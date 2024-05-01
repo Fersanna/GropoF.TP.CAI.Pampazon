@@ -1,4 +1,4 @@
-namespace GropoF.TP.CAI.Pampazon
+namespace GrupoF.TP.CAI.Pampazon
 {
     internal static class Program
     {
