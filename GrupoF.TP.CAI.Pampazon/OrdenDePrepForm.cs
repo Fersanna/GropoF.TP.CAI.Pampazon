@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GropoF.TP.CAI.Pampazon
+namespace GrupoF.TP.CAI.Pampazon
 {
     public partial class OrdenDePrepForm : Form
     {
