@@ -12,5 +12,15 @@ namespace GrupoF.TP.CAI.Pampazon
             OrdenDePrepForm ordenDePrepForm = new OrdenDePrepForm();
             ordenDePrepForm.ShowDialog();
         }
+
+        private void OrdenSeleccionClick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void OrdenEntrega_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -37,9 +37,10 @@
             // 
             // OrdeDePreparacionBtn
             // 
-            OrdeDePreparacionBtn.Location = new Point(48, 31);
+            OrdeDePreparacionBtn.Location = new Point(42, 23);
+            OrdeDePreparacionBtn.Margin = new Padding(3, 2, 3, 2);
             OrdeDePreparacionBtn.Name = "OrdeDePreparacionBtn";
-            OrdeDePreparacionBtn.Size = new Size(309, 69);
+            OrdeDePreparacionBtn.Size = new Size(270, 52);
             OrdeDePreparacionBtn.TabIndex = 0;
             OrdeDePreparacionBtn.Text = "Orden de Preparacion";
             OrdeDePreparacionBtn.UseVisualStyleBackColor = true;
@@ -47,50 +48,57 @@
             // 
             // button2
             // 
-            button2.Location = new Point(48, 123);
+            button2.Location = new Point(42, 92);
+            button2.Margin = new Padding(3, 2, 3, 2);
             button2.Name = "button2";
-            button2.Size = new Size(309, 69);
+            button2.Size = new Size(270, 52);
             button2.TabIndex = 1;
             button2.Text = "Orden de Seleccion";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += OrdenSeleccionClick;
             // 
             // button3
             // 
-            button3.Location = new Point(48, 215);
+            button3.Location = new Point(42, 161);
+            button3.Margin = new Padding(3, 2, 3, 2);
             button3.Name = "button3";
-            button3.Size = new Size(309, 69);
+            button3.Size = new Size(270, 52);
             button3.TabIndex = 2;
             button3.Text = "Orden de Entrega";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += OrdenEntrega_Click;
             // 
             // button4
             // 
-            button4.Location = new Point(48, 307);
+            button4.Location = new Point(42, 230);
+            button4.Margin = new Padding(3, 2, 3, 2);
             button4.Name = "button4";
-            button4.Size = new Size(309, 69);
+            button4.Size = new Size(270, 52);
             button4.TabIndex = 3;
             button4.Text = "Generar Documentos";
             button4.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            button5.Location = new Point(48, 399);
+            button5.Location = new Point(42, 299);
+            button5.Margin = new Padding(3, 2, 3, 2);
             button5.Name = "button5";
-            button5.Size = new Size(309, 69);
+            button5.Size = new Size(270, 52);
             button5.TabIndex = 4;
             button5.Text = "Confirmar Orden";
             button5.UseVisualStyleBackColor = true;
             // 
             // MenuForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(392, 492);
+            ClientSize = new Size(343, 369);
             Controls.Add(button5);
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(OrdeDePreparacionBtn);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "MenuForm";
             Text = "Menu";
             ResumeLayout(false);
