@@ -28,25 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            button1 = new Button();
+            OrdeDePreparacionBtn = new Button();
             button2 = new Button();
             button3 = new Button();
             button4 = new Button();
             button5 = new Button();
             SuspendLayout();
             // 
-            // button1
+            // OrdeDePreparacionBtn
             // 
-            button1.Location = new Point(48, 31);
-            button1.Name = "button1";
-            button1.Size = new Size(309, 69);
-            button1.TabIndex = 0;
-            button1.Text = "Orden de Preparacion";
-            button1.UseVisualStyleBackColor = true;
+            OrdeDePreparacionBtn.Location = new Point(48, 31);
+            OrdeDePreparacionBtn.Name = "OrdeDePreparacionBtn";
+            OrdeDePreparacionBtn.Size = new Size(309, 69);
+            OrdeDePreparacionBtn.TabIndex = 0;
+            OrdeDePreparacionBtn.Text = "Orden de Preparacion";
+            OrdeDePreparacionBtn.UseVisualStyleBackColor = true;
+            OrdeDePreparacionBtn.Click += OrdenPreparacionClick;
             // 
             // button2
             // 
-            button2.Location = new Point(48, 129);
+            button2.Location = new Point(48, 123);
             button2.Name = "button2";
             button2.Size = new Size(309, 69);
             button2.TabIndex = 1;
@@ -55,7 +56,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(48, 230);
+            button3.Location = new Point(48, 215);
             button3.Name = "button3";
             button3.Size = new Size(309, 69);
             button3.TabIndex = 2;
@@ -64,7 +65,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(48, 316);
+            button4.Location = new Point(48, 307);
             button4.Name = "button4";
             button4.Size = new Size(309, 69);
             button4.TabIndex = 3;
@@ -73,7 +74,7 @@
             // 
             // button5
             // 
-            button5.Location = new Point(48, 400);
+            button5.Location = new Point(48, 399);
             button5.Name = "button5";
             button5.Size = new Size(309, 69);
             button5.TabIndex = 4;
@@ -89,7 +90,7 @@
             Controls.Add(button4);
             Controls.Add(button3);
             Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(OrdeDePreparacionBtn);
             Name = "MenuForm";
             Text = "Menu";
             ResumeLayout(false);
@@ -97,7 +98,7 @@
 
         #endregion
 
-        private Button button1;
+        private Button OrdeDePreparacionBtn;
         private Button button2;
         private Button button3;
         private Button button4;

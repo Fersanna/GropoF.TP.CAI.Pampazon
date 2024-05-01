@@ -6,5 +6,11 @@ namespace GropoF.TP.CAI.Pampazon
         {
             InitializeComponent();
         }
+
+        private void OrdenPreparacionClick(object sender, EventArgs e)
+        {
+            OrdenDePrepForm ordenDePrepForm = new OrdenDePrepForm();
+            ordenDePrepForm.ShowDialog();
+        }
     }
 }
