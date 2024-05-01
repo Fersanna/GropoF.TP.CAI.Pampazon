@@ -1,6 +1,6 @@
 ﻿namespace GrupoF.TP.CAI.Pampazon
 {
-    partial class OrdenDeSelec
+    partial class OrdenDeEntregForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,30 +34,34 @@
             // 
             // listView1
             // 
-            listView1.Location = new Point(53, 51);
+            listView1.Location = new Point(77, 91);
+            listView1.Margin = new Padding(3, 4, 3, 4);
             listView1.Name = "listView1";
-            listView1.Size = new Size(659, 259);
+            listView1.Size = new Size(740, 347);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
             // button1
             // 
-            button1.Location = new Point(632, 335);
+            button1.Location = new Point(714, 463);
+            button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
-            button1.Size = new Size(80, 23);
+            button1.Size = new Size(103, 36);
             button1.TabIndex = 1;
             button1.Text = "Generar";
             button1.UseVisualStyleBackColor = true;
             // 
-            // OrdenDeSelec
+            // OrdenDeEntregForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
             Controls.Add(button1);
             Controls.Add(listView1);
-            Name = "OrdenDeSelec";
-            Text = "OrdenDeSelec";
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "OrdenDeEntregForm";
+            Text = "Orden De Entrega";
+            Load += OrdenDeEntregForm_Load;
             ResumeLayout(false);
         }
 

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace GrupoF.TP.CAI.Pampazon
 {
-    public partial class OrdenDeEntreg : Form
+    public partial class OrdenDeSelec : Form
     {
-        public OrdenDeEntreg()
+        public OrdenDeSelec()
         {
             InitializeComponent();
+        }
+
+        private void OrdenDeSelec_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
