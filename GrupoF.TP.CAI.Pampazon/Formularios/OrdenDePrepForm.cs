@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrupoF.TP.CAI.Pampazon.Formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,17 @@ namespace GrupoF.TP.CAI.Pampazon
         private void CancelarOrdenPrepBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void SeleccionarBtn_Click(object sender, EventArgs e)
+        {
+            GenerarOrdenPrepForm generarOrdenPrep = new GenerarOrdenPrepForm();
+            generarOrdenPrep.ShowDialog();
         }
     }
 }

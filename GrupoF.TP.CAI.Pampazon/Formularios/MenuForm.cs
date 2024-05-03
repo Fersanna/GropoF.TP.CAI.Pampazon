@@ -36,7 +36,12 @@ namespace GrupoF.TP.CAI.Pampazon
         private void ConfirmarOrdeBtn_Click(object sender, EventArgs e)
         {
             ConfirmarOrdForm confirmarOrdForm = new ConfirmarOrdForm();
-            confirmarOrdForm.ShowDialog(); 
+            confirmarOrdForm.ShowDialog();
+        }
+
+        private void MenuForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

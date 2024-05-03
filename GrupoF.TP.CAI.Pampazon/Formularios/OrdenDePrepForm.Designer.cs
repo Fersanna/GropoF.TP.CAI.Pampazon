@@ -30,20 +30,17 @@
         {
             CancelarOrdenPrepBtn = new Button();
             listView1 = new ListView();
-            button2 = new Button();
-            button3 = new Button();
-            comboBox1 = new ComboBox();
-            numericUpDown1 = new NumericUpDown();
+            SeleccionarBtn = new Button();
             label1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
+            textBox1 = new TextBox();
+            button1 = new Button();
             SuspendLayout();
             // 
             // CancelarOrdenPrepBtn
             // 
-            CancelarOrdenPrepBtn.Location = new Point(649, 363);
-            CancelarOrdenPrepBtn.Margin = new Padding(3, 4, 3, 4);
+            CancelarOrdenPrepBtn.Location = new Point(568, 272);
             CancelarOrdenPrepBtn.Name = "CancelarOrdenPrepBtn";
-            CancelarOrdenPrepBtn.Size = new Size(86, 31);
+            CancelarOrdenPrepBtn.Size = new Size(75, 23);
             CancelarOrdenPrepBtn.TabIndex = 0;
             CancelarOrdenPrepBtn.Text = "&Cancelar";
             CancelarOrdenPrepBtn.UseVisualStyleBackColor = true;
@@ -51,75 +48,62 @@
             // 
             // listView1
             // 
-            listView1.Location = new Point(46, 103);
-            listView1.Margin = new Padding(3, 4, 3, 4);
+            listView1.Location = new Point(40, 77);
             listView1.Name = "listView1";
-            listView1.Size = new Size(689, 227);
+            listView1.Size = new Size(603, 171);
             listView1.TabIndex = 1;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // button2
+            // SeleccionarBtn
             // 
-            button2.Location = new Point(557, 363);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(86, 31);
-            button2.TabIndex = 2;
-            button2.Text = "&Agregar";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(464, 363);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(86, 31);
-            button3.TabIndex = 3;
-            button3.Text = "&Aceptar";
-            button3.UseVisualStyleBackColor = true;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(46, 40);
-            comboBox1.Margin = new Padding(3, 4, 3, 4);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(239, 28);
-            comboBox1.TabIndex = 4;
-            // 
-            // numericUpDown1
-            // 
-            numericUpDown1.Location = new Point(47, 363);
-            numericUpDown1.Margin = new Padding(3, 4, 3, 4);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(137, 27);
-            numericUpDown1.TabIndex = 5;
+            SeleccionarBtn.Location = new Point(487, 272);
+            SeleccionarBtn.Name = "SeleccionarBtn";
+            SeleccionarBtn.Size = new Size(75, 23);
+            SeleccionarBtn.TabIndex = 3;
+            SeleccionarBtn.Text = "Seleccionar";
+            SeleccionarBtn.UseVisualStyleBackColor = true;
+            SeleccionarBtn.Click += SeleccionarBtn_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(46, 12);
+            label1.Location = new Point(40, 9);
             label1.Name = "label1";
-            label1.Size = new Size(61, 20);
+            label1.Size = new Size(49, 15);
             label1.TabIndex = 6;
             label1.Text = "Clientes";
             // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(41, 27);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(211, 23);
+            textBox1.TabIndex = 7;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(280, 26);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 8;
+            button1.Text = "Buscar";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // OrdenDePrepForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 451);
+            ClientSize = new Size(700, 338);
+            Controls.Add(button1);
+            Controls.Add(textBox1);
             Controls.Add(label1);
-            Controls.Add(numericUpDown1);
-            Controls.Add(comboBox1);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(SeleccionarBtn);
             Controls.Add(listView1);
             Controls.Add(CancelarOrdenPrepBtn);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "OrdenDePrepForm";
             Text = "Orden De Preparacion";
             Load += OrdenDePrepForm_Load;
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -128,10 +112,9 @@
 
         private Button CancelarOrdenPrepBtn;
         private ListView listView1;
-        private Button button2;
-        private Button button3;
-        private ComboBox comboBox1;
-        private NumericUpDown numericUpDown1;
+        private Button SeleccionarBtn;
         private Label label1;
+        private TextBox textBox1;
+        private Button button1;
     }
 }
