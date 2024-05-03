@@ -57,7 +57,7 @@
             GenerarOrdenDeSeleccionBtn.TabIndex = 1;
             GenerarOrdenDeSeleccionBtn.Text = "Generar Orden de Selección";
             GenerarOrdenDeSeleccionBtn.UseVisualStyleBackColor = true;
-            GenerarOrdenDeSeleccionBtn.Click += OrdenSeleccionClick;
+            GenerarOrdenDeSeleccionBtn.Click += GenerarOrdenDeSeleccionBtn_Click;
             // 
             // GenerarOrdenDeEntregaBtn
             // 
@@ -68,7 +68,7 @@
             GenerarOrdenDeEntregaBtn.TabIndex = 2;
             GenerarOrdenDeEntregaBtn.Text = "Generar Orden de Entrega";
             GenerarOrdenDeEntregaBtn.UseVisualStyleBackColor = true;
-            GenerarOrdenDeEntregaBtn.Click += GenerarOrdenEntregaBtn_Click;
+            GenerarOrdenDeEntregaBtn.Click += GenerarOrdenDeEntregaBtn_Click;
             // 
             // GenerarDocumentosBtn
             // 
@@ -90,7 +90,7 @@
             ConfirmarOrdenDeEntregaBtn.TabIndex = 4;
             ConfirmarOrdenDeEntregaBtn.Text = "Confirmar Orden de Entrega";
             ConfirmarOrdenDeEntregaBtn.UseVisualStyleBackColor = true;
-            ConfirmarOrdenDeEntregaBtn.Click += ConfirmarOrdeBtn_Click;
+            ConfirmarOrdenDeEntregaBtn.Click += ConfirmarOrdenDeEntregaBtn_Click;
             // 
             // BuscarPosiciónBtn
             // 
@@ -101,6 +101,7 @@
             BuscarPosiciónBtn.TabIndex = 5;
             BuscarPosiciónBtn.Text = "Buscar Posición";
             BuscarPosiciónBtn.UseVisualStyleBackColor = true;
+            BuscarPosiciónBtn.Click += BuscarPosicionBtn_Click;
             // 
             // ConfirmarOrdenSeleccionadaBtn
             // 
@@ -111,6 +112,7 @@
             ConfirmarOrdenSeleccionadaBtn.TabIndex = 6;
             ConfirmarOrdenSeleccionadaBtn.Text = "Confirmar Orden Seleccionada";
             ConfirmarOrdenSeleccionadaBtn.UseVisualStyleBackColor = true;
+            ConfirmarOrdenSeleccionadaBtn.Click += ConfirmarOrdenSeleccionadaBtn_Click;
             // 
             // MenuForm
             // 

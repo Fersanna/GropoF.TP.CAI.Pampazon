@@ -44,14 +44,36 @@ namespace GrupoF.TP.CAI.Pampazon
 
         }
 
+        private void GenerarOrdenDeSeleccionBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BuscarPosicionBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ConfirmarOrdenSeleccionadaBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GenerarOrdenDeEntregaBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void GenerarDocumentosBtn_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void GenerarOrdenEntregaBtn_Click(object sender, EventArgs e)
+        private void ConfirmarOrdenDeEntregaBtn_Click(object sender, EventArgs e)
         {
 
         }
+
+
     }
 }
