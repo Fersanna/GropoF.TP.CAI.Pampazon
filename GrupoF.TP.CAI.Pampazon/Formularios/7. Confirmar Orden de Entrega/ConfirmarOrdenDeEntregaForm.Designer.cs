@@ -1,6 +1,6 @@
 ﻿namespace GrupoF.TP.CAI.Pampazon
 {
-    partial class ConfirmarOrdForm
+    partial class ConfirmarOrdenDeEntregaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,33 +34,30 @@
             // 
             // listView1
             // 
-            listView1.Location = new Point(80, 103);
-            listView1.Margin = new Padding(3, 4, 3, 4);
+            listView1.Location = new Point(70, 77);
             listView1.Name = "listView1";
-            listView1.Size = new Size(738, 301);
+            listView1.Size = new Size(646, 227);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
             // button1
             // 
-            button1.Location = new Point(701, 441);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(613, 331);
             button1.Name = "button1";
-            button1.Size = new Size(118, 35);
+            button1.Size = new Size(103, 26);
             button1.TabIndex = 1;
             button1.Text = "Generar";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click_1;
             // 
-            // ConfirmarOrdForm
+            // ConfirmarOrdenDeEntregaForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
             Controls.Add(button1);
             Controls.Add(listView1);
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "ConfirmarOrdForm";
+            Name = "ConfirmarOrdenDeEntregaForm";
             Text = "Confirmar Ordenes";
             Load += ConfirmarOrdForm_Load;
             ResumeLayout(false);

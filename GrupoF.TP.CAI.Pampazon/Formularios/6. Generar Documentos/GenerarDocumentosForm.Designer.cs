@@ -1,6 +1,6 @@
 ﻿namespace GrupoF.TP.CAI.Pampazon
 {
-    partial class GenerarDocForm
+    partial class GenerarDocumentosForm
     {
         /// <summary>
         /// Required designer variable.
@@ -34,32 +34,29 @@
             // 
             // listView1
             // 
-            listView1.Location = new Point(61, 75);
-            listView1.Margin = new Padding(3, 4, 3, 4);
+            listView1.Location = new Point(53, 56);
             listView1.Name = "listView1";
-            listView1.Size = new Size(756, 337);
+            listView1.Size = new Size(662, 254);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
             // button1
             // 
-            button1.Location = new Point(713, 437);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(624, 328);
             button1.Name = "button1";
-            button1.Size = new Size(104, 31);
+            button1.Size = new Size(91, 23);
             button1.TabIndex = 1;
             button1.Text = "Generar";
             button1.UseVisualStyleBackColor = true;
             // 
-            // GenerarDocForm
+            // GenerarDocumentosForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(914, 600);
+            ClientSize = new Size(800, 450);
             Controls.Add(button1);
             Controls.Add(listView1);
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "GenerarDocForm";
+            Name = "GenerarDocumentosForm";
             Text = "Generar Documento";
             Load += GenerarDocForm_Load;
             ResumeLayout(false);

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GrupoF.TP.CAI.Pampazon
 {
-    public partial class ConfirmarOrdForm : Form
+    public partial class ConfirmarOrdenDeEntregaForm : Form
     {
-        public ConfirmarOrdForm()
+        public ConfirmarOrdenDeEntregaForm()
         {
             InitializeComponent();
         }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace GrupoF.TP.CAI.Pampazon
 {
-    public partial class GenerarDocForm : Form
+    public partial class GenerarDocumentosForm : Form
     {
-        public GenerarDocForm()
+        public GenerarDocumentosForm()
         {
             InitializeComponent();
         }
