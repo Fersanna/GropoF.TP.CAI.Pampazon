@@ -1,6 +1,6 @@
 ﻿namespace GrupoF.TP.CAI.Pampazon
 {
-    partial class OrdenDeSelec
+    partial class GenerarOrdenDeSeleccionForm
     {
         /// <summary>
         /// Required designer variable.

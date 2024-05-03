@@ -17,7 +17,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void OrdenSeleccionClick(object sender, EventArgs e)
         {
-            OrdenDeSelec ordenDeSeleccion = new OrdenDeSelec();
+            GenerarOrdenDeSeleccionForm ordenDeSeleccion = new GenerarOrdenDeSeleccionForm();
             ordenDeSeleccion.ShowDialog();
         }
 
@@ -40,6 +40,16 @@ namespace GrupoF.TP.CAI.Pampazon
         }
 
         private void MenuForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GenerarDocumentosBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void GenerarOrdenEntregaBtn_Click(object sender, EventArgs e)
         {
 
         }

@@ -68,7 +68,7 @@
             GenerarOrdenDeEntregaBtn.TabIndex = 2;
             GenerarOrdenDeEntregaBtn.Text = "Generar Orden de Entrega";
             GenerarOrdenDeEntregaBtn.UseVisualStyleBackColor = true;
-            GenerarOrdenDeEntregaBtn.Click += OrdenEntrega_Click;
+            GenerarOrdenDeEntregaBtn.Click += GenerarOrdenEntregaBtn_Click;
             // 
             // GenerarDocumentosBtn
             // 
@@ -79,7 +79,7 @@
             GenerarDocumentosBtn.TabIndex = 3;
             GenerarDocumentosBtn.Text = "Generar Documentos";
             GenerarDocumentosBtn.UseVisualStyleBackColor = true;
-            GenerarDocumentosBtn.Click += GenerarDocBtn_Click;
+            GenerarDocumentosBtn.Click += GenerarDocumentosBtn_Click;
             // 
             // ConfirmarOrdenDeEntregaBtn
             // 

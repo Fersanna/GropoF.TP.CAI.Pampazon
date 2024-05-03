@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GrupoF.TP.CAI.Pampazon
+namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
 {
-    public partial class OrdenDeSelec : Form
+    public partial class ConfirmarOrdenSeleccionadaForm : Form
     {
-        public OrdenDeSelec()
+        public ConfirmarOrdenSeleccionadaForm()
         {
             InitializeComponent();
-        }
-
-        private void OrdenDeSelec_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
