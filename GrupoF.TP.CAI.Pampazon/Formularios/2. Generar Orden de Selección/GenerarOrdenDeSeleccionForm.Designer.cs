@@ -34,33 +34,30 @@
             // 
             // listView1
             // 
-            listView1.Location = new Point(61, 68);
-            listView1.Margin = new Padding(3, 4, 3, 4);
+            listView1.Location = new Point(53, 51);
             listView1.Name = "listView1";
-            listView1.Size = new Size(753, 344);
+            listView1.Size = new Size(659, 259);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
             // button1
             // 
-            button1.Location = new Point(722, 447);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(632, 335);
             button1.Name = "button1";
-            button1.Size = new Size(91, 31);
+            button1.Size = new Size(80, 23);
             button1.TabIndex = 1;
             button1.Text = "Generar";
             button1.UseVisualStyleBackColor = true;
             // 
-            // OrdenDeSelec
+            // GenerarOrdenDeSeleccionForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(902, 525);
+            ClientSize = new Size(789, 394);
             Controls.Add(button1);
             Controls.Add(listView1);
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "OrdenDeSelec";
-            Text = "Ordenes de Seleccion";
+            Name = "GenerarOrdenDeSeleccionForm";
+            Text = "Generar Orden de Selección";
             Load += OrdenDeSelec_Load;
             ResumeLayout(false);
         }

@@ -58,7 +58,7 @@
             Controls.Add(button1);
             Controls.Add(listView1);
             Name = "ConfirmarOrdenDeEntregaForm";
-            Text = "Confirmar Ordenes";
+            Text = "Confirmar Orden de Entrega";
             Load += ConfirmarOrdForm_Load;
             ResumeLayout(false);
         }
