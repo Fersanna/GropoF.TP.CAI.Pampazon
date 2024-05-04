@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             listView1 = new ListView();
-            button1 = new Button();
+            GenerarBtn = new Button();
             SuspendLayout();
             // 
             // listView1
@@ -40,32 +40,32 @@
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // button1
+            // GenerarBtn
             // 
-            button1.Location = new Point(613, 331);
-            button1.Name = "button1";
-            button1.Size = new Size(103, 26);
-            button1.TabIndex = 1;
-            button1.Text = "Generar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
+            GenerarBtn.Location = new Point(613, 331);
+            GenerarBtn.Name = "GenerarBtn";
+            GenerarBtn.Size = new Size(103, 26);
+            GenerarBtn.TabIndex = 1;
+            GenerarBtn.Text = "Generar";
+            GenerarBtn.UseVisualStyleBackColor = true;
+            GenerarBtn.Click += GenerarBtn_Click;
             // 
             // ConfirmarOrdenDeEntregaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(GenerarBtn);
             Controls.Add(listView1);
             Name = "ConfirmarOrdenDeEntregaForm";
             Text = "Confirmar Orden de Entrega";
-            Load += ConfirmarOrdForm_Load;
+            Load += ConfirmarOrdenDeEntregaForm_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
         private ListView listView1;
-        private Button button1;
+        private Button GenerarBtn;
     }
 }

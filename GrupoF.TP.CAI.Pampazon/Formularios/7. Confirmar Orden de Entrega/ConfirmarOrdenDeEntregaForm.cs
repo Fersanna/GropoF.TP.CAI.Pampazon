@@ -22,14 +22,16 @@ namespace GrupoF.TP.CAI.Pampazon
 
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void ConfirmarOrdenDeEntregaForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void ConfirmarOrdForm_Load(object sender, EventArgs e)
+        private void GenerarBtn_Click(object sender, EventArgs e)
         {
 
         }
+
+        
     }
 }

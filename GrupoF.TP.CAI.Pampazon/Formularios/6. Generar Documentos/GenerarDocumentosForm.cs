@@ -17,7 +17,7 @@ namespace GrupoF.TP.CAI.Pampazon
             InitializeComponent();
         }
 
-        private void GenerarDocForm_Load(object sender, EventArgs e)
+        private void GenerarDocumentosForm_Load(object sender, EventArgs e)
         {
 
         }

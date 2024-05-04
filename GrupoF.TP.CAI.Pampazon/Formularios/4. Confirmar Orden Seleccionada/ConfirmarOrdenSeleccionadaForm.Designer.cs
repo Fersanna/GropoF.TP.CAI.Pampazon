@@ -37,6 +37,7 @@
             ClientSize = new Size(800, 450);
             Name = "ConfirmarOrdenSeleccionadaForm";
             Text = "Confirmar Orden Seleccionada";
+            Load += ConfirmarOrdenSeleccionadaForm_Load;
             ResumeLayout(false);
         }
 

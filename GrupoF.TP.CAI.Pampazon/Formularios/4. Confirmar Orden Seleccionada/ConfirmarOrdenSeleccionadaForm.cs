@@ -16,5 +16,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
         {
             InitializeComponent();
         }
+
+        private void ConfirmarOrdenSeleccionadaForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

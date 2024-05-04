@@ -58,7 +58,7 @@
             Controls.Add(listView1);
             Name = "GenerarDocumentosForm";
             Text = "Generar Documentos";
-            Load += GenerarDocForm_Load;
+            Load += GenerarDocumentosForm_Load;
             ResumeLayout(false);
         }
 

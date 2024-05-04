@@ -59,7 +59,7 @@
             Controls.Add(listView1);
             Name = "GenerarOrdenDeSeleccionForm";
             Text = "Generar Orden de Selección";
-            Load += OrdenDeSelec_Load;
+            Load += GenerarOrdenDeSeleccionForm_Load;
             ResumeLayout(false);
         }
 

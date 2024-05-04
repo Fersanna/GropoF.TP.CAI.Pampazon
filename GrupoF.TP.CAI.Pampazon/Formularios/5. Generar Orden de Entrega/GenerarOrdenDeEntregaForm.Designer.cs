@@ -58,7 +58,7 @@
             Controls.Add(listView1);
             Name = "GenerarOrdenDeEntregaForm";
             Text = "Generar Orden de Entrega";
-            Load += OrdenDeEntregForm_Load;
+            Load += GenerarOrdenDeEntregaForm_Load;
             ResumeLayout(false);
         }
 

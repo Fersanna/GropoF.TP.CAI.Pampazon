@@ -18,15 +18,15 @@ namespace GrupoF.TP.CAI.Pampazon
             InitializeComponent();
         }
 
-        private void OrdenDeSelec_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void GenerarBtn_Click(object sender, EventArgs e)
         {
             OrdenDeSeleccionForm ordenDeSeleccionForm = new OrdenDeSeleccionForm();
             ordenDeSeleccionForm.ShowDialog();
+        }
+
+        private void GenerarOrdenDeSeleccionForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
