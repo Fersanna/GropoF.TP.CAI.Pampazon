@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             listView1 = new ListView();
-            button1 = new Button();
+            GenerarBtn = new Button();
             SuspendLayout();
             // 
             // listView1
@@ -40,21 +40,22 @@
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // button1
+            // GenerarBtn
             // 
-            button1.Location = new Point(632, 335);
-            button1.Name = "button1";
-            button1.Size = new Size(80, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Generar";
-            button1.UseVisualStyleBackColor = true;
+            GenerarBtn.Location = new Point(632, 335);
+            GenerarBtn.Name = "GenerarBtn";
+            GenerarBtn.Size = new Size(80, 23);
+            GenerarBtn.TabIndex = 1;
+            GenerarBtn.Text = "Generar";
+            GenerarBtn.UseVisualStyleBackColor = true;
+            GenerarBtn.Click += GenerarBtn_Click;
             // 
             // GenerarOrdenDeSeleccionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(789, 394);
-            Controls.Add(button1);
+            Controls.Add(GenerarBtn);
             Controls.Add(listView1);
             Name = "GenerarOrdenDeSeleccionForm";
             Text = "Generar Orden de Selección";
@@ -65,6 +66,6 @@
         #endregion
 
         private ListView listView1;
-        private Button button1;
+        private Button GenerarBtn;
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
 {
-    partial class BuscarPosicionForm
+    partial class InventarioForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,32 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            InventarioBtn = new Button();
             SuspendLayout();
             // 
-            // InventarioBtn
-            // 
-            InventarioBtn.Location = new Point(668, 378);
-            InventarioBtn.Name = "InventarioBtn";
-            InventarioBtn.Size = new Size(88, 23);
-            InventarioBtn.TabIndex = 3;
-            InventarioBtn.Text = "Inventario";
-            InventarioBtn.UseVisualStyleBackColor = true;
-            InventarioBtn.Click += InventarioBtn_Click;
-            // 
-            // BuscarPosicionForm
+            // InventarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(InventarioBtn);
-            Name = "BuscarPosicionForm";
-            Text = "Buscar Posición";
+            Name = "InventarioForm";
+            Text = "Inventario";
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Button InventarioBtn;
     }
 }

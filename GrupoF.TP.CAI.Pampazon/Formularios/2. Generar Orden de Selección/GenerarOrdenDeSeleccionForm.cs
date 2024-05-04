@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,12 @@ namespace GrupoF.TP.CAI.Pampazon
         private void OrdenDeSelec_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void GenerarBtn_Click(object sender, EventArgs e)
+        {
+            OrdenDeSeleccionForm ordenDeSeleccionForm = new OrdenDeSeleccionForm();
+            ordenDeSeleccionForm.ShowDialog();
         }
     }
 }
