@@ -16,5 +16,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
         {
             InitializeComponent();
         }
+
+        private void CancelarBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

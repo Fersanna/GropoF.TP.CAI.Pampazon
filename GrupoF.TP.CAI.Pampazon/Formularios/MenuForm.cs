@@ -11,21 +11,21 @@ namespace GrupoF.TP.CAI.Pampazon
             InitializeComponent();
         }
 
-        private void OrdenPreparacionClick(object sender, EventArgs e)
-        {
-            OrdenDePrepForm ordenDePrepForm = new OrdenDePrepForm();
-            ordenDePrepForm.ShowDialog();
-        }
-
         private void MenuForm_Load(object sender, EventArgs e)
         {
 
         }
 
+        private void RegistrarOrdenDePreparacion_Click(object sender, EventArgs e)
+        {
+            BuscarClienteForm buscarClienteForm = new BuscarClienteForm();
+            buscarClienteForm.ShowDialog();
+        }
+
         private void GenerarOrdenDeSeleccionBtn_Click(object sender, EventArgs e)
         {
-            GenerarOrdenDeSeleccionForm generarOrdenDeSeleccion = new GenerarOrdenDeSeleccionForm();
-            generarOrdenDeSeleccion.ShowDialog();
+            GenerarOrdenDeSeleccionForm generarOrdenDeSeleccionForm = new GenerarOrdenDeSeleccionForm();
+            generarOrdenDeSeleccionForm.ShowDialog();
         }
 
         private void BuscarPosicionBtn_Click(object sender, EventArgs e)
@@ -42,8 +42,8 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void GenerarOrdenDeEntregaBtn_Click(object sender, EventArgs e)
         {
-            GenerarOrdenDeEntregaForm generarOrdenDeEntrega = new GenerarOrdenDeEntregaForm();
-            generarOrdenDeEntrega.ShowDialog();
+            GenerarOrdenDeEntregaForm generarOrdenDeEntregaForm = new GenerarOrdenDeEntregaForm();
+            generarOrdenDeEntregaForm.ShowDialog();
         }
 
         private void GenerarDocumentosBtn_Click(object sender, EventArgs e)
@@ -57,7 +57,5 @@ namespace GrupoF.TP.CAI.Pampazon
             ConfirmarOrdenDeEntregaForm confirmarOrdenDeEntregaForm = new ConfirmarOrdenDeEntregaForm();
             confirmarOrdenDeEntregaForm.ShowDialog();
         }
-
-
     }
 }

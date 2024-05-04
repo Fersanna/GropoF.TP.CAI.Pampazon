@@ -17,10 +17,15 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
             InitializeComponent();
         }
 
-        private void InventarioBtn_Click(object sender, EventArgs e)
+        private void BuscarBtn_Click(object sender, EventArgs e)
         {
             InventarioForm inventarioForm = new InventarioForm();
             inventarioForm.ShowDialog();
+        }
+
+        private void CancelarBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

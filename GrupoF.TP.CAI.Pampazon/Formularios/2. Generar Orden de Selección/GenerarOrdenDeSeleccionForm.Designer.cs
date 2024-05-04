@@ -30,6 +30,7 @@
         {
             listView1 = new ListView();
             GenerarBtn = new Button();
+            CancelarBtn = new Button();
             SuspendLayout();
             // 
             // listView1
@@ -50,11 +51,22 @@
             GenerarBtn.UseVisualStyleBackColor = true;
             GenerarBtn.Click += GenerarBtn_Click;
             // 
+            // CancelarBtn
+            // 
+            CancelarBtn.Location = new Point(537, 335);
+            CancelarBtn.Name = "CancelarBtn";
+            CancelarBtn.Size = new Size(80, 23);
+            CancelarBtn.TabIndex = 2;
+            CancelarBtn.Text = "Cancelar";
+            CancelarBtn.UseVisualStyleBackColor = true;
+            CancelarBtn.Click += CancelarBtn_Click;
+            // 
             // GenerarOrdenDeSeleccionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(789, 394);
+            Controls.Add(CancelarBtn);
             Controls.Add(GenerarBtn);
             Controls.Add(listView1);
             Name = "GenerarOrdenDeSeleccionForm";
@@ -67,5 +79,6 @@
 
         private ListView listView1;
         private Button GenerarBtn;
+        private Button CancelarBtn;
     }
 }

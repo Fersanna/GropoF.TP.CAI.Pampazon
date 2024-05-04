@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             listView1 = new ListView();
-            button1 = new Button();
+            GenerarBtn = new Button();
+            CancelarBtn = new Button();
             SuspendLayout();
             // 
             // listView1
@@ -40,21 +41,33 @@
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // button1
+            // GenerarBtn
             // 
-            button1.Location = new Point(624, 328);
-            button1.Name = "button1";
-            button1.Size = new Size(91, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Generar";
-            button1.UseVisualStyleBackColor = true;
+            GenerarBtn.Location = new Point(624, 328);
+            GenerarBtn.Name = "GenerarBtn";
+            GenerarBtn.Size = new Size(91, 23);
+            GenerarBtn.TabIndex = 1;
+            GenerarBtn.Text = "Generar";
+            GenerarBtn.UseVisualStyleBackColor = true;
+            GenerarBtn.Click += GenerarBtn_Click;
+            // 
+            // CancelarBtn
+            // 
+            CancelarBtn.Location = new Point(527, 328);
+            CancelarBtn.Name = "CancelarBtn";
+            CancelarBtn.Size = new Size(91, 23);
+            CancelarBtn.TabIndex = 2;
+            CancelarBtn.Text = "Cancelar";
+            CancelarBtn.UseVisualStyleBackColor = true;
+            CancelarBtn.Click += CancelarBtn_Click;
             // 
             // GenerarDocumentosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(button1);
+            Controls.Add(CancelarBtn);
+            Controls.Add(GenerarBtn);
             Controls.Add(listView1);
             Name = "GenerarDocumentosForm";
             Text = "Generar Documentos";
@@ -65,6 +78,7 @@
         #endregion
 
         private ListView listView1;
-        private Button button1;
+        private Button GenerarBtn;
+        private Button CancelarBtn;
     }
 }

@@ -1,4 +1,4 @@
-﻿using GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega;
+﻿using GrupoF.TP.CAI.Pampazon.Formularios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,22 +11,22 @@ using System.Windows.Forms;
 
 namespace GrupoF.TP.CAI.Pampazon
 {
-    public partial class GenerarOrdenDeEntregaForm : Form
+    public partial class BuscarClienteForm : Form
     {
-        public GenerarOrdenDeEntregaForm()
+        public BuscarClienteForm()
         {
             InitializeComponent();
         }
 
-        private void GenerarOrdenDeEntregaForm_Load(object sender, EventArgs e)
+        private void BuscarClienteForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void GenerarBtn_Click(object sender, EventArgs e)
+        private void SeleccionarBtn_Click(object sender, EventArgs e)
         {
-            OrdenDeEntregaForm ordenDeEntregaForm = new OrdenDeEntregaForm();
-            ordenDeEntregaForm.ShowDialog();
+            GenerarOrdenDePreparacionForm generarOrdenDePreparacionForm = new GenerarOrdenDePreparacionForm();
+            generarOrdenDePreparacionForm.ShowDialog();
         }
 
         private void CancelarBtn_Click(object sender, EventArgs e)

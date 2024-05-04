@@ -28,12 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "OrdenDeSeleccionForm";
+            listView1 = new ListView();
+            EliminarBtn = new Button();
+            CancelarBtn = new Button();
+            SuspendLayout();
+            // 
+            // listView1
+            // 
+            listView1.Location = new Point(39, 52);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(689, 288);
+            listView1.TabIndex = 0;
+            listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // EliminarBtn
+            // 
+            EliminarBtn.Location = new Point(628, 357);
+            EliminarBtn.Name = "EliminarBtn";
+            EliminarBtn.Size = new Size(100, 27);
+            EliminarBtn.TabIndex = 1;
+            EliminarBtn.Text = "Eliminar";
+            EliminarBtn.UseVisualStyleBackColor = true;
+            // 
+            // CancelarBtn
+            // 
+            CancelarBtn.Location = new Point(522, 357);
+            CancelarBtn.Name = "CancelarBtn";
+            CancelarBtn.Size = new Size(100, 27);
+            CancelarBtn.TabIndex = 2;
+            CancelarBtn.Text = "Cancelar";
+            CancelarBtn.UseVisualStyleBackColor = true;
+            CancelarBtn.Click += CancelarBtn_Click;
+            // 
+            // OrdenDeSeleccionForm
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(CancelarBtn);
+            Controls.Add(EliminarBtn);
+            Controls.Add(listView1);
+            Name = "OrdenDeSeleccionForm";
+            Text = "Orden de Seleccion";
+            ResumeLayout(false);
         }
 
         #endregion
+
+        private ListView listView1;
+        private Button EliminarBtn;
+        private Button CancelarBtn;
     }
 }

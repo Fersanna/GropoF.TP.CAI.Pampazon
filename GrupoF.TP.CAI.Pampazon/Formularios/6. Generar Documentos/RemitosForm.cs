@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GrupoF.TP.CAI.Pampazon.Formularios
+namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 {
-    public partial class GenerarOrdenPrepForm : Form
+    public partial class RemitosForm : Form
     {
-        public GenerarOrdenPrepForm()
+        public RemitosForm()
         {
             InitializeComponent();
-        }
-
-        private void GenerarOrdenPrepForm_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

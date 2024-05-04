@@ -28,18 +28,55 @@
         /// </summary>
         private void InitializeComponent()
         {
+            listView1 = new ListView();
+            ConfirmarBtn = new Button();
+            CancelarBtn = new Button();
             SuspendLayout();
+            // 
+            // listView1
+            // 
+            listView1.Location = new Point(49, 52);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(681, 287);
+            listView1.TabIndex = 0;
+            listView1.UseCompatibleStateImageBehavior = false;
+            // 
+            // ConfirmarBtn
+            // 
+            ConfirmarBtn.Location = new Point(624, 357);
+            ConfirmarBtn.Name = "ConfirmarBtn";
+            ConfirmarBtn.Size = new Size(102, 29);
+            ConfirmarBtn.TabIndex = 1;
+            ConfirmarBtn.Text = "Confirmar";
+            ConfirmarBtn.UseVisualStyleBackColor = true;
+            // 
+            // CancelarBtn
+            // 
+            CancelarBtn.Location = new Point(516, 357);
+            CancelarBtn.Name = "CancelarBtn";
+            CancelarBtn.Size = new Size(102, 29);
+            CancelarBtn.TabIndex = 2;
+            CancelarBtn.Text = "Cancelar";
+            CancelarBtn.UseVisualStyleBackColor = true;
+            CancelarBtn.Click += CancelarBtn_Click;
             // 
             // InventarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(CancelarBtn);
+            Controls.Add(ConfirmarBtn);
+            Controls.Add(listView1);
             Name = "InventarioForm";
             Text = "Inventario";
             ResumeLayout(false);
         }
 
         #endregion
+
+        private ListView listView1;
+        private Button ConfirmarBtn;
+        private Button CancelarBtn;
     }
 }

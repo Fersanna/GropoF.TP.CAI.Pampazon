@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            OrdeDePreparacionBtn = new Button();
+            RegistrarOrdenDePreparacionBtn = new Button();
             GenerarOrdenDeSeleccionBtn = new Button();
             GenerarOrdenDeEntregaBtn = new Button();
             GenerarDocumentosBtn = new Button();
@@ -37,16 +37,16 @@
             ConfirmarOrdenSeleccionadaBtn = new Button();
             SuspendLayout();
             // 
-            // OrdeDePreparacionBtn
+            // RegistrarOrdenDePreparacionBtn
             // 
-            OrdeDePreparacionBtn.Location = new Point(42, 23);
-            OrdeDePreparacionBtn.Margin = new Padding(3, 2, 3, 2);
-            OrdeDePreparacionBtn.Name = "OrdeDePreparacionBtn";
-            OrdeDePreparacionBtn.Size = new Size(270, 52);
-            OrdeDePreparacionBtn.TabIndex = 0;
-            OrdeDePreparacionBtn.Text = "Registrar Orden de Preparación";
-            OrdeDePreparacionBtn.UseVisualStyleBackColor = true;
-            OrdeDePreparacionBtn.Click += OrdenPreparacionClick;
+            RegistrarOrdenDePreparacionBtn.Location = new Point(42, 23);
+            RegistrarOrdenDePreparacionBtn.Margin = new Padding(3, 2, 3, 2);
+            RegistrarOrdenDePreparacionBtn.Name = "RegistrarOrdenDePreparacionBtn";
+            RegistrarOrdenDePreparacionBtn.Size = new Size(270, 52);
+            RegistrarOrdenDePreparacionBtn.TabIndex = 0;
+            RegistrarOrdenDePreparacionBtn.Text = "Registrar Orden de Preparación";
+            RegistrarOrdenDePreparacionBtn.UseVisualStyleBackColor = true;
+            RegistrarOrdenDePreparacionBtn.Click += RegistrarOrdenDePreparacion_Click;
             // 
             // GenerarOrdenDeSeleccionBtn
             // 
@@ -125,7 +125,7 @@
             Controls.Add(GenerarDocumentosBtn);
             Controls.Add(GenerarOrdenDeEntregaBtn);
             Controls.Add(GenerarOrdenDeSeleccionBtn);
-            Controls.Add(OrdeDePreparacionBtn);
+            Controls.Add(RegistrarOrdenDePreparacionBtn);
             Margin = new Padding(3, 2, 3, 2);
             Name = "MenuForm";
             Text = "Menu";
@@ -135,7 +135,7 @@
 
         #endregion
 
-        private Button OrdeDePreparacionBtn;
+        private Button RegistrarOrdenDePreparacionBtn;
         private Button GenerarOrdenDeSeleccionBtn;
         private Button GenerarOrdenDeEntregaBtn;
         private Button GenerarDocumentosBtn;

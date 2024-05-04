@@ -21,5 +21,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
         {
 
         }
+
+        private void CancelarBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

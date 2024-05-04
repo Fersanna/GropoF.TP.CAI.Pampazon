@@ -22,11 +22,14 @@ namespace GrupoF.TP.CAI.Pampazon
 
         }
 
-        private void GenerarBtn_Click(object sender, EventArgs e)
+        private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
 
         }
 
-        
+        private void CancelarBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

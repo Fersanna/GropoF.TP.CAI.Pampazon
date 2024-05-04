@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
+namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
 {
-    public partial class OrdenDeSeleccionForm : Form
+    public partial class OrdenDePreparacionForm : Form
     {
-        public OrdenDeSeleccionForm()
+        public OrdenDePreparacionForm()
         {
             InitializeComponent();
         }

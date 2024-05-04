@@ -1,6 +1,6 @@
 ﻿namespace GrupoF.TP.CAI.Pampazon
 {
-    partial class OrdenDePrepForm
+    partial class BuscarClienteForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            CancelarOrdenPrepBtn = new Button();
+            CancelarBtn = new Button();
             listView1 = new ListView();
             SeleccionarBtn = new Button();
             label1 = new Label();
@@ -36,15 +36,15 @@
             button1 = new Button();
             SuspendLayout();
             // 
-            // CancelarOrdenPrepBtn
+            // CancelarBtn
             // 
-            CancelarOrdenPrepBtn.Location = new Point(568, 272);
-            CancelarOrdenPrepBtn.Name = "CancelarOrdenPrepBtn";
-            CancelarOrdenPrepBtn.Size = new Size(75, 23);
-            CancelarOrdenPrepBtn.TabIndex = 0;
-            CancelarOrdenPrepBtn.Text = "&Cancelar";
-            CancelarOrdenPrepBtn.UseVisualStyleBackColor = true;
-            CancelarOrdenPrepBtn.Click += CancelarOrdenPrepBtn_Click;
+            CancelarBtn.Location = new Point(568, 272);
+            CancelarBtn.Name = "CancelarBtn";
+            CancelarBtn.Size = new Size(75, 23);
+            CancelarBtn.TabIndex = 0;
+            CancelarBtn.Text = "Cancelar";
+            CancelarBtn.UseVisualStyleBackColor = true;
+            CancelarBtn.Click += CancelarBtn_Click;
             // 
             // listView1
             // 
@@ -89,7 +89,7 @@
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
             // 
-            // OrdenDePrepForm
+            // BuscarClienteForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -99,18 +99,18 @@
             Controls.Add(label1);
             Controls.Add(SeleccionarBtn);
             Controls.Add(listView1);
-            Controls.Add(CancelarOrdenPrepBtn);
+            Controls.Add(CancelarBtn);
             Margin = new Padding(3, 2, 3, 2);
-            Name = "OrdenDePrepForm";
-            Text = "Orden De Preparacion";
-            Load += OrdenDePrepForm_Load;
+            Name = "BuscarClienteForm";
+            Text = "Buscar Cliente";
+            Load += BuscarClienteForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private Button CancelarOrdenPrepBtn;
+        private Button CancelarBtn;
         private ListView listView1;
         private Button SeleccionarBtn;
         private Label label1;

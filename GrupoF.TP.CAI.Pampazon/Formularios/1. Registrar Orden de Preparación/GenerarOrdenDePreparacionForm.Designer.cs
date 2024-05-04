@@ -1,6 +1,6 @@
 ﻿namespace GrupoF.TP.CAI.Pampazon.Formularios
 {
-    partial class GenerarOrdenPrepForm
+    partial class GenerarOrdenDePreparacionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             listView1 = new ListView();
-            button1 = new Button();
+            GenerarBtn = new Button();
             button2 = new Button();
             listView2 = new ListView();
             SuspendLayout();
@@ -42,14 +42,15 @@
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             // 
-            // button1
+            // GenerarBtn
             // 
-            button1.Location = new Point(611, 415);
-            button1.Name = "button1";
-            button1.Size = new Size(88, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Generar";
-            button1.UseVisualStyleBackColor = true;
+            GenerarBtn.Location = new Point(611, 415);
+            GenerarBtn.Name = "GenerarBtn";
+            GenerarBtn.Size = new Size(88, 23);
+            GenerarBtn.TabIndex = 1;
+            GenerarBtn.Text = "Generar";
+            GenerarBtn.UseVisualStyleBackColor = true;
+            GenerarBtn.Click += GenerarBtn_Click;
             // 
             // button2
             // 
@@ -68,25 +69,25 @@
             listView2.TabIndex = 3;
             listView2.UseCompatibleStateImageBehavior = false;
             // 
-            // GenerarOrdenPrepForm
+            // GenerarOrdenDePreparacionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(listView2);
             Controls.Add(button2);
-            Controls.Add(button1);
+            Controls.Add(GenerarBtn);
             Controls.Add(listView1);
-            Name = "GenerarOrdenPrepForm";
+            Name = "GenerarOrdenDePreparacionForm";
             Text = "Generar Orden de Preparación";
-            Load += GenerarOrdenPrepForm_Load;
+            Load += GenerarOrdenDePreparacionForm_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
         private ListView listView1;
-        private Button button1;
+        private Button GenerarBtn;
         private Button button2;
         private ListView listView2;
     }

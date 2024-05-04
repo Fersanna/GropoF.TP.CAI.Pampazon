@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,17 @@ namespace GrupoF.TP.CAI.Pampazon
         private void GenerarDocumentosForm_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void GenerarBtn_Click(object sender, EventArgs e)
+        {
+            RemitosForm remitosForm = new RemitosForm();
+            remitosForm.ShowDialog();
+        }
+
+        private void CancelarBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
