@@ -34,7 +34,7 @@
             // 
             // listView1
             // 
-            listView1.Location = new Point(53, 51);
+            listView1.Location = new Point(53, 60);
             listView1.Name = "listView1";
             listView1.Size = new Size(659, 259);
             listView1.TabIndex = 0;

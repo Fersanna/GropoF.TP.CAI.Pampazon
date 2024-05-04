@@ -17,11 +17,6 @@ namespace GrupoF.TP.CAI.Pampazon
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void ConfirmarOrdenDeEntregaForm_Load(object sender, EventArgs e)
         {
 
