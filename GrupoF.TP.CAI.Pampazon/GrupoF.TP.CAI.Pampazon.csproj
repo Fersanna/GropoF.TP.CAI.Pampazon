@@ -10,7 +10,6 @@
 
   <ItemGroup>
     <Folder Include="Entidades\" />
-    <Folder Include="Modelos\" />
     <Folder Include="Modulos\" />
     <Folder Include="Json\" />
     <Folder Include="Almacenes\" />
