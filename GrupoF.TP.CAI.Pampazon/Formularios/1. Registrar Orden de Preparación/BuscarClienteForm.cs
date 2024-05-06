@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -48,8 +49,8 @@ namespace GrupoF.TP.CAI.Pampazon
             {
                 model.ClienteSeleccionado = (Clientes)ClientesList.SelectedItems[0].Tag;
 
-            GenerarOrdenDePreparacionForm generarOrdenDePreparacionForm = new GenerarOrdenDePreparacionForm();
-            generarOrdenDePreparacionForm.ShowDialog();
+                GenerarOrdenDePreparacionForm generarOrdenDePreparacionForm = new GenerarOrdenDePreparacionForm();
+                generarOrdenDePreparacionForm.ShowDialog();
             }
 
         }
@@ -57,6 +58,24 @@ namespace GrupoF.TP.CAI.Pampazon
         private void CancelarBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cuit_Box_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(Cuit_Box.Text))
+            {
+                  return;
+            }
+            if (!Regex.IsMatch(Cuit_Box.Text, @"^\d{2}-\d{8}-\d{1}$"))
+            {
+                MessageBox.Show("Formato de CUIT inválido.");
+                e.Cancel = false;
+            }
         }
     }
 }

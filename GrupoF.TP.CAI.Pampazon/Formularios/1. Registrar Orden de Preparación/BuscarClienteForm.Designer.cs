@@ -36,9 +36,9 @@
             DomicilioHeader = new ColumnHeader();
             SeleccionarBtn = new Button();
             label1 = new Label();
-            textBox1 = new TextBox();
             button1 = new Button();
             groupBox1 = new GroupBox();
+            Cuit_Box = new MaskedTextBox();
             label2 = new Label();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -109,14 +109,6 @@
             label1.TabIndex = 6;
             label1.Text = "Listado Clientes";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(6, 56);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(189, 27);
-            textBox1.TabIndex = 7;
-            // 
             // button1
             // 
             button1.Location = new Point(0, 91);
@@ -129,15 +121,28 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(Cuit_Box);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(button1);
-            groupBox1.Controls.Add(textBox1);
             groupBox1.Location = new Point(40, 12);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(689, 125);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Buscar Cliente";
+            groupBox1.Enter += groupBox1_Enter;
+            // 
+            // Cuit_Box
+            // 
+            Cuit_Box.Location = new Point(6, 57);
+            Cuit_Box.Mask = "00-00000000-0";
+            Cuit_Box.Name = "Cuit_Box";
+            Cuit_Box.ResetOnPrompt = false;
+            Cuit_Box.ResetOnSpace = false;
+            Cuit_Box.Size = new Size(107, 27);
+            Cuit_Box.TabIndex = 12;
+            Cuit_Box.TabStop = false;
+            Cuit_Box.Validating += Cuit_Box_Validating;
             // 
             // label2
             // 
@@ -173,7 +178,6 @@
         private ListView ClientesList;
         private Button SeleccionarBtn;
         private Label label1;
-        private TextBox textBox1;
         private Button button1;
         private ColumnHeader CodigoHeader;
         private ColumnHeader RazonSocialHeader;
@@ -181,5 +185,6 @@
         private ColumnHeader DomicilioHeader;
         private GroupBox groupBox1;
         private Label label2;
+        private MaskedTextBox Cuit_Box;
     }
 }
