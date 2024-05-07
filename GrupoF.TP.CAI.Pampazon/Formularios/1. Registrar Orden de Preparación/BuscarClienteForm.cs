@@ -49,7 +49,8 @@ namespace GrupoF.TP.CAI.Pampazon
             {
                 model.ClienteSeleccionado = (Clientes)ClientesList.SelectedItems[0].Tag;
 
-                GenerarOrdenDePreparacionForm generarOrdenDePreparacionForm = new GenerarOrdenDePreparacionForm();
+                var generarOrdenDePreparacionForm = new GenerarOrdenDePreparacionForm();
+                generarOrdenDePreparacionForm.model = model;
                 generarOrdenDePreparacionForm.ShowDialog();
             }
 
