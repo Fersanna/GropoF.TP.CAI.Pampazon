@@ -25,7 +25,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
 
         private void GenerarOrdenDePreparacionForm_Load(object sender, EventArgs e)
         {
-            model = new BuscarClienteModel();
+            this.model = model;
 
             PorductosList.Items.Clear();
 
