@@ -58,6 +58,7 @@
             // 
             ClientesList.Columns.AddRange(new ColumnHeader[] { CodigoHeader, RazonSocialHeader, CUITHeader, DomicilioHeader });
             ClientesList.FullRowSelect = true;
+            ClientesList.GridLines = true;
             ClientesList.Location = new Point(40, 172);
             ClientesList.Margin = new Padding(3, 4, 3, 4);
             ClientesList.Name = "ClientesList";

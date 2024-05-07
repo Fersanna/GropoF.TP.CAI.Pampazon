@@ -15,17 +15,18 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
 {
     public partial class GenerarOrdenDePreparacionForm : Form
     {
-        public BuscarClienteModel model {get; set;}
-    
-        public GenerarOrdenDePreparacionForm()
+        public BuscarClienteModel model { get; set; }
+
+        public GenerarOrdenDePreparacionForm(BuscarClienteModel model)
         {
             InitializeComponent();
-           
+
+
         }
 
         private void GenerarOrdenDePreparacionForm_Load(object sender, EventArgs e)
         {
-            this.model = model;
+
 
             PorductosList.Items.Clear();
 
@@ -62,5 +63,12 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
 
 
         }
+
+        private void AgregarBtn_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
     }
 }

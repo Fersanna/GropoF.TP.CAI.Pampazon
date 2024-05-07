@@ -29,13 +29,19 @@
         private void InitializeComponent()
         {
             PorductosList = new ListView();
-            GenerarBtn = new Button();
-            button2 = new Button();
-            listView2 = new ListView();
             IdProducto_Header = new ColumnHeader();
             Descripcion_Header = new ColumnHeader();
             Posicion_Header = new ColumnHeader();
             Cantidad_Header = new ColumnHeader();
+            GenerarBtn = new Button();
+            AgregarBtn = new Button();
+            OdenEnPrepList = new ListView();
+            CodigoProductoCol = new ColumnHeader();
+            DescripcionCol = new ColumnHeader();
+            PosicionCol = new ColumnHeader();
+            CantidadCol = new ColumnHeader();
+            label1 = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // PorductosList
@@ -51,36 +57,6 @@
             PorductosList.UseCompatibleStateImageBehavior = false;
             PorductosList.View = View.Details;
             PorductosList.SelectedIndexChanged += PorductosList_SelectedIndexChanged;
-            // 
-            // GenerarBtn
-            // 
-            GenerarBtn.Location = new Point(455, 556);
-            GenerarBtn.Margin = new Padding(3, 4, 3, 4);
-            GenerarBtn.Name = "GenerarBtn";
-            GenerarBtn.Size = new Size(101, 31);
-            GenerarBtn.TabIndex = 1;
-            GenerarBtn.Text = "Generar";
-            GenerarBtn.UseVisualStyleBackColor = true;
-            GenerarBtn.Click += GenerarBtn_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(455, 339);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(101, 31);
-            button2.TabIndex = 2;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
-            // 
-            // listView2
-            // 
-            listView2.Location = new Point(67, 435);
-            listView2.Margin = new Padding(3, 4, 3, 4);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(489, 109);
-            listView2.TabIndex = 3;
-            listView2.UseCompatibleStateImageBehavior = false;
             // 
             // IdProducto_Header
             // 
@@ -105,13 +81,91 @@
             Cantidad_Header.TextAlign = HorizontalAlignment.Center;
             Cantidad_Header.Width = 120;
             // 
+            // GenerarBtn
+            // 
+            GenerarBtn.Location = new Point(455, 556);
+            GenerarBtn.Margin = new Padding(3, 4, 3, 4);
+            GenerarBtn.Name = "GenerarBtn";
+            GenerarBtn.Size = new Size(101, 31);
+            GenerarBtn.TabIndex = 1;
+            GenerarBtn.Text = "Generar";
+            GenerarBtn.UseVisualStyleBackColor = true;
+            GenerarBtn.Click += GenerarBtn_Click;
+            // 
+            // AgregarBtn
+            // 
+            AgregarBtn.Location = new Point(455, 339);
+            AgregarBtn.Margin = new Padding(3, 4, 3, 4);
+            AgregarBtn.Name = "AgregarBtn";
+            AgregarBtn.Size = new Size(101, 31);
+            AgregarBtn.TabIndex = 2;
+            AgregarBtn.Text = "Agregar";
+            AgregarBtn.UseVisualStyleBackColor = true;
+            AgregarBtn.Click += AgregarBtn_Click;
+            // 
+            // OdenEnPrepList
+            // 
+            OdenEnPrepList.Columns.AddRange(new ColumnHeader[] { CodigoProductoCol, DescripcionCol, PosicionCol, CantidadCol });
+            OdenEnPrepList.FullRowSelect = true;
+            OdenEnPrepList.GridLines = true;
+            OdenEnPrepList.Location = new Point(67, 398);
+            OdenEnPrepList.Margin = new Padding(3, 4, 3, 4);
+            OdenEnPrepList.Name = "OdenEnPrepList";
+            OdenEnPrepList.Size = new Size(489, 146);
+            OdenEnPrepList.TabIndex = 3;
+            OdenEnPrepList.UseCompatibleStateImageBehavior = false;
+            OdenEnPrepList.View = View.Details;
+            // 
+            // CodigoProductoCol
+            // 
+            CodigoProductoCol.Text = "Codigo Producto";
+            CodigoProductoCol.Width = 120;
+            // 
+            // DescripcionCol
+            // 
+            DescripcionCol.Text = "Descripcion";
+            DescripcionCol.TextAlign = HorizontalAlignment.Center;
+            DescripcionCol.Width = 120;
+            // 
+            // PosicionCol
+            // 
+            PosicionCol.Text = "Posicion";
+            PosicionCol.TextAlign = HorizontalAlignment.Center;
+            PosicionCol.Width = 120;
+            // 
+            // CantidadCol
+            // 
+            CantidadCol.Text = "Cantidad";
+            CantidadCol.TextAlign = HorizontalAlignment.Center;
+            CantidadCol.Width = 120;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(68, 58);
+            label1.Name = "label1";
+            label1.Size = new Size(150, 20);
+            label1.TabIndex = 4;
+            label1.Text = "Productos del Cliente";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(68, 350);
+            label2.Name = "label2";
+            label2.Size = new Size(155, 20);
+            label2.TabIndex = 5;
+            label2.Text = "Agregados a la Orden";
+            // 
             // GenerarOrdenDePreparacionForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(607, 615);
-            Controls.Add(listView2);
-            Controls.Add(button2);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(OdenEnPrepList);
+            Controls.Add(AgregarBtn);
             Controls.Add(GenerarBtn);
             Controls.Add(PorductosList);
             Margin = new Padding(3, 4, 3, 4);
@@ -119,17 +173,24 @@
             Text = "Generar Orden de Preparación";
             Load += GenerarOrdenDePreparacionForm_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private ListView PorductosList;
         private Button GenerarBtn;
-        private Button button2;
-        private ListView listView2;
+        private Button AgregarBtn;
+        private ListView OdenEnPrepList;
         private ColumnHeader IdProducto_Header;
         private ColumnHeader Descripcion_Header;
         private ColumnHeader Posicion_Header;
         private ColumnHeader Cantidad_Header;
+        private Label label1;
+        private Label label2;
+        private ColumnHeader CodigoProductoCol;
+        private ColumnHeader DescripcionCol;
+        private ColumnHeader PosicionCol;
+        private ColumnHeader CantidadCol;
     }
 }
