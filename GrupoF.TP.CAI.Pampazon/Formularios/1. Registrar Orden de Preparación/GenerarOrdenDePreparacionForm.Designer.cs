@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            PorductosList = new ListView();
+            ProductosList = new ListView();
             IdProducto_Header = new ColumnHeader();
             Descripcion_Header = new ColumnHeader();
             Posicion_Header = new ColumnHeader();
@@ -44,19 +44,19 @@
             label2 = new Label();
             SuspendLayout();
             // 
-            // PorductosList
+            // ProductosList
             // 
-            PorductosList.Columns.AddRange(new ColumnHeader[] { IdProducto_Header, Descripcion_Header, Posicion_Header, Cantidad_Header });
-            PorductosList.FullRowSelect = true;
-            PorductosList.GridLines = true;
-            PorductosList.Location = new Point(68, 91);
-            PorductosList.Margin = new Padding(3, 4, 3, 4);
-            PorductosList.Name = "PorductosList";
-            PorductosList.Size = new Size(488, 224);
-            PorductosList.TabIndex = 0;
-            PorductosList.UseCompatibleStateImageBehavior = false;
-            PorductosList.View = View.Details;
-            PorductosList.SelectedIndexChanged += PorductosList_SelectedIndexChanged;
+            ProductosList.Columns.AddRange(new ColumnHeader[] { IdProducto_Header, Descripcion_Header, Posicion_Header, Cantidad_Header });
+            ProductosList.FullRowSelect = true;
+            ProductosList.GridLines = true;
+            ProductosList.Location = new Point(68, 91);
+            ProductosList.Margin = new Padding(3, 4, 3, 4);
+            ProductosList.Name = "ProductosList";
+            ProductosList.Size = new Size(488, 224);
+            ProductosList.TabIndex = 0;
+            ProductosList.UseCompatibleStateImageBehavior = false;
+            ProductosList.View = View.Details;
+            ProductosList.SelectedIndexChanged += PorductosList_SelectedIndexChanged;
             // 
             // IdProducto_Header
             // 
@@ -167,7 +167,7 @@
             Controls.Add(OdenEnPrepList);
             Controls.Add(AgregarBtn);
             Controls.Add(GenerarBtn);
-            Controls.Add(PorductosList);
+            Controls.Add(ProductosList);
             Margin = new Padding(3, 4, 3, 4);
             Name = "GenerarOrdenDePreparacionForm";
             Text = "Generar Orden de Preparación";
@@ -178,7 +178,7 @@
 
         #endregion
 
-        private ListView PorductosList;
+        private ListView ProductosList;
         private Button GenerarBtn;
         private Button AgregarBtn;
         private ListView OdenEnPrepList;

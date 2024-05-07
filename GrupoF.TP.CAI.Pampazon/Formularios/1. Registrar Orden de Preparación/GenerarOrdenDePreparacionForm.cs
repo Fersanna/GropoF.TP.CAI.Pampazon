@@ -28,7 +28,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
         {
 
 
-            PorductosList.Items.Clear();
+            ProductosList.Items.Clear();
 
             if (model.ClienteSeleccionado != null && model.ClienteSeleccionado.Productos != null)
             {
@@ -39,7 +39,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                     item.SubItems.Add(producto.Posicion); // Añade posición como subítem.
                     item.SubItems.Add(producto.Cantidad.ToString()); // Añade cantidad como subítem, asegúrate de convertirlo a string si es necesario.
 
-                    PorductosList.Items.Add(item); // Añade el ítem al ListView.
+                    ProductosList.Items.Add(item); // Añade el ítem al ListView.
 
                     item.Tag = producto;
                 }
@@ -66,9 +66,26 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
 
         private void AgregarBtn_Click(object sender, EventArgs e)
         {
+            if (ProductosList.SelectedItems.Count > 0)
+            {
+                ListViewItem selectedItem = ProductosList.SelectedItems[0];
+                Productos selectedProducto = (Productos)selectedItem.Tag;
 
+                ListViewItem ordenItem = new ListViewItem(selectedProducto.IdProducto);
+                ordenItem.SubItems.Add(selectedProducto.Descripcion);
+                ordenItem.SubItems.Add(selectedProducto.Posicion);
+                ordenItem.SubItems.Add(selectedProducto.Cantidad.ToString());
+
+                OdenEnPrepList.Items.Add(ordenItem);
+            }
+
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un producto primero.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
-
-       
     }
+
+
 }
+
