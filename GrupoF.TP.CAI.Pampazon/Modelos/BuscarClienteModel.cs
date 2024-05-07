@@ -7,15 +7,29 @@ using System.Threading.Tasks;
 
 namespace GrupoF.TP.CAI.Pampazon.Modelos
 {
-    internal class BuscarClienteModel
+    public  class BuscarClienteModel
     {
         public Clientes ClienteSeleccionado { get; set; }
         public List<Clientes> Clientes { get; set; } = new List<Clientes>
                {
         new Clientes { CodigoCliente = "001",
-                       RazonSocial = "Cliente 1", 
-                       Cuit = "20-12345678-9", 
-                       Domicilio = "Dirección 1" },
+                       RazonSocial = "Cliente 1",
+                       Cuit = "20-12345678-9",
+                       Domicilio = "Dirección 1",
+                       Productos = new List<Productos> ()
+                       {
+                           new Productos
+                           {
+                            IdProducto = "AA1",
+                            Descripcion = "Descripción del Producto 1",
+                            Posicion = "Almacén 3",
+                            Cantidad = 15
+                           }
+
+                       }
+
+                      },
+
 
         new Clientes { CodigoCliente = "002",
                        RazonSocial = "Cliente 2",
