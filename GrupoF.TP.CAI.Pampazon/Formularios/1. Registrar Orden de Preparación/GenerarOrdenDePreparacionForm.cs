@@ -71,21 +71,46 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                 ListViewItem selectedItem = ProductosList.SelectedItems[0];
                 Productos selectedProducto = (Productos)selectedItem.Tag;
 
-                ListViewItem ordenItem = new ListViewItem(selectedProducto.IdProducto);
-                ordenItem.SubItems.Add(selectedProducto.Descripcion);
-                ordenItem.SubItems.Add(selectedProducto.Posicion);
-                ordenItem.SubItems.Add(selectedProducto.Cantidad.ToString());
+                bool productoExiste = false;
 
-                OdenEnPrepList.Items.Add(ordenItem);
+                foreach (DataGridViewRow row in EditarOrden_GridView.Rows)
+                {
+                    if (!row.IsNewRow && row.Cells["IdProducto"].Value.ToString() == selectedProducto.IdProducto)
+                    {
+                        productoExiste = true;
+                        MessageBox.Show("Este producto ya está agregado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        break;
+                    }
+                }
+                if (!productoExiste)
+                {
+                    // Crear una nueva fila en el DataGridView
+                    int rowIndex = EditarOrden_GridView.Rows.Add();
+                    DataGridViewRow newRow = EditarOrden_GridView.Rows[rowIndex];
+
+                    newRow.Cells["IdProducto"].Value = selectedProducto.IdProducto;
+                    newRow.Cells["Descripcion"].Value = selectedProducto.Descripcion;
+                    newRow.Cells["Posicion"].Value = selectedProducto.Posicion;
+                    newRow.Cells["Cantidad"].Value = selectedProducto.Cantidad;  // Inicialmente usa la cantidad máxima disponible
+
+                    // Opcionalmente, podrías ajustar la celda de cantidad para ser editada por el usuario
+                    EditarOrden_GridView.BeginEdit(true);  // Pone en modo edición la celda de cantidad
+
+                }
             }
-
             else
             {
                 MessageBox.Show("Por favor, seleccione un producto primero.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+
         }
+
+
     }
 
 
 }
+
+
+
 

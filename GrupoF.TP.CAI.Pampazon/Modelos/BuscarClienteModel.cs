@@ -26,6 +26,13 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
                     Descripcion = "Descripción del Producto 1",
                     Posicion = "Almacén 3",
                     Cantidad = 15
+                },
+                 new Productos
+                {
+                    IdProducto = "AA2",
+                    Descripcion = "Descripción del Producto 1",
+                    Posicion = "Almacén 2",
+                    Cantidad = 18
                 }
             }
         },  // Añade una coma aquí para separar los elementos de la lista
