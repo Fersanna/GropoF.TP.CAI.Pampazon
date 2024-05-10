@@ -28,55 +28,99 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
             EliminarBtn = new Button();
-            CancelarBtn = new Button();
+            listView1 = new ListView();
+            FechaColum = new ColumnHeader();
+            TranspColum = new ColumnHeader();
+            ClienteColum = new ColumnHeader();
+            NumeroColum = new ColumnHeader();
+            EstadoColum = new ColumnHeader();
+            button1 = new Button();
             SuspendLayout();
-            // 
-            // listView1
-            // 
-            listView1.Location = new Point(39, 52);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(689, 288);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
             // 
             // EliminarBtn
             // 
-            EliminarBtn.Location = new Point(628, 357);
+            EliminarBtn.Location = new Point(597, 377);
+            EliminarBtn.Margin = new Padding(3, 4, 3, 4);
             EliminarBtn.Name = "EliminarBtn";
-            EliminarBtn.Size = new Size(100, 27);
+            EliminarBtn.Size = new Size(114, 36);
             EliminarBtn.TabIndex = 1;
-            EliminarBtn.Text = "Eliminar";
+            EliminarBtn.Text = "Confirmar";
             EliminarBtn.UseVisualStyleBackColor = true;
             // 
-            // CancelarBtn
+            // listView1
             // 
-            CancelarBtn.Location = new Point(522, 357);
-            CancelarBtn.Name = "CancelarBtn";
-            CancelarBtn.Size = new Size(100, 27);
-            CancelarBtn.TabIndex = 2;
-            CancelarBtn.Text = "Cancelar";
-            CancelarBtn.UseVisualStyleBackColor = true;
-            CancelarBtn.Click += CancelarBtn_Click;
+            listView1.Columns.AddRange(new ColumnHeader[] { FechaColum, TranspColum, ClienteColum, NumeroColum, EstadoColum });
+            listView1.GridLines = true;
+            listView1.Location = new Point(35, 37);
+            listView1.Margin = new Padding(3, 4, 3, 4);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(797, 309);
+            listView1.TabIndex = 3;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // FechaColum
+            // 
+            FechaColum.Text = "Fecha";
+            FechaColum.Width = 150;
+            // 
+            // TranspColum
+            // 
+            TranspColum.Text = "Transportista";
+            TranspColum.TextAlign = HorizontalAlignment.Center;
+            TranspColum.Width = 150;
+            // 
+            // ClienteColum
+            // 
+            ClienteColum.Text = "Cliente";
+            ClienteColum.TextAlign = HorizontalAlignment.Center;
+            ClienteColum.Width = 150;
+            // 
+            // NumeroColum
+            // 
+            NumeroColum.Text = "Numero de Orden";
+            NumeroColum.TextAlign = HorizontalAlignment.Center;
+            NumeroColum.Width = 150;
+            // 
+            // EstadoColum
+            // 
+            EstadoColum.Text = "Estado";
+            EstadoColum.TextAlign = HorizontalAlignment.Center;
+            EstadoColum.Width = 150;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(717, 377);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(114, 36);
+            button1.TabIndex = 4;
+            button1.Text = "Eliminar";
+            button1.UseVisualStyleBackColor = true;
             // 
             // OrdenDeSeleccionForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
-            Controls.Add(CancelarBtn);
-            Controls.Add(EliminarBtn);
+            ClientSize = new Size(847, 450);
+            Controls.Add(button1);
             Controls.Add(listView1);
+            Controls.Add(EliminarBtn);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "OrdenDeSeleccionForm";
             Text = "Orden de Seleccion";
             ResumeLayout(false);
         }
 
         #endregion
-
-        private ListView listView1;
         private Button EliminarBtn;
-        private Button CancelarBtn;
+        private ListView listView1;
+        private ColumnHeader FechaColum;
+        private ColumnHeader TranspColum;
+        private ColumnHeader ClienteColum;
+        private ColumnHeader NumeroColum;
+        private ColumnHeader EstadoColum;
+        private Button button1;
     }
 }

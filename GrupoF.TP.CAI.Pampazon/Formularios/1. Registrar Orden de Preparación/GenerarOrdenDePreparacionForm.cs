@@ -53,8 +53,12 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
 
         private void GenerarBtn_Click(object sender, EventArgs e)
         {
+          
+
             OrdenDePreparacionForm ordenDePreparacionForm = new OrdenDePreparacionForm();
+            ordenDePreparacionForm.model = model;
             ordenDePreparacionForm.ShowDialog();
+
         }
 
         private void PorductosList_SelectedIndexChanged(object sender, EventArgs e)
@@ -64,7 +68,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
 
         }
 
-        private void AgregarBtn_Click(object sender, EventArgs e)
+        public void AgregarBtn_Click(object sender, EventArgs e)
         {
             if (ProductosList.SelectedItems.Count > 0)
             {
@@ -87,15 +91,19 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                     // Crear una nueva fila en el DataGridView
                     int rowIndex = EditarOrden_GridView.Rows.Add();
                     DataGridViewRow newRow = EditarOrden_GridView.Rows[rowIndex];
+                                      
 
-                    newRow.Cells["IdProducto"].Value = selectedProducto.IdProducto;
+                    newRow.Cells["IdProducto"].Value= selectedProducto.IdProducto;
                     newRow.Cells["Descripcion"].Value = selectedProducto.Descripcion;
                     newRow.Cells["Posicion"].Value = selectedProducto.Posicion;
                     newRow.Cells["Cantidad"].Value = selectedProducto.Cantidad;  // Inicialmente usa la cantidad máxima disponible
 
-                    // Opcionalmente, podrías ajustar la celda de cantidad para ser editada por el usuario
-                    EditarOrden_GridView.BeginEdit(true);  // Pone en modo edición la celda de cantidad
+                    
+                    
 
+                    EditarOrden_GridView.BeginEdit(true);
+
+                   
                 }
             }
             else
