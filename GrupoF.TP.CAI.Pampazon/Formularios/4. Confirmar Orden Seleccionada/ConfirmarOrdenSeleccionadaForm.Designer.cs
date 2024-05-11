@@ -28,19 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "000001", "01", "13/05/24", "01", "En selección" }, -1);
             EliminarBtn = new Button();
             ConfirmarBtn = new Button();
             CancelarBtn = new Button();
+            listView1 = new ListView();
+            NumeroColum = new ColumnHeader();
+            ClienteColum = new ColumnHeader();
+            FechaColum = new ColumnHeader();
+            TranspColum = new ColumnHeader();
+            EstadoColum = new ColumnHeader();
             SuspendLayout();
-            // 
-            // listView1
-            // 
-            listView1.Location = new Point(61, 53);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(659, 291);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
             // 
             // EliminarBtn
             // 
@@ -70,15 +68,57 @@
             CancelarBtn.UseVisualStyleBackColor = true;
             CancelarBtn.Click += CancelarBtn_Click;
             // 
+            // listView1
+            // 
+            listView1.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
+            listView1.GridLines = true;
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem1 });
+            listView1.Location = new Point(49, 109);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(669, 202);
+            listView1.TabIndex = 4;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // NumeroColum
+            // 
+            NumeroColum.Text = "Numero de Orden";
+            NumeroColum.Width = 130;
+            // 
+            // ClienteColum
+            // 
+            ClienteColum.Text = "Cliente";
+            ClienteColum.TextAlign = HorizontalAlignment.Center;
+            ClienteColum.Width = 130;
+            // 
+            // FechaColum
+            // 
+            FechaColum.Text = "Fecha";
+            FechaColum.TextAlign = HorizontalAlignment.Center;
+            FechaColum.Width = 130;
+            // 
+            // TranspColum
+            // 
+            TranspColum.Text = "Transportista";
+            TranspColum.TextAlign = HorizontalAlignment.Center;
+            TranspColum.Width = 130;
+            // 
+            // EstadoColum
+            // 
+            EstadoColum.Tag = "";
+            EstadoColum.Text = "Estado";
+            EstadoColum.TextAlign = HorizontalAlignment.Center;
+            EstadoColum.Width = 130;
+            // 
             // ConfirmarOrdenSeleccionadaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(listView1);
             Controls.Add(CancelarBtn);
             Controls.Add(ConfirmarBtn);
             Controls.Add(EliminarBtn);
-            Controls.Add(listView1);
             Name = "ConfirmarOrdenSeleccionadaForm";
             Text = "Confirmar Orden Seleccionada";
             Load += ConfirmarOrdenSeleccionadaForm_Load;
@@ -86,10 +126,14 @@
         }
 
         #endregion
-
-        private ListView listView1;
         private Button EliminarBtn;
         private Button ConfirmarBtn;
         private Button CancelarBtn;
+        private ListView listView1;
+        private ColumnHeader NumeroColum;
+        private ColumnHeader ClienteColum;
+        private ColumnHeader FechaColum;
+        private ColumnHeader TranspColum;
+        private ColumnHeader EstadoColum;
     }
 }

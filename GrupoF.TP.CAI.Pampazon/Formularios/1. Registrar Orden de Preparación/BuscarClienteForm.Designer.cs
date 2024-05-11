@@ -45,10 +45,9 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(620, 407);
-            CancelarBtn.Margin = new Padding(3, 4, 3, 4);
+            CancelarBtn.Location = new Point(542, 305);
             CancelarBtn.Name = "CancelarBtn";
-            CancelarBtn.Size = new Size(113, 31);
+            CancelarBtn.Size = new Size(99, 23);
             CancelarBtn.TabIndex = 0;
             CancelarBtn.Text = "Cancelar";
             CancelarBtn.UseVisualStyleBackColor = true;
@@ -59,22 +58,21 @@
             ClientesList.Columns.AddRange(new ColumnHeader[] { CodigoHeader, RazonSocialHeader, CUITHeader, DomicilioHeader });
             ClientesList.FullRowSelect = true;
             ClientesList.GridLines = true;
-            ClientesList.Location = new Point(40, 172);
-            ClientesList.Margin = new Padding(3, 4, 3, 4);
+            ClientesList.Location = new Point(35, 129);
             ClientesList.Name = "ClientesList";
-            ClientesList.Size = new Size(689, 227);
+            ClientesList.Size = new Size(603, 171);
             ClientesList.TabIndex = 1;
             ClientesList.UseCompatibleStateImageBehavior = false;
             ClientesList.View = View.Details;
             // 
             // CodigoHeader
             // 
-            CodigoHeader.Text = "Codigo Cliente";
+            CodigoHeader.Text = "Código Cliente";
             CodigoHeader.Width = 150;
             // 
             // RazonSocialHeader
             // 
-            RazonSocialHeader.Text = "Razon Social";
+            RazonSocialHeader.Text = "Razón Social";
             RazonSocialHeader.TextAlign = HorizontalAlignment.Center;
             RazonSocialHeader.Width = 150;
             // 
@@ -92,10 +90,9 @@
             // 
             // SeleccionarBtn
             // 
-            SeleccionarBtn.Location = new Point(501, 407);
-            SeleccionarBtn.Margin = new Padding(3, 4, 3, 4);
+            SeleccionarBtn.Location = new Point(438, 305);
             SeleccionarBtn.Name = "SeleccionarBtn";
-            SeleccionarBtn.Size = new Size(113, 31);
+            SeleccionarBtn.Size = new Size(99, 23);
             SeleccionarBtn.TabIndex = 3;
             SeleccionarBtn.Text = "Seleccionar";
             SeleccionarBtn.UseVisualStyleBackColor = true;
@@ -104,18 +101,17 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(40, 148);
+            label1.Location = new Point(35, 111);
             label1.Name = "label1";
-            label1.Size = new Size(113, 20);
+            label1.Size = new Size(90, 15);
             label1.TabIndex = 6;
             label1.Text = "Listado Clientes";
             // 
             // button1
             // 
-            button1.Location = new Point(0, 91);
-            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Location = new Point(0, 68);
             button1.Name = "button1";
-            button1.Size = new Size(689, 27);
+            button1.Size = new Size(603, 20);
             button1.TabIndex = 8;
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
@@ -125,9 +121,11 @@
             groupBox1.Controls.Add(Cuit_Box);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(button1);
-            groupBox1.Location = new Point(40, 12);
+            groupBox1.Location = new Point(35, 9);
+            groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(689, 125);
+            groupBox1.Padding = new Padding(3, 2, 3, 2);
+            groupBox1.Size = new Size(603, 94);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
             groupBox1.Text = "Buscar Cliente";
@@ -135,12 +133,13 @@
             // 
             // Cuit_Box
             // 
-            Cuit_Box.Location = new Point(6, 57);
+            Cuit_Box.Location = new Point(5, 43);
+            Cuit_Box.Margin = new Padding(3, 2, 3, 2);
             Cuit_Box.Mask = "00-00000000-0";
             Cuit_Box.Name = "Cuit_Box";
             Cuit_Box.ResetOnPrompt = false;
             Cuit_Box.ResetOnSpace = false;
-            Cuit_Box.Size = new Size(107, 27);
+            Cuit_Box.Size = new Size(94, 23);
             Cuit_Box.TabIndex = 12;
             Cuit_Box.TabStop = false;
             Cuit_Box.Validating += Cuit_Box_Validating;
@@ -148,22 +147,23 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(6, 32);
+            label2.Location = new Point(5, 24);
             label2.Name = "label2";
-            label2.Size = new Size(35, 20);
+            label2.Size = new Size(32, 15);
             label2.TabIndex = 11;
-            label2.Text = "Cuit";
+            label2.Text = "CUIT";
             // 
             // BuscarClienteForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(763, 451);
+            ClientSize = new Size(668, 338);
             Controls.Add(groupBox1);
             Controls.Add(label1);
             Controls.Add(SeleccionarBtn);
             Controls.Add(ClientesList);
             Controls.Add(CancelarBtn);
+            Margin = new Padding(3, 2, 3, 2);
             Name = "BuscarClienteForm";
             Text = "Buscar Cliente";
             Load += BuscarClienteForm_Load;

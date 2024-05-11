@@ -28,18 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "01", "Sillas", "12-43-2", "18", "01" }, -1);
             ConfirmarBtn = new Button();
             CancelarBtn = new Button();
+            ProductosList = new ListView();
+            IdProducto_Header = new ColumnHeader();
+            Descripcion_Header = new ColumnHeader();
+            Posicion_Header = new ColumnHeader();
+            Cantidad_Header = new ColumnHeader();
+            columnHeader1 = new ColumnHeader();
             SuspendLayout();
-            // 
-            // listView1
-            // 
-            listView1.Location = new Point(49, 52);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(681, 287);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
             // 
             // ConfirmarBtn
             // 
@@ -60,23 +58,69 @@
             CancelarBtn.UseVisualStyleBackColor = true;
             CancelarBtn.Click += CancelarBtn_Click;
             // 
+            // ProductosList
+            // 
+            ProductosList.Columns.AddRange(new ColumnHeader[] { IdProducto_Header, Descripcion_Header, Posicion_Header, Cantidad_Header, columnHeader1 });
+            ProductosList.FullRowSelect = true;
+            ProductosList.GridLines = true;
+            ProductosList.Items.AddRange(new ListViewItem[] { listViewItem1 });
+            ProductosList.Location = new Point(53, 61);
+            ProductosList.Name = "ProductosList";
+            ProductosList.Size = new Size(673, 268);
+            ProductosList.TabIndex = 3;
+            ProductosList.UseCompatibleStateImageBehavior = false;
+            ProductosList.View = View.Details;
+            // 
+            // IdProducto_Header
+            // 
+            IdProducto_Header.Text = "Codigo Producto";
+            IdProducto_Header.Width = 120;
+            // 
+            // Descripcion_Header
+            // 
+            Descripcion_Header.Text = "Descripcion";
+            Descripcion_Header.TextAlign = HorizontalAlignment.Center;
+            Descripcion_Header.Width = 120;
+            // 
+            // Posicion_Header
+            // 
+            Posicion_Header.Text = "Posicion";
+            Posicion_Header.TextAlign = HorizontalAlignment.Center;
+            Posicion_Header.Width = 120;
+            // 
+            // Cantidad_Header
+            // 
+            Cantidad_Header.Text = "Cantidad";
+            Cantidad_Header.TextAlign = HorizontalAlignment.Center;
+            Cantidad_Header.Width = 120;
+            // 
+            // columnHeader1
+            // 
+            columnHeader1.Text = "Cliente";
+            columnHeader1.TextAlign = HorizontalAlignment.Center;
+            columnHeader1.Width = 120;
+            // 
             // InventarioForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(ProductosList);
             Controls.Add(CancelarBtn);
             Controls.Add(ConfirmarBtn);
-            Controls.Add(listView1);
             Name = "InventarioForm";
             Text = "Inventario";
             ResumeLayout(false);
         }
 
         #endregion
-
-        private ListView listView1;
         private Button ConfirmarBtn;
         private Button CancelarBtn;
+        private ListView ProductosList;
+        private ColumnHeader IdProducto_Header;
+        private ColumnHeader Descripcion_Header;
+        private ColumnHeader Posicion_Header;
+        private ColumnHeader Cantidad_Header;
+        private ColumnHeader columnHeader1;
     }
 }
