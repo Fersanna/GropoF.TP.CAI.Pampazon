@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             dateTimePicker1 = new DateTimePicker();
-            listView1 = new ListView();
+            RemitoDetalle = new ListView();
             Cuit_Box = new MaskedTextBox();
             label1 = new Label();
             label2 = new Label();
@@ -42,13 +42,13 @@
             dateTimePicker1.Size = new Size(200, 23);
             dateTimePicker1.TabIndex = 0;
             // 
-            // listView1
+            // RemitoDetalle
             // 
-            listView1.Location = new Point(49, 121);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(723, 242);
-            listView1.TabIndex = 1;
-            listView1.UseCompatibleStateImageBehavior = false;
+            RemitoDetalle.Location = new Point(49, 121);
+            RemitoDetalle.Name = "RemitoDetalle";
+            RemitoDetalle.Size = new Size(723, 242);
+            RemitoDetalle.TabIndex = 1;
+            RemitoDetalle.UseCompatibleStateImageBehavior = false;
             // 
             // Cuit_Box
             // 
@@ -89,9 +89,8 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(Cuit_Box);
-            Controls.Add(listView1);
+            Controls.Add(RemitoDetalle);
             Controls.Add(dateTimePicker1);
-            ImeMode = ImeMode.NoControl;
             Name = "RemitosForm";
             Text = "Remitos";
             ResumeLayout(false);
@@ -101,7 +100,7 @@
         #endregion
 
         private DateTimePicker dateTimePicker1;
-        private ListView listView1;
+        private ListView RemitoDetalle;
         private MaskedTextBox Cuit_Box;
         private Label label1;
         private Label label2;
