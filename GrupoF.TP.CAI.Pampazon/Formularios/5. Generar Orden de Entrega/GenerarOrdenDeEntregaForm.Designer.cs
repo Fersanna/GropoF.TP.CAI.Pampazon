@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "000001", "01", "13/05/24", "01", "Seleccionada" }, -1);
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "Seleccionada" }, -1);
+            ListViewItem listViewItem2 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "Seleccionada" }, -1);
             GenerarBtn = new Button();
             CancelarBtn = new Button();
-            listView2 = new ListView();
+            listView1 = new ListView();
             NumeroColum = new ColumnHeader();
             ClienteColum = new ColumnHeader();
             FechaColum = new ColumnHeader();
@@ -59,21 +60,21 @@
             CancelarBtn.UseVisualStyleBackColor = true;
             CancelarBtn.Click += CancelarBtn_Click;
             // 
-            // listView2
+            // listView1
             // 
-            listView2.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
-            listView2.GridLines = true;
-            listView2.Items.AddRange(new ListViewItem[] { listViewItem1 });
-            listView2.Location = new Point(66, 92);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(649, 234);
-            listView2.TabIndex = 5;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.Details;
+            listView1.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
+            listView1.GridLines = true;
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
+            listView1.Location = new Point(46, 98);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(669, 202);
+            listView1.TabIndex = 7;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
             // 
             // NumeroColum
             // 
-            NumeroColum.Text = "Numero de Orden";
+            NumeroColum.Text = "ID";
             NumeroColum.Width = 130;
             // 
             // ClienteColum
@@ -106,7 +107,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
-            Controls.Add(listView2);
+            Controls.Add(listView1);
             Controls.Add(CancelarBtn);
             Controls.Add(GenerarBtn);
             Name = "GenerarOrdenDeEntregaForm";
@@ -118,7 +119,7 @@
         #endregion
         private Button GenerarBtn;
         private Button CancelarBtn;
-        private ListView listView2;
+        private ListView listView1;
         private ColumnHeader NumeroColum;
         private ColumnHeader ClienteColum;
         private ColumnHeader FechaColum;

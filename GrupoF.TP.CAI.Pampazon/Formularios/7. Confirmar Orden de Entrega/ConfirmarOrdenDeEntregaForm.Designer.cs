@@ -28,19 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "Preparada" }, -1);
+            ListViewItem listViewItem2 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "Preparada" }, -1);
             ConfirmarBtn = new Button();
             EliminarBtn = new Button();
             CancelarBtn = new Button();
+            listView1 = new ListView();
+            NumeroColum = new ColumnHeader();
+            ClienteColum = new ColumnHeader();
+            FechaColum = new ColumnHeader();
+            TranspColum = new ColumnHeader();
+            EstadoColum = new ColumnHeader();
             SuspendLayout();
-            // 
-            // listView1
-            // 
-            listView1.Location = new Point(70, 77);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(646, 227);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
             // 
             // ConfirmarBtn
             // 
@@ -71,15 +70,57 @@
             CancelarBtn.UseVisualStyleBackColor = true;
             CancelarBtn.Click += CancelarBtn_Click;
             // 
+            // listView1
+            // 
+            listView1.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
+            listView1.GridLines = true;
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
+            listView1.Location = new Point(47, 90);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(669, 202);
+            listView1.TabIndex = 8;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // NumeroColum
+            // 
+            NumeroColum.Text = "ID";
+            NumeroColum.Width = 130;
+            // 
+            // ClienteColum
+            // 
+            ClienteColum.Text = "Cliente";
+            ClienteColum.TextAlign = HorizontalAlignment.Center;
+            ClienteColum.Width = 130;
+            // 
+            // FechaColum
+            // 
+            FechaColum.Text = "Fecha";
+            FechaColum.TextAlign = HorizontalAlignment.Center;
+            FechaColum.Width = 130;
+            // 
+            // TranspColum
+            // 
+            TranspColum.Text = "Transportista";
+            TranspColum.TextAlign = HorizontalAlignment.Center;
+            TranspColum.Width = 130;
+            // 
+            // EstadoColum
+            // 
+            EstadoColum.Tag = "";
+            EstadoColum.Text = "Estado";
+            EstadoColum.TextAlign = HorizontalAlignment.Center;
+            EstadoColum.Width = 130;
+            // 
             // ConfirmarOrdenDeEntregaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(listView1);
             Controls.Add(CancelarBtn);
             Controls.Add(EliminarBtn);
             Controls.Add(ConfirmarBtn);
-            Controls.Add(listView1);
             Name = "ConfirmarOrdenDeEntregaForm";
             Text = "Confirmar Orden de Entrega";
             Load += ConfirmarOrdenDeEntregaForm_Load;
@@ -87,10 +128,14 @@
         }
 
         #endregion
-
-        private ListView listView1;
         private Button ConfirmarBtn;
         private Button EliminarBtn;
         private Button CancelarBtn;
+        private ListView listView1;
+        private ColumnHeader NumeroColum;
+        private ColumnHeader ClienteColum;
+        private ColumnHeader FechaColum;
+        private ColumnHeader TranspColum;
+        private ColumnHeader EstadoColum;
     }
 }
