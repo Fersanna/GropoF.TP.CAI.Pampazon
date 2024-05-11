@@ -29,10 +29,15 @@
         private void InitializeComponent()
         {
             dateTimePicker1 = new DateTimePicker();
-            RemitoDetalle = new ListView();
             Cuit_Box = new MaskedTextBox();
             label1 = new Label();
             label2 = new Label();
+            ProductosList = new ListView();
+            Descripcion_Header = new ColumnHeader();
+            Cantidad_Header = new ColumnHeader();
+            textBox1 = new TextBox();
+            label3 = new Label();
+            textBox2 = new TextBox();
             SuspendLayout();
             // 
             // dateTimePicker1
@@ -41,14 +46,6 @@
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(200, 23);
             dateTimePicker1.TabIndex = 0;
-            // 
-            // RemitoDetalle
-            // 
-            RemitoDetalle.Location = new Point(49, 121);
-            RemitoDetalle.Name = "RemitoDetalle";
-            RemitoDetalle.Size = new Size(723, 242);
-            RemitoDetalle.TabIndex = 1;
-            RemitoDetalle.UseCompatibleStateImageBehavior = false;
             // 
             // Cuit_Box
             // 
@@ -81,15 +78,69 @@
             label2.TabIndex = 15;
             label2.Text = "Fecha:";
             // 
+            // ProductosList
+            // 
+            ProductosList.Columns.AddRange(new ColumnHeader[] { Descripcion_Header, Cantidad_Header });
+            ProductosList.FullRowSelect = true;
+            ProductosList.GridLines = true;
+            ProductosList.Location = new Point(29, 141);
+            ProductosList.Name = "ProductosList";
+            ProductosList.Size = new Size(759, 169);
+            ProductosList.TabIndex = 16;
+            ProductosList.UseCompatibleStateImageBehavior = false;
+            ProductosList.View = View.Details;
+            // 
+            // Descripcion_Header
+            // 
+            Descripcion_Header.Text = "Descripción";
+            Descripcion_Header.TextAlign = HorizontalAlignment.Center;
+            Descripcion_Header.Width = 120;
+            // 
+            // Cantidad_Header
+            // 
+            Cantidad_Header.Text = "Cantidad";
+            Cantidad_Header.TextAlign = HorizontalAlignment.Center;
+            Cantidad_Header.Width = 120;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(572, 95);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(200, 23);
+            textBox1.TabIndex = 17;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(496, 98);
+            label3.Name = "label3";
+            label3.Size = new Size(73, 15);
+            label3.TabIndex = 18;
+            label3.Text = "Razón Social";
+            label3.Click += label3_Click;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(378, 12);
+            textBox2.Name = "textBox2";
+            textBox2.ReadOnly = true;
+            textBox2.Size = new Size(38, 23);
+            textBox2.TabIndex = 40;
+            textBox2.Text = "X";
+            textBox2.TextAlign = HorizontalAlignment.Center;
+            // 
             // RemitosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(textBox2);
+            Controls.Add(label3);
+            Controls.Add(textBox1);
+            Controls.Add(ProductosList);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(Cuit_Box);
-            Controls.Add(RemitoDetalle);
             Controls.Add(dateTimePicker1);
             Name = "RemitosForm";
             Text = "Remitos";
@@ -100,9 +151,14 @@
         #endregion
 
         private DateTimePicker dateTimePicker1;
-        private ListView RemitoDetalle;
         private MaskedTextBox Cuit_Box;
         private Label label1;
         private Label label2;
+        private ListView ProductosList;
+        private ColumnHeader Descripcion_Header;
+        private ColumnHeader Cantidad_Header;
+        private TextBox textBox1;
+        private Label label3;
+        private TextBox textBox2;
     }
 }

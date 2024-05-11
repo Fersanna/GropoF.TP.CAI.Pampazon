@@ -95,7 +95,7 @@
             GenerarBtn.Name = "GenerarBtn";
             GenerarBtn.Size = new Size(80, 23);
             GenerarBtn.TabIndex = 1;
-            GenerarBtn.Text = "Seleccionar";
+            GenerarBtn.Text = "Confirmar";
             GenerarBtn.UseVisualStyleBackColor = true;
             GenerarBtn.Click += GenerarBtn_Click;
             // 
