@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "Pendiente" }, -1);
-            ListViewItem listViewItem2 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "Pendiente" }, -1);
+            ListViewItem listViewItem3 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "Pendiente" }, -1);
+            ListViewItem listViewItem4 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "Pendiente" }, -1);
             EliminarBtn = new Button();
             button1 = new Button();
             listView1 = new ListView();
@@ -38,6 +38,7 @@
             FechaColum = new ColumnHeader();
             TranspColum = new ColumnHeader();
             EstadoColum = new ColumnHeader();
+            label1 = new Label();
             SuspendLayout();
             // 
             // EliminarBtn
@@ -46,7 +47,7 @@
             EliminarBtn.Name = "EliminarBtn";
             EliminarBtn.Size = new Size(100, 27);
             EliminarBtn.TabIndex = 1;
-            EliminarBtn.Text = "Confirmar";
+            EliminarBtn.Text = "Generar";
             EliminarBtn.UseVisualStyleBackColor = true;
             // 
             // button1
@@ -55,17 +56,17 @@
             button1.Name = "button1";
             button1.Size = new Size(100, 27);
             button1.TabIndex = 4;
-            button1.Text = "Eliminar";
+            button1.Text = "Cancelar";
             button1.UseVisualStyleBackColor = true;
             // 
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
             listView1.GridLines = true;
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
             listView1.Location = new Point(58, 47);
             listView1.Name = "listView1";
-            listView1.Size = new Size(669, 202);
+            listView1.Size = new Size(669, 230);
             listView1.TabIndex = 5;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -100,17 +101,28 @@
             EstadoColum.TextAlign = HorizontalAlignment.Center;
             EstadoColum.Width = 130;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(58, 29);
+            label1.Name = "label1";
+            label1.Size = new Size(104, 15);
+            label1.TabIndex = 6;
+            label1.Text = "Detalle de ordenes";
+            // 
             // OrdenDeSeleccionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(809, 338);
+            ClientSize = new Size(782, 338);
+            Controls.Add(label1);
             Controls.Add(listView1);
             Controls.Add(button1);
             Controls.Add(EliminarBtn);
             Name = "OrdenDeSeleccionForm";
             Text = "Orden de Seleccion";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -122,5 +134,6 @@
         private ColumnHeader FechaColum;
         private ColumnHeader TranspColum;
         private ColumnHeader EstadoColum;
+        private Label label1;
     }
 }

@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "000001", "01", "13/05/24", "01", "Seleccionada" }, -1);
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "E-000001", "01", "13/05/24", "Express Cargo" }, -1);
+            ListViewItem listViewItem2 = new ListViewItem(new string[] { "E-000002", "02", "13/05/24", "Logística Global" }, -1);
             EliminarBtn = new Button();
             CancelarBtn = new Button();
             listView2 = new ListView();
@@ -61,8 +62,8 @@
             // 
             listView2.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum });
             listView2.GridLines = true;
-            listView2.Items.AddRange(new ListViewItem[] { listViewItem1 });
-            listView2.Location = new Point(75, 85);
+            listView2.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
+            listView2.Location = new Point(75, 87);
             listView2.Name = "listView2";
             listView2.Size = new Size(536, 234);
             listView2.TabIndex = 6;
@@ -71,7 +72,7 @@
             // 
             // NumeroColum
             // 
-            NumeroColum.Text = "Numero de Orden";
+            NumeroColum.Text = "ID";
             NumeroColum.Width = 130;
             // 
             // ClienteColum

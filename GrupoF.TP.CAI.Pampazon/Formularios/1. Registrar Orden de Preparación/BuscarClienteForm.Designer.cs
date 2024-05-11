@@ -45,7 +45,7 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(542, 305);
+            CancelarBtn.Location = new Point(539, 305);
             CancelarBtn.Name = "CancelarBtn";
             CancelarBtn.Size = new Size(99, 23);
             CancelarBtn.TabIndex = 0;
@@ -90,7 +90,7 @@
             // 
             // SeleccionarBtn
             // 
-            SeleccionarBtn.Location = new Point(438, 305);
+            SeleccionarBtn.Location = new Point(434, 306);
             SeleccionarBtn.Name = "SeleccionarBtn";
             SeleccionarBtn.Size = new Size(99, 23);
             SeleccionarBtn.TabIndex = 3;
@@ -103,15 +103,16 @@
             label1.AutoSize = true;
             label1.Location = new Point(35, 111);
             label1.Name = "label1";
-            label1.Size = new Size(90, 15);
+            label1.Size = new Size(104, 15);
             label1.TabIndex = 6;
-            label1.Text = "Listado Clientes";
+            label1.Text = "Listado de clientes";
+            label1.Click += label1_Click;
             // 
             // button1
             // 
-            button1.Location = new Point(0, 68);
+            button1.Location = new Point(6, 63);
             button1.Name = "button1";
-            button1.Size = new Size(603, 20);
+            button1.Size = new Size(591, 23);
             button1.TabIndex = 8;
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
@@ -121,19 +122,18 @@
             groupBox1.Controls.Add(Cuit_Box);
             groupBox1.Controls.Add(label2);
             groupBox1.Controls.Add(button1);
-            groupBox1.Location = new Point(35, 9);
+            groupBox1.Location = new Point(35, 2);
             groupBox1.Margin = new Padding(3, 2, 3, 2);
             groupBox1.Name = "groupBox1";
             groupBox1.Padding = new Padding(3, 2, 3, 2);
-            groupBox1.Size = new Size(603, 94);
+            groupBox1.Size = new Size(603, 96);
             groupBox1.TabIndex = 10;
             groupBox1.TabStop = false;
-            groupBox1.Text = "Buscar Cliente";
             groupBox1.Enter += groupBox1_Enter;
             // 
             // Cuit_Box
             // 
-            Cuit_Box.Location = new Point(5, 43);
+            Cuit_Box.Location = new Point(6, 35);
             Cuit_Box.Margin = new Padding(3, 2, 3, 2);
             Cuit_Box.Mask = "00-00000000-0";
             Cuit_Box.Name = "Cuit_Box";
@@ -147,7 +147,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(5, 24);
+            label2.Location = new Point(6, 18);
             label2.Name = "label2";
             label2.Size = new Size(32, 15);
             label2.TabIndex = 11;

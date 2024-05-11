@@ -38,6 +38,7 @@
             FechaColum = new ColumnHeader();
             TranspColum = new ColumnHeader();
             EstadoColum = new ColumnHeader();
+            label1 = new Label();
             SuspendLayout();
             // 
             // GenerarBtn
@@ -102,11 +103,21 @@
             EstadoColum.TextAlign = HorizontalAlignment.Center;
             EstadoColum.Width = 130;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(46, 80);
+            label1.Name = "label1";
+            label1.Size = new Size(106, 15);
+            label1.TabIndex = 8;
+            label1.Text = "Listado de ordenes";
+            // 
             // GenerarOrdenDeEntregaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(label1);
             Controls.Add(listView1);
             Controls.Add(CancelarBtn);
             Controls.Add(GenerarBtn);
@@ -114,6 +125,7 @@
             Text = "Generar Orden de Entrega";
             Load += GenerarOrdenDeEntregaForm_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -125,5 +137,6 @@
         private ColumnHeader FechaColum;
         private ColumnHeader TranspColum;
         private ColumnHeader EstadoColum;
+        private Label label1;
     }
 }
