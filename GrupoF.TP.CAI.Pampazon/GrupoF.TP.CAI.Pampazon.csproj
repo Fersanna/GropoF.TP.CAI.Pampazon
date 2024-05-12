@@ -8,4 +8,11 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Entidades\" />
+    <Folder Include="Modulos\" />
+    <Folder Include="Json\" />
+    <Folder Include="Almacenes\" />
+  </ItemGroup>
+
 </Project>

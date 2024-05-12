@@ -8,18 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace GropoF.TP.CAI.Pampazon
+namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 {
-    public partial class OrdenDePrepForm : Form
+    public partial class OrdenDeSeleccionForm : Form
     {
-        public OrdenDePrepForm()
+        public OrdenDeSeleccionForm()
         {
             InitializeComponent();
         }
 
-        private void OrdenDePrepForm_Load(object sender, EventArgs e)
+        private void CancelarBtn_Click(object sender, EventArgs e)
         {
-            
+            this.Close();
         }
     }
 }
