@@ -31,12 +31,12 @@
             EliminarBtn = new Button();
             CancelarBtn = new Button();
             label1 = new Label();
-            CodigoTransBox = new TextBox();
+            ClienteNombreTextBox = new TextBox();
             TransportistaBox = new Label();
             FechaBox = new Label();
-            textBox2 = new TextBox();
+            CodigoClienteTextBox = new TextBox();
             label2 = new Label();
-            textBox3 = new TextBox();
+            TranspBox = new TextBox();
             ProductosOrdenList = new ListView();
             IdProducto_Header = new ColumnHeader();
             Descripcion_Header = new ColumnHeader();
@@ -76,12 +76,12 @@
             label1.TabIndex = 3;
             label1.Text = "Detalle de productos";
             // 
-            // CodigoTransBox
+            // ClienteNombreTextBox
             // 
-            CodigoTransBox.Location = new Point(242, 51);
-            CodigoTransBox.Name = "CodigoTransBox";
-            CodigoTransBox.Size = new Size(125, 27);
-            CodigoTransBox.TabIndex = 4;
+            ClienteNombreTextBox.Location = new Point(242, 51);
+            ClienteNombreTextBox.Name = "ClienteNombreTextBox";
+            ClienteNombreTextBox.Size = new Size(125, 27);
+            ClienteNombreTextBox.TabIndex = 4;
             // 
             // TransportistaBox
             // 
@@ -101,12 +101,12 @@
             FechaBox.TabIndex = 9;
             FechaBox.Text = "Fecha";
             // 
-            // textBox2
+            // CodigoClienteTextBox
             // 
-            textBox2.Location = new Point(34, 51);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(125, 27);
-            textBox2.TabIndex = 8;
+            CodigoClienteTextBox.Location = new Point(34, 51);
+            CodigoClienteTextBox.Name = "CodigoClienteTextBox";
+            CodigoClienteTextBox.Size = new Size(125, 27);
+            CodigoClienteTextBox.TabIndex = 8;
             // 
             // label2
             // 
@@ -117,12 +117,12 @@
             label2.TabIndex = 11;
             label2.Text = "ID";
             // 
-            // textBox3
+            // TranspBox
             // 
-            textBox3.Location = new Point(435, 51);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(125, 27);
-            textBox3.TabIndex = 10;
+            TranspBox.Location = new Point(435, 51);
+            TranspBox.Name = "TranspBox";
+            TranspBox.Size = new Size(125, 27);
+            TranspBox.TabIndex = 10;
             // 
             // ProductosOrdenList
             // 
@@ -185,12 +185,12 @@
             Controls.Add(dateTimePicker1);
             Controls.Add(ProductosOrdenList);
             Controls.Add(label2);
-            Controls.Add(textBox3);
+            Controls.Add(TranspBox);
             Controls.Add(FechaBox);
-            Controls.Add(textBox2);
+            Controls.Add(CodigoClienteTextBox);
             Controls.Add(ClienteBox);
             Controls.Add(TransportistaBox);
-            Controls.Add(CodigoTransBox);
+            Controls.Add(ClienteNombreTextBox);
             Controls.Add(label1);
             Controls.Add(CancelarBtn);
             Controls.Add(EliminarBtn);
@@ -206,12 +206,12 @@
         private Button EliminarBtn;
         private Button CancelarBtn;
         private Label label1;
-        private TextBox CodigoTransBox;
+        private TextBox ClienteNombreTextBox;
         private Label TransportistaBox;
         private Label FechaBox;
-        private TextBox textBox2;
+        private TextBox CodigoClienteTextBox;
         private Label label2;
-        private TextBox textBox3;
+        private TextBox TranspBox;
         private ListView ProductosOrdenList;
         private ColumnHeader IdProducto_Header;
         private ColumnHeader Descripcion_Header;

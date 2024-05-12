@@ -28,6 +28,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
 
         private void OrdenDePreparacionForm_Load(object sender, EventArgs e)
         {
+            model.ClienteOrden.CodigoCliente = model.ClienteSeleccionado.CodigoCliente.ToString();
+            ClienteNombreTextBox.Text = model.ClienteOrden.CodigoCliente.ToString();
+
             ProductosOrdenList.Items.Clear();
 
             foreach (var productos in model.ClienteOrden.ProductosOrden)
