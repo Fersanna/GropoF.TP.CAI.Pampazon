@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem2 = new ListViewItem(new string[] { "01", "Sillas", "12-43-2", "18", "01" }, -1);
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "A1", "Sillas", "12-43-2", "18", "01" }, -1);
             ConfirmarBtn = new Button();
             CancelarBtn = new Button();
             ProductosList = new ListView();
@@ -42,7 +42,7 @@
             // 
             // ConfirmarBtn
             // 
-            ConfirmarBtn.Location = new Point(516, 335);
+            ConfirmarBtn.Location = new Point(447, 335);
             ConfirmarBtn.Name = "ConfirmarBtn";
             ConfirmarBtn.Size = new Size(102, 29);
             ConfirmarBtn.TabIndex = 1;
@@ -51,7 +51,7 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(624, 335);
+            CancelarBtn.Location = new Point(555, 335);
             CancelarBtn.Name = "CancelarBtn";
             CancelarBtn.Size = new Size(102, 29);
             CancelarBtn.TabIndex = 2;
@@ -64,10 +64,10 @@
             ProductosList.Columns.AddRange(new ColumnHeader[] { IdProducto_Header, Descripcion_Header, Posicion_Header, Cantidad_Header, Cliente_Header });
             ProductosList.FullRowSelect = true;
             ProductosList.GridLines = true;
-            ProductosList.Items.AddRange(new ListViewItem[] { listViewItem2 });
+            ProductosList.Items.AddRange(new ListViewItem[] { listViewItem1 });
             ProductosList.Location = new Point(53, 61);
             ProductosList.Name = "ProductosList";
-            ProductosList.Size = new Size(673, 268);
+            ProductosList.Size = new Size(604, 268);
             ProductosList.TabIndex = 3;
             ProductosList.UseCompatibleStateImageBehavior = false;
             ProductosList.View = View.Details;
@@ -114,7 +114,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 427);
+            ClientSize = new Size(732, 427);
             Controls.Add(label1);
             Controls.Add(ProductosList);
             Controls.Add(CancelarBtn);

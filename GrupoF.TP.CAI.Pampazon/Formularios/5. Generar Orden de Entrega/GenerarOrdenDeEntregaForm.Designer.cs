@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "Seleccionada" }, -1);
-            ListViewItem listViewItem2 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "Seleccionada" }, -1);
+            ListViewItem listViewItem3 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "Seleccionada" }, -1);
+            ListViewItem listViewItem4 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "Seleccionada" }, -1);
             GenerarBtn = new Button();
             CancelarBtn = new Button();
             listView1 = new ListView();
@@ -43,7 +43,7 @@
             // 
             // GenerarBtn
             // 
-            GenerarBtn.Location = new Point(625, 347);
+            GenerarBtn.Location = new Point(529, 274);
             GenerarBtn.Name = "GenerarBtn";
             GenerarBtn.Size = new Size(90, 27);
             GenerarBtn.TabIndex = 1;
@@ -53,7 +53,7 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(529, 347);
+            CancelarBtn.Location = new Point(625, 274);
             CancelarBtn.Name = "CancelarBtn";
             CancelarBtn.Size = new Size(90, 27);
             CancelarBtn.TabIndex = 2;
@@ -65,10 +65,10 @@
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
             listView1.GridLines = true;
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
-            listView1.Location = new Point(46, 98);
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
+            listView1.Location = new Point(36, 56);
             listView1.Name = "listView1";
-            listView1.Size = new Size(669, 202);
+            listView1.Size = new Size(679, 202);
             listView1.TabIndex = 7;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -106,17 +106,17 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(46, 80);
+            label1.Location = new Point(36, 38);
             label1.Name = "label1";
-            label1.Size = new Size(106, 15);
+            label1.Size = new Size(188, 15);
             label1.TabIndex = 8;
-            label1.Text = "Listado de ordenes";
+            label1.Text = "Listado de ordenes de preparación";
             // 
             // GenerarOrdenDeEntregaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(759, 332);
             Controls.Add(label1);
             Controls.Add(listView1);
             Controls.Add(CancelarBtn);

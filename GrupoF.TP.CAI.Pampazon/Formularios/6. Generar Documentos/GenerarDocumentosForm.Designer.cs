@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "E-000001", "01", "13/05/24", "Express Cargo" }, -1);
-            ListViewItem listViewItem2 = new ListViewItem(new string[] { "E-000002", "02", "13/05/24", "Logística Global" }, -1);
+            ListViewItem listViewItem3 = new ListViewItem(new string[] { "E-000001", "01", "13/05/24", "Express Cargo" }, -1);
+            ListViewItem listViewItem4 = new ListViewItem(new string[] { "E-000002", "02", "13/05/24", "Logística Global" }, -1);
             GenerarBtn = new Button();
             CancelarBtn = new Button();
             listView2 = new ListView();
@@ -37,11 +37,12 @@
             ClienteColum = new ColumnHeader();
             FechaColum = new ColumnHeader();
             TranspColum = new ColumnHeader();
+            label1 = new Label();
             SuspendLayout();
             // 
             // GenerarBtn
             // 
-            GenerarBtn.Location = new Point(527, 328);
+            GenerarBtn.Location = new Point(388, 304);
             GenerarBtn.Name = "GenerarBtn";
             GenerarBtn.Size = new Size(91, 23);
             GenerarBtn.TabIndex = 1;
@@ -51,7 +52,7 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(425, 328);
+            CancelarBtn.Location = new Point(485, 304);
             CancelarBtn.Name = "CancelarBtn";
             CancelarBtn.Size = new Size(91, 23);
             CancelarBtn.TabIndex = 2;
@@ -63,8 +64,8 @@
             // 
             listView2.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum });
             listView2.GridLines = true;
-            listView2.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
-            listView2.Location = new Point(82, 64);
+            listView2.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
+            listView2.Location = new Point(40, 64);
             listView2.Name = "listView2";
             listView2.Size = new Size(536, 234);
             listView2.TabIndex = 7;
@@ -94,11 +95,21 @@
             TranspColum.TextAlign = HorizontalAlignment.Center;
             TranspColum.Width = 130;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(40, 46);
+            label1.Name = "label1";
+            label1.Size = new Size(165, 15);
+            label1.TabIndex = 8;
+            label1.Text = "Listado de ordenes de entrega";
+            // 
             // GenerarDocumentosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(717, 450);
+            ClientSize = new Size(626, 384);
+            Controls.Add(label1);
             Controls.Add(listView2);
             Controls.Add(CancelarBtn);
             Controls.Add(GenerarBtn);
@@ -106,6 +117,7 @@
             Text = "Generar Documentos";
             Load += GenerarDocumentosForm_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -116,5 +128,6 @@
         private ColumnHeader ClienteColum;
         private ColumnHeader FechaColum;
         private ColumnHeader TranspColum;
+        private Label label1;
     }
 }

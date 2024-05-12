@@ -54,7 +54,7 @@
             ProductosList.Columns.AddRange(new ColumnHeader[] { IdProducto_Header, Descripcion_Header, Posicion_Header, Cantidad_Header });
             ProductosList.FullRowSelect = true;
             ProductosList.GridLines = true;
-            ProductosList.Location = new Point(60, 68);
+            ProductosList.Location = new Point(59, 45);
             ProductosList.Name = "ProductosList";
             ProductosList.Size = new Size(502, 169);
             ProductosList.TabIndex = 0;
@@ -87,7 +87,7 @@
             // 
             // GenerarBtn
             // 
-            GenerarBtn.Location = new Point(380, 433);
+            GenerarBtn.Location = new Point(379, 410);
             GenerarBtn.Name = "GenerarBtn";
             GenerarBtn.Size = new Size(88, 23);
             GenerarBtn.TabIndex = 1;
@@ -97,7 +97,7 @@
             // 
             // AgregarBtn
             // 
-            AgregarBtn.Location = new Point(474, 241);
+            AgregarBtn.Location = new Point(473, 218);
             AgregarBtn.Name = "AgregarBtn";
             AgregarBtn.Size = new Size(88, 23);
             AgregarBtn.TabIndex = 2;
@@ -108,7 +108,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(59, 50);
+            label1.Location = new Point(58, 27);
             label1.Name = "label1";
             label1.Size = new Size(118, 15);
             label1.TabIndex = 4;
@@ -117,7 +117,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(59, 270);
+            label2.Location = new Point(58, 247);
             label2.Name = "label2";
             label2.Size = new Size(119, 15);
             label2.TabIndex = 5;
@@ -127,7 +127,7 @@
             // 
             EditarOrden_GridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             EditarOrden_GridView.Columns.AddRange(new DataGridViewColumn[] { IdProducto, Descripcion, Posicion, Cantidad });
-            EditarOrden_GridView.Location = new Point(60, 287);
+            EditarOrden_GridView.Location = new Point(59, 264);
             EditarOrden_GridView.Margin = new Padding(3, 2, 3, 2);
             EditarOrden_GridView.Name = "EditarOrden_GridView";
             EditarOrden_GridView.RowHeadersWidth = 51;
@@ -168,7 +168,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(286, 433);
+            button1.Location = new Point(285, 410);
             button1.Name = "button1";
             button1.Size = new Size(88, 23);
             button1.TabIndex = 7;
@@ -177,14 +177,14 @@
             // 
             // numericUpDown1
             // 
-            numericUpDown1.Location = new Point(380, 241);
+            numericUpDown1.Location = new Point(379, 218);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(88, 23);
             numericUpDown1.TabIndex = 8;
             // 
             // button2
             // 
-            button2.Location = new Point(474, 433);
+            button2.Location = new Point(473, 410);
             button2.Name = "button2";
             button2.Size = new Size(88, 23);
             button2.TabIndex = 9;

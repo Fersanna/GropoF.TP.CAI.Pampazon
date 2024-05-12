@@ -28,9 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "En selección" }, -1);
-            ListViewItem listViewItem2 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "En selección" }, -1);
-            EliminarBtn = new Button();
+            ListViewItem listViewItem3 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "En selección" }, -1);
+            ListViewItem listViewItem4 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "En selección" }, -1);
             ConfirmarBtn = new Button();
             CancelarBtn = new Button();
             listView1 = new ListView();
@@ -39,20 +38,12 @@
             FechaColum = new ColumnHeader();
             TranspColum = new ColumnHeader();
             EstadoColum = new ColumnHeader();
+            label1 = new Label();
             SuspendLayout();
-            // 
-            // EliminarBtn
-            // 
-            EliminarBtn.Location = new Point(620, 359);
-            EliminarBtn.Name = "EliminarBtn";
-            EliminarBtn.Size = new Size(98, 31);
-            EliminarBtn.TabIndex = 1;
-            EliminarBtn.Text = "Eliminar";
-            EliminarBtn.UseVisualStyleBackColor = true;
             // 
             // ConfirmarBtn
             // 
-            ConfirmarBtn.Location = new Point(516, 359);
+            ConfirmarBtn.Location = new Point(511, 300);
             ConfirmarBtn.Name = "ConfirmarBtn";
             ConfirmarBtn.Size = new Size(98, 31);
             ConfirmarBtn.TabIndex = 2;
@@ -61,7 +52,7 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(412, 359);
+            CancelarBtn.Location = new Point(615, 300);
             CancelarBtn.Name = "CancelarBtn";
             CancelarBtn.Size = new Size(98, 31);
             CancelarBtn.TabIndex = 3;
@@ -73,10 +64,10 @@
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
             listView1.GridLines = true;
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
-            listView1.Location = new Point(65, 92);
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
+            listView1.Location = new Point(40, 46);
             listView1.Name = "listView1";
-            listView1.Size = new Size(669, 202);
+            listView1.Size = new Size(669, 248);
             listView1.TabIndex = 6;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -111,23 +102,32 @@
             EstadoColum.TextAlign = HorizontalAlignment.Center;
             EstadoColum.Width = 130;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(40, 28);
+            label1.Name = "label1";
+            label1.Size = new Size(188, 15);
+            label1.TabIndex = 7;
+            label1.Text = "Listado de ordenes de preparación";
+            // 
             // ConfirmarOrdenSeleccionadaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(752, 372);
+            Controls.Add(label1);
             Controls.Add(listView1);
             Controls.Add(CancelarBtn);
             Controls.Add(ConfirmarBtn);
-            Controls.Add(EliminarBtn);
             Name = "ConfirmarOrdenSeleccionadaForm";
             Text = "Confirmar Orden Seleccionada";
             Load += ConfirmarOrdenSeleccionadaForm_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-        private Button EliminarBtn;
         private Button ConfirmarBtn;
         private Button CancelarBtn;
         private ListView listView1;
@@ -136,5 +136,6 @@
         private ColumnHeader FechaColum;
         private ColumnHeader TranspColum;
         private ColumnHeader EstadoColum;
+        private Label label1;
     }
 }
