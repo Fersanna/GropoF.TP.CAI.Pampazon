@@ -42,7 +42,11 @@
             Descripcion = new DataGridViewTextBoxColumn();
             Posicion = new DataGridViewTextBoxColumn();
             Cantidad = new DataGridViewTextBoxColumn();
+            button1 = new Button();
+            numericUpDown1 = new NumericUpDown();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)EditarOrden_GridView).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // ProductosList
@@ -50,10 +54,9 @@
             ProductosList.Columns.AddRange(new ColumnHeader[] { IdProducto_Header, Descripcion_Header, Posicion_Header, Cantidad_Header });
             ProductosList.FullRowSelect = true;
             ProductosList.GridLines = true;
-            ProductosList.Location = new Point(68, 91);
-            ProductosList.Margin = new Padding(3, 4, 3, 4);
+            ProductosList.Location = new Point(59, 45);
             ProductosList.Name = "ProductosList";
-            ProductosList.Size = new Size(522, 224);
+            ProductosList.Size = new Size(502, 169);
             ProductosList.TabIndex = 0;
             ProductosList.UseCompatibleStateImageBehavior = false;
             ProductosList.View = View.Details;
@@ -61,18 +64,18 @@
             // 
             // IdProducto_Header
             // 
-            IdProducto_Header.Text = "Codigo Producto";
+            IdProducto_Header.Text = "Código Producto";
             IdProducto_Header.Width = 120;
             // 
             // Descripcion_Header
             // 
-            Descripcion_Header.Text = "Descripcion";
+            Descripcion_Header.Text = "Descripción";
             Descripcion_Header.TextAlign = HorizontalAlignment.Center;
             Descripcion_Header.Width = 120;
             // 
             // Posicion_Header
             // 
-            Posicion_Header.Text = "Posicion";
+            Posicion_Header.Text = "Posición";
             Posicion_Header.TextAlign = HorizontalAlignment.Center;
             Posicion_Header.Width = 120;
             // 
@@ -84,10 +87,9 @@
             // 
             // GenerarBtn
             // 
-            GenerarBtn.Location = new Point(489, 585);
-            GenerarBtn.Margin = new Padding(3, 4, 3, 4);
+            GenerarBtn.Location = new Point(379, 410);
             GenerarBtn.Name = "GenerarBtn";
-            GenerarBtn.Size = new Size(101, 31);
+            GenerarBtn.Size = new Size(88, 23);
             GenerarBtn.TabIndex = 1;
             GenerarBtn.Text = "Generar";
             GenerarBtn.UseVisualStyleBackColor = true;
@@ -95,10 +97,9 @@
             // 
             // AgregarBtn
             // 
-            AgregarBtn.Location = new Point(489, 339);
-            AgregarBtn.Margin = new Padding(3, 4, 3, 4);
+            AgregarBtn.Location = new Point(473, 218);
             AgregarBtn.Name = "AgregarBtn";
-            AgregarBtn.Size = new Size(101, 31);
+            AgregarBtn.Size = new Size(88, 23);
             AgregarBtn.TabIndex = 2;
             AgregarBtn.Text = "Agregar";
             AgregarBtn.UseVisualStyleBackColor = true;
@@ -107,30 +108,31 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(68, 58);
+            label1.Location = new Point(58, 27);
             label1.Name = "label1";
-            label1.Size = new Size(150, 20);
+            label1.Size = new Size(118, 15);
             label1.TabIndex = 4;
-            label1.Text = "Productos del Cliente";
+            label1.Text = "Productos del cliente";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(68, 350);
+            label2.Location = new Point(58, 247);
             label2.Name = "label2";
-            label2.Size = new Size(93, 20);
+            label2.Size = new Size(119, 15);
             label2.TabIndex = 5;
-            label2.Text = "Editar Orden";
+            label2.Text = "Productos agregados";
             // 
             // EditarOrden_GridView
             // 
             EditarOrden_GridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             EditarOrden_GridView.Columns.AddRange(new DataGridViewColumn[] { IdProducto, Descripcion, Posicion, Cantidad });
-            EditarOrden_GridView.Location = new Point(68, 383);
+            EditarOrden_GridView.Location = new Point(59, 264);
+            EditarOrden_GridView.Margin = new Padding(3, 2, 3, 2);
             EditarOrden_GridView.Name = "EditarOrden_GridView";
             EditarOrden_GridView.RowHeadersWidth = 51;
             EditarOrden_GridView.RowTemplate.Height = 29;
-            EditarOrden_GridView.Size = new Size(522, 188);
+            EditarOrden_GridView.Size = new Size(502, 141);
             EditarOrden_GridView.TabIndex = 6;
             // 
             // IdProducto
@@ -164,22 +166,50 @@
             Cantidad.Name = "Cantidad";
             Cantidad.Width = 125;
             // 
+            // button1
+            // 
+            button1.Location = new Point(285, 410);
+            button1.Name = "button1";
+            button1.Size = new Size(88, 23);
+            button1.TabIndex = 7;
+            button1.Text = "Quitar";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown1
+            // 
+            numericUpDown1.Location = new Point(379, 218);
+            numericUpDown1.Name = "numericUpDown1";
+            numericUpDown1.Size = new Size(88, 23);
+            numericUpDown1.TabIndex = 8;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(473, 410);
+            button2.Name = "button2";
+            button2.Size = new Size(88, 23);
+            button2.TabIndex = 9;
+            button2.Text = "Cancelar";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // GenerarOrdenDePreparacionForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(621, 629);
+            ClientSize = new Size(638, 472);
+            Controls.Add(button2);
+            Controls.Add(numericUpDown1);
+            Controls.Add(button1);
             Controls.Add(EditarOrden_GridView);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(AgregarBtn);
             Controls.Add(GenerarBtn);
             Controls.Add(ProductosList);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "GenerarOrdenDePreparacionForm";
             Text = "Generar Orden de Preparación";
             Load += GenerarOrdenDePreparacionForm_Load;
             ((System.ComponentModel.ISupportInitialize)EditarOrden_GridView).EndInit();
+            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -200,5 +230,8 @@
         private DataGridViewTextBoxColumn Posicion;
         private DataGridViewTextBoxColumn Cantidad;
         public DataGridView EditarOrden_GridView;
+        private Button button1;
+        private NumericUpDown numericUpDown1;
+        private Button button2;
     }
 }

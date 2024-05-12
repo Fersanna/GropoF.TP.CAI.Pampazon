@@ -53,7 +53,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
 
         private void GenerarBtn_Click(object sender, EventArgs e)
         {
-          
+
 
             OrdenDePreparacionForm ordenDePreparacionForm = new OrdenDePreparacionForm();
             ordenDePreparacionForm.model = model;
@@ -91,19 +91,19 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                     // Crear una nueva fila en el DataGridView
                     int rowIndex = EditarOrden_GridView.Rows.Add();
                     DataGridViewRow newRow = EditarOrden_GridView.Rows[rowIndex];
-                                      
 
-                    newRow.Cells["IdProducto"].Value= selectedProducto.IdProducto;
+
+                    newRow.Cells["IdProducto"].Value = selectedProducto.IdProducto;
                     newRow.Cells["Descripcion"].Value = selectedProducto.Descripcion;
                     newRow.Cells["Posicion"].Value = selectedProducto.Posicion;
                     newRow.Cells["Cantidad"].Value = selectedProducto.Cantidad;  // Inicialmente usa la cantidad máxima disponible
 
-                    
-                    
+
+
 
                     EditarOrden_GridView.BeginEdit(true);
 
-                   
+
                 }
             }
             else
@@ -113,7 +113,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
 
         }
 
+        private void EditarOrden_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+        }
     }
 
 

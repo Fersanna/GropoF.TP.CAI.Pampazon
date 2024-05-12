@@ -28,31 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
-            EliminarBtn = new Button();
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "E-000001", "01", "13/05/24", "Express Cargo" }, -1);
+            ListViewItem listViewItem2 = new ListViewItem(new string[] { "E-000002", "02", "13/05/24", "Logística Global" }, -1);
             CancelarBtn = new Button();
+            listView2 = new ListView();
+            NumeroColum = new ColumnHeader();
+            ClienteColum = new ColumnHeader();
+            FechaColum = new ColumnHeader();
+            TranspColum = new ColumnHeader();
+            label1 = new Label();
             SuspendLayout();
-            // 
-            // listView1
-            // 
-            listView1.Location = new Point(66, 61);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(638, 268);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
-            // 
-            // EliminarBtn
-            // 
-            EliminarBtn.Location = new Point(599, 345);
-            EliminarBtn.Name = "EliminarBtn";
-            EliminarBtn.Size = new Size(105, 30);
-            EliminarBtn.TabIndex = 1;
-            EliminarBtn.Text = "Eliminar";
-            EliminarBtn.UseVisualStyleBackColor = true;
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(488, 345);
+            CancelarBtn.Location = new Point(456, 295);
             CancelarBtn.Name = "CancelarBtn";
             CancelarBtn.Size = new Size(105, 30);
             CancelarBtn.TabIndex = 2;
@@ -60,23 +49,71 @@
             CancelarBtn.UseVisualStyleBackColor = true;
             CancelarBtn.Click += CancelarBtn_Click;
             // 
+            // listView2
+            // 
+            listView2.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum });
+            listView2.GridLines = true;
+            listView2.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
+            listView2.Location = new Point(27, 45);
+            listView2.Name = "listView2";
+            listView2.Size = new Size(667, 234);
+            listView2.TabIndex = 6;
+            listView2.UseCompatibleStateImageBehavior = false;
+            listView2.View = View.Details;
+            // 
+            // NumeroColum
+            // 
+            NumeroColum.Text = "ID";
+            NumeroColum.Width = 130;
+            // 
+            // ClienteColum
+            // 
+            ClienteColum.Text = "Cliente";
+            ClienteColum.TextAlign = HorizontalAlignment.Center;
+            ClienteColum.Width = 130;
+            // 
+            // FechaColum
+            // 
+            FechaColum.Text = "Fecha";
+            FechaColum.TextAlign = HorizontalAlignment.Center;
+            FechaColum.Width = 130;
+            // 
+            // TranspColum
+            // 
+            TranspColum.Text = "Transportista";
+            TranspColum.TextAlign = HorizontalAlignment.Center;
+            TranspColum.Width = 130;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(27, 27);
+            label1.Name = "label1";
+            label1.Size = new Size(104, 15);
+            label1.TabIndex = 7;
+            label1.Text = "Detalle de ordenes";
+            // 
             // OrdenDeEntregaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(744, 406);
+            Controls.Add(label1);
+            Controls.Add(listView2);
             Controls.Add(CancelarBtn);
-            Controls.Add(EliminarBtn);
-            Controls.Add(listView1);
             Name = "OrdenDeEntregaForm";
             Text = "Orden de Entrega";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private ListView listView1;
-        private Button EliminarBtn;
         private Button CancelarBtn;
+        private ListView listView2;
+        private ColumnHeader NumeroColum;
+        private ColumnHeader ClienteColum;
+        private ColumnHeader FechaColum;
+        private ColumnHeader TranspColum;
+        private Label label1;
     }
 }

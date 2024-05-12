@@ -70,13 +70,18 @@ namespace GrupoF.TP.CAI.Pampazon
         {
             if (string.IsNullOrWhiteSpace(Cuit_Box.Text))
             {
-                  return;
+                return;
             }
             if (!Regex.IsMatch(Cuit_Box.Text, @"^\d{2}-\d{8}-\d{1}$"))
             {
                 MessageBox.Show("Formato de CUIT inválido.");
                 e.Cancel = false;
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

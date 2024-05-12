@@ -16,5 +16,20 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
         {
             InitializeComponent();
         }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

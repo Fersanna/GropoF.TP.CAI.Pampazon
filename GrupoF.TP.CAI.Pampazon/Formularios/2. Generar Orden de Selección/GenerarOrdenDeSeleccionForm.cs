@@ -33,5 +33,10 @@ namespace GrupoF.TP.CAI.Pampazon
         {
             this.Close();
         }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

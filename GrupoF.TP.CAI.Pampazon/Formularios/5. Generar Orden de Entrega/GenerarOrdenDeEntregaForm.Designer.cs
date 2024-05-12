@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            listView1 = new ListView();
+            ListViewItem listViewItem3 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "Seleccionada" }, -1);
+            ListViewItem listViewItem4 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "Seleccionada" }, -1);
             GenerarBtn = new Button();
             CancelarBtn = new Button();
+            listView1 = new ListView();
+            NumeroColum = new ColumnHeader();
+            ClienteColum = new ColumnHeader();
+            FechaColum = new ColumnHeader();
+            TranspColum = new ColumnHeader();
+            EstadoColum = new ColumnHeader();
+            label1 = new Label();
             SuspendLayout();
-            // 
-            // listView1
-            // 
-            listView1.Location = new Point(67, 68);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(648, 261);
-            listView1.TabIndex = 0;
-            listView1.UseCompatibleStateImageBehavior = false;
             // 
             // GenerarBtn
             // 
-            GenerarBtn.Location = new Point(625, 347);
+            GenerarBtn.Location = new Point(529, 274);
             GenerarBtn.Name = "GenerarBtn";
             GenerarBtn.Size = new Size(90, 27);
             GenerarBtn.TabIndex = 1;
@@ -53,7 +53,7 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(529, 347);
+            CancelarBtn.Location = new Point(625, 274);
             CancelarBtn.Name = "CancelarBtn";
             CancelarBtn.Size = new Size(90, 27);
             CancelarBtn.TabIndex = 2;
@@ -61,24 +61,82 @@
             CancelarBtn.UseVisualStyleBackColor = true;
             CancelarBtn.Click += CancelarBtn_Click;
             // 
+            // listView1
+            // 
+            listView1.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
+            listView1.GridLines = true;
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
+            listView1.Location = new Point(36, 56);
+            listView1.Name = "listView1";
+            listView1.Size = new Size(679, 202);
+            listView1.TabIndex = 7;
+            listView1.UseCompatibleStateImageBehavior = false;
+            listView1.View = View.Details;
+            // 
+            // NumeroColum
+            // 
+            NumeroColum.Text = "ID";
+            NumeroColum.Width = 130;
+            // 
+            // ClienteColum
+            // 
+            ClienteColum.Text = "Cliente";
+            ClienteColum.TextAlign = HorizontalAlignment.Center;
+            ClienteColum.Width = 130;
+            // 
+            // FechaColum
+            // 
+            FechaColum.Text = "Fecha";
+            FechaColum.TextAlign = HorizontalAlignment.Center;
+            FechaColum.Width = 130;
+            // 
+            // TranspColum
+            // 
+            TranspColum.Text = "Transportista";
+            TranspColum.TextAlign = HorizontalAlignment.Center;
+            TranspColum.Width = 130;
+            // 
+            // EstadoColum
+            // 
+            EstadoColum.Tag = "";
+            EstadoColum.Text = "Estado";
+            EstadoColum.TextAlign = HorizontalAlignment.Center;
+            EstadoColum.Width = 130;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(36, 38);
+            label1.Name = "label1";
+            label1.Size = new Size(188, 15);
+            label1.TabIndex = 8;
+            label1.Text = "Listado de ordenes de preparación";
+            // 
             // GenerarOrdenDeEntregaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(759, 332);
+            Controls.Add(label1);
+            Controls.Add(listView1);
             Controls.Add(CancelarBtn);
             Controls.Add(GenerarBtn);
-            Controls.Add(listView1);
             Name = "GenerarOrdenDeEntregaForm";
             Text = "Generar Orden de Entrega";
             Load += GenerarOrdenDeEntregaForm_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-
-        private ListView listView1;
         private Button GenerarBtn;
         private Button CancelarBtn;
+        private ListView listView1;
+        private ColumnHeader NumeroColum;
+        private ColumnHeader ClienteColum;
+        private ColumnHeader FechaColum;
+        private ColumnHeader TranspColum;
+        private ColumnHeader EstadoColum;
+        private Label label1;
     }
 }
