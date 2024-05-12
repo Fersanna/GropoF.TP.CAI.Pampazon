@@ -103,14 +103,30 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
 
                     EditarOrden_GridView.BeginEdit(true);
 
+                    if (model.ClienteOrden == null)
+                    {
+                        model.ClienteOrden = new OrdenDeSeleccion();
+                        model.ClienteOrden.CodigoCliente = model.ClienteOrden.CodigoCliente;
+                        model.ClienteOrden.ProductosOrden = new List<Productos>();
+                    }
 
+                    // Añadir el producto seleccionado a la lista de productos en ClienteOrden
+                    model.ClienteOrden.ProductosOrden.Add(new Productos()
+                    {
+                        IdProducto = (string)newRow.Cells["IdProducto"].Value,
+                        Descripcion = (string)newRow.Cells["Descripcion"].Value,
+                        Posicion = (string)newRow.Cells["Posicion"].Value,
+                        Cantidad = (int)newRow.Cells["Cantidad"].Value,
+                    });
+
+                    MessageBox.Show("Se han agregado " + model.ClienteOrden.ProductosOrden.Count() + "a la orden");
                 }
-            }
-            else
-            {
-                MessageBox.Show("Por favor, seleccione un producto primero.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione un producto primero.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
 
+            }
         }
 
         private void EditarOrden_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -121,6 +137,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
 
 
 }
+
 
 
 
