@@ -64,6 +64,7 @@
             ClientesList.TabIndex = 1;
             ClientesList.UseCompatibleStateImageBehavior = false;
             ClientesList.View = View.Details;
+            ClientesList.SelectedIndexChanged += ClientesList_SelectedIndexChanged;
             // 
             // CodigoHeader
             // 
@@ -116,6 +117,7 @@
             button1.TabIndex = 8;
             button1.Text = "Buscar";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // groupBox1
             // 
