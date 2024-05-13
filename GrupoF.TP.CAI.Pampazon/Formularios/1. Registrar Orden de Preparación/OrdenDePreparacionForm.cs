@@ -38,11 +38,11 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
             {
                 ListViewItem item = new ListViewItem(productos.IdProducto);
 
-                item.SubItems.Add(productos.Descripcion); // Añade descripción como subítem.
-                item.SubItems.Add(productos.Posicion); // Añade posición como subítem.
-                item.SubItems.Add(productos.Cantidad.ToString()); // Añade cantidad como subítem, 
+                item.SubItems.Add(productos.Descripcion); 
+                item.SubItems.Add(productos.Posicion); 
+                item.SubItems.Add(productos.Cantidad.ToString()); 
 
-                ProductosOrdenList.Items.Add(item); // Añade el ítem al ListView.
+                ProductosOrdenList.Items.Add(item);
 
                 item.Tag = productos;
 

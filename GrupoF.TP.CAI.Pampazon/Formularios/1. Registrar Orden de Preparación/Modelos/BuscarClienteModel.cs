@@ -9,7 +9,6 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
 {
     public class BuscarClienteModel
     {
-        public List<OrdenDeSeleccion> OrdenesPendientesDeValidar { get; set; }
         public Clientes ClienteSeleccionado { get; set; }
         public OrdenDeSeleccion ClienteOrden { get; set; }
         public List<Clientes> Clientes { get; set; } = new List<Clientes>
@@ -39,7 +38,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
                     Cantidad = 18
                 }
             }
-        },  // Añade una coma aquí para separar los elementos de la lista
+        },  
 
         new Clientes
         {
@@ -57,7 +56,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
                     Cantidad = 18
                 }
             }
-        },  // Nuevamente, asegúrate de poner la coma para separar los clientes
+        }, 
 
         new Clientes
         {
@@ -65,7 +64,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
             RazonSocial = "Constructora López",
             Cuit = "20-19283746-9",
             Domicilio = "Dirección 3"
-            // Parece que el Cliente 3 no tiene productos definidos
+           
         }
         };
 
@@ -85,7 +84,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
                 {
                     return $"Producto con ID {productoOrden.IdProducto} no encontrado en la lista del cliente.";
                 }
-                else if (productoOrden.Cantidad > productoCliente.Cantidad)
+                else if (productoOrden.Cantidad > productoCliente.Cantidad && productoOrden.Cantidad > 0)
                 {
                     return $"La cantidad pedida para el producto {productoOrden.IdProducto} excede la cantidad disponible. Disponible: {productoCliente.Cantidad}, Pedida: {productoOrden.Cantidad}.";
                 }
