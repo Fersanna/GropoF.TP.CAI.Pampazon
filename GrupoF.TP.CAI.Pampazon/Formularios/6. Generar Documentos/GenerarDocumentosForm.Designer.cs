@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem3 = new ListViewItem(new string[] { "E-000001", "01", "13/05/24", "Express Cargo" }, -1);
-            ListViewItem listViewItem4 = new ListViewItem(new string[] { "E-000002", "02", "13/05/24", "Logística Global" }, -1);
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "E-000001", "01", "13/05/24", "Express Cargo", "00001-00000001" }, -1);
+            ListViewItem listViewItem2 = new ListViewItem(new string[] { "E-000002", "02", "13/05/24", "Logística Global", "00001-00000002" }, -1);
             GenerarBtn = new Button();
             CancelarBtn = new Button();
             listView2 = new ListView();
@@ -38,11 +38,12 @@
             FechaColum = new ColumnHeader();
             TranspColum = new ColumnHeader();
             label1 = new Label();
+            RemitoColum = new ColumnHeader();
             SuspendLayout();
             // 
             // GenerarBtn
             // 
-            GenerarBtn.Location = new Point(388, 304);
+            GenerarBtn.Location = new Point(509, 304);
             GenerarBtn.Name = "GenerarBtn";
             GenerarBtn.Size = new Size(91, 23);
             GenerarBtn.TabIndex = 1;
@@ -52,7 +53,7 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(485, 304);
+            CancelarBtn.Location = new Point(606, 304);
             CancelarBtn.Name = "CancelarBtn";
             CancelarBtn.Size = new Size(91, 23);
             CancelarBtn.TabIndex = 2;
@@ -62,12 +63,12 @@
             // 
             // listView2
             // 
-            listView2.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum });
+            listView2.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, RemitoColum });
             listView2.GridLines = true;
-            listView2.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
+            listView2.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
             listView2.Location = new Point(40, 64);
             listView2.Name = "listView2";
-            listView2.Size = new Size(536, 234);
+            listView2.Size = new Size(657, 234);
             listView2.TabIndex = 7;
             listView2.UseCompatibleStateImageBehavior = false;
             listView2.View = View.Details;
@@ -104,11 +105,17 @@
             label1.TabIndex = 8;
             label1.Text = "Listado de ordenes de entrega";
             // 
+            // RemitoColum
+            // 
+            RemitoColum.Text = "Remito";
+            RemitoColum.TextAlign = HorizontalAlignment.Center;
+            RemitoColum.Width = 120;
+            // 
             // GenerarDocumentosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(626, 384);
+            ClientSize = new Size(750, 384);
             Controls.Add(label1);
             Controls.Add(listView2);
             Controls.Add(CancelarBtn);
@@ -129,5 +136,6 @@
         private ColumnHeader FechaColum;
         private ColumnHeader TranspColum;
         private Label label1;
+        private ColumnHeader RemitoColum;
     }
 }
