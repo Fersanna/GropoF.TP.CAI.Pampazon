@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem5 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "Pendiente" }, -1);
-            ListViewItem listViewItem6 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "Pendiente" }, -1);
-            ListViewItem listViewItem7 = new ListViewItem(new string[] { "P-000003", "03", "14/05/24", "Transportes XYZ", "Pendiente" }, -1);
-            ListViewItem listViewItem8 = new ListViewItem(new string[] { "P-000004", "02", "15/05/24", "Logística Global", "Pendiente" }, -1);
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "P-000001", "001", "13/05/24", "Express Cargo", "Pendiente" }, -1);
+            ListViewItem listViewItem2 = new ListViewItem(new string[] { "P-000002", "002", "13/05/24", "Logística Global", "Pendiente" }, -1);
+            ListViewItem listViewItem3 = new ListViewItem(new string[] { "P-000003", "003", "14/05/24", "Transportes XYZ", "Pendiente" }, -1);
+            ListViewItem listViewItem4 = new ListViewItem(new string[] { "P-000004", "002", "15/05/24", "Logística Global", "Pendiente" }, -1);
             listView1 = new ListView();
             NumeroColum = new ColumnHeader();
             ClienteColum = new ColumnHeader();
@@ -50,7 +50,7 @@
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
             listView1.GridLines = true;
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem5, listViewItem6, listViewItem7, listViewItem8 });
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2, listViewItem3, listViewItem4 });
             listView1.Location = new Point(42, 134);
             listView1.Name = "listView1";
             listView1.Size = new Size(669, 202);

@@ -19,7 +19,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
         new Clientes
         {
             CodigoCliente = "001",
-            RazonSocial = "Cliente 1",
+            RazonSocial = "Industrias Miranda",
             Cuit = "20-12345678-9",
             Domicilio = "Dirección 1",
             Productos = new List<Productos>
@@ -44,7 +44,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
         new Clientes
         {
             CodigoCliente = "002",
-            RazonSocial = "Cliente 2",
+            RazonSocial = "Editorial Ramírez",
             Cuit = "20-87654321-9",
             Domicilio = "Dirección 2",
             Productos = new List<Productos>
@@ -62,7 +62,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
         new Clientes
         {
             CodigoCliente = "003",
-            RazonSocial = "Cliente 3",
+            RazonSocial = "Constructora López",
             Cuit = "20-19283746-9",
             Domicilio = "Dirección 3"
             // Parece que el Cliente 3 no tiene productos definidos
