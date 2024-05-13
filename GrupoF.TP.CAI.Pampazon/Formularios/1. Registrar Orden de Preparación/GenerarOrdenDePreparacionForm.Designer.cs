@@ -44,7 +44,7 @@
             Cantidad = new DataGridViewTextBoxColumn();
             button1 = new Button();
             numericUpDown1 = new NumericUpDown();
-            button2 = new Button();
+            CancelarBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)EditarOrden_GridView).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
@@ -187,22 +187,23 @@
             numericUpDown1.Size = new Size(101, 27);
             numericUpDown1.TabIndex = 8;
             // 
-            // button2
+            // CancelarBtn
             // 
-            button2.Location = new Point(541, 547);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(101, 31);
-            button2.TabIndex = 9;
-            button2.Text = "Cancelar";
-            button2.UseVisualStyleBackColor = true;
+            CancelarBtn.Location = new Point(541, 547);
+            CancelarBtn.Margin = new Padding(3, 4, 3, 4);
+            CancelarBtn.Name = "CancelarBtn";
+            CancelarBtn.Size = new Size(101, 31);
+            CancelarBtn.TabIndex = 9;
+            CancelarBtn.Text = "Cancelar";
+            CancelarBtn.UseVisualStyleBackColor = true;
+            CancelarBtn.Click += CancelarBtn_Click;
             // 
             // GenerarOrdenDePreparacionForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(729, 629);
-            Controls.Add(button2);
+            Controls.Add(CancelarBtn);
             Controls.Add(numericUpDown1);
             Controls.Add(button1);
             Controls.Add(EditarOrden_GridView);
@@ -214,6 +215,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "GenerarOrdenDePreparacionForm";
             Text = "Generar Orden de Preparación";
+            FormClosing += GenerarOrdenDePreparacionForm_FormClosing;
             Load += GenerarOrdenDePreparacionForm_Load;
             ((System.ComponentModel.ISupportInitialize)EditarOrden_GridView).EndInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
@@ -239,6 +241,6 @@
         public DataGridView EditarOrden_GridView;
         private Button button1;
         private NumericUpDown numericUpDown1;
-        private Button button2;
+        private Button CancelarBtn;
     }
 }

@@ -35,11 +35,11 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                 foreach (Productos producto in model.ClienteSeleccionado.Productos)
                 {
                     ListViewItem item = new ListViewItem(producto.IdProducto); // Usa el IdProducto como el primer texto del ítem.
-                    item.SubItems.Add(producto.Descripcion); // Añade descripción como subítem.
-                    item.SubItems.Add(producto.Posicion); // Añade posición como subítem.
-                    item.SubItems.Add(producto.Cantidad.ToString()); // Añade cantidad como subítem, asegúrate de convertirlo a string si es necesario.
+                    item.SubItems.Add(producto.Descripcion);
+                    item.SubItems.Add(producto.Posicion);
+                    item.SubItems.Add(producto.Cantidad.ToString());
 
-                    ProductosList.Items.Add(item); // Añade el ítem al ListView.
+                    ProductosList.Items.Add(item);
 
                     item.Tag = producto;
                 }
@@ -54,8 +54,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
         private void GenerarBtn_Click(object sender, EventArgs e)
         {
 
-            var error =model.ValidarCantidadProductos();
-            
+            var error = model.ValidarCantidadProductos();
+
             if (error != null)
             {
                 MessageBox.Show(error);
@@ -63,9 +63,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
             }
             else
             {
-            OrdenDePreparacionForm ordenDePreparacionForm = new OrdenDePreparacionForm();
-            ordenDePreparacionForm.model = model;
-            ordenDePreparacionForm.ShowDialog();
+                OrdenDePreparacionForm ordenDePreparacionForm = new OrdenDePreparacionForm();
+                ordenDePreparacionForm.model = model;
+                ordenDePreparacionForm.ShowDialog();
 
             }
 
@@ -148,12 +148,12 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
         private void EditarOrden_GridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
         {
             DataGridView dgv = sender as DataGridView;
-            if (dgv.Rows[e.RowIndex].IsNewRow)  // Verifica si la fila es la fila de nueva entrada
+            if (dgv.Rows[e.RowIndex].IsNewRow)
             {
-                return; // Sal del método sin hacer nada más
+                return;
             }
 
-            if (e.ColumnIndex == 3) // Asumiendo que la columna 3 es la de cantidad
+            if (e.ColumnIndex == 3)
             {
                 DataGridViewRow row = EditarOrden_GridView.Rows[e.RowIndex];
                 string idProducto = row.Cells["IdProducto"].Value.ToString();
@@ -174,6 +174,29 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
 
                 }
             }
+        }
+
+        private void CancelarBtn_Click(object sender, EventArgs e)
+        {
+            EditarOrden_GridView.Rows.Clear();
+
+
+            if (model.ClienteOrden != null && model.ClienteOrden.ProductosOrden != null)
+            {
+                model.ClienteOrden.ProductosOrden.Clear();
+            }
+            this.Close();
+        }
+
+        private void GenerarOrdenDePreparacionForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            if (model.ClienteOrden != null && model.ClienteOrden.ProductosOrden != null)
+            {
+                model.ClienteOrden.ProductosOrden.Clear();
+            }
+            
+
         }
     }
 
