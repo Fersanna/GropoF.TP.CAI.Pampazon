@@ -26,10 +26,10 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
             {
                 new Productos
                 {
-                    IdProducto = "AA1",
-                    Descripcion = "Descripción del Producto 1",
-                    Posicion = "Almacén 3",
-                    Cantidad = 15
+                    IdProducto = "A1",
+                    Descripcion = "Producto 1",
+                    Posicion = "X-Y-Z",
+                    Cantidad = 5
                 },
                  new Productos
                 {
