@@ -9,12 +9,12 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
 {
     public class BuscarClienteModel
     {
-        public List<OrdenDeSeleccion> OrdenesPendientesDeValidar {get; set; }
+        public List<OrdenDeSeleccion> OrdenesPendientesDeValidar { get; set; }
         public Clientes ClienteSeleccionado { get; set; }
-        public OrdenDeSeleccion ClienteOrden {get; set; } 
+        public OrdenDeSeleccion ClienteOrden { get; set; }
         public List<Clientes> Clientes { get; set; } = new List<Clientes>
 
-        
+
         {
         new Clientes
         {
@@ -69,8 +69,32 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
         }
         };
 
+        internal string ValidarCantidadProductos()
+        {
+            var clienteEncontrado = Clientes.FirstOrDefault(c => c.CodigoCliente == ClienteOrden.CodigoCliente);
 
+            if (clienteEncontrado == null)
+            {
+                return "El cliente no se ha encontrado";
+            }
+
+            foreach (var productoOrden in ClienteOrden.ProductosOrden)
+            {
+                var productoCliente = clienteEncontrado.Productos?.FirstOrDefault(p => p.IdProducto == productoOrden.IdProducto);
+                if (productoCliente == null)
+                {
+                    return $"Producto con ID {productoOrden.IdProducto} no encontrado en la lista del cliente.";
+                }
+                else if (productoOrden.Cantidad > productoCliente.Cantidad)
+                {
+                    return $"La cantidad pedida para el producto {productoOrden.IdProducto} excede la cantidad disponible. Disponible: {productoCliente.Cantidad}, Pedida: {productoOrden.Cantidad}.";
+                }
+            }
+
+            return null;
+        }
     }
+}
 
-};
+
 

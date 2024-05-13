@@ -54,10 +54,21 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
         private void GenerarBtn_Click(object sender, EventArgs e)
         {
 
-
+            var error =model.ValidarCantidadProductos();
+            
+            if (error != null)
+            {
+                MessageBox.Show(error);
+                return;
+            }
+            else
+            {
             OrdenDePreparacionForm ordenDePreparacionForm = new OrdenDePreparacionForm();
             ordenDePreparacionForm.model = model;
             ordenDePreparacionForm.ShowDialog();
+
+            }
+
 
         }
 
@@ -106,7 +117,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                     if (model.ClienteOrden == null)
                     {
                         model.ClienteOrden = new OrdenDeSeleccion();
-                        model.ClienteOrden.CodigoCliente = model.ClienteOrden.CodigoCliente;
+                        model.ClienteOrden.CodigoCliente = model.ClienteSeleccionado.CodigoCliente;
                         model.ClienteOrden.ProductosOrden = new List<Productos>();
                     }
 
