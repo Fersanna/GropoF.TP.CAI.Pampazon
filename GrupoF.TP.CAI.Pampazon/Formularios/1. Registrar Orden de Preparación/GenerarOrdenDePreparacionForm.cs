@@ -110,7 +110,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                         model.ClienteOrden.ProductosOrden = new List<Productos>();
                     }
 
-                    // Añadir el producto seleccionado a la lista de productos en ClienteOrden
+
                     model.ClienteOrden.ProductosOrden.Add(new Productos()
                     {
                         IdProducto = (string)newRow.Cells["IdProducto"].Value,
@@ -132,6 +132,37 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
         private void EditarOrden_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void EditarOrden_GridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            if (dgv.Rows[e.RowIndex].IsNewRow)  // Verifica si la fila es la fila de nueva entrada
+            {
+                return; // Sal del método sin hacer nada más
+            }
+
+            if (e.ColumnIndex == 3) // Asumiendo que la columna 3 es la de cantidad
+            {
+                DataGridViewRow row = EditarOrden_GridView.Rows[e.RowIndex];
+                string idProducto = row.Cells["IdProducto"].Value.ToString();
+
+                // Buscar el producto en el modelo y actualizar la cantidad
+                Productos producto = model.ClienteOrden.ProductosOrden.FirstOrDefault(p => p.IdProducto == idProducto);
+                if (producto != null)
+                {
+                    if (!int.TryParse(e.FormattedValue.ToString(), out int nuevaCantidad))
+                    {
+                        MessageBox.Show("La cantidad ingresada no es válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        e.Cancel = true; // Cancela la edición
+                    }
+                    else if (producto != null)
+                    {
+                        producto.Cantidad = nuevaCantidad;
+                    }
+
+                }
+            }
         }
     }
 
