@@ -38,7 +38,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
                     Cantidad = 18
                 }
             }
-        },  
+        },
 
         new Clientes
         {
@@ -56,7 +56,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
                     Cantidad = 18
                 }
             }
-        }, 
+        },
 
         new Clientes
         {
@@ -64,7 +64,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
             RazonSocial = "Constructora López",
             Cuit = "20-19283746-9",
             Domicilio = "Dirección 3"
-           
+
         }
         };
 
@@ -84,9 +84,13 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
                 {
                     return $"Producto con ID {productoOrden.IdProducto} no encontrado en la lista del cliente.";
                 }
-                else if (productoOrden.Cantidad > productoCliente.Cantidad && productoOrden.Cantidad > 0)
+                if (productoOrden.Cantidad > productoCliente.Cantidad)
                 {
                     return $"La cantidad pedida para el producto {productoOrden.IdProducto} excede la cantidad disponible. Disponible: {productoCliente.Cantidad}, Pedida: {productoOrden.Cantidad}.";
+                }
+                if (productoOrden.Cantidad <= 0)
+                {
+                    return $"La cantidad pedida para el producto {productoOrden.IdProducto} debe ser mayor que cero.";
                 }
             }
 
