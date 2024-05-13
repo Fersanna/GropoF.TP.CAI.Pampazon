@@ -11,6 +11,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
     {
         public List<OrdenDeSeleccion> OrdenesPendientesDeValidar {get; set; }
         public Clientes ClienteSeleccionado { get; set; }
+        public OrdenDeSeleccion ClienteOrden {get; set; } 
         public List<Clientes> Clientes { get; set; } = new List<Clientes>
 
         

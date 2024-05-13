@@ -1,4 +1,5 @@
-﻿using GrupoF.TP.CAI.Pampazon.Modelos;
+﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Modelos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,6 +28,26 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
 
         private void OrdenDePreparacionForm_Load(object sender, EventArgs e)
         {
+            model.ClienteOrden.CodigoCliente = model.ClienteSeleccionado.CodigoCliente.ToString();
+            ClienteNombreTextBox.Text = model.ClienteOrden.CodigoCliente.ToString();
+
+            ProductosOrdenList.Items.Clear();
+
+            foreach (var productos in model.ClienteOrden.ProductosOrden)
+            {
+                ListViewItem item = new ListViewItem(productos.IdProducto);
+
+                item.SubItems.Add(productos.Descripcion); // Añade descripción como subítem.
+                item.SubItems.Add(productos.Posicion); // Añade posición como subítem.
+                item.SubItems.Add(productos.Cantidad.ToString()); // Añade cantidad como subítem, 
+
+                 ProductosOrdenList.Items.Add(item); // Añade el ítem al ListView.
+
+                 item.Tag = productos;
+
+            }
+
+
 
         }
     }

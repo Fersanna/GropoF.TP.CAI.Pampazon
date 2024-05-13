@@ -31,13 +31,13 @@
             EliminarBtn = new Button();
             CancelarBtn = new Button();
             label1 = new Label();
-            CodigoTransBox = new TextBox();
+            ClienteNombreTextBox = new TextBox();
             TransportistaBox = new Label();
             FechaBox = new Label();
-            textBox2 = new TextBox();
+            CodigoClienteTextBox = new TextBox();
             label2 = new Label();
-            textBox3 = new TextBox();
-            ProductosList = new ListView();
+            TranspBox = new TextBox();
+            ProductosOrdenList = new ListView();
             IdProducto_Header = new ColumnHeader();
             Descripcion_Header = new ColumnHeader();
             Posicion_Header = new ColumnHeader();
@@ -48,18 +48,20 @@
             // 
             // EliminarBtn
             // 
-            EliminarBtn.Location = new Point(402, 339);
+            EliminarBtn.Location = new Point(459, 452);
+            EliminarBtn.Margin = new Padding(3, 4, 3, 4);
             EliminarBtn.Name = "EliminarBtn";
-            EliminarBtn.Size = new Size(100, 26);
+            EliminarBtn.Size = new Size(114, 35);
             EliminarBtn.TabIndex = 1;
             EliminarBtn.Text = "Cancelar";
             EliminarBtn.UseVisualStyleBackColor = true;
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(292, 339);
+            CancelarBtn.Location = new Point(334, 452);
+            CancelarBtn.Margin = new Padding(3, 4, 3, 4);
             CancelarBtn.Name = "CancelarBtn";
-            CancelarBtn.Size = new Size(100, 26);
+            CancelarBtn.Size = new Size(114, 35);
             CancelarBtn.TabIndex = 2;
             CancelarBtn.Text = "Confirmar";
             CancelarBtn.UseVisualStyleBackColor = true;
@@ -68,74 +70,72 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(12, 147);
+            label1.Location = new Point(14, 196);
             label1.Name = "label1";
-            label1.Size = new Size(116, 15);
+            label1.Size = new Size(149, 20);
             label1.TabIndex = 3;
             label1.Text = "Detalle de productos";
             // 
-            // CodigoTransBox
+            // ClienteNombreTextBox
             // 
-            CodigoTransBox.Location = new Point(212, 38);
-            CodigoTransBox.Margin = new Padding(3, 2, 3, 2);
-            CodigoTransBox.Name = "CodigoTransBox";
-            CodigoTransBox.Size = new Size(110, 23);
-            CodigoTransBox.TabIndex = 4;
+            ClienteNombreTextBox.Location = new Point(242, 51);
+            ClienteNombreTextBox.Name = "ClienteNombreTextBox";
+            ClienteNombreTextBox.Size = new Size(125, 27);
+            ClienteNombreTextBox.TabIndex = 4;
             // 
             // TransportistaBox
             // 
             TransportistaBox.AutoSize = true;
-            TransportistaBox.Location = new Point(381, 21);
+            TransportistaBox.Location = new Point(435, 28);
             TransportistaBox.Name = "TransportistaBox";
-            TransportistaBox.Size = new Size(74, 15);
+            TransportistaBox.Size = new Size(94, 20);
             TransportistaBox.TabIndex = 6;
             TransportistaBox.Text = "Transportista";
             // 
             // FechaBox
             // 
             FechaBox.AutoSize = true;
-            FechaBox.Location = new Point(129, 89);
+            FechaBox.Location = new Point(147, 119);
             FechaBox.Name = "FechaBox";
-            FechaBox.Size = new Size(38, 15);
+            FechaBox.Size = new Size(47, 20);
             FechaBox.TabIndex = 9;
             FechaBox.Text = "Fecha";
             // 
-            // textBox2
+            // CodigoClienteTextBox
             // 
-            textBox2.Location = new Point(30, 38);
-            textBox2.Margin = new Padding(3, 2, 3, 2);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(110, 23);
-            textBox2.TabIndex = 8;
+            CodigoClienteTextBox.Location = new Point(34, 51);
+            CodigoClienteTextBox.Name = "CodigoClienteTextBox";
+            CodigoClienteTextBox.Size = new Size(125, 27);
+            CodigoClienteTextBox.TabIndex = 8;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(30, 21);
+            label2.Location = new Point(34, 28);
             label2.Name = "label2";
-            label2.Size = new Size(18, 15);
+            label2.Size = new Size(24, 20);
             label2.TabIndex = 11;
             label2.Text = "ID";
             // 
-            // textBox3
+            // TranspBox
             // 
-            textBox3.Location = new Point(381, 38);
-            textBox3.Margin = new Padding(3, 2, 3, 2);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(110, 23);
-            textBox3.TabIndex = 10;
+            TranspBox.Location = new Point(435, 51);
+            TranspBox.Name = "TranspBox";
+            TranspBox.Size = new Size(125, 27);
+            TranspBox.TabIndex = 10;
             // 
-            // ProductosList
+            // ProductosOrdenList
             // 
-            ProductosList.Columns.AddRange(new ColumnHeader[] { IdProducto_Header, Descripcion_Header, Posicion_Header, Cantidad_Header });
-            ProductosList.FullRowSelect = true;
-            ProductosList.GridLines = true;
-            ProductosList.Location = new Point(12, 165);
-            ProductosList.Name = "ProductosList";
-            ProductosList.Size = new Size(490, 169);
-            ProductosList.TabIndex = 12;
-            ProductosList.UseCompatibleStateImageBehavior = false;
-            ProductosList.View = View.Details;
+            ProductosOrdenList.Columns.AddRange(new ColumnHeader[] { IdProducto_Header, Descripcion_Header, Posicion_Header, Cantidad_Header });
+            ProductosOrdenList.FullRowSelect = true;
+            ProductosOrdenList.GridLines = true;
+            ProductosOrdenList.Location = new Point(14, 220);
+            ProductosOrdenList.Margin = new Padding(3, 4, 3, 4);
+            ProductosOrdenList.Name = "ProductosOrdenList";
+            ProductosOrdenList.Size = new Size(559, 224);
+            ProductosOrdenList.TabIndex = 12;
+            ProductosOrdenList.UseCompatibleStateImageBehavior = false;
+            ProductosOrdenList.View = View.Details;
             // 
             // IdProducto_Header
             // 
@@ -163,38 +163,38 @@
             // ClienteBox
             // 
             ClienteBox.AutoSize = true;
-            ClienteBox.Location = new Point(212, 21);
+            ClienteBox.Location = new Point(242, 28);
             ClienteBox.Name = "ClienteBox";
-            ClienteBox.Size = new Size(44, 15);
+            ClienteBox.Size = new Size(55, 20);
             ClienteBox.TabIndex = 7;
             ClienteBox.Text = "Cliente";
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(182, 83);
-            dateTimePicker1.Margin = new Padding(3, 2, 3, 2);
+            dateTimePicker1.Location = new Point(208, 111);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(199, 23);
+            dateTimePicker1.Size = new Size(227, 27);
             dateTimePicker1.TabIndex = 13;
             dateTimePicker1.Value = new DateTime(2024, 5, 10, 15, 54, 23, 0);
             // 
             // OrdenDePreparacionForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(544, 388);
+            ClientSize = new Size(622, 517);
             Controls.Add(dateTimePicker1);
-            Controls.Add(ProductosList);
+            Controls.Add(ProductosOrdenList);
             Controls.Add(label2);
-            Controls.Add(textBox3);
+            Controls.Add(TranspBox);
             Controls.Add(FechaBox);
-            Controls.Add(textBox2);
+            Controls.Add(CodigoClienteTextBox);
             Controls.Add(ClienteBox);
             Controls.Add(TransportistaBox);
-            Controls.Add(CodigoTransBox);
+            Controls.Add(ClienteNombreTextBox);
             Controls.Add(label1);
             Controls.Add(CancelarBtn);
             Controls.Add(EliminarBtn);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "OrdenDePreparacionForm";
             Text = "Orden de Preparacion";
             Load += OrdenDePreparacionForm_Load;
@@ -206,13 +206,13 @@
         private Button EliminarBtn;
         private Button CancelarBtn;
         private Label label1;
-        private TextBox CodigoTransBox;
+        private TextBox ClienteNombreTextBox;
         private Label TransportistaBox;
         private Label FechaBox;
-        private TextBox textBox2;
+        private TextBox CodigoClienteTextBox;
         private Label label2;
-        private TextBox textBox3;
-        private ListView ProductosList;
+        private TextBox TranspBox;
+        private ListView ProductosOrdenList;
         private ColumnHeader IdProducto_Header;
         private ColumnHeader Descripcion_Header;
         private ColumnHeader Posicion_Header;
