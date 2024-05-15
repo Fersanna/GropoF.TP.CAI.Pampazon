@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace GrupoF.TP.CAI.Pampazon
 {
@@ -23,20 +24,22 @@ namespace GrupoF.TP.CAI.Pampazon
 
         }
 
-        private void GenerarBtn_Click(object sender, EventArgs e)
-        {
-            OrdenDeSeleccionForm ordenDeSeleccionForm = new OrdenDeSeleccionForm();
-            ordenDeSeleccionForm.ShowDialog();
-        }
-
         private void CancelarBtn_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
-
+            if (listOrdenesPendientes.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar una o varias ordenes.");
+            }
+            else
+            {
+                OrdenDeSeleccionForm ordenDeSeleccionForm = new OrdenDeSeleccionForm();
+                ordenDeSeleccionForm.ShowDialog();
+            }
         }
     }
 }

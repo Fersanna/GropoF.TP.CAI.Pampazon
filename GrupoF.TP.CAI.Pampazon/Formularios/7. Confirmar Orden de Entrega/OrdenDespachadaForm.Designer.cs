@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem3 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "Despachada" }, -1);
-            ListViewItem listViewItem4 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "Despachada" }, -1);
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "Despachada" }, -1);
+            ListViewItem listViewItem2 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "Despachada" }, -1);
             listView1 = new ListView();
             NumeroColum = new ColumnHeader();
             ClienteColum = new ColumnHeader();
@@ -44,7 +44,7 @@
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
             listView1.GridLines = true;
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
             listView1.Location = new Point(34, 64);
             listView1.Name = "listView1";
             listView1.Size = new Size(669, 202);
@@ -87,9 +87,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(34, 46);
             label1.Name = "label1";
-            label1.Size = new Size(106, 15);
+            label1.Size = new Size(188, 15);
             label1.TabIndex = 10;
-            label1.Text = "Listado de ordenes";
+            label1.Text = "Listado de ordenes de preparación";
             // 
             // CancelarBtn
             // 
@@ -104,7 +104,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(751, 381);
+            ClientSize = new Size(751, 351);
             Controls.Add(CancelarBtn);
             Controls.Add(label1);
             Controls.Add(listView1);

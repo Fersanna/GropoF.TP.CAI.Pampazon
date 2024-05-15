@@ -108,9 +108,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(30, 39);
             label1.Name = "label1";
-            label1.Size = new Size(106, 15);
+            label1.Size = new Size(188, 15);
             label1.TabIndex = 9;
-            label1.Text = "Listado de ordenes";
+            label1.Text = "Listado de ordenes de preparación";
             label1.Click += label1_Click;
             // 
             // ConfirmarOrdenDeEntregaForm

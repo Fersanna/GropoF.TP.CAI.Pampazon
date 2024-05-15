@@ -1,5 +1,6 @@
 using GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición;
 using GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada;
+using GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos;
 using System.Configuration;
 
 namespace GrupoF.TP.CAI.Pampazon
@@ -48,8 +49,8 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void GenerarDocumentosBtn_Click(object sender, EventArgs e)
         {
-            GenerarDocumentosForm generarDocumentosForm = new GenerarDocumentosForm();
-            generarDocumentosForm.ShowDialog();
+            GenerarRemitosForm generarRemitosForm = new GenerarRemitosForm();
+            generarRemitosForm.ShowDialog();
         }
 
         private void ConfirmarOrdenDeEntregaBtn_Click(object sender, EventArgs e)

@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem3 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "En selección" }, -1);
-            ListViewItem listViewItem4 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "En selección" }, -1);
             ConfirmarBtn = new Button();
             CancelarBtn = new Button();
             listView1 = new ListView();
@@ -64,7 +62,6 @@
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
             listView1.GridLines = true;
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
             listView1.Location = new Point(40, 46);
             listView1.Name = "listView1";
             listView1.Size = new Size(669, 248);

@@ -28,26 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "S-000001", "13/05/25" }, -1);
-            ListViewItem listViewItem2 = new ListViewItem(new string[] { "S-000002", "14/05/24" }, -1);
-            ListViewItem listViewItem3 = new ListViewItem(new string[] { "S-000003", "15/05/24" }, -1);
-            BuscarBtn = new Button();
+            ConsultarBtn = new Button();
             CancelarBtn = new Button();
-            listView1 = new ListView();
+            listOrdenesDeSeleccion = new ListView();
             NumeroColum = new ColumnHeader();
             FechaColum = new ColumnHeader();
             label1 = new Label();
             SuspendLayout();
             // 
-            // BuscarBtn
+            // ConsultarBtn
             // 
-            BuscarBtn.Location = new Point(374, 306);
-            BuscarBtn.Name = "BuscarBtn";
-            BuscarBtn.Size = new Size(88, 23);
-            BuscarBtn.TabIndex = 3;
-            BuscarBtn.Text = "Consultar";
-            BuscarBtn.UseVisualStyleBackColor = true;
-            BuscarBtn.Click += BuscarBtn_Click;
+            ConsultarBtn.Location = new Point(374, 306);
+            ConsultarBtn.Name = "ConsultarBtn";
+            ConsultarBtn.Size = new Size(88, 23);
+            ConsultarBtn.TabIndex = 3;
+            ConsultarBtn.Text = "Consultar";
+            ConsultarBtn.UseVisualStyleBackColor = true;
+            ConsultarBtn.Click += ConsultarBtn_Click;
             // 
             // CancelarBtn
             // 
@@ -59,17 +56,16 @@
             CancelarBtn.UseVisualStyleBackColor = true;
             CancelarBtn.Click += CancelarBtn_Click;
             // 
-            // listView1
+            // listOrdenesDeSeleccion
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { NumeroColum, FechaColum });
-            listView1.GridLines = true;
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2, listViewItem3 });
-            listView1.Location = new Point(66, 44);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(490, 256);
-            listView1.TabIndex = 6;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            listOrdenesDeSeleccion.Columns.AddRange(new ColumnHeader[] { NumeroColum, FechaColum });
+            listOrdenesDeSeleccion.GridLines = true;
+            listOrdenesDeSeleccion.Location = new Point(66, 44);
+            listOrdenesDeSeleccion.Name = "listOrdenesDeSeleccion";
+            listOrdenesDeSeleccion.Size = new Size(490, 256);
+            listOrdenesDeSeleccion.TabIndex = 6;
+            listOrdenesDeSeleccion.UseCompatibleStateImageBehavior = false;
+            listOrdenesDeSeleccion.View = View.Details;
             // 
             // NumeroColum
             // 
@@ -78,7 +74,7 @@
             // 
             // FechaColum
             // 
-            FechaColum.Text = "Fecha";
+            FechaColum.Text = "Prioridad";
             FechaColum.TextAlign = HorizontalAlignment.Center;
             FechaColum.Width = 130;
             // 
@@ -97,9 +93,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(615, 384);
             Controls.Add(label1);
-            Controls.Add(listView1);
+            Controls.Add(listOrdenesDeSeleccion);
             Controls.Add(CancelarBtn);
-            Controls.Add(BuscarBtn);
+            Controls.Add(ConsultarBtn);
             Name = "BuscarPosicionForm";
             Text = "Buscar Posición";
             ResumeLayout(false);
@@ -108,9 +104,9 @@
 
         #endregion
 
-        private Button BuscarBtn;
+        private Button ConsultarBtn;
         private Button CancelarBtn;
-        private ListView listView1;
+        private ListView listOrdenesDeSeleccion;
         private ColumnHeader NumeroColum;
         private ColumnHeader FechaColum;
         private Label label1;

@@ -1,6 +1,6 @@
-﻿namespace GrupoF.TP.CAI.Pampazon
+﻿namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 {
-    partial class GenerarDocumentosForm
+    partial class GenerarRemitosForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,48 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "E-000001", "01", "13/05/24", "Express Cargo", "00001-00000001" }, -1);
-            ListViewItem listViewItem2 = new ListViewItem(new string[] { "E-000002", "02", "13/05/24", "Logística Global", "00001-00000002" }, -1);
             GenerarBtn = new Button();
-            CancelarBtn = new Button();
+            label1 = new Label();
             listView2 = new ListView();
             NumeroColum = new ColumnHeader();
             ClienteColum = new ColumnHeader();
             FechaColum = new ColumnHeader();
             TranspColum = new ColumnHeader();
-            label1 = new Label();
-            RemitoColum = new ColumnHeader();
+            EstadoColum = new ColumnHeader();
+            CancelarBtn = new Button();
             SuspendLayout();
             // 
             // GenerarBtn
             // 
-            GenerarBtn.Location = new Point(509, 304);
+            GenerarBtn.Location = new Point(503, 316);
             GenerarBtn.Name = "GenerarBtn";
-            GenerarBtn.Size = new Size(91, 23);
-            GenerarBtn.TabIndex = 1;
+            GenerarBtn.Size = new Size(105, 30);
+            GenerarBtn.TabIndex = 12;
             GenerarBtn.Text = "Generar";
             GenerarBtn.UseVisualStyleBackColor = true;
-            GenerarBtn.Click += GenerarBtn_Click;
             // 
-            // CancelarBtn
+            // label1
             // 
-            CancelarBtn.Location = new Point(606, 304);
-            CancelarBtn.Name = "CancelarBtn";
-            CancelarBtn.Size = new Size(91, 23);
-            CancelarBtn.TabIndex = 2;
-            CancelarBtn.Text = "Cancelar";
-            CancelarBtn.UseVisualStyleBackColor = true;
-            CancelarBtn.Click += CancelarBtn_Click;
+            label1.AutoSize = true;
+            label1.Location = new Point(52, 48);
+            label1.Name = "label1";
+            label1.Size = new Size(104, 15);
+            label1.TabIndex = 11;
+            label1.Text = "Detalle de ordenes";
             // 
             // listView2
             // 
-            listView2.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, RemitoColum });
+            listView2.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
             listView2.GridLines = true;
-            listView2.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
-            listView2.Location = new Point(40, 64);
+            listView2.Location = new Point(52, 66);
             listView2.Name = "listView2";
-            listView2.Size = new Size(657, 234);
-            listView2.TabIndex = 7;
+            listView2.Size = new Size(667, 234);
+            listView2.TabIndex = 10;
             listView2.UseCompatibleStateImageBehavior = false;
             listView2.View = View.Details;
             // 
@@ -96,46 +91,46 @@
             TranspColum.TextAlign = HorizontalAlignment.Center;
             TranspColum.Width = 130;
             // 
-            // label1
+            // EstadoColum
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(40, 46);
-            label1.Name = "label1";
-            label1.Size = new Size(165, 15);
-            label1.TabIndex = 8;
-            label1.Text = "Listado de ordenes de entrega";
+            EstadoColum.Text = "Estado";
+            EstadoColum.TextAlign = HorizontalAlignment.Center;
+            EstadoColum.Width = 130;
             // 
-            // RemitoColum
+            // CancelarBtn
             // 
-            RemitoColum.Text = "Remito";
-            RemitoColum.TextAlign = HorizontalAlignment.Center;
-            RemitoColum.Width = 120;
+            CancelarBtn.Location = new Point(614, 316);
+            CancelarBtn.Name = "CancelarBtn";
+            CancelarBtn.Size = new Size(105, 30);
+            CancelarBtn.TabIndex = 9;
+            CancelarBtn.Text = "Cancelar";
+            CancelarBtn.UseVisualStyleBackColor = true;
             // 
-            // GenerarDocumentosForm
+            // GenerarRemitosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(750, 384);
+            ClientSize = new Size(800, 398);
+            Controls.Add(GenerarBtn);
             Controls.Add(label1);
             Controls.Add(listView2);
             Controls.Add(CancelarBtn);
-            Controls.Add(GenerarBtn);
-            Name = "GenerarDocumentosForm";
-            Text = "Generar Documentos";
-            Load += GenerarDocumentosForm_Load;
+            Name = "GenerarRemitosForm";
+            Text = "Generar Remitos";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
+
         private Button GenerarBtn;
-        private Button CancelarBtn;
+        private Label label1;
         private ListView listView2;
         private ColumnHeader NumeroColum;
         private ColumnHeader ClienteColum;
         private ColumnHeader FechaColum;
         private ColumnHeader TranspColum;
-        private Label label1;
-        private ColumnHeader RemitoColum;
+        private ColumnHeader EstadoColum;
+        private Button CancelarBtn;
     }
 }
