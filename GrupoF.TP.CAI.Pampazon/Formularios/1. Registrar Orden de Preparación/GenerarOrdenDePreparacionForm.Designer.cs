@@ -42,7 +42,7 @@
             Descripcion = new DataGridViewTextBoxColumn();
             Posicion = new DataGridViewTextBoxColumn();
             Cantidad = new DataGridViewTextBoxColumn();
-            button1 = new Button();
+            QuitarBtn = new Button();
             numericUpDown1 = new NumericUpDown();
             CancelarBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)EditarOrden_GridView).BeginInit();
@@ -169,15 +169,16 @@
             Cantidad.Name = "Cantidad";
             Cantidad.Width = 125;
             // 
-            // button1
+            // QuitarBtn
             // 
-            button1.Location = new Point(326, 547);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(101, 31);
-            button1.TabIndex = 7;
-            button1.Text = "Quitar";
-            button1.UseVisualStyleBackColor = true;
+            QuitarBtn.Location = new Point(326, 547);
+            QuitarBtn.Margin = new Padding(3, 4, 3, 4);
+            QuitarBtn.Name = "QuitarBtn";
+            QuitarBtn.Size = new Size(101, 31);
+            QuitarBtn.TabIndex = 7;
+            QuitarBtn.Text = "Quitar";
+            QuitarBtn.UseVisualStyleBackColor = true;
+            QuitarBtn.Click += QuitarBtn_Click;
             // 
             // numericUpDown1
             // 
@@ -205,7 +206,7 @@
             ClientSize = new Size(729, 629);
             Controls.Add(CancelarBtn);
             Controls.Add(numericUpDown1);
-            Controls.Add(button1);
+            Controls.Add(QuitarBtn);
             Controls.Add(EditarOrden_GridView);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -239,7 +240,7 @@
         private DataGridViewTextBoxColumn Posicion;
         private DataGridViewTextBoxColumn Cantidad;
         public DataGridView EditarOrden_GridView;
-        private Button button1;
+        private Button QuitarBtn;
         private NumericUpDown numericUpDown1;
         private Button CancelarBtn;
     }

@@ -109,7 +109,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                     newRow.Cells["Posicion"].Value = selectedProducto.Posicion;
                     newRow.Cells["Cantidad"].Value = selectedProducto.Cantidad;  // Inicialmente usa la cantidad máxima disponible
 
-
+                    newRow.Tag = selectedProducto;
 
 
                     EditarOrden_GridView.BeginEdit(true);
@@ -195,8 +195,42 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
             {
                 model.ClienteOrden.ProductosOrden.Clear();
             }
-            
 
+
+        }
+
+        private void QuitarBtn_Click(object sender, EventArgs e)
+        {
+            if (EditarOrden_GridView.SelectedRows.Count > 0)
+            {
+                // Obtiene la fila seleccionada
+                DataGridViewRow selectedRow = EditarOrden_GridView.SelectedRows[0];
+
+                // Elimina la fila seleccionada del DataGridView
+                EditarOrden_GridView.Rows.Remove(selectedRow);
+
+                if (selectedRow.Tag is Productos producto)
+                {
+
+                    var error = model.QuitarProductoDelaOrden(producto);
+
+                    if (error != null)
+                    {
+                        MessageBox.Show(error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
+                    else
+                    {
+                        MessageBox.Show( "El producto ha sido eliminado");
+                    }
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione una fila para quitar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 

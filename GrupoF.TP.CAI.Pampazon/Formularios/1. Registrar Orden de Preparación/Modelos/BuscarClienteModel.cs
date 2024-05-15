@@ -11,10 +11,10 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
     {
         public Clientes ClienteSeleccionado { get; set; }
         public OrdenDeSeleccion ClienteOrden { get; set; }
-        public string Cuit {get; set; }
+        public string Cuit { get; set; }
         public List<Clientes> Clientes { get; set; } = new List<Clientes>
 
-        
+
         {
         new Clientes
         {
@@ -68,6 +68,28 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
 
         }
         };
+
+        internal string QuitarProductoDelaOrden(Productos producto)
+        {
+            if (producto != null)
+            {
+                // Busca el producto en la lista de productos de la orden y lo elimina
+                var productoEncontrado = ClienteOrden.ProductosOrden.FirstOrDefault(p => p.IdProducto == producto.IdProducto);
+                if (productoEncontrado != null)
+                {
+                    ClienteOrden.ProductosOrden.Remove(productoEncontrado);
+                    return null; // No hay error
+                }
+                else
+                {
+                    return "El producto seleccionado no se encontró en la orden.";
+                }
+            }
+            else
+            {
+                return "El producto seleccionado es nulo.";
+            }
+        }
 
         internal string ValidarCantidadProductos()
         {
