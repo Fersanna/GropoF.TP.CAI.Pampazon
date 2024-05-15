@@ -29,8 +29,12 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
         private void OrdenDePreparacionForm_Load(object sender, EventArgs e)
         {
             model.ClienteOrden.CodigoCliente = model.ClienteSeleccionado.CodigoCliente.ToString();
-            ClienteNombreTextBox.Text = model.ClienteOrden.CodigoCliente.ToString();
-            CodigoClienteTextBox.Text = "P-000001";
+            CodigoClienteTextBox.Text = model.ClienteOrden.CodigoCliente.ToString();
+            model.ClienteOrden.CodigoTransportista = TransportistaBox.Text;
+            model.ClienteOrden.Fecha = FechaPicker.Value;
+            model.ClienteOrden.EstadoOrden = "Disponible";
+            CodigoClienteTextBox.Text= model.ClienteOrden.NumeroDeOrden;
+            
 
             ProductosOrdenList.Items.Clear();
 
@@ -47,7 +51,6 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
                 item.Tag = productos;
 
             }
-
 
 
         }
