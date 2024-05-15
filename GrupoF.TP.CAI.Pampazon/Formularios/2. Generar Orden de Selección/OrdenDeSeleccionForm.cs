@@ -21,5 +21,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
         {
             this.Close();
         }
+
+        private void GenerarBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("La orden de selección ha sido generada.");
+        }
     }
 }

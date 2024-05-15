@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "A1", "Sillas", "12-43-2", "18", "01" }, -1);
             ConfirmarBtn = new Button();
             CancelarBtn = new Button();
             ProductosList = new ListView();
@@ -48,6 +47,7 @@
             ConfirmarBtn.TabIndex = 1;
             ConfirmarBtn.Text = "Confirmar";
             ConfirmarBtn.UseVisualStyleBackColor = true;
+            ConfirmarBtn.Click += ConfirmarBtn_Click;
             // 
             // CancelarBtn
             // 
@@ -64,7 +64,6 @@
             ProductosList.Columns.AddRange(new ColumnHeader[] { IdProducto_Header, Descripcion_Header, Posicion_Header, Cantidad_Header, Cliente_Header });
             ProductosList.FullRowSelect = true;
             ProductosList.GridLines = true;
-            ProductosList.Items.AddRange(new ListViewItem[] { listViewItem1 });
             ProductosList.Location = new Point(53, 61);
             ProductosList.Name = "ProductosList";
             ProductosList.Size = new Size(604, 268);

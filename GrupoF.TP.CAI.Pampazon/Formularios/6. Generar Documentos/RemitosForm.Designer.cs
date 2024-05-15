@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "18", "Sillas" }, -1);
             dateTimePicker1 = new DateTimePicker();
             Cuit_Box = new MaskedTextBox();
             label1 = new Label();
@@ -93,7 +92,6 @@
             ProductosList.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
             ProductosList.FullRowSelect = true;
             ProductosList.GridLines = true;
-            ProductosList.Items.AddRange(new ListViewItem[] { listViewItem1 });
             ProductosList.Location = new Point(29, 173);
             ProductosList.Name = "ProductosList";
             ProductosList.Size = new Size(577, 165);

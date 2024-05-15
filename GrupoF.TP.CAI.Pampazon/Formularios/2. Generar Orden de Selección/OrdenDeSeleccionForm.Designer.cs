@@ -28,9 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem3 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "Pendiente" }, -1);
-            ListViewItem listViewItem4 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "Pendiente" }, -1);
-            EliminarBtn = new Button();
+            GenerarBtn = new Button();
             button1 = new Button();
             listView1 = new ListView();
             NumeroColum = new ColumnHeader();
@@ -41,14 +39,15 @@
             label1 = new Label();
             SuspendLayout();
             // 
-            // EliminarBtn
+            // GenerarBtn
             // 
-            EliminarBtn.Location = new Point(521, 283);
-            EliminarBtn.Name = "EliminarBtn";
-            EliminarBtn.Size = new Size(100, 27);
-            EliminarBtn.TabIndex = 1;
-            EliminarBtn.Text = "Generar";
-            EliminarBtn.UseVisualStyleBackColor = true;
+            GenerarBtn.Location = new Point(521, 283);
+            GenerarBtn.Name = "GenerarBtn";
+            GenerarBtn.Size = new Size(100, 27);
+            GenerarBtn.TabIndex = 1;
+            GenerarBtn.Text = "Generar";
+            GenerarBtn.UseVisualStyleBackColor = true;
+            GenerarBtn.Click += GenerarBtn_Click;
             // 
             // button1
             // 
@@ -63,7 +62,6 @@
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
             listView1.GridLines = true;
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
             listView1.Location = new Point(58, 47);
             listView1.Name = "listView1";
             listView1.Size = new Size(669, 230);
@@ -118,7 +116,7 @@
             Controls.Add(label1);
             Controls.Add(listView1);
             Controls.Add(button1);
-            Controls.Add(EliminarBtn);
+            Controls.Add(GenerarBtn);
             Name = "OrdenDeSeleccionForm";
             Text = "Orden de Seleccion";
             ResumeLayout(false);
@@ -126,7 +124,7 @@
         }
 
         #endregion
-        private Button EliminarBtn;
+        private Button GenerarBtn;
         private Button button1;
         private ListView listView1;
         private ColumnHeader NumeroColum;

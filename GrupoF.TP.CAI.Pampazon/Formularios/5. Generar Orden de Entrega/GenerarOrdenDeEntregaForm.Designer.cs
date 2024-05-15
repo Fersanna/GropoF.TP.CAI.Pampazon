@@ -28,11 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem3 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "Seleccionada" }, -1);
-            ListViewItem listViewItem4 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "Seleccionada" }, -1);
-            GenerarBtn = new Button();
+            ConfirmarBtn = new Button();
             CancelarBtn = new Button();
-            listView1 = new ListView();
+            listOrdenesEntrega = new ListView();
             NumeroColum = new ColumnHeader();
             ClienteColum = new ColumnHeader();
             FechaColum = new ColumnHeader();
@@ -41,15 +39,15 @@
             label1 = new Label();
             SuspendLayout();
             // 
-            // GenerarBtn
+            // ConfirmarBtn
             // 
-            GenerarBtn.Location = new Point(529, 274);
-            GenerarBtn.Name = "GenerarBtn";
-            GenerarBtn.Size = new Size(90, 27);
-            GenerarBtn.TabIndex = 1;
-            GenerarBtn.Text = "Generar";
-            GenerarBtn.UseVisualStyleBackColor = true;
-            GenerarBtn.Click += GenerarBtn_Click;
+            ConfirmarBtn.Location = new Point(529, 274);
+            ConfirmarBtn.Name = "ConfirmarBtn";
+            ConfirmarBtn.Size = new Size(90, 27);
+            ConfirmarBtn.TabIndex = 1;
+            ConfirmarBtn.Text = "Confirmar";
+            ConfirmarBtn.UseVisualStyleBackColor = true;
+            ConfirmarBtn.Click += ConfirmarBtn_Click;
             // 
             // CancelarBtn
             // 
@@ -61,17 +59,16 @@
             CancelarBtn.UseVisualStyleBackColor = true;
             CancelarBtn.Click += CancelarBtn_Click;
             // 
-            // listView1
+            // listOrdenesEntrega
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
-            listView1.GridLines = true;
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
-            listView1.Location = new Point(36, 56);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(679, 202);
-            listView1.TabIndex = 7;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            listOrdenesEntrega.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
+            listOrdenesEntrega.GridLines = true;
+            listOrdenesEntrega.Location = new Point(36, 56);
+            listOrdenesEntrega.Name = "listOrdenesEntrega";
+            listOrdenesEntrega.Size = new Size(679, 202);
+            listOrdenesEntrega.TabIndex = 7;
+            listOrdenesEntrega.UseCompatibleStateImageBehavior = false;
+            listOrdenesEntrega.View = View.Details;
             // 
             // NumeroColum
             // 
@@ -118,9 +115,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(759, 332);
             Controls.Add(label1);
-            Controls.Add(listView1);
+            Controls.Add(listOrdenesEntrega);
             Controls.Add(CancelarBtn);
-            Controls.Add(GenerarBtn);
+            Controls.Add(ConfirmarBtn);
             Name = "GenerarOrdenDeEntregaForm";
             Text = "Generar Orden de Entrega";
             Load += GenerarOrdenDeEntregaForm_Load;
@@ -129,9 +126,9 @@
         }
 
         #endregion
-        private Button GenerarBtn;
+        private Button ConfirmarBtn;
         private Button CancelarBtn;
-        private ListView listView1;
+        private ListView listOrdenesEntrega;
         private ColumnHeader NumeroColum;
         private ColumnHeader ClienteColum;
         private ColumnHeader FechaColum;

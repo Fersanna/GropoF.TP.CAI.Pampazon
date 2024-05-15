@@ -23,15 +23,22 @@ namespace GrupoF.TP.CAI.Pampazon
 
         }
 
-        private void GenerarBtn_Click(object sender, EventArgs e)
-        {
-            OrdenDeEntregaForm ordenDeEntregaForm = new OrdenDeEntregaForm();
-            ordenDeEntregaForm.ShowDialog();
-        }
-
         private void CancelarBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ConfirmarBtn_Click(object sender, EventArgs e)
+        {
+            if (listOrdenesEntrega.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar una o varias ordenes.");
+            }
+            else
+            {
+                OrdenDeEntregaForm ordenDeEntregaForm = new OrdenDeEntregaForm();
+                ordenDeEntregaForm.ShowDialog();
+            }
         }
     }
 }

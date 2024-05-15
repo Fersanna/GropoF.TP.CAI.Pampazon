@@ -21,5 +21,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
         {
             this.Close();
         }
+
+        private void ConfirmarBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Se han eliminado con éxito los productos del inventario.");
+        }
     }
 }
