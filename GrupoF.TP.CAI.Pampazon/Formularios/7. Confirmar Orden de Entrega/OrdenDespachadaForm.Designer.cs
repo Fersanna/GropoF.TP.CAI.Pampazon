@@ -1,6 +1,6 @@
-﻿namespace GrupoF.TP.CAI.Pampazon
+﻿namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
 {
-    partial class ConfirmarOrdenDeEntregaForm
+    partial class OrdenDespachadaForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "Preparada" }, -1);
-            ListViewItem listViewItem2 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "Preparada" }, -1);
-            ConfirmarBtn = new Button();
-            CancelarBtn = new Button();
+            ListViewItem listViewItem3 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "Despachada" }, -1);
+            ListViewItem listViewItem4 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "Despachada" }, -1);
             listView1 = new ListView();
             NumeroColum = new ColumnHeader();
             ClienteColum = new ColumnHeader();
@@ -39,37 +37,18 @@
             TranspColum = new ColumnHeader();
             EstadoColum = new ColumnHeader();
             label1 = new Label();
+            CancelarBtn = new Button();
             SuspendLayout();
-            // 
-            // ConfirmarBtn
-            // 
-            ConfirmarBtn.Location = new Point(487, 278);
-            ConfirmarBtn.Name = "ConfirmarBtn";
-            ConfirmarBtn.Size = new Size(103, 26);
-            ConfirmarBtn.TabIndex = 1;
-            ConfirmarBtn.Text = "Confirmar";
-            ConfirmarBtn.UseVisualStyleBackColor = true;
-            ConfirmarBtn.Click += ConfirmarBtn_Click;
-            // 
-            // CancelarBtn
-            // 
-            CancelarBtn.Location = new Point(596, 278);
-            CancelarBtn.Name = "CancelarBtn";
-            CancelarBtn.Size = new Size(103, 26);
-            CancelarBtn.TabIndex = 3;
-            CancelarBtn.Text = "Cancelar";
-            CancelarBtn.UseVisualStyleBackColor = true;
-            CancelarBtn.Click += CancelarBtn_Click;
             // 
             // listView1
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
             listView1.GridLines = true;
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
-            listView1.Location = new Point(30, 57);
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
+            listView1.Location = new Point(34, 64);
             listView1.Name = "listView1";
             listView1.Size = new Size(669, 202);
-            listView1.TabIndex = 8;
+            listView1.TabIndex = 9;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
             // 
@@ -106,32 +85,37 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(30, 39);
+            label1.Location = new Point(34, 46);
             label1.Name = "label1";
             label1.Size = new Size(106, 15);
-            label1.TabIndex = 9;
+            label1.TabIndex = 10;
             label1.Text = "Listado de ordenes";
-            label1.Click += label1_Click;
             // 
-            // ConfirmarOrdenDeEntregaForm
+            // CancelarBtn
+            // 
+            CancelarBtn.Location = new Point(600, 290);
+            CancelarBtn.Name = "CancelarBtn";
+            CancelarBtn.Size = new Size(103, 26);
+            CancelarBtn.TabIndex = 11;
+            CancelarBtn.Text = "Aceptar";
+            CancelarBtn.UseVisualStyleBackColor = true;
+            // 
+            // OrdenDespachadaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(744, 361);
+            ClientSize = new Size(751, 381);
+            Controls.Add(CancelarBtn);
             Controls.Add(label1);
             Controls.Add(listView1);
-            Controls.Add(CancelarBtn);
-            Controls.Add(ConfirmarBtn);
-            Name = "ConfirmarOrdenDeEntregaForm";
-            Text = "Confirmar Orden de Entrega";
-            Load += ConfirmarOrdenDeEntregaForm_Load;
+            Name = "OrdenDespachadaForm";
+            Text = "OrdenDespachadaForm";
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private Button ConfirmarBtn;
-        private Button CancelarBtn;
+
         private ListView listView1;
         private ColumnHeader NumeroColum;
         private ColumnHeader ClienteColum;
@@ -139,5 +123,6 @@
         private ColumnHeader TranspColum;
         private ColumnHeader EstadoColum;
         private Label label1;
+        private Button CancelarBtn;
     }
 }

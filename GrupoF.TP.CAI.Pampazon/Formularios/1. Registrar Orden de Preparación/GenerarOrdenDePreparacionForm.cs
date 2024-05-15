@@ -35,11 +35,11 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                 foreach (Productos producto in model.ClienteSeleccionado.Productos)
                 {
                     ListViewItem item = new ListViewItem(producto.IdProducto); // Usa el IdProducto como el primer texto del ítem.
-                    item.SubItems.Add(producto.Descripcion); // Añade descripción como subítem.
-                    item.SubItems.Add(producto.Posicion); // Añade posición como subítem.
-                    item.SubItems.Add(producto.Cantidad.ToString()); // Añade cantidad como subítem, asegúrate de convertirlo a string si es necesario.
+                    item.SubItems.Add(producto.Descripcion);
+                    item.SubItems.Add(producto.Posicion);
+                    item.SubItems.Add(producto.Cantidad.ToString());
 
-                    ProductosList.Items.Add(item); // Añade el ítem al ListView.
+                    ProductosList.Items.Add(item);
 
                     item.Tag = producto;
                 }
@@ -54,10 +54,21 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
         private void GenerarBtn_Click(object sender, EventArgs e)
         {
 
+            var error = model.ValidarCantidadProductos();
 
-            OrdenDePreparacionForm ordenDePreparacionForm = new OrdenDePreparacionForm();
-            ordenDePreparacionForm.model = model;
-            ordenDePreparacionForm.ShowDialog();
+            if (error != null)
+            {
+                MessageBox.Show(error);
+                return;
+            }
+            else
+            {
+                OrdenDePreparacionForm ordenDePreparacionForm = new OrdenDePreparacionForm();
+                ordenDePreparacionForm.model = model;
+                ordenDePreparacionForm.ShowDialog();
+
+            }
+
 
         }
 
@@ -106,11 +117,11 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                     if (model.ClienteOrden == null)
                     {
                         model.ClienteOrden = new OrdenDeSeleccion();
-                        model.ClienteOrden.CodigoCliente = model.ClienteOrden.CodigoCliente;
+                        model.ClienteOrden.CodigoCliente = model.ClienteSeleccionado.CodigoCliente;
                         model.ClienteOrden.ProductosOrden = new List<Productos>();
                     }
 
-                    // Añadir el producto seleccionado a la lista de productos en ClienteOrden
+
                     model.ClienteOrden.ProductosOrden.Add(new Productos()
                     {
                         IdProducto = (string)newRow.Cells["IdProducto"].Value,
@@ -131,6 +142,60 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
 
         private void EditarOrden_GridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+        private void EditarOrden_GridView_CellValidating(object sender, DataGridViewCellValidatingEventArgs e)
+        {
+            DataGridView dgv = sender as DataGridView;
+            if (dgv.Rows[e.RowIndex].IsNewRow)
+            {
+                return;
+            }
+
+            if (e.ColumnIndex == 3)
+            {
+                DataGridViewRow row = EditarOrden_GridView.Rows[e.RowIndex];
+                string idProducto = row.Cells["IdProducto"].Value.ToString();
+
+                // Buscar el producto en el modelo y actualizar la cantidad
+                Productos producto = model.ClienteOrden.ProductosOrden.FirstOrDefault(p => p.IdProducto == idProducto);
+                if (producto != null)
+                {
+                    if (!int.TryParse(e.FormattedValue.ToString(), out int nuevaCantidad))
+                    {
+                        MessageBox.Show("La cantidad ingresada no es válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        e.Cancel = true; // Cancela la edición
+                    }
+                    else if (producto != null)
+                    {
+                        producto.Cantidad = nuevaCantidad;
+                    }
+
+                }
+            }
+        }
+
+        private void CancelarBtn_Click(object sender, EventArgs e)
+        {
+            EditarOrden_GridView.Rows.Clear();
+
+
+            if (model.ClienteOrden != null && model.ClienteOrden.ProductosOrden != null)
+            {
+                model.ClienteOrden.ProductosOrden.Clear();
+            }
+            this.Close();
+        }
+
+        private void GenerarOrdenDePreparacionForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+            if (model.ClienteOrden != null && model.ClienteOrden.ProductosOrden != null)
+            {
+                model.ClienteOrden.ProductosOrden.Clear();
+            }
+            
 
         }
     }

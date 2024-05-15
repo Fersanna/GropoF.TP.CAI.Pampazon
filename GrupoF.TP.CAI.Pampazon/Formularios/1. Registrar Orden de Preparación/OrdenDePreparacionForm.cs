@@ -30,6 +30,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
         {
             model.ClienteOrden.CodigoCliente = model.ClienteSeleccionado.CodigoCliente.ToString();
             ClienteNombreTextBox.Text = model.ClienteOrden.CodigoCliente.ToString();
+            CodigoClienteTextBox.Text = "P-000001";
 
             ProductosOrdenList.Items.Clear();
 
@@ -37,17 +38,27 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
             {
                 ListViewItem item = new ListViewItem(productos.IdProducto);
 
-                item.SubItems.Add(productos.Descripcion); // Añade descripción como subítem.
-                item.SubItems.Add(productos.Posicion); // Añade posición como subítem.
-                item.SubItems.Add(productos.Cantidad.ToString()); // Añade cantidad como subítem, 
+                item.SubItems.Add(productos.Descripcion); 
+                item.SubItems.Add(productos.Posicion); 
+                item.SubItems.Add(productos.Cantidad.ToString()); 
 
-                 ProductosOrdenList.Items.Add(item); // Añade el ítem al ListView.
+                ProductosOrdenList.Items.Add(item);
 
-                 item.Tag = productos;
+                item.Tag = productos;
 
             }
 
 
+
+        }
+
+        private void ClienteNombreTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void ProductosOrdenList_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
         }
     }

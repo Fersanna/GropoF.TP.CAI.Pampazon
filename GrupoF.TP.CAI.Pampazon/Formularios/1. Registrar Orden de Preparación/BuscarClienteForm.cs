@@ -83,5 +83,38 @@ namespace GrupoF.TP.CAI.Pampazon
         {
 
         }
+
+        private void ClientesList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Buscar_Click(object sender, EventArgs e)
+        {
+            ClientesList.Items.Clear();
+
+            model.Cuit = Cuit_Box.Text;
+
+            var clienteBuscado = model.Clientes.FirstOrDefault(p => p.Cuit == model.Cuit);
+
+            if (clienteBuscado  == null)
+            {
+                MessageBox.Show("El cliente no ha sido encontrado");
+                return;
+            }
+
+            ListViewItem item = new ListViewItem();
+
+            item.Text += clienteBuscado.CodigoCliente.ToString();
+            item.SubItems.Add(clienteBuscado.RazonSocial.ToString());
+            item.SubItems.Add(clienteBuscado.Cuit.ToString());
+            item.SubItems.Add(clienteBuscado.Domicilio.ToString());
+
+            ClientesList.Items.Add(item);
+
+            item.Tag = clienteBuscado;
+
+
+        }
     }
 }
