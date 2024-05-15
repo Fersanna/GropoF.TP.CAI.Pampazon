@@ -93,6 +93,13 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
 
         internal string ValidarCantidadProductos()
         {
+            if (ClienteOrden == null || ClienteOrden.ProductosOrden == null || !ClienteOrden.ProductosOrden.Any())
+            {
+                return "Debe agregar al menos un producto para generar la orden.";
+            }
+
+
+
             var clienteEncontrado = Clientes.FirstOrDefault(c => c.CodigoCliente == ClienteOrden.CodigoCliente);
 
             if (clienteEncontrado == null)
