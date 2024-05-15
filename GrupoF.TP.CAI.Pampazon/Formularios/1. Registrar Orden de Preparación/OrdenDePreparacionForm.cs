@@ -28,13 +28,20 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
 
         private void OrdenDePreparacionForm_Load(object sender, EventArgs e)
         {
-            model.ClienteOrden.CodigoCliente = model.ClienteSeleccionado.CodigoCliente.ToString();
-            CodigoClienteTextBox.Text = model.ClienteOrden.CodigoCliente.ToString();
+            if (model.ClienteSeleccionado != null)
+            {
+                model.ClienteOrden.CodigoCliente = model.ClienteSeleccionado.RazonSocial;
+                ClienteNombreTextBox.Text = model.ClienteOrden.CodigoCliente.ToString();
+            }
+            else
+            {
+                MessageBox.Show("No se ha seleccionado un cliente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             model.ClienteOrden.CodigoTransportista = TransportistaBox.Text;
             model.ClienteOrden.Fecha = FechaPicker.Value;
             model.ClienteOrden.EstadoOrden = "Disponible";
-            CodigoClienteTextBox.Text= model.ClienteOrden.NumeroDeOrden;
-            
+            CodigoClienteTextBox.Text = model.ClienteOrden.NumeroDeOrden;
+
 
             ProductosOrdenList.Items.Clear();
 
@@ -42,9 +49,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
             {
                 ListViewItem item = new ListViewItem(productos.IdProducto);
 
-                item.SubItems.Add(productos.Descripcion); 
-                item.SubItems.Add(productos.Posicion); 
-                item.SubItems.Add(productos.Cantidad.ToString()); 
+                item.SubItems.Add(productos.Descripcion);
+                item.SubItems.Add(productos.Posicion);
+                item.SubItems.Add(productos.Cantidad.ToString());
 
                 ProductosOrdenList.Items.Add(item);
 
@@ -63,6 +70,12 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
         private void ProductosOrdenList_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void ConfirmarPrepBtn_Click(object sender, EventArgs e)
+        {   
+            //Subir a ordenes confirmadas, validar y volver a menu principal
+            MessageBox.Show("La orden fue cargada con exito!");
         }
     }
 }

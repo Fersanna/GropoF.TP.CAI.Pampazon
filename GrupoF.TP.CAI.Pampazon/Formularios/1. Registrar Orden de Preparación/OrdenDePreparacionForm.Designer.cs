@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            EliminarBtn = new Button();
-            CancelarBtn = new Button();
+            ConfirmarPrepBtn = new Button();
+            CancelarOrdenBtn = new Button();
             label1 = new Label();
             ClienteNombreTextBox = new TextBox();
             TransportistaBox = new Label();
@@ -46,26 +46,27 @@
             FechaPicker = new DateTimePicker();
             SuspendLayout();
             // 
-            // EliminarBtn
+            // ConfirmarPrepBtn
             // 
-            EliminarBtn.Location = new Point(544, 305);
-            EliminarBtn.Margin = new Padding(3, 4, 3, 4);
-            EliminarBtn.Name = "EliminarBtn";
-            EliminarBtn.Size = new Size(114, 35);
-            EliminarBtn.TabIndex = 1;
-            EliminarBtn.Text = "Cancelar";
-            EliminarBtn.UseVisualStyleBackColor = true;
+            ConfirmarPrepBtn.Location = new Point(424, 305);
+            ConfirmarPrepBtn.Margin = new Padding(3, 4, 3, 4);
+            ConfirmarPrepBtn.Name = "ConfirmarPrepBtn";
+            ConfirmarPrepBtn.Size = new Size(114, 35);
+            ConfirmarPrepBtn.TabIndex = 1;
+            ConfirmarPrepBtn.Text = "Confirmar";
+            ConfirmarPrepBtn.UseVisualStyleBackColor = true;
+            ConfirmarPrepBtn.Click += ConfirmarPrepBtn_Click;
             // 
-            // CancelarBtn
+            // CancelarOrdenBtn
             // 
-            CancelarBtn.Location = new Point(424, 305);
-            CancelarBtn.Margin = new Padding(3, 4, 3, 4);
-            CancelarBtn.Name = "CancelarBtn";
-            CancelarBtn.Size = new Size(114, 35);
-            CancelarBtn.TabIndex = 2;
-            CancelarBtn.Text = "Confirmar";
-            CancelarBtn.UseVisualStyleBackColor = true;
-            CancelarBtn.Click += CancelarBtn_Click;
+            CancelarOrdenBtn.Location = new Point(544, 305);
+            CancelarOrdenBtn.Margin = new Padding(3, 4, 3, 4);
+            CancelarOrdenBtn.Name = "CancelarOrdenBtn";
+            CancelarOrdenBtn.Size = new Size(114, 35);
+            CancelarOrdenBtn.TabIndex = 2;
+            CancelarOrdenBtn.Text = "Cancelar";
+            CancelarOrdenBtn.UseVisualStyleBackColor = true;
+            CancelarOrdenBtn.Click += CancelarBtn_Click;
             // 
             // label1
             // 
@@ -81,7 +82,7 @@
             ClienteNombreTextBox.Enabled = false;
             ClienteNombreTextBox.Location = new Point(12, 262);
             ClienteNombreTextBox.Name = "ClienteNombreTextBox";
-            ClienteNombreTextBox.Size = new Size(125, 27);
+            ClienteNombreTextBox.Size = new Size(151, 27);
             ClienteNombreTextBox.TabIndex = 4;
             ClienteNombreTextBox.TextChanged += ClienteNombreTextBox_TextChanged;
             // 
@@ -108,7 +109,7 @@
             CodigoClienteTextBox.Enabled = false;
             CodigoClienteTextBox.Location = new Point(12, 196);
             CodigoClienteTextBox.Name = "CodigoClienteTextBox";
-            CodigoClienteTextBox.Size = new Size(125, 27);
+            CodigoClienteTextBox.Size = new Size(151, 27);
             CodigoClienteTextBox.TabIndex = 8;
             // 
             // label2
@@ -124,7 +125,7 @@
             // 
             TranspBox.Location = new Point(12, 135);
             TranspBox.Name = "TranspBox";
-            TranspBox.Size = new Size(121, 27);
+            TranspBox.Size = new Size(151, 27);
             TranspBox.TabIndex = 10;
             // 
             // ProductosOrdenList
@@ -178,7 +179,7 @@
             FechaPicker.Format = DateTimePickerFormat.Short;
             FechaPicker.Location = new Point(12, 73);
             FechaPicker.Name = "FechaPicker";
-            FechaPicker.Size = new Size(121, 27);
+            FechaPicker.Size = new Size(151, 27);
             FechaPicker.TabIndex = 13;
             FechaPicker.Value = new DateTime(2024, 5, 10, 15, 54, 23, 0);
             // 
@@ -197,8 +198,8 @@
             Controls.Add(TransportistaBox);
             Controls.Add(ClienteNombreTextBox);
             Controls.Add(label1);
-            Controls.Add(CancelarBtn);
-            Controls.Add(EliminarBtn);
+            Controls.Add(CancelarOrdenBtn);
+            Controls.Add(ConfirmarPrepBtn);
             Margin = new Padding(3, 4, 3, 4);
             Name = "OrdenDePreparacionForm";
             Text = "Orden de Preparacion";
@@ -208,8 +209,8 @@
         }
 
         #endregion
-        private Button EliminarBtn;
-        private Button CancelarBtn;
+        private Button ConfirmarPrepBtn;
+        private Button CancelarOrdenBtn;
         private Label label1;
         private TextBox ClienteNombreTextBox;
         private Label TransportistaBox;
