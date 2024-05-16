@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem3 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "Despachada" }, -1);
-            ListViewItem listViewItem4 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "Despachada" }, -1);
             listOrdenesDespachadas = new ListView();
             NumeroColum = new ColumnHeader();
             ClienteColum = new ColumnHeader();
@@ -44,7 +42,6 @@
             // 
             listOrdenesDespachadas.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
             listOrdenesDespachadas.GridLines = true;
-            listOrdenesDespachadas.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
             listOrdenesDespachadas.Location = new Point(34, 64);
             listOrdenesDespachadas.Name = "listOrdenesDespachadas";
             listOrdenesDespachadas.Size = new Size(669, 202);
