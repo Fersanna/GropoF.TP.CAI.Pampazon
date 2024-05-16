@@ -38,7 +38,7 @@
             textBox1 = new TextBox();
             label3 = new Label();
             textBox2 = new TextBox();
-            button1 = new Button();
+            ImprimirBtn = new Button();
             textBox3 = new TextBox();
             label5 = new Label();
             textBox4 = new TextBox();
@@ -136,14 +136,15 @@
             textBox2.Text = "R";
             textBox2.TextAlign = HorizontalAlignment.Center;
             // 
-            // button1
+            // ImprimirBtn
             // 
-            button1.Location = new Point(512, 388);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 25);
-            button1.TabIndex = 41;
-            button1.Text = "Imprimir";
-            button1.UseVisualStyleBackColor = true;
+            ImprimirBtn.Location = new Point(512, 388);
+            ImprimirBtn.Name = "ImprimirBtn";
+            ImprimirBtn.Size = new Size(94, 25);
+            ImprimirBtn.TabIndex = 41;
+            ImprimirBtn.Text = "Imprimir";
+            ImprimirBtn.UseVisualStyleBackColor = true;
+            ImprimirBtn.Click += ImprimirBtn_Click;
             // 
             // textBox3
             // 
@@ -219,7 +220,7 @@
             Controls.Add(label6);
             Controls.Add(textBox5);
             Controls.Add(groupBox1);
-            Controls.Add(button1);
+            Controls.Add(ImprimirBtn);
             Controls.Add(textBox2);
             Controls.Add(ProductosList);
             Name = "RemitosForm";
@@ -242,7 +243,7 @@
         private TextBox textBox2;
         private ColumnHeader columnHeader1;
         private ColumnHeader columnHeader2;
-        private Button button1;
+        private Button ImprimirBtn;
         private TextBox textBox3;
         private Label label5;
         private TextBox textBox4;

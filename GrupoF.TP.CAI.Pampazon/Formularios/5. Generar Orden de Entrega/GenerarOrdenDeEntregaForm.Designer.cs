@@ -30,7 +30,7 @@
         {
             ConfirmarBtn = new Button();
             CancelarBtn = new Button();
-            listOrdenesEntrega = new ListView();
+            listOrdenesSeleccionadas = new ListView();
             NumeroColum = new ColumnHeader();
             ClienteColum = new ColumnHeader();
             FechaColum = new ColumnHeader();
@@ -59,16 +59,16 @@
             CancelarBtn.UseVisualStyleBackColor = true;
             CancelarBtn.Click += CancelarBtn_Click;
             // 
-            // listOrdenesEntrega
+            // listOrdenesSeleccionadas
             // 
-            listOrdenesEntrega.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
-            listOrdenesEntrega.GridLines = true;
-            listOrdenesEntrega.Location = new Point(36, 56);
-            listOrdenesEntrega.Name = "listOrdenesEntrega";
-            listOrdenesEntrega.Size = new Size(679, 202);
-            listOrdenesEntrega.TabIndex = 7;
-            listOrdenesEntrega.UseCompatibleStateImageBehavior = false;
-            listOrdenesEntrega.View = View.Details;
+            listOrdenesSeleccionadas.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
+            listOrdenesSeleccionadas.GridLines = true;
+            listOrdenesSeleccionadas.Location = new Point(36, 56);
+            listOrdenesSeleccionadas.Name = "listOrdenesSeleccionadas";
+            listOrdenesSeleccionadas.Size = new Size(679, 202);
+            listOrdenesSeleccionadas.TabIndex = 7;
+            listOrdenesSeleccionadas.UseCompatibleStateImageBehavior = false;
+            listOrdenesSeleccionadas.View = View.Details;
             // 
             // NumeroColum
             // 
@@ -115,7 +115,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(759, 332);
             Controls.Add(label1);
-            Controls.Add(listOrdenesEntrega);
+            Controls.Add(listOrdenesSeleccionadas);
             Controls.Add(CancelarBtn);
             Controls.Add(ConfirmarBtn);
             Name = "GenerarOrdenDeEntregaForm";
@@ -128,7 +128,7 @@
         #endregion
         private Button ConfirmarBtn;
         private Button CancelarBtn;
-        private ListView listOrdenesEntrega;
+        private ListView listOrdenesSeleccionadas;
         private ColumnHeader NumeroColum;
         private ColumnHeader ClienteColum;
         private ColumnHeader FechaColum;

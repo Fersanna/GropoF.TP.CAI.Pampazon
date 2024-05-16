@@ -28,25 +28,26 @@
         /// </summary>
         private void InitializeComponent()
         {
-            GenerarBtn = new Button();
+            ConfirmarBtn = new Button();
             label1 = new Label();
-            listView2 = new ListView();
+            listOrdenesDeEntrega = new ListView();
             NumeroColum = new ColumnHeader();
             ClienteColum = new ColumnHeader();
             FechaColum = new ColumnHeader();
             TranspColum = new ColumnHeader();
-            EstadoColum = new ColumnHeader();
+            RemitoColum = new ColumnHeader();
             CancelarBtn = new Button();
             SuspendLayout();
             // 
-            // GenerarBtn
+            // ConfirmarBtn
             // 
-            GenerarBtn.Location = new Point(503, 316);
-            GenerarBtn.Name = "GenerarBtn";
-            GenerarBtn.Size = new Size(105, 30);
-            GenerarBtn.TabIndex = 12;
-            GenerarBtn.Text = "Generar";
-            GenerarBtn.UseVisualStyleBackColor = true;
+            ConfirmarBtn.Location = new Point(503, 316);
+            ConfirmarBtn.Name = "ConfirmarBtn";
+            ConfirmarBtn.Size = new Size(105, 30);
+            ConfirmarBtn.TabIndex = 12;
+            ConfirmarBtn.Text = "Confirmar";
+            ConfirmarBtn.UseVisualStyleBackColor = true;
+            ConfirmarBtn.Click += ConfirmarBtn_Click;
             // 
             // label1
             // 
@@ -57,16 +58,16 @@
             label1.TabIndex = 11;
             label1.Text = "Detalle de ordenes";
             // 
-            // listView2
+            // listOrdenesDeEntrega
             // 
-            listView2.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
-            listView2.GridLines = true;
-            listView2.Location = new Point(52, 66);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(667, 234);
-            listView2.TabIndex = 10;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.Details;
+            listOrdenesDeEntrega.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, RemitoColum });
+            listOrdenesDeEntrega.GridLines = true;
+            listOrdenesDeEntrega.Location = new Point(52, 66);
+            listOrdenesDeEntrega.Name = "listOrdenesDeEntrega";
+            listOrdenesDeEntrega.Size = new Size(667, 234);
+            listOrdenesDeEntrega.TabIndex = 10;
+            listOrdenesDeEntrega.UseCompatibleStateImageBehavior = false;
+            listOrdenesDeEntrega.View = View.Details;
             // 
             // NumeroColum
             // 
@@ -91,11 +92,11 @@
             TranspColum.TextAlign = HorizontalAlignment.Center;
             TranspColum.Width = 130;
             // 
-            // EstadoColum
+            // RemitoColum
             // 
-            EstadoColum.Text = "Estado";
-            EstadoColum.TextAlign = HorizontalAlignment.Center;
-            EstadoColum.Width = 130;
+            RemitoColum.Text = "Remito";
+            RemitoColum.TextAlign = HorizontalAlignment.Center;
+            RemitoColum.Width = 130;
             // 
             // CancelarBtn
             // 
@@ -105,15 +106,16 @@
             CancelarBtn.TabIndex = 9;
             CancelarBtn.Text = "Cancelar";
             CancelarBtn.UseVisualStyleBackColor = true;
+            CancelarBtn.Click += CancelarBtn_Click;
             // 
             // GenerarRemitosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 398);
-            Controls.Add(GenerarBtn);
+            Controls.Add(ConfirmarBtn);
             Controls.Add(label1);
-            Controls.Add(listView2);
+            Controls.Add(listOrdenesDeEntrega);
             Controls.Add(CancelarBtn);
             Name = "GenerarRemitosForm";
             Text = "Generar Remitos";
@@ -123,14 +125,14 @@
 
         #endregion
 
-        private Button GenerarBtn;
+        private Button ConfirmarBtn;
         private Label label1;
-        private ListView listView2;
+        private ListView listOrdenesDeEntrega;
         private ColumnHeader NumeroColum;
         private ColumnHeader ClienteColum;
         private ColumnHeader FechaColum;
         private ColumnHeader TranspColum;
-        private ColumnHeader EstadoColum;
+        private ColumnHeader RemitoColum;
         private Button CancelarBtn;
     }
 }

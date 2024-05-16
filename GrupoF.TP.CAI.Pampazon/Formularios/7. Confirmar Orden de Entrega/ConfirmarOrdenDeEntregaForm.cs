@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +25,15 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
-
+            if (listOrdenesPreparadas.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar una orden.");
+            }
+            else
+            {
+                OrdenDespachadaForm ordenDespachadaForm = new OrdenDespachadaForm();
+                ordenDespachadaForm.ShowDialog();
+            }
         }
 
         private void CancelarBtn_Click(object sender, EventArgs e)

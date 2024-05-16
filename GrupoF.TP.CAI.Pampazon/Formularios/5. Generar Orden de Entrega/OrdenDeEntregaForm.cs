@@ -24,7 +24,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         private void GenerarBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("La orden de entrega ha sido generada.");
+            MessageBox.Show("La orden de entrega ha sido generada con éxito.");
         }
     }
 }

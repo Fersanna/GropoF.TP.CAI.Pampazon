@@ -30,7 +30,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
-            if (listOrdenesEntrega.SelectedItems.Count == 0)
+            if (listOrdenesSeleccionadas.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Debe seleccionar una o varias ordenes.");
             }

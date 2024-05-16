@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,19 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
         private void CancelarBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void ConfirmarBtn_Click(object sender, EventArgs e)
+        {
+            if (listOrdenesEnSeleccion.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar una orden.");
+            }
+            else
+            {
+                InventarioForm inventarioForm = new InventarioForm();
+                inventarioForm.ShowDialog();
+            }
         }
     }
 }

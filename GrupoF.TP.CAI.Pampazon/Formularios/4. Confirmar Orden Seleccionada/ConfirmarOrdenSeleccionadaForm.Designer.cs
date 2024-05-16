@@ -30,7 +30,7 @@
         {
             ConfirmarBtn = new Button();
             CancelarBtn = new Button();
-            listView1 = new ListView();
+            listOrdenesEnSeleccion = new ListView();
             NumeroColum = new ColumnHeader();
             ClienteColum = new ColumnHeader();
             FechaColum = new ColumnHeader();
@@ -47,6 +47,7 @@
             ConfirmarBtn.TabIndex = 2;
             ConfirmarBtn.Text = "Confirmar";
             ConfirmarBtn.UseVisualStyleBackColor = true;
+            ConfirmarBtn.Click += ConfirmarBtn_Click;
             // 
             // CancelarBtn
             // 
@@ -58,16 +59,16 @@
             CancelarBtn.UseVisualStyleBackColor = true;
             CancelarBtn.Click += CancelarBtn_Click;
             // 
-            // listView1
+            // listOrdenesEnSeleccion
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
-            listView1.GridLines = true;
-            listView1.Location = new Point(40, 46);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(669, 248);
-            listView1.TabIndex = 6;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            listOrdenesEnSeleccion.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
+            listOrdenesEnSeleccion.GridLines = true;
+            listOrdenesEnSeleccion.Location = new Point(40, 46);
+            listOrdenesEnSeleccion.Name = "listOrdenesEnSeleccion";
+            listOrdenesEnSeleccion.Size = new Size(669, 248);
+            listOrdenesEnSeleccion.TabIndex = 6;
+            listOrdenesEnSeleccion.UseCompatibleStateImageBehavior = false;
+            listOrdenesEnSeleccion.View = View.Details;
             // 
             // NumeroColum
             // 
@@ -114,7 +115,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(752, 372);
             Controls.Add(label1);
-            Controls.Add(listView1);
+            Controls.Add(listOrdenesEnSeleccion);
             Controls.Add(CancelarBtn);
             Controls.Add(ConfirmarBtn);
             Name = "ConfirmarOrdenSeleccionadaForm";
@@ -127,7 +128,7 @@
         #endregion
         private Button ConfirmarBtn;
         private Button CancelarBtn;
-        private ListView listView1;
+        private ListView listOrdenesEnSeleccion;
         private ColumnHeader NumeroColum;
         private ColumnHeader ClienteColum;
         private ColumnHeader FechaColum;

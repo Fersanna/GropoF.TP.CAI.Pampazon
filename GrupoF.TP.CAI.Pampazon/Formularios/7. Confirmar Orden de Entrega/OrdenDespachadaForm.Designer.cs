@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem1 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "Despachada" }, -1);
-            ListViewItem listViewItem2 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "Despachada" }, -1);
-            listView1 = new ListView();
+            ListViewItem listViewItem3 = new ListViewItem(new string[] { "P-000001", "01", "13/05/24", "Express Cargo", "Despachada" }, -1);
+            ListViewItem listViewItem4 = new ListViewItem(new string[] { "P-000002", "02", "13/05/24", "Logística Global", "Despachada" }, -1);
+            listOrdenesDespachadas = new ListView();
             NumeroColum = new ColumnHeader();
             ClienteColum = new ColumnHeader();
             FechaColum = new ColumnHeader();
             TranspColum = new ColumnHeader();
             EstadoColum = new ColumnHeader();
             label1 = new Label();
-            CancelarBtn = new Button();
+            AceptarBtn = new Button();
             SuspendLayout();
             // 
-            // listView1
+            // listOrdenesDespachadas
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
-            listView1.GridLines = true;
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2 });
-            listView1.Location = new Point(34, 64);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(669, 202);
-            listView1.TabIndex = 9;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            listOrdenesDespachadas.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
+            listOrdenesDespachadas.GridLines = true;
+            listOrdenesDespachadas.Items.AddRange(new ListViewItem[] { listViewItem3, listViewItem4 });
+            listOrdenesDespachadas.Location = new Point(34, 64);
+            listOrdenesDespachadas.Name = "listOrdenesDespachadas";
+            listOrdenesDespachadas.Size = new Size(669, 202);
+            listOrdenesDespachadas.TabIndex = 9;
+            listOrdenesDespachadas.UseCompatibleStateImageBehavior = false;
+            listOrdenesDespachadas.View = View.Details;
             // 
             // NumeroColum
             // 
@@ -91,23 +91,24 @@
             label1.TabIndex = 10;
             label1.Text = "Listado de ordenes de preparación";
             // 
-            // CancelarBtn
+            // AceptarBtn
             // 
-            CancelarBtn.Location = new Point(600, 290);
-            CancelarBtn.Name = "CancelarBtn";
-            CancelarBtn.Size = new Size(103, 26);
-            CancelarBtn.TabIndex = 11;
-            CancelarBtn.Text = "Aceptar";
-            CancelarBtn.UseVisualStyleBackColor = true;
+            AceptarBtn.Location = new Point(600, 290);
+            AceptarBtn.Name = "AceptarBtn";
+            AceptarBtn.Size = new Size(103, 26);
+            AceptarBtn.TabIndex = 11;
+            AceptarBtn.Text = "Aceptar";
+            AceptarBtn.UseVisualStyleBackColor = true;
+            AceptarBtn.Click += AceptarBtn_Click;
             // 
             // OrdenDespachadaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(751, 351);
-            Controls.Add(CancelarBtn);
+            Controls.Add(AceptarBtn);
             Controls.Add(label1);
-            Controls.Add(listView1);
+            Controls.Add(listOrdenesDespachadas);
             Name = "OrdenDespachadaForm";
             Text = "OrdenDespachadaForm";
             ResumeLayout(false);
@@ -116,13 +117,13 @@
 
         #endregion
 
-        private ListView listView1;
+        private ListView listOrdenesDespachadas;
         private ColumnHeader NumeroColum;
         private ColumnHeader ClienteColum;
         private ColumnHeader FechaColum;
         private ColumnHeader TranspColum;
         private ColumnHeader EstadoColum;
         private Label label1;
-        private Button CancelarBtn;
+        private Button AceptarBtn;
     }
 }

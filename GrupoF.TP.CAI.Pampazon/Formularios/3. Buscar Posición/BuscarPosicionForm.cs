@@ -24,7 +24,6 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
 
         private void ConsultarBtn_Click(object sender, EventArgs e)
         {
-
             if (listOrdenesDeSeleccion.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Debe seleccionar una orden.");
@@ -34,7 +33,6 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
                 InventarioForm inventarioForm = new InventarioForm();
                 inventarioForm.ShowDialog();
             }
-            
         }
     }
 }
