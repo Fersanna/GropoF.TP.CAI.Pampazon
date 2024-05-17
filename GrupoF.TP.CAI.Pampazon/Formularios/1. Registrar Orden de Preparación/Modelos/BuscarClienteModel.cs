@@ -10,7 +10,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
     public class BuscarClienteModel
     {
         public Clientes ClienteSeleccionado { get; set; }
-        public OrdenDeSeleccion ClienteOrden { get; set; }
+        public OrdenDePreparacion ClienteOrden { get; set; }
         public string Cuit { get; set; }
         public List<Clientes> Clientes { get; set; } = new List<Clientes>
 

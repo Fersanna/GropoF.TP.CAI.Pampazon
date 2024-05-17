@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrupoF.TP.CAI.Pampazon.Clases_Auxiliares
 {
-    public class OrdenDeSeleccion
+    public class OrdenDePreparacion
     {
         private static int contadorOrdenes = 0;
         public string NumeroDeOrden {get; set; }
@@ -20,7 +20,7 @@ namespace GrupoF.TP.CAI.Pampazon.Clases_Auxiliares
         public List<Productos> ProductosOrden {get; set; }
 
 
-        public OrdenDeSeleccion()
+        public OrdenDePreparacion()
         {
             ProductosOrden = new List<Productos>();
 

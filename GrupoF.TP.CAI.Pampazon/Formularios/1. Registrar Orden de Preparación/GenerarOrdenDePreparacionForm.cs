@@ -116,7 +116,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
 
                     if (model.ClienteOrden == null)
                     {
-                        model.ClienteOrden = new OrdenDeSeleccion();
+                        model.ClienteOrden = new OrdenDePreparacion();
                         model.ClienteOrden.CodigoCliente = model.ClienteSeleccionado.CodigoCliente;
                         model.ClienteOrden.ProductosOrden = new List<Productos>();
                     }

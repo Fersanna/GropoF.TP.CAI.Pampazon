@@ -1,4 +1,5 @@
-﻿using GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección;
+﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace GrupoF.TP.CAI.Pampazon
 {
     public partial class GenerarOrdenDeSeleccionForm : Form
     {
+        OrdenDeSeleccionModel model;
         public GenerarOrdenDeSeleccionForm()
         {
             InitializeComponent();
@@ -22,7 +24,9 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void GenerarOrdenDeSeleccionForm_Load(object sender, EventArgs e)
         {
-            AgregarDatosDePrueba();
+            model = new OrdenDeSeleccionModel();
+
+            CargarOrdenesDePreparacion();
         }
 
         private void CancelarBtn_Click(object sender, EventArgs e)
@@ -49,42 +53,28 @@ namespace GrupoF.TP.CAI.Pampazon
                 }
 
                 OrdenDeSeleccionForm ordenDeSeleccionForm = new OrdenDeSeleccionForm();
-                ordenDeSeleccionForm.CargarDatos(items);
+               // ordenDeSeleccionForm.CargarDatos(items);
                 ordenDeSeleccionForm.ShowDialog();
             }
         }
 
-        private void AgregarDatosDePrueba()
+        private void CargarOrdenesDePreparacion()
         {
-            ListViewItem item1 = new ListViewItem("P-000001");
-            item1.SubItems.Add("001");
-            item1.SubItems.Add("13/05/24");
-            item1.SubItems.Add("Transportista 1");
-            item1.SubItems.Add("Pendiente");
+            listOrdenesPendientes.Items.Clear();
 
-            ListViewItem item2 = new ListViewItem("P-000002");
-            item2.SubItems.Add("002");
-            item2.SubItems.Add("13/05/24");
-            item2.SubItems.Add("Transportista 2");
-            item2.SubItems.Add("Pendiente");
+            foreach (OrdenDePreparacion ordenes in model.OrdenDePreparacion)
+            {
+                ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
+                item.SubItems.Add(ordenes.CodigoCliente);
+                item.SubItems.Add(ordenes.Fecha.ToString());
+                item.SubItems.Add(ordenes.CodigoTransportista);
+                item.SubItems.Add(ordenes.EstadoOrden);
 
-            ListViewItem item3 = new ListViewItem("P-000003");
-            item3.SubItems.Add("003");
-            item3.SubItems.Add("14/05/24");
-            item3.SubItems.Add("Transportista 3");
-            item3.SubItems.Add("Pendiente");
+                listOrdenesPendientes.Items.Add(item);
 
-            ListViewItem item4 = new ListViewItem("P-000004");
-            item4.SubItems.Add("002");
-            item4.SubItems.Add("15/05/24");
-            item4.SubItems.Add("Transportista 4");
-            item4.SubItems.Add("Pendiente");
-
-            // Agregar elementos al ListView
-            listOrdenesPendientes.Items.Add(item1);
-            listOrdenesPendientes.Items.Add(item2);
-            listOrdenesPendientes.Items.Add(item3);
-            listOrdenesPendientes.Items.Add(item4);
+                item.Tag=ordenes;
+            }
+            
         }
     }
 }
