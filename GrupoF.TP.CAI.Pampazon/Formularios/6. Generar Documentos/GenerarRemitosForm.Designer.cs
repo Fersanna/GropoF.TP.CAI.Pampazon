@@ -61,6 +61,7 @@
             // listOrdenesDeEntrega
             // 
             listOrdenesDeEntrega.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, RemitoColum });
+            listOrdenesDeEntrega.FullRowSelect = true;
             listOrdenesDeEntrega.GridLines = true;
             listOrdenesDeEntrega.Location = new Point(52, 66);
             listOrdenesDeEntrega.Name = "listOrdenesDeEntrega";
@@ -119,6 +120,7 @@
             Controls.Add(CancelarBtn);
             Name = "GenerarRemitosForm";
             Text = "Generar Remitos";
+            Load += GenerarRemitosForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

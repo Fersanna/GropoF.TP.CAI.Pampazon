@@ -62,6 +62,7 @@
             // listOrdenesSeleccionadas
             // 
             listOrdenesSeleccionadas.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
+            listOrdenesSeleccionadas.FullRowSelect = true;
             listOrdenesSeleccionadas.GridLines = true;
             listOrdenesSeleccionadas.Location = new Point(36, 56);
             listOrdenesSeleccionadas.Name = "listOrdenesSeleccionadas";

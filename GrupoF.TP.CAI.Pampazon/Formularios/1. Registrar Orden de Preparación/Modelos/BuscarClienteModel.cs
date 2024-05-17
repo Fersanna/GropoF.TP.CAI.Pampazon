@@ -19,7 +19,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
         new Clientes
         {
             CodigoCliente = "001",
-            RazonSocial = "Industrias Miranda",
+            RazonSocial = "Cliente 1",
             Cuit = "20-12345678-9",
             Domicilio = "Dirección 1",
             Productos = new List<Productos>
@@ -33,9 +33,9 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
                 },
                  new Productos
                 {
-                    IdProducto = "AA2",
-                    Descripcion = "Descripción del Producto 1",
-                    Posicion = "Almacén 2",
+                    IdProducto = "A2",
+                    Descripcion = "Producto 2",
+                    Posicion = "X-Y-Z",
                     Cantidad = 18
                 }
             }
@@ -44,16 +44,16 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
         new Clientes
         {
             CodigoCliente = "002",
-            RazonSocial = "Editorial Ramírez",
+            RazonSocial = "Cliente 2",
             Cuit = "20-87654321-9",
             Domicilio = "Dirección 2",
             Productos = new List<Productos>
             {
                 new Productos
                 {
-                    IdProducto = "AA2",
-                    Descripcion = "Descripción del Producto 1",
-                    Posicion = "Almacén 2",
+                    IdProducto = "A2",
+                    Descripcion = "Producto 2",
+                    Posicion = "X-Y-Z",
                     Cantidad = 18
                 }
             }
@@ -62,7 +62,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
         new Clientes
         {
             CodigoCliente = "003",
-            RazonSocial = "Constructora López",
+            RazonSocial = "Cliente 3",
             Cuit = "20-19283746-9",
             Domicilio = "Dirección 3"
 

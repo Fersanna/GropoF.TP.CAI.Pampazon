@@ -26,5 +26,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
         {
             MessageBox.Show("La orden de entrega ha sido generada con éxito.");
         }
+
+        public void CargarDatos(List<ListViewItem> items)
+        {
+            listOrdenesSeleccionadasConfirmadas.Items.AddRange(items.ToArray());
+        }
     }
 }

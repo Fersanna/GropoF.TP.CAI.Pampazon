@@ -46,11 +46,13 @@
             groupBox1 = new GroupBox();
             textBox5 = new TextBox();
             label6 = new Label();
+            CancelarBtn = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
             // dateTimePicker1
             // 
+            dateTimePicker1.Enabled = false;
             dateTimePicker1.Location = new Point(376, 51);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(191, 23);
@@ -58,6 +60,7 @@
             // 
             // Cuit_Box
             // 
+            Cuit_Box.Enabled = false;
             Cuit_Box.Location = new Point(93, 80);
             Cuit_Box.Margin = new Padding(3, 2, 3, 2);
             Cuit_Box.Mask = "00-00000000-0";
@@ -90,6 +93,7 @@
             // ProductosList
             // 
             ProductosList.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2 });
+            ProductosList.Enabled = false;
             ProductosList.FullRowSelect = true;
             ProductosList.GridLines = true;
             ProductosList.Location = new Point(29, 173);
@@ -111,6 +115,7 @@
             // 
             // textBox1
             // 
+            textBox1.Enabled = false;
             textBox1.Location = new Point(93, 22);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(200, 23);
@@ -128,6 +133,7 @@
             // 
             // textBox2
             // 
+            textBox2.Enabled = false;
             textBox2.Location = new Point(304, 9);
             textBox2.Name = "textBox2";
             textBox2.ReadOnly = true;
@@ -138,7 +144,7 @@
             // 
             // ImprimirBtn
             // 
-            ImprimirBtn.Location = new Point(512, 388);
+            ImprimirBtn.Location = new Point(413, 388);
             ImprimirBtn.Name = "ImprimirBtn";
             ImprimirBtn.Size = new Size(94, 25);
             ImprimirBtn.TabIndex = 41;
@@ -148,6 +154,7 @@
             // 
             // textBox3
             // 
+            textBox3.Enabled = false;
             textBox3.Location = new Point(93, 51);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(200, 23);
@@ -164,6 +171,7 @@
             // 
             // textBox4
             // 
+            textBox4.Enabled = false;
             textBox4.Location = new Point(376, 22);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(102, 23);
@@ -198,6 +206,7 @@
             // 
             // textBox5
             // 
+            textBox5.Enabled = false;
             textBox5.Location = new Point(86, 355);
             textBox5.Name = "textBox5";
             textBox5.Size = new Size(97, 23);
@@ -212,11 +221,22 @@
             label6.TabIndex = 47;
             label6.Text = "Total";
             // 
+            // CancelarBtn
+            // 
+            CancelarBtn.Location = new Point(512, 388);
+            CancelarBtn.Name = "CancelarBtn";
+            CancelarBtn.Size = new Size(94, 25);
+            CancelarBtn.TabIndex = 49;
+            CancelarBtn.Text = "Cancelar";
+            CancelarBtn.UseVisualStyleBackColor = true;
+            CancelarBtn.Click += CancelarBtn_Click;
+            // 
             // RemitosForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(637, 425);
+            Controls.Add(CancelarBtn);
             Controls.Add(label6);
             Controls.Add(textBox5);
             Controls.Add(groupBox1);
@@ -251,5 +271,6 @@
         private GroupBox groupBox1;
         private TextBox textBox5;
         private Label label6;
+        private Button CancelarBtn;
     }
 }

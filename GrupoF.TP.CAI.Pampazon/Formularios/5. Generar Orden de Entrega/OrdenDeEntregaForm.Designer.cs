@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             CancelarBtn = new Button();
-            listView2 = new ListView();
+            listOrdenesSeleccionadasConfirmadas = new ListView();
             NumeroColum = new ColumnHeader();
             ClienteColum = new ColumnHeader();
             FechaColum = new ColumnHeader();
@@ -49,16 +49,16 @@
             CancelarBtn.UseVisualStyleBackColor = true;
             CancelarBtn.Click += CancelarBtn_Click;
             // 
-            // listView2
+            // listOrdenesSeleccionadasConfirmadas
             // 
-            listView2.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
-            listView2.GridLines = true;
-            listView2.Location = new Point(27, 45);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(667, 234);
-            listView2.TabIndex = 6;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.Details;
+            listOrdenesSeleccionadasConfirmadas.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
+            listOrdenesSeleccionadasConfirmadas.GridLines = true;
+            listOrdenesSeleccionadasConfirmadas.Location = new Point(27, 45);
+            listOrdenesSeleccionadasConfirmadas.Name = "listOrdenesSeleccionadasConfirmadas";
+            listOrdenesSeleccionadasConfirmadas.Size = new Size(667, 234);
+            listOrdenesSeleccionadasConfirmadas.TabIndex = 6;
+            listOrdenesSeleccionadasConfirmadas.UseCompatibleStateImageBehavior = false;
+            listOrdenesSeleccionadasConfirmadas.View = View.Details;
             // 
             // NumeroColum
             // 
@@ -115,7 +115,7 @@
             ClientSize = new Size(744, 366);
             Controls.Add(GenerarBtn);
             Controls.Add(label1);
-            Controls.Add(listView2);
+            Controls.Add(listOrdenesSeleccionadasConfirmadas);
             Controls.Add(CancelarBtn);
             Name = "OrdenDeEntregaForm";
             Text = "Orden de Entrega";
@@ -125,7 +125,7 @@
 
         #endregion
         private Button CancelarBtn;
-        private ListView listView2;
+        private ListView listOrdenesSeleccionadasConfirmadas;
         private ColumnHeader NumeroColum;
         private ColumnHeader ClienteColum;
         private ColumnHeader FechaColum;

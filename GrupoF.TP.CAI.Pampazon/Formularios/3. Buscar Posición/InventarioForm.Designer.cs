@@ -30,7 +30,7 @@
         {
             ConfirmarBtn = new Button();
             CancelarBtn = new Button();
-            ProductosList = new ListView();
+            listInventario = new ListView();
             IdProducto_Header = new ColumnHeader();
             Descripcion_Header = new ColumnHeader();
             Posicion_Header = new ColumnHeader();
@@ -59,17 +59,17 @@
             CancelarBtn.UseVisualStyleBackColor = true;
             CancelarBtn.Click += CancelarBtn_Click;
             // 
-            // ProductosList
+            // listInventario
             // 
-            ProductosList.Columns.AddRange(new ColumnHeader[] { IdProducto_Header, Descripcion_Header, Posicion_Header, Cantidad_Header, Cliente_Header });
-            ProductosList.FullRowSelect = true;
-            ProductosList.GridLines = true;
-            ProductosList.Location = new Point(53, 61);
-            ProductosList.Name = "ProductosList";
-            ProductosList.Size = new Size(604, 268);
-            ProductosList.TabIndex = 3;
-            ProductosList.UseCompatibleStateImageBehavior = false;
-            ProductosList.View = View.Details;
+            listInventario.Columns.AddRange(new ColumnHeader[] { IdProducto_Header, Descripcion_Header, Posicion_Header, Cantidad_Header, Cliente_Header });
+            listInventario.FullRowSelect = true;
+            listInventario.GridLines = true;
+            listInventario.Location = new Point(53, 61);
+            listInventario.Name = "listInventario";
+            listInventario.Size = new Size(604, 268);
+            listInventario.TabIndex = 3;
+            listInventario.UseCompatibleStateImageBehavior = false;
+            listInventario.View = View.Details;
             // 
             // IdProducto_Header
             // 
@@ -115,11 +115,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(732, 427);
             Controls.Add(label1);
-            Controls.Add(ProductosList);
+            Controls.Add(listInventario);
             Controls.Add(CancelarBtn);
             Controls.Add(ConfirmarBtn);
             Name = "InventarioForm";
             Text = "Inventario";
+            Load += InventarioForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -127,7 +128,7 @@
         #endregion
         private Button ConfirmarBtn;
         private Button CancelarBtn;
-        private ListView ProductosList;
+        private ListView listInventario;
         private ColumnHeader IdProducto_Header;
         private ColumnHeader Descripcion_Header;
         private ColumnHeader Posicion_Header;

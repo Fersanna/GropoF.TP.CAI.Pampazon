@@ -29,19 +29,21 @@
         private void InitializeComponent()
         {
             GenerarBtn = new Button();
-            button1 = new Button();
-            listView1 = new ListView();
+            CancelarBtn = new Button();
+            listOrdenesPendientesConfirmadas = new ListView();
             NumeroColum = new ColumnHeader();
             ClienteColum = new ColumnHeader();
             FechaColum = new ColumnHeader();
             TranspColum = new ColumnHeader();
             EstadoColum = new ColumnHeader();
             label1 = new Label();
+            label4 = new Label();
+            PrioridadBox = new TextBox();
             SuspendLayout();
             // 
             // GenerarBtn
             // 
-            GenerarBtn.Location = new Point(521, 283);
+            GenerarBtn.Location = new Point(520, 324);
             GenerarBtn.Name = "GenerarBtn";
             GenerarBtn.Size = new Size(100, 27);
             GenerarBtn.TabIndex = 1;
@@ -49,25 +51,26 @@
             GenerarBtn.UseVisualStyleBackColor = true;
             GenerarBtn.Click += GenerarBtn_Click;
             // 
-            // button1
+            // CancelarBtn
             // 
-            button1.Location = new Point(627, 283);
-            button1.Name = "button1";
-            button1.Size = new Size(100, 27);
-            button1.TabIndex = 4;
-            button1.Text = "Cancelar";
-            button1.UseVisualStyleBackColor = true;
+            CancelarBtn.Location = new Point(626, 324);
+            CancelarBtn.Name = "CancelarBtn";
+            CancelarBtn.Size = new Size(100, 27);
+            CancelarBtn.TabIndex = 4;
+            CancelarBtn.Text = "Cancelar";
+            CancelarBtn.UseVisualStyleBackColor = true;
+            CancelarBtn.Click += Cancelar_Click;
             // 
-            // listView1
+            // listOrdenesPendientesConfirmadas
             // 
-            listView1.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
-            listView1.GridLines = true;
-            listView1.Location = new Point(58, 47);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(669, 230);
-            listView1.TabIndex = 5;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            listOrdenesPendientesConfirmadas.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
+            listOrdenesPendientesConfirmadas.GridLines = true;
+            listOrdenesPendientesConfirmadas.Location = new Point(57, 88);
+            listOrdenesPendientesConfirmadas.Name = "listOrdenesPendientesConfirmadas";
+            listOrdenesPendientesConfirmadas.Size = new Size(669, 230);
+            listOrdenesPendientesConfirmadas.TabIndex = 5;
+            listOrdenesPendientesConfirmadas.UseCompatibleStateImageBehavior = false;
+            listOrdenesPendientesConfirmadas.View = View.Details;
             // 
             // NumeroColum
             // 
@@ -102,36 +105,57 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(58, 29);
+            label1.Location = new Point(57, 70);
             label1.Name = "label1";
             label1.Size = new Size(104, 15);
             label1.TabIndex = 6;
             label1.Text = "Detalle de ordenes";
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(57, 30);
+            label4.Name = "label4";
+            label4.Size = new Size(55, 15);
+            label4.TabIndex = 48;
+            label4.Text = "Prioridad";
+            // 
+            // PrioridadBox
+            // 
+            PrioridadBox.Location = new Point(118, 27);
+            PrioridadBox.Name = "PrioridadBox";
+            PrioridadBox.Size = new Size(102, 23);
+            PrioridadBox.TabIndex = 47;
+            // 
             // OrdenDeSeleccionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(782, 338);
+            ClientSize = new Size(782, 381);
+            Controls.Add(label4);
+            Controls.Add(PrioridadBox);
             Controls.Add(label1);
-            Controls.Add(listView1);
-            Controls.Add(button1);
+            Controls.Add(listOrdenesPendientesConfirmadas);
+            Controls.Add(CancelarBtn);
             Controls.Add(GenerarBtn);
             Name = "OrdenDeSeleccionForm";
             Text = "Orden de Seleccion";
+            Load += OrdenDeSeleccionForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
         private Button GenerarBtn;
-        private Button button1;
-        private ListView listView1;
+        private Button CancelarBtn;
+        private ListView listOrdenesPendientesConfirmadas;
         private ColumnHeader NumeroColum;
         private ColumnHeader ClienteColum;
         private ColumnHeader FechaColum;
         private ColumnHeader TranspColum;
         private ColumnHeader EstadoColum;
         private Label label1;
+        private Label label4;
+        private TextBox PrioridadBox;
     }
 }

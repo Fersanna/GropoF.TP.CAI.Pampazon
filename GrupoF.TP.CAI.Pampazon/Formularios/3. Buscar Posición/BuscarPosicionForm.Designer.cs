@@ -59,6 +59,7 @@
             // listOrdenesDeSeleccion
             // 
             listOrdenesDeSeleccion.Columns.AddRange(new ColumnHeader[] { NumeroColum, FechaColum });
+            listOrdenesDeSeleccion.FullRowSelect = true;
             listOrdenesDeSeleccion.GridLines = true;
             listOrdenesDeSeleccion.Location = new Point(66, 44);
             listOrdenesDeSeleccion.Name = "listOrdenesDeSeleccion";
@@ -98,6 +99,7 @@
             Controls.Add(ConsultarBtn);
             Name = "BuscarPosicionForm";
             Text = "Buscar Posición";
+            Load += BuscarPosicionForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

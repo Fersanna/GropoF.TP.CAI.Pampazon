@@ -49,6 +49,7 @@
             // listOrdenesPendientes
             // 
             listOrdenesPendientes.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
+            listOrdenesPendientes.FullRowSelect = true;
             listOrdenesPendientes.GridLines = true;
             listOrdenesPendientes.Location = new Point(42, 119);
             listOrdenesPendientes.Name = "listOrdenesPendientes";

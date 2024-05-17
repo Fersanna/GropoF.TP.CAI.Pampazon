@@ -36,5 +36,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
         {
             MessageBox.Show("El remito se ha generado con éxito.");
         }
+
+        private void CancelarBtn_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

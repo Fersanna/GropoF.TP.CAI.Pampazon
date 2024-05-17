@@ -37,6 +37,7 @@
             TranspColum = new ColumnHeader();
             EstadoColum = new ColumnHeader();
             label1 = new Label();
+            SiguienteBtn = new Button();
             SuspendLayout();
             // 
             // ConfirmarBtn
@@ -62,6 +63,7 @@
             // listOrdenesPreparadas
             // 
             listOrdenesPreparadas.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
+            listOrdenesPreparadas.FullRowSelect = true;
             listOrdenesPreparadas.GridLines = true;
             listOrdenesPreparadas.Location = new Point(30, 57);
             listOrdenesPreparadas.Name = "listOrdenesPreparadas";
@@ -110,11 +112,22 @@
             label1.Text = "Listado de ordenes de preparación";
             label1.Click += label1_Click;
             // 
+            // SiguienteBtn
+            // 
+            SiguienteBtn.Location = new Point(30, 278);
+            SiguienteBtn.Name = "SiguienteBtn";
+            SiguienteBtn.Size = new Size(103, 26);
+            SiguienteBtn.TabIndex = 10;
+            SiguienteBtn.Text = "Siguiente";
+            SiguienteBtn.UseVisualStyleBackColor = true;
+            SiguienteBtn.Click += SiguienteBtn_Click;
+            // 
             // ConfirmarOrdenDeEntregaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(744, 361);
+            Controls.Add(SiguienteBtn);
             Controls.Add(label1);
             Controls.Add(listOrdenesPreparadas);
             Controls.Add(CancelarBtn);
@@ -136,5 +149,6 @@
         private ColumnHeader TranspColum;
         private ColumnHeader EstadoColum;
         private Label label1;
+        private Button SiguienteBtn;
     }
 }

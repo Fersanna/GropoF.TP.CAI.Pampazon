@@ -17,6 +17,11 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
             InitializeComponent();
         }
 
+        public void CargarDatos(List<ListViewItem> items)
+        {
+            listOrdenesDespachadas.Items.AddRange(items.ToArray());
+        }
+
         private void AceptarBtn_Click(object sender, EventArgs e)
         {
             this.Close();

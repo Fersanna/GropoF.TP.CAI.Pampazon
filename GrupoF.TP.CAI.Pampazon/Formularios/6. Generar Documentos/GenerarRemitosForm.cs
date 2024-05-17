@@ -35,5 +35,22 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
         {
             this.Close();
         }
+
+        private void AgregarDatosDePrueba()
+        {
+            ListViewItem item1 = new ListViewItem("E-000001");
+            item1.SubItems.Add("001");
+            item1.SubItems.Add("13/05/24");
+            item1.SubItems.Add("Transportista 1");
+            item1.SubItems.Add("00001-00000001");
+
+            // Agregar elementos al ListView
+            listOrdenesDeEntrega.Items.Add(item1);
+        }
+
+        private void GenerarRemitosForm_Load(object sender, EventArgs e)
+        {
+            AgregarDatosDePrueba();
+        }
     }
 }
