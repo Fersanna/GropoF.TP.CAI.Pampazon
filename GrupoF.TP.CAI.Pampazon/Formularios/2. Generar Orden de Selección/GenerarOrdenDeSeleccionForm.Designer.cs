@@ -42,7 +42,7 @@
             label2 = new Label();
             HastadateTimePicker = new DateTimePicker();
             label3 = new Label();
-            textBox1 = new TextBox();
+            ClienteTextBox = new TextBox();
             label4 = new Label();
             SuspendLayout();
             // 
@@ -122,6 +122,7 @@
             FiltrarBtn.TabIndex = 3;
             FiltrarBtn.Text = "Filtrar";
             FiltrarBtn.UseVisualStyleBackColor = true;
+            FiltrarBtn.Click += FiltrarBtn_Click;
             // 
             // label1
             // 
@@ -169,13 +170,13 @@
             label3.TabIndex = 8;
             label3.Text = "Hasta";
             // 
-            // textBox1
+            // ClienteTextBox
             // 
-            textBox1.Location = new Point(349, 40);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(139, 27);
-            textBox1.TabIndex = 9;
+            ClienteTextBox.Location = new Point(349, 40);
+            ClienteTextBox.Margin = new Padding(3, 4, 3, 4);
+            ClienteTextBox.Name = "ClienteTextBox";
+            ClienteTextBox.Size = new Size(139, 27);
+            ClienteTextBox.TabIndex = 9;
             // 
             // label4
             // 
@@ -192,7 +193,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(862, 525);
             Controls.Add(label4);
-            Controls.Add(textBox1);
+            Controls.Add(ClienteTextBox);
             Controls.Add(label3);
             Controls.Add(HastadateTimePicker);
             Controls.Add(label2);
@@ -226,7 +227,7 @@
         private Label label2;
         private DateTimePicker HastadateTimePicker;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox ClienteTextBox;
         private Label label4;
     }
 }

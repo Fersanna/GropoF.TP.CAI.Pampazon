@@ -48,7 +48,7 @@ namespace GrupoF.TP.CAI.Pampazon
                 model = model
             };
             ordenDeSeleccionForm.ShowDialog();
-         
+
             CargarOrdenesDePreparacion();
         }
 
@@ -96,5 +96,19 @@ namespace GrupoF.TP.CAI.Pampazon
 
         }
 
+        private void FiltrarBtn_Click(object sender, EventArgs e)
+        {
+            model.Cliente = ClienteTextBox.Text;
+
+           var error = model.ValidarFiltro();
+
+            if (error != null)
+            {
+                MessageBox.Show (error);
+                return;
+            }
+
+           
+        }
     }
 }
