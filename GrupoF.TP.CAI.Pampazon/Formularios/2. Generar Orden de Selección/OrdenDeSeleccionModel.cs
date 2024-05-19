@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 {
-    internal class OrdenDeSeleccionModel
-    {
+    public class OrdenDeSeleccionModel
+    {   
+
         public List<OrdenDePreparacion> OrdenDePreparacion { get; set; } = new List<OrdenDePreparacion>
         {
             new OrdenDePreparacion

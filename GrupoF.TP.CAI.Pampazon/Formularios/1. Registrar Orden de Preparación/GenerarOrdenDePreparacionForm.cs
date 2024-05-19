@@ -167,9 +167,14 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                         MessageBox.Show("La cantidad ingresada no es válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         e.Cancel = true; // Cancela la edición
                     }
-                    else if (producto != null)
+                    if (producto != null)
                     {
                         producto.Cantidad = nuevaCantidad;
+                    }
+                    if (nuevaCantidad < 0)
+                    {
+                        MessageBox.Show("La cantidad no puede ser menor que cero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        e.Cancel = true; // Cancela la edición
                     }
 
                 }
@@ -221,7 +226,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
 
                     else
                     {
-                        MessageBox.Show( "El producto ha sido eliminado");
+                        MessageBox.Show("El producto ha sido eliminado");
                     }
                 }
 

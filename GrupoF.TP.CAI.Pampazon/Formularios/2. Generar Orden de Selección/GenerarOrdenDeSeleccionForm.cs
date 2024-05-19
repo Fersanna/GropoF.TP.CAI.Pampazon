@@ -53,7 +53,8 @@ namespace GrupoF.TP.CAI.Pampazon
                 }
 
                 OrdenDeSeleccionForm ordenDeSeleccionForm = new OrdenDeSeleccionForm();
-               // ordenDeSeleccionForm.CargarDatos(items);
+                ordenDeSeleccionForm.model = model;
+                 // ordenDeSeleccionForm.CargarDatos(items);
                 ordenDeSeleccionForm.ShowDialog();
             }
         }
@@ -72,9 +73,17 @@ namespace GrupoF.TP.CAI.Pampazon
 
                 listOrdenesPendientes.Items.Add(item);
 
-                item.Tag=ordenes;
+                item.Tag = ordenes;
             }
-            
+
         }
+
+        private void listOrdenesPendientes_MouseClick(object sender, MouseEventArgs e)
+        {
+            MessageBox.Show("La orden fue seleccionada");
+
+
+        }
+               
     }
 }
