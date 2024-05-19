@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 {
     public class OrdenDeSeleccionModel
-    {   
+    {
 
         public List<OrdenDePreparacion> OrdenDePreparacion { get; set; } = new List<OrdenDePreparacion>
         {
@@ -46,7 +46,27 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
             }
         };
 
+        internal string ValidarOrden(OrdenDePreparacion ordenSeleccionada)
+        {
+            if (ordenSeleccionada.EstadoOrden == "Seleccionada")
+            {
+                DialogResult result = MessageBox.Show("Esta orden ya fue seleccionada. ¿Desea quitarla de la selección?", "Confirmación", MessageBoxButtons.OKCancel);
 
+                if (result == DialogResult.OK)
+                {
+                    RevertirEstadoOrden(ordenSeleccionada);
+                    return "Orden revertida a pendiente.";
+                }
+            }
+
+            return null;
+
+        }
+
+        private void RevertirEstadoOrden(OrdenDePreparacion ordenSeleccionada)
+        {
+            ordenSeleccionada.EstadoOrden = "Pendiente";
+        }
     }
 
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,7 +13,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 {
     public partial class OrdenDeSeleccionForm : Form
     {
-        public OrdenDeSeleccionModel model {get; set; } 
+        public OrdenDeSeleccionModel model { get; set; }
         public OrdenDeSeleccionForm()
         {
             InitializeComponent();
@@ -36,16 +37,29 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                 {
                     MessageBox.Show("Ingrese un valor válido para la prioridad (1, 2 o 3).");
                 }
-            }    
+            }
         }
 
         public void CargarDatos(List<ListViewItem> items)
         {
-            listOrdenesPendientesConfirmadas.Items.AddRange(items.ToArray());
+            ListOrdenesSeleccionConfirmadas.Items.AddRange(items.ToArray());
         }
 
         private void OrdenDeSeleccionForm_Load(object sender, EventArgs e)
         {
+             foreach (OrdenDePreparacion ordenesSeleccionada in model.OrdenDePreparacion)
+            {
+                        if (ordenesSeleccionada.EstadoOrden == "Seleccionada")
+                {
+                            ListViewItem item = new ListViewItem(ordenesSeleccionada.NumeroDeOrden);
+                            item.SubItems.Add(ordenesSeleccionada.CodigoCliente);
+                            item.SubItems.Add(ordenesSeleccionada.Fecha.ToString());
+                            item.SubItems.Add(ordenesSeleccionada.CodigoTransportista);
+                            item.SubItems.Add(ordenesSeleccionada.EstadoOrden);
+
+                            ListOrdenesSeleccionConfirmadas.Items.Add(item);
+                        }
+                    }
         }
 
         private void Cancelar_Click(object sender, EventArgs e)

@@ -36,27 +36,20 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
-            if (listOrdenesPendientes.SelectedItems.Count == 0)
+
+            if (!model.OrdenDePreparacion.Any(o => o.EstadoOrden == "Seleccionada"))
             {
                 MessageBox.Show("Debe seleccionar una o varias ordenes.");
+                return;
             }
-            else
+
+            OrdenDeSeleccionForm ordenDeSeleccionForm = new OrdenDeSeleccionForm
             {
-                // Crear una lista para almacenar los elementos seleccionados del ListView
-                List<ListViewItem> items = new List<ListViewItem>();
-
-                // Copiar los elementos seleccionados del ListView actual
-                foreach (ListViewItem item in listOrdenesPendientes.SelectedItems)
-                {
-                    ListViewItem newItem = (ListViewItem)item.Clone();
-                    items.Add(newItem);
-                }
-
-                OrdenDeSeleccionForm ordenDeSeleccionForm = new OrdenDeSeleccionForm();
-                ordenDeSeleccionForm.model = model;
-                 // ordenDeSeleccionForm.CargarDatos(items);
-                ordenDeSeleccionForm.ShowDialog();
-            }
+                model = model
+            };
+            ordenDeSeleccionForm.ShowDialog();
+         
+            CargarOrdenesDePreparacion();
         }
 
         private void CargarOrdenesDePreparacion()
@@ -80,10 +73,28 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void listOrdenesPendientes_MouseClick(object sender, MouseEventArgs e)
         {
+            if (listOrdenesPendientes.SelectedItems.Count > 0)
+            {
+                OrdenDePreparacion ordenSeleccionada = (OrdenDePreparacion)listOrdenesPendientes.SelectedItems[0].Tag as OrdenDePreparacion;
+
+
+                var error = model.ValidarOrden(ordenSeleccionada);
+
+                if (error != null)
+                {
+                    MessageBox.Show(error);
+                    CargarOrdenesDePreparacion();
+                    return;
+                }
+
+                ordenSeleccionada.EstadoOrden = "Seleccionada";
+
+                CargarOrdenesDePreparacion();
+            }
             MessageBox.Show("La orden fue seleccionada");
 
 
         }
-               
+
     }
 }
