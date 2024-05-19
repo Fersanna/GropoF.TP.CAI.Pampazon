@@ -64,7 +64,6 @@
             listOrdenesDeEntrega.FullRowSelect = true;
             listOrdenesDeEntrega.GridLines = true;
             listOrdenesDeEntrega.Location = new Point(52, 66);
-            listOrdenesDeEntrega.MultiSelect = false;
             listOrdenesDeEntrega.Name = "listOrdenesDeEntrega";
             listOrdenesDeEntrega.Size = new Size(667, 234);
             listOrdenesDeEntrega.TabIndex = 10;
