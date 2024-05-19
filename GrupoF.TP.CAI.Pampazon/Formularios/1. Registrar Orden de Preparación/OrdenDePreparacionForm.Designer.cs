@@ -44,11 +44,13 @@
             Cantidad_Header = new ColumnHeader();
             ClienteBox = new Label();
             FechaPicker = new DateTimePicker();
+            PrioridadBox = new TextBox();
+            label3 = new Label();
             SuspendLayout();
             // 
             // ConfirmarPrepBtn
             // 
-            ConfirmarPrepBtn.Location = new Point(434, 229);
+            ConfirmarPrepBtn.Location = new Point(434, 279);
             ConfirmarPrepBtn.Name = "ConfirmarPrepBtn";
             ConfirmarPrepBtn.Size = new Size(100, 26);
             ConfirmarPrepBtn.TabIndex = 1;
@@ -58,7 +60,7 @@
             // 
             // CancelarOrdenBtn
             // 
-            CancelarOrdenBtn.Location = new Point(540, 229);
+            CancelarOrdenBtn.Location = new Point(540, 279);
             CancelarOrdenBtn.Name = "CancelarOrdenBtn";
             CancelarOrdenBtn.Size = new Size(100, 26);
             CancelarOrdenBtn.TabIndex = 2;
@@ -78,7 +80,7 @@
             // ClienteNombreTextBox
             // 
             ClienteNombreTextBox.Enabled = false;
-            ClienteNombreTextBox.Location = new Point(10, 196);
+            ClienteNombreTextBox.Location = new Point(10, 245);
             ClienteNombreTextBox.Margin = new Padding(3, 2, 3, 2);
             ClienteNombreTextBox.Name = "ClienteNombreTextBox";
             ClienteNombreTextBox.Size = new Size(133, 23);
@@ -106,7 +108,7 @@
             // CodigoClienteTextBox
             // 
             CodigoClienteTextBox.Enabled = false;
-            CodigoClienteTextBox.Location = new Point(10, 147);
+            CodigoClienteTextBox.Location = new Point(10, 196);
             CodigoClienteTextBox.Margin = new Padding(3, 2, 3, 2);
             CodigoClienteTextBox.Name = "CodigoClienteTextBox";
             CodigoClienteTextBox.Size = new Size(133, 23);
@@ -115,7 +117,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(10, 130);
+            label2.Location = new Point(10, 179);
             label2.Name = "label2";
             label2.Size = new Size(18, 15);
             label2.TabIndex = 11;
@@ -136,7 +138,7 @@
             ProductosOrdenList.GridLines = true;
             ProductosOrdenList.Location = new Point(148, 55);
             ProductosOrdenList.Name = "ProductosOrdenList";
-            ProductosOrdenList.Size = new Size(492, 169);
+            ProductosOrdenList.Size = new Size(492, 214);
             ProductosOrdenList.TabIndex = 12;
             ProductosOrdenList.UseCompatibleStateImageBehavior = false;
             ProductosOrdenList.View = View.Details;
@@ -168,7 +170,7 @@
             // ClienteBox
             // 
             ClienteBox.AutoSize = true;
-            ClienteBox.Location = new Point(10, 180);
+            ClienteBox.Location = new Point(10, 229);
             ClienteBox.Name = "ClienteBox";
             ClienteBox.Size = new Size(44, 15);
             ClienteBox.TabIndex = 7;
@@ -184,11 +186,30 @@
             FechaPicker.TabIndex = 13;
             FechaPicker.Value = new DateTime(2024, 5, 10, 15, 54, 23, 0);
             // 
+            // PrioridadBox
+            // 
+            PrioridadBox.Location = new Point(10, 149);
+            PrioridadBox.Margin = new Padding(3, 2, 3, 2);
+            PrioridadBox.Name = "PrioridadBox";
+            PrioridadBox.Size = new Size(133, 23);
+            PrioridadBox.TabIndex = 14;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(10, 132);
+            label3.Name = "label3";
+            label3.Size = new Size(55, 15);
+            label3.TabIndex = 15;
+            label3.Text = "Prioridad";
+            // 
             // OrdenDePreparacionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(675, 275);
+            ClientSize = new Size(675, 328);
+            Controls.Add(label3);
+            Controls.Add(PrioridadBox);
             Controls.Add(FechaPicker);
             Controls.Add(ProductosOrdenList);
             Controls.Add(label2);
@@ -225,5 +246,7 @@
         private ColumnHeader Cantidad_Header;
         private Label ClienteBox;
         private DateTimePicker FechaPicker;
+        private TextBox PrioridadBox;
+        private Label label3;
     }
 }
