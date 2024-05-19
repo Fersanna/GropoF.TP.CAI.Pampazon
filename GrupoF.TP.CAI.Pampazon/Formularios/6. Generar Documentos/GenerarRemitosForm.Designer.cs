@@ -101,7 +101,7 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(614, 316);
+            CancelarBtn.Location = new Point(645, 316);
             CancelarBtn.Name = "CancelarBtn";
             CancelarBtn.Size = new Size(105, 30);
             CancelarBtn.TabIndex = 9;
