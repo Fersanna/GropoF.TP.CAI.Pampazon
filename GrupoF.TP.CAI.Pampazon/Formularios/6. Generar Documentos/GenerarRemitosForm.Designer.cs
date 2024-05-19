@@ -41,7 +41,7 @@
             // 
             // ConfirmarBtn
             // 
-            ConfirmarBtn.Location = new Point(503, 316);
+            ConfirmarBtn.Location = new Point(392, 316);
             ConfirmarBtn.Name = "ConfirmarBtn";
             ConfirmarBtn.Size = new Size(105, 30);
             ConfirmarBtn.TabIndex = 12;
