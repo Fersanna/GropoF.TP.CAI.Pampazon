@@ -21,22 +21,24 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         private void GenerarBtn_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(PrioridadBox.Text))
+            var ordenesSeleccionadas = model.OrdenDePreparacion.Where(o => o.EstadoOrden == "Seleccionada").ToList();
+
+            if (ordenesSeleccionadas.Any())
             {
-                MessageBox.Show("Complete el campo de prioridad (1, 2 o 3).");
+                var dialogResult = MessageBox.Show("¿Confirma las órdenes seleccionadas?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    model.OrdenesConfirmadas = ordenesSeleccionadas;
+                    MessageBox.Show("Órdenes seleccionadas y confirmadas.");
+
+                    this.Close();
+                }
+
             }
             else
             {
-                // Verifica si el contenido del TextBox es válido (1, 2 o 3)
-                if (PrioridadBox.Text == "1" || PrioridadBox.Text == "2" || PrioridadBox.Text == "3")
-                {
-                    // Aquí puedes colocar el código para generar algo
-                    MessageBox.Show("La orden de selección ha sido generada con éxito. Prioridad " + PrioridadBox.Text);
-                }
-                else
-                {
-                    MessageBox.Show("Ingrese un valor válido para la prioridad (1, 2 o 3).");
-                }
+                MessageBox.Show("No hay ordenes seleccionadas para confirmar.");
             }
         }
 
@@ -47,19 +49,19 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         private void OrdenDeSeleccionForm_Load(object sender, EventArgs e)
         {
-             foreach (OrdenDePreparacion ordenesSeleccionada in model.OrdenDePreparacion)
+            foreach (OrdenDePreparacion ordenesSeleccionada in model.OrdenDePreparacion)
             {
-                        if (ordenesSeleccionada.EstadoOrden == "Seleccionada")
+                if (ordenesSeleccionada.EstadoOrden == "Seleccionada")
                 {
-                            ListViewItem item = new ListViewItem(ordenesSeleccionada.NumeroDeOrden);
-                            item.SubItems.Add(ordenesSeleccionada.CodigoCliente);
-                            item.SubItems.Add(ordenesSeleccionada.Fecha.ToString());
-                            item.SubItems.Add(ordenesSeleccionada.CodigoTransportista);
-                            item.SubItems.Add(ordenesSeleccionada.EstadoOrden);
+                    ListViewItem item = new ListViewItem(ordenesSeleccionada.NumeroDeOrden);
+                    item.SubItems.Add(ordenesSeleccionada.CodigoCliente);
+                    item.SubItems.Add(ordenesSeleccionada.Fecha.ToString());
+                    item.SubItems.Add(ordenesSeleccionada.CodigoTransportista);
+                    item.SubItems.Add(ordenesSeleccionada.EstadoOrden);
 
-                            ListOrdenesSeleccionConfirmadas.Items.Add(item);
-                        }
-                    }
+                    ListOrdenesSeleccionConfirmadas.Items.Add(item);
+                }
+            }
         }
 
         private void Cancelar_Click(object sender, EventArgs e)

@@ -10,6 +10,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
     public class OrdenDeSeleccionModel
     {
         public string Cliente { get; set; }
+        public List<OrdenDePreparacion> OrdenesConfirmadas { get; set; }    
         public List<OrdenDePreparacion> OrdenDePreparacion { get; set; } = new List<OrdenDePreparacion>
         {
             new OrdenDePreparacion

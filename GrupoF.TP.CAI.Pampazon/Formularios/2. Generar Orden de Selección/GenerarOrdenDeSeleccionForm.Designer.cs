@@ -70,7 +70,7 @@
             // 
             ClienteColum.Text = "Cliente";
             ClienteColum.TextAlign = HorizontalAlignment.Center;
-            ClienteColum.Width = 130;
+            ClienteColum.Width = 160;
             // 
             // FechaColum
             // 
