@@ -44,10 +44,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
             MessageBox.Show("La orden de selección ha sido generada con éxito.");
         }
 
-        public void CargarDatos(List<ListViewItem> items)
-        {
-            ListOrdenesSeleccionConfirmadas.Items.AddRange(items.ToArray());
-        }
+    
 
         private void OrdenDeSeleccionForm_Load(object sender, EventArgs e)
         {
