@@ -40,7 +40,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
             {
                 MessageBox.Show("No hay ordenes seleccionadas para confirmar.");
             }
-=======
+
             MessageBox.Show("La orden de selección ha sido generada con éxito.");
         }
 
