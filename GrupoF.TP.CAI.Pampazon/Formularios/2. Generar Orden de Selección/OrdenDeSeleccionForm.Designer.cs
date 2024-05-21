@@ -37,16 +37,13 @@
             TranspColum = new ColumnHeader();
             EstadoColum = new ColumnHeader();
             label1 = new Label();
-            label4 = new Label();
-            PrioridadBox = new TextBox();
             SuspendLayout();
             // 
             // GenerarBtn
             // 
-            GenerarBtn.Location = new Point(594, 432);
-            GenerarBtn.Margin = new Padding(3, 4, 3, 4);
+            GenerarBtn.Location = new Point(520, 324);
             GenerarBtn.Name = "GenerarBtn";
-            GenerarBtn.Size = new Size(114, 36);
+            GenerarBtn.Size = new Size(100, 27);
             GenerarBtn.TabIndex = 1;
             GenerarBtn.Text = "Generar";
             GenerarBtn.UseVisualStyleBackColor = true;
@@ -54,10 +51,9 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(715, 432);
-            CancelarBtn.Margin = new Padding(3, 4, 3, 4);
+            CancelarBtn.Location = new Point(626, 324);
             CancelarBtn.Name = "CancelarBtn";
-            CancelarBtn.Size = new Size(114, 36);
+            CancelarBtn.Size = new Size(100, 27);
             CancelarBtn.TabIndex = 4;
             CancelarBtn.Text = "Cancelar";
             CancelarBtn.UseVisualStyleBackColor = true;
@@ -67,10 +63,9 @@
             // 
             ListOrdenesSeleccionConfirmadas.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
             ListOrdenesSeleccionConfirmadas.GridLines = true;
-            ListOrdenesSeleccionConfirmadas.Location = new Point(65, 117);
-            ListOrdenesSeleccionConfirmadas.Margin = new Padding(3, 4, 3, 4);
+            ListOrdenesSeleccionConfirmadas.Location = new Point(57, 51);
             ListOrdenesSeleccionConfirmadas.Name = "ListOrdenesSeleccionConfirmadas";
-            ListOrdenesSeleccionConfirmadas.Size = new Size(764, 305);
+            ListOrdenesSeleccionConfirmadas.Size = new Size(669, 267);
             ListOrdenesSeleccionConfirmadas.TabIndex = 5;
             ListOrdenesSeleccionConfirmadas.UseCompatibleStateImageBehavior = false;
             ListOrdenesSeleccionConfirmadas.View = View.Details;
@@ -108,41 +103,21 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(65, 93);
+            label1.Location = new Point(57, 33);
             label1.Name = "label1";
-            label1.Size = new Size(135, 20);
+            label1.Size = new Size(104, 15);
             label1.TabIndex = 6;
             label1.Text = "Detalle de ordenes";
             // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(65, 40);
-            label4.Name = "label4";
-            label4.Size = new Size(70, 20);
-            label4.TabIndex = 48;
-            label4.Text = "Prioridad";
-            // 
-            // PrioridadBox
-            // 
-            PrioridadBox.Location = new Point(135, 36);
-            PrioridadBox.Margin = new Padding(3, 4, 3, 4);
-            PrioridadBox.Name = "PrioridadBox";
-            PrioridadBox.Size = new Size(116, 27);
-            PrioridadBox.TabIndex = 47;
-            // 
             // OrdenDeSeleccionForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(894, 508);
-            Controls.Add(label4);
-            Controls.Add(PrioridadBox);
+            ClientSize = new Size(782, 381);
             Controls.Add(label1);
             Controls.Add(ListOrdenesSeleccionConfirmadas);
             Controls.Add(CancelarBtn);
             Controls.Add(GenerarBtn);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "OrdenDeSeleccionForm";
             Text = "Orden de Seleccion";
             Load += OrdenDeSeleccionForm_Load;
@@ -160,7 +135,5 @@
         private ColumnHeader TranspColum;
         private ColumnHeader EstadoColum;
         private Label label1;
-        private Label label4;
-        private TextBox PrioridadBox;
     }
 }
