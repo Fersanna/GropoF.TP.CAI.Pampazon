@@ -13,6 +13,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 {
     public partial class OrdenDeSeleccionForm : Form
     {
+        
         public OrdenDeSeleccionModel model { get; set; }
         public OrdenDeSeleccionForm()
         {
@@ -34,8 +35,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                 {
                     model.OrdenesConfirmadas = ordenesSeleccionadas;
                     MessageBox.Show("Órdenes seleccionadas y confirmadas.");
+                                         
 
                     this.Close();
+                   
                 }
                 else if (dialogResult == DialogResult.Cancel)
                 {

@@ -50,6 +50,8 @@ namespace GrupoF.TP.CAI.Pampazon
             ordenDeSeleccionForm.ShowDialog();
 
             CargarOrdenesDePreparacion();
+
+            this.Close();
         }
 
         private void CargarOrdenesDePreparacion()
@@ -99,16 +101,41 @@ namespace GrupoF.TP.CAI.Pampazon
         private void FiltrarBtn_Click(object sender, EventArgs e)
         {
             model.Cliente = ClienteTextBox.Text;
+            model.FechaDesde = DesdeTimePicker.Value;
+            model.FechaHasta = HastadateTimePicker.Value;
 
-           var error = model.ValidarFiltro();
+            var error = model.ValidarFiltro();
 
             if (error != null)
             {
-                MessageBox.Show (error);
+                MessageBox.Show(error);
                 return;
             }
 
-           
+            var ordenesFiltradas = model.FiltrarOrdenes().ToList();
+
+            listOrdenesPendientes.Items.Clear();
+            if (ordenesFiltradas != null)
+            {
+                foreach (var ordenes in ordenesFiltradas)
+                {
+                    ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
+                    item.SubItems.Add(ordenes.CodigoCliente);
+                    item.SubItems.Add(ordenes.Fecha.ToString());
+                    item.SubItems.Add(ordenes.CodigoTransportista);
+                    item.SubItems.Add(ordenes.EstadoOrden);
+
+                    listOrdenesPendientes.Items.Add(item);
+
+                    item.Tag = ordenes;
+
+
+                }
+
+
+
+            }
+            return;
         }
     }
 }

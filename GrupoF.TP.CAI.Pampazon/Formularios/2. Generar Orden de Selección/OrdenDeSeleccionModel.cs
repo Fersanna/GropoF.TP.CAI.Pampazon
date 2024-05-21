@@ -10,6 +10,11 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
     public class OrdenDeSeleccionModel
     {
         public string Cliente { get; set; }
+
+        public DateTime FechaDesde {get; set;}
+
+        public DateTime FechaHasta {get; set;}
+
         public List<OrdenDePreparacion> OrdenesConfirmadas { get; set; }    
         public List<OrdenDePreparacion> OrdenDePreparacion { get; set; } = new List<OrdenDePreparacion>
         {
@@ -46,6 +51,20 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                 EstadoOrden = "Pendiente"
             }
         };
+
+        internal List<OrdenDePreparacion> FiltrarOrdenes()
+        {
+            var OrdenesFiltradas = OrdenDePreparacion.Where(p => p.Fecha >= FechaDesde && p.Fecha <= FechaHasta).ToList();
+
+            if (!OrdenesFiltradas.Any())
+            {
+                MessageBox.Show("No existen Ordenes para el rango indicado");
+              
+            }
+           
+
+            return OrdenesFiltradas;
+        }
 
         internal string ValidarFiltro()
         {
