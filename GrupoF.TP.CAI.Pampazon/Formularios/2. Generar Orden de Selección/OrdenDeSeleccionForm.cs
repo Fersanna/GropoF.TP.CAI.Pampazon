@@ -25,7 +25,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
             if (ordenesSeleccionadas.Any())
             {
-                var dialogResult = MessageBox.Show("¿Confirma las órdenes seleccionadas?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var dialogResult = MessageBox.Show("¿Confirma las órdenes seleccionadas?", "Confirmación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
 
                 if (dialogResult == DialogResult.Yes)
                 {
@@ -33,6 +33,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                     MessageBox.Show("Órdenes seleccionadas y confirmadas.");
 
                     this.Close();
+                }
+                else if (dialogResult == DialogResult.Cancel)
+                {
+                    MessageBox.Show("Operación cancelada.");
                 }
 
             }
@@ -42,10 +46,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
             }
         }
 
-        public void CargarDatos(List<ListViewItem> items)
-        {
-            ListOrdenesSeleccionConfirmadas.Items.AddRange(items.ToArray());
-        }
+
 
         private void OrdenDeSeleccionForm_Load(object sender, EventArgs e)
         {
