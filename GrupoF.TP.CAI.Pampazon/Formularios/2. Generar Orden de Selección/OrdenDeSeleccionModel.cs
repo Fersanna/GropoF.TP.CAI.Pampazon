@@ -11,11 +11,11 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
     {
         public string Cliente { get; set; }
 
-        public DateTime FechaDesde {get; set;}
+        public DateTime FechaDesde { get; set; }
 
-        public DateTime FechaHasta {get; set;}
+        public DateTime FechaHasta { get; set; }
 
-        public List<OrdenDePreparacion> OrdenesConfirmadas { get; set; }    
+        public List<OrdenDePreparacion> OrdenesConfirmadas { get; set; }
         public List<OrdenDePreparacion> OrdenDePreparacion { get; set; } = new List<OrdenDePreparacion>
         {
             new OrdenDePreparacion
@@ -59,9 +59,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
             if (!OrdenesFiltradas.Any())
             {
                 MessageBox.Show("No existen Ordenes para el rango indicado");
-              
+                return null;
             }
-           
+
 
             return OrdenesFiltradas;
         }
@@ -80,7 +80,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
         }
 
         internal string ValidarOrden(OrdenDePreparacion ordenSeleccionada)
-        {
+        {   // Arreglar esto para cuando se null
             if (ordenSeleccionada.EstadoOrden == "Seleccionada")
             {
                 DialogResult result = MessageBox.Show("Esta orden ya fue seleccionada. ¿Desea quitarla de la selección?", "Confirmación", MessageBoxButtons.OKCancel);
@@ -91,6 +91,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                     return "Orden revertida a pendiente.";
                 }
             }
+
 
             return null;
 

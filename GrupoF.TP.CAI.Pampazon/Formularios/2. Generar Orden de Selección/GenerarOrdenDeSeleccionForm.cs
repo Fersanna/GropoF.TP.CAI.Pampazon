@@ -111,31 +111,31 @@ namespace GrupoF.TP.CAI.Pampazon
                 MessageBox.Show(error);
                 return;
             }
+          
+            var ordenesFiltradas = model.FiltrarOrdenes();
 
-            var ordenesFiltradas = model.FiltrarOrdenes().ToList();
-
-            listOrdenesPendientes.Items.Clear();
-            if (ordenesFiltradas != null)
+            if (ordenesFiltradas == null)
             {
-                foreach (var ordenes in ordenesFiltradas)
-                {
-                    ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
-                    item.SubItems.Add(ordenes.CodigoCliente);
-                    item.SubItems.Add(ordenes.Fecha.ToString());
-                    item.SubItems.Add(ordenes.CodigoTransportista);
-                    item.SubItems.Add(ordenes.EstadoOrden);
-
-                    listOrdenesPendientes.Items.Add(item);
-
-                    item.Tag = ordenes;
-
-
-                }
-
-
-
+                return;
             }
-            return;
+
+
+            ActualizarListaOrdenesFiltradas(ordenesFiltradas);
+        }
+        private void ActualizarListaOrdenesFiltradas(List<OrdenDePreparacion> ordenesFiltradas)
+        {
+            listOrdenesPendientes.Items.Clear();
+
+            foreach (var orden in ordenesFiltradas)
+            {
+                ListViewItem item = new ListViewItem(orden.NumeroDeOrden);
+                item.SubItems.Add(orden.CodigoCliente);
+                item.SubItems.Add(orden.Fecha.ToString());
+                item.SubItems.Add(orden.CodigoTransportista);
+                item.SubItems.Add(orden.EstadoOrden);
+
+                listOrdenesPendientes.Items.Add(item);
+            }
         }
     }
 }
