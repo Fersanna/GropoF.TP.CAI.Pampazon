@@ -21,6 +21,26 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         private void GenerarBtn_Click(object sender, EventArgs e)
         {
+                        var ordenesSeleccionadas = model.OrdenDePreparacion.Where(o => o.EstadoOrden == "Seleccionada").ToList();
+
+            if (ordenesSeleccionadas.Any())
+            {
+                var dialogResult = MessageBox.Show("¿Confirma las órdenes seleccionadas?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    model.OrdenesConfirmadas = ordenesSeleccionadas;
+                    MessageBox.Show("Órdenes seleccionadas y confirmadas.");
+
+                    this.Close();
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No hay ordenes seleccionadas para confirmar.");
+            }
+=======
             MessageBox.Show("La orden de selección ha sido generada con éxito.");
         }
 
