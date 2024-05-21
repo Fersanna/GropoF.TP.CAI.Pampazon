@@ -19,6 +19,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
             InitializeComponent();
         }
 
+
+
+
         private void GenerarBtn_Click(object sender, EventArgs e)
         {
             var ordenesSeleccionadas = model.OrdenDePreparacion.Where(o => o.EstadoOrden == "Seleccionada").ToList();
@@ -47,35 +50,6 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
         }
 
 
-     private void GenerarBtn_Click(object sender, EventArgs e)
- {
-     var ordenesSeleccionadas = model.OrdenDePreparacion.Where(o => o.EstadoOrden == "Seleccionada").ToList();
-
-     if (ordenesSeleccionadas.Any())
-     {
-         var dialogResult = MessageBox.Show("¿Confirma las órdenes seleccionadas?", "Confirmación", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-
-         if (dialogResult == DialogResult.Yes)
-         {
-             model.OrdenesConfirmadas = ordenesSeleccionadas;
-             MessageBox.Show("Órdenes seleccionadas y confirmadas.");
-
-             this.Close();
-         }
-         else if (dialogResult == DialogResult.Cancel)
-         {
-             MessageBox.Show("Operación cancelada.");
-         }
-
-     }
-     else
-     {
-         MessageBox.Show("No hay ordenes seleccionadas para confirmar.");
-     }
- }
-
-    
->>>>>>> 73660c1f9399b52c5de06b9df4734bcd071d3891
 
         private void OrdenDeSeleccionForm_Load(object sender, EventArgs e)
         {
@@ -99,9 +73,5 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
             this.Close();
         }
 
-        private void PrioridadBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
