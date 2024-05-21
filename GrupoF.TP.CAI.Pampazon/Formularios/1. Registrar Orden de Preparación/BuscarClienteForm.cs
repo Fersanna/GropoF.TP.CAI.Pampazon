@@ -91,7 +91,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void Buscar_Click(object sender, EventArgs e)
         {
-            ClientesList.Items.Clear();
+         
 
             model.Cuit = Cuit_Box.Text;
 
@@ -102,6 +102,8 @@ namespace GrupoF.TP.CAI.Pampazon
                 MessageBox.Show("El cliente no ha sido encontrado");
                 return;
             }
+
+            ClientesList.Items.Clear();
 
             ListViewItem item = new ListViewItem();
 

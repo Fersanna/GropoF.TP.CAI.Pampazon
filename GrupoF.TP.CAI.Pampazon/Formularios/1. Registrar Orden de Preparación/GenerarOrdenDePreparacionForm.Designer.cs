@@ -43,10 +43,8 @@
             Posicion = new DataGridViewTextBoxColumn();
             Cantidad = new DataGridViewTextBoxColumn();
             QuitarBtn = new Button();
-            numericUpDown1 = new NumericUpDown();
             CancelarBtn = new Button();
             ((System.ComponentModel.ISupportInitialize)EditarOrden_GridView).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             SuspendLayout();
             // 
             // ProductosList
@@ -180,14 +178,6 @@
             QuitarBtn.UseVisualStyleBackColor = true;
             QuitarBtn.Click += QuitarBtn_Click;
             // 
-            // numericUpDown1
-            // 
-            numericUpDown1.Location = new Point(433, 291);
-            numericUpDown1.Margin = new Padding(3, 4, 3, 4);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(101, 27);
-            numericUpDown1.TabIndex = 8;
-            // 
             // CancelarBtn
             // 
             CancelarBtn.Location = new Point(541, 547);
@@ -205,7 +195,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(729, 629);
             Controls.Add(CancelarBtn);
-            Controls.Add(numericUpDown1);
             Controls.Add(QuitarBtn);
             Controls.Add(EditarOrden_GridView);
             Controls.Add(label2);
@@ -219,7 +208,6 @@
             FormClosing += GenerarOrdenDePreparacionForm_FormClosing;
             Load += GenerarOrdenDePreparacionForm_Load;
             ((System.ComponentModel.ISupportInitialize)EditarOrden_GridView).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -241,7 +229,6 @@
         private DataGridViewTextBoxColumn Cantidad;
         public DataGridView EditarOrden_GridView;
         private Button QuitarBtn;
-        private NumericUpDown numericUpDown1;
         private Button CancelarBtn;
     }
 }
