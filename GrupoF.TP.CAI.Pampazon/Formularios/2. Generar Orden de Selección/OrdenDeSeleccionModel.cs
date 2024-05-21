@@ -54,8 +54,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         internal List<OrdenDePreparacion> FiltrarOrdenes()
         {
-            var OrdenesFiltradas = OrdenDePreparacion.Where(p => p.Fecha >= FechaDesde && p.Fecha <= FechaHasta).ToList();
-
+            var OrdenesFiltradas = OrdenDePreparacion
+                .Where(p => p.Fecha >= FechaDesde && p.Fecha <= FechaHasta &&
+                    (string.IsNullOrEmpty(Cliente) || p.CodigoCliente.Contains(Cliente, StringComparison.OrdinalIgnoreCase)))
+                 .ToList();
             if (!OrdenesFiltradas.Any())
             {
                 MessageBox.Show("No existen Ordenes para el rango indicado");
