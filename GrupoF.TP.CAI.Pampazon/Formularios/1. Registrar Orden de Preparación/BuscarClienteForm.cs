@@ -53,6 +53,10 @@ namespace GrupoF.TP.CAI.Pampazon
                 generarOrdenDePreparacionForm.model = model;
                 generarOrdenDePreparacionForm.ShowDialog();
             }
+            else
+            {
+                MessageBox.Show("Debe seleccionar un cliente");
+            }
 
         }
 
@@ -77,8 +81,7 @@ namespace GrupoF.TP.CAI.Pampazon
             if (!Regex.IsMatch(Cuit_Box.Text, @"^\d{2}-\d{8}-\d{1}$"))
             {
                 MessageBox.Show("Formato de CUIT inválido.");
-                 Cuit_Box.Focus();
-                e.Cancel = true;
+                e.Cancel = false;
                 return;
             }
 
@@ -98,17 +101,20 @@ namespace GrupoF.TP.CAI.Pampazon
         private void Buscar_Click(object sender, EventArgs e)
         {
 
+          
+
             if (string.IsNullOrWhiteSpace(Cuit_Box.Text))
             {
                 MessageBox.Show("Debe ingresar un número de CUIT");
                 return;
             }
 
-            model.Cuit = Cuit_Box.Text;
-
+            
+              model.Cuit = Cuit_Box.Text;
 
             var clienteBuscado = model.Clientes.FirstOrDefault(p => p.Cuit == model.Cuit);
 
+            
 
             if (clienteBuscado == null)
             {

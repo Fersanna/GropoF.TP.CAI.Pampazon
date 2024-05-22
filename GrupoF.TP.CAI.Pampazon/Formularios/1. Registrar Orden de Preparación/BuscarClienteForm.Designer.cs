@@ -61,6 +61,7 @@
             ClientesList.GridLines = true;
             ClientesList.Location = new Point(40, 172);
             ClientesList.Margin = new Padding(3, 4, 3, 4);
+            ClientesList.MultiSelect = false;
             ClientesList.Name = "ClientesList";
             ClientesList.Size = new Size(689, 227);
             ClientesList.TabIndex = 1;
