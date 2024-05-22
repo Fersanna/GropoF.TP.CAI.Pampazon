@@ -103,6 +103,9 @@ namespace GrupoF.TP.CAI.Pampazon
             model.Cliente = ClienteTextBox.Text;
             model.FechaDesde = DesdeTimePicker.Value;
             model.FechaHasta = HastadateTimePicker.Value;
+            model.Transportista = TransportistaTextBox.Text;
+            model.NumeroOrden = NumeroOrdenTextBox.Text;
+        
 
             var error = model.ValidarFiltro();
 

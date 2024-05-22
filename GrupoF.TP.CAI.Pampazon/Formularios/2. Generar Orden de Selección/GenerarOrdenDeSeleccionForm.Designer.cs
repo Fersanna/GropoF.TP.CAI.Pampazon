@@ -44,7 +44,7 @@
             label3 = new Label();
             ClienteTextBox = new TextBox();
             label4 = new Label();
-            IdTextBox = new TextBox();
+            NumeroOrdenTextBox = new TextBox();
             TransportistaTextBox = new TextBox();
             PrioridadTextBox = new TextBox();
             label5 = new Label();
@@ -69,7 +69,7 @@
             // 
             // NumeroColum
             // 
-            NumeroColum.Text = "ID";
+            NumeroColum.Text = "N.º Orden";
             NumeroColum.Width = 130;
             // 
             // ClienteColum
@@ -165,7 +165,7 @@
             HastadateTimePicker.Name = "HastadateTimePicker";
             HastadateTimePicker.Size = new Size(137, 27);
             HastadateTimePicker.TabIndex = 7;
-            HastadateTimePicker.Value = new DateTime(2024, 5, 10, 15, 54, 23, 0);
+            HastadateTimePicker.Value = new DateTime(2024, 5, 18, 15, 54, 0, 0);
             // 
             // label3
             // 
@@ -178,7 +178,7 @@
             // 
             // ClienteTextBox
             // 
-            ClienteTextBox.Location = new Point(495, 40);
+            ClienteTextBox.Location = new Point(335, 40);
             ClienteTextBox.Margin = new Padding(3, 4, 3, 4);
             ClienteTextBox.Name = "ClienteTextBox";
             ClienteTextBox.Size = new Size(139, 27);
@@ -187,23 +187,23 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(347, 17);
+            label4.Location = new Point(642, 17);
             label4.Name = "label4";
-            label4.Size = new Size(24, 20);
+            label4.Size = new Size(108, 20);
             label4.TabIndex = 10;
-            label4.Text = "ID";
+            label4.Text = "Numero Orden";
             // 
-            // IdTextBox
+            // NumeroOrdenTextBox
             // 
-            IdTextBox.Location = new Point(347, 40);
-            IdTextBox.Margin = new Padding(3, 4, 3, 4);
-            IdTextBox.Name = "IdTextBox";
-            IdTextBox.Size = new Size(139, 27);
-            IdTextBox.TabIndex = 11;
+            NumeroOrdenTextBox.Location = new Point(635, 40);
+            NumeroOrdenTextBox.Margin = new Padding(3, 4, 3, 4);
+            NumeroOrdenTextBox.Name = "NumeroOrdenTextBox";
+            NumeroOrdenTextBox.Size = new Size(139, 27);
+            NumeroOrdenTextBox.TabIndex = 11;
             // 
             // TransportistaTextBox
             // 
-            TransportistaTextBox.Location = new Point(641, 40);
+            TransportistaTextBox.Location = new Point(485, 40);
             TransportistaTextBox.Margin = new Padding(3, 4, 3, 4);
             TransportistaTextBox.Name = "TransportistaTextBox";
             TransportistaTextBox.Size = new Size(139, 27);
@@ -211,7 +211,7 @@
             // 
             // PrioridadTextBox
             // 
-            PrioridadTextBox.Location = new Point(787, 40);
+            PrioridadTextBox.Location = new Point(785, 40);
             PrioridadTextBox.Margin = new Padding(3, 4, 3, 4);
             PrioridadTextBox.Name = "PrioridadTextBox";
             PrioridadTextBox.Size = new Size(139, 27);
@@ -220,7 +220,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(495, 17);
+            label5.Location = new Point(335, 17);
             label5.Name = "label5";
             label5.Size = new Size(55, 20);
             label5.TabIndex = 14;
@@ -229,7 +229,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(641, 17);
+            label6.Location = new Point(481, 17);
             label6.Name = "label6";
             label6.Size = new Size(94, 20);
             label6.TabIndex = 15;
@@ -254,7 +254,7 @@
             Controls.Add(label5);
             Controls.Add(PrioridadTextBox);
             Controls.Add(TransportistaTextBox);
-            Controls.Add(IdTextBox);
+            Controls.Add(NumeroOrdenTextBox);
             Controls.Add(label4);
             Controls.Add(ClienteTextBox);
             Controls.Add(label3);
@@ -292,7 +292,7 @@
         private Label label3;
         private TextBox ClienteTextBox;
         private Label label4;
-        private TextBox IdTextBox;
+        private TextBox NumeroOrdenTextBox;
         private TextBox TransportistaTextBox;
         private TextBox PrioridadTextBox;
         private Label label5;
