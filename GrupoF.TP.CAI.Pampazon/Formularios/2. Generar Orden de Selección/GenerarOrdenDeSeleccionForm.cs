@@ -37,7 +37,7 @@ namespace GrupoF.TP.CAI.Pampazon
         private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
 
-            if (!model.OrdenDePreparacion.Any(o => o.EstadoOrden == "Seleccionada"))
+            if (!model.OrdenDePreparacion.Any(o => o.EstadoOrden == "En selección"))
             {
                 MessageBox.Show("Debe seleccionar una o varias ordenes.");
                 return;
@@ -89,7 +89,7 @@ namespace GrupoF.TP.CAI.Pampazon
                     return;
                 }
 
-                ordenSeleccionada.EstadoOrden = "Seleccionada";
+                ordenSeleccionada.EstadoOrden = "En selección";
 
                 CargarOrdenesDePreparacion();
             }

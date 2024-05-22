@@ -99,7 +99,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         internal string ValidarOrden(OrdenDePreparacion ordenSeleccionada)
         {   // Arreglar esto para cuando se null
-            if (ordenSeleccionada.EstadoOrden == "Seleccionada")
+            if (ordenSeleccionada.EstadoOrden == "En selección")
             {
                 DialogResult result = MessageBox.Show("Esta orden ya fue seleccionada. ¿Desea quitarla de la selección?", "Confirmación", MessageBoxButtons.OKCancel);
 
