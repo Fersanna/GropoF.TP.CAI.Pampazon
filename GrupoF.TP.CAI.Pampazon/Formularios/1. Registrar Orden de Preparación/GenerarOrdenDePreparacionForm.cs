@@ -130,7 +130,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                         Cantidad = (int)newRow.Cells["Cantidad"].Value,
                     });
 
-                    MessageBox.Show("Se han agregado " + model.ClienteOrden.ProductosOrden.Count() + "a la orden");
+                   // MessageBox.Show("Se han agregado " + model.ClienteOrden.ProductosOrden.Count() + "a la orden"); Para probar que el producto se este agregando correctamente a la orden.
                 }
                 else
                 {
