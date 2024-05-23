@@ -44,5 +44,19 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 EstadoOrden = "En selección"
             }
         };
+
+        internal void CambiarEstadoEnOrden(OrdenDePreparacion orden)
+        {
+           if (orden.EstadoOrden != "En selección")
+            {
+                MessageBox.Show("Esta Orden ya ha sido seleccionada");
+            }
+           else
+            {
+                orden.EstadoOrden = "Seleccionada";
+                return;
+            }
+
+        }
     }
 }

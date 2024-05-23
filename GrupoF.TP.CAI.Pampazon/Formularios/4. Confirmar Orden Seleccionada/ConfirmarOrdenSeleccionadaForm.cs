@@ -1,4 +1,5 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación;
 using GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición;
 using System;
 using System.Collections.Generic;
@@ -15,7 +16,7 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
 {
     public partial class ConfirmarOrdenSeleccionadaForm : Form
-    {   
+    {
         ConfirmarOrdenSeleccionadaFormModel model;
         public ConfirmarOrdenSeleccionadaForm()
         {
@@ -24,9 +25,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
 
         private void ConfirmarOrdenSeleccionadaForm_Load(object sender, EventArgs e)
         {
-             model = new ConfirmarOrdenSeleccionadaFormModel();
+            model = new ConfirmarOrdenSeleccionadaFormModel();
 
-              foreach (OrdenDePreparacion ordenesSeleccionada in model.OrdenEnSeleccion)
+            foreach (OrdenDePreparacion ordenesSeleccionada in model.OrdenEnSeleccion)
             {
                 if (ordenesSeleccionada.EstadoOrden == "En selección")
                 {
@@ -37,9 +38,13 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                     item.SubItems.Add(ordenesSeleccionada.EstadoOrden);
 
                     listOrdenesEnSeleccion.Items.Add(item);
+
+                    item.Tag = ordenesSeleccionada;
                 }
+
+
             }
-            
+
         }
 
         private void CancelarBtn_Click(object sender, EventArgs e)
@@ -52,18 +57,25 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
             if (listOrdenesEnSeleccion.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Debe seleccionar una orden.");
+                return;
             }
             else
             {
-                MessageBox.Show("La orden se ha confirmado con éxito.");
+
+                OrdenDePreparacion ordenDePreparacion = (OrdenDePreparacion)listOrdenesEnSeleccion.SelectedItems[0].Tag;
+
+
+                model.CambiarEstadoEnOrden(ordenDePreparacion);
 
                 foreach (ListViewItem item in listOrdenesEnSeleccion.SelectedItems)
                 {
                     listOrdenesEnSeleccion.Items.Remove(item);
                 }
+
+                MessageBox.Show("La orden se ha confirmado con éxito.");
             }
         }
 
-      
+
     }
 }
