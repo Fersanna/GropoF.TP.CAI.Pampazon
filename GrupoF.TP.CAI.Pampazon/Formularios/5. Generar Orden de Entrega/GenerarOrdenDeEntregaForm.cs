@@ -1,4 +1,5 @@
-﻿using GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección;
+﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección;
 using GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega;
 using System;
 using System.Collections.Generic;
@@ -14,14 +15,16 @@ namespace GrupoF.TP.CAI.Pampazon
 {
     public partial class GenerarOrdenDeEntregaForm : Form
     {
+        OrdenDeEntregaModel model;
         public GenerarOrdenDeEntregaForm()
         {
             InitializeComponent();
+            model = new OrdenDeEntregaModel();
         }
 
         private void GenerarOrdenDeEntregaForm_Load(object sender, EventArgs e)
         {
-            AgregarDatosDePrueba();
+            CargarOrdenesSeleccionadas();
         }
 
         private void CancelarBtn_Click(object sender, EventArgs e)
@@ -31,59 +34,95 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
-            if (listOrdenesSeleccionadas.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Debe seleccionar una o varias ordenes.");
-            }
-            else
-            {
-                // Crear una lista para almacenar los elementos seleccionados del ListView
-                List<ListViewItem> items = new List<ListViewItem>();
 
-                // Copiar los elementos seleccionados del ListView actual
-                foreach (ListViewItem item in listOrdenesSeleccionadas.SelectedItems)
+        }
+
+        private void CargarOrdenesSeleccionadas()
+        {
+            listOrdenesPreparacion.Items.Clear();
+
+            foreach (OrdenDePreparacion ordenes in model.OrdenesSeleccionadas)
+            {
+                ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
+                item.SubItems.Add(ordenes.CodigoCliente);
+                item.SubItems.Add(ordenes.Fecha.ToString());
+                item.SubItems.Add(ordenes.CodigoTransportista);
+                item.SubItems.Add(ordenes.EstadoOrden);
+
+                listOrdenesPreparacion.Items.Add(item);
+
+                item.Tag = ordenes;
+            }
+
+        }
+
+        private void listOrdenesPreparacion_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (listOrdenesPreparacion.SelectedItems.Count > 0)
+            {
+                OrdenDePreparacion ordenSeleccionada = (OrdenDePreparacion)listOrdenesPreparacion.SelectedItems[0].Tag as OrdenDePreparacion;
+
+
+                var error = model.ValidarOrden(ordenSeleccionada);
+
+                if (error != null)
                 {
-                    ListViewItem newItem = (ListViewItem)item.Clone();
-                    items.Add(newItem);
+                    MessageBox.Show(error);
+                    CargarOrdenesSeleccionadas();
+                    return;
                 }
 
-                OrdenDeEntregaForm ordenDeEntregaForm = new OrdenDeEntregaForm();
-                ordenDeEntregaForm.CargarDatos(items);
-                ordenDeEntregaForm.ShowDialog();
+                ordenSeleccionada.EstadoOrden = "En selección";
+
+                CargarOrdenesSeleccionadas();
+            }
+            MessageBox.Show("La orden fue seleccionada");
+        }
+
+
+
+        private void ActualizarListaOrdenesFiltradas(List<OrdenDePreparacion> ordenesFiltradas)
+        {
+            listOrdenesPreparacion.Items.Clear();
+
+            foreach (var orden in ordenesFiltradas)
+            {
+                ListViewItem item = new ListViewItem(orden.NumeroDeOrden);
+                item.SubItems.Add(orden.CodigoCliente);
+                item.SubItems.Add(orden.Fecha.ToString());
+                item.SubItems.Add(orden.CodigoTransportista);
+                item.SubItems.Add(orden.EstadoOrden);
+
+                listOrdenesPreparacion.Items.Add(item);
             }
         }
 
-        private void AgregarDatosDePrueba()
+        private void FiltrarBtn_Click_1(object sender, EventArgs e)
         {
-            ListViewItem item1 = new ListViewItem("P-000001");
-            item1.SubItems.Add("001");
-            item1.SubItems.Add("13/05/24");
-            item1.SubItems.Add("Transportista 1");
-            item1.SubItems.Add("Seleccionada");
+            model.Cliente = ClienteTextBox.Text;
+            model.FechaDesde = DesdeTimePicker.Value;
+            model.FechaHasta = HastadateTimePicker.Value;
+            model.Transportista = TransportistaTextBox.Text;
+            model.NumeroOrden = NumeroOrdenTextBox.Text;
 
-            ListViewItem item2 = new ListViewItem("P-000002");
-            item2.SubItems.Add("002");
-            item2.SubItems.Add("13/05/24");
-            item2.SubItems.Add("Transportista 2");
-            item2.SubItems.Add("Seleccionada");
 
-            ListViewItem item3 = new ListViewItem("P-000003");
-            item3.SubItems.Add("003");
-            item3.SubItems.Add("14/05/24");
-            item3.SubItems.Add("Transportista 3");
-            item3.SubItems.Add("Seleccionada");
+            var error = model.ValidarFiltro();
 
-            ListViewItem item4 = new ListViewItem("P-000004");
-            item4.SubItems.Add("002");
-            item4.SubItems.Add("15/05/24");
-            item4.SubItems.Add("Transportista 4");
-            item4.SubItems.Add("Seleccionada");
+            if (error != null)
+            {
+                MessageBox.Show(error);
+                return;
+            }
 
-            // Agregar elementos al ListView
-            listOrdenesSeleccionadas.Items.Add(item1);
-            listOrdenesSeleccionadas.Items.Add(item2);
-            listOrdenesSeleccionadas.Items.Add(item3);
-            listOrdenesSeleccionadas.Items.Add(item4);
+            var ordenesFiltradas = model.FiltrarOrdenes();
+
+            if (ordenesFiltradas == null)
+            {
+                return;
+            }
+
+
+            ActualizarListaOrdenesFiltradas(ordenesFiltradas);
         }
     }
 }
