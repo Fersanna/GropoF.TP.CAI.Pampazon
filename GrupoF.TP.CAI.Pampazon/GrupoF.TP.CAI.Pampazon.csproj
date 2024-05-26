@@ -10,14 +10,17 @@
 
   <ItemGroup>
     <Compile Remove="Almacenes\**" />
+    <Compile Remove="Entidades\**" />
+    <Compile Remove="Json\**" />
+    <Compile Remove="Modulos\**" />
     <EmbeddedResource Remove="Almacenes\**" />
+    <EmbeddedResource Remove="Entidades\**" />
+    <EmbeddedResource Remove="Json\**" />
+    <EmbeddedResource Remove="Modulos\**" />
     <None Remove="Almacenes\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Entidades\" />
-    <Folder Include="Modulos\" />
-    <Folder Include="Json\" />
+    <None Remove="Entidades\**" />
+    <None Remove="Json\**" />
+    <None Remove="Modulos\**" />
   </ItemGroup>
 
 </Project>
