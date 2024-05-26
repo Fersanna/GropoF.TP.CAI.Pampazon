@@ -9,18 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Almacenes\**" />
-    <Compile Remove="Entidades\**" />
-    <Compile Remove="Json\**" />
-    <Compile Remove="Modulos\**" />
-    <EmbeddedResource Remove="Almacenes\**" />
-    <EmbeddedResource Remove="Entidades\**" />
-    <EmbeddedResource Remove="Json\**" />
-    <EmbeddedResource Remove="Modulos\**" />
-    <None Remove="Almacenes\**" />
-    <None Remove="Entidades\**" />
-    <None Remove="Json\**" />
-    <None Remove="Modulos\**" />
+    <Folder Include="Entidades\" />
+    <Folder Include="Json\" />
+    <Folder Include="Modulos\" />
+    <Folder Include="Almacenes\" />
   </ItemGroup>
 
 </Project>
