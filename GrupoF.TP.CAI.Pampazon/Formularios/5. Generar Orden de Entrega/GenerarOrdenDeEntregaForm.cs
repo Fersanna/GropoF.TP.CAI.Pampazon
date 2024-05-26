@@ -34,7 +34,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
-            if (!model.OrdenesConfirmadas.Any(o => o.EstadoOrden == "Confirmada"))
+            if (!model.OrdenesSeleccionadas.Any(o => o.EstadoOrden == "Confirmada"))
             {
                 MessageBox.Show("Debe seleccionar una o varias ordenes.");
                 return;
@@ -42,7 +42,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
             OrdenDeEntregaForm ordenDeEntregaForm = new OrdenDeEntregaForm();
 
-            model =model;
+           ordenDeEntregaForm.model =this.model;
 
             ordenDeEntregaForm.ShowDialog();
             CargarOrdenesSeleccionadas();

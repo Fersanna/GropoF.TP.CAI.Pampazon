@@ -20,7 +20,6 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         public string NumeroOrden { get; set; }
 
-        public List<OrdenDePreparacion> OrdenesConfirmadas { get; set; }
         public List<OrdenDePreparacion> OrdenesSeleccionadas { get; set; } = new List<OrdenDePreparacion> {
           new OrdenDePreparacion
             {

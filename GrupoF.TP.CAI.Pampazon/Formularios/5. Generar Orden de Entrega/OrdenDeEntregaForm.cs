@@ -28,7 +28,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
         {
             var ordenesConfirmadas = model.OrdenesSeleccionadas.Where(o => o.EstadoOrden == "Confirmada").ToList();
 
-            if (ordenesConfirmadas.Any())
+            if (ordenesConfirmadas.Any() == true)
             {
                 var dialogResult = MessageBox.Show("¿Confirma las órdenes seleccionadas?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -55,7 +55,13 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         private void OrdenDeEntregaForm_Load(object sender, EventArgs e)
         {
-             foreach (OrdenDePreparacion ordenesConfirmadas in model.OrdenesSeleccionadas)
+            if (model == null || model.OrdenesSeleccionadas == null)
+            {
+                MessageBox.Show("El modelo o las órdenes seleccionadas no están inicializados.");
+                return;
+            }
+
+            foreach (OrdenDePreparacion ordenesConfirmadas in model.OrdenesSeleccionadas)
             {
                 if (ordenesConfirmadas.EstadoOrden == "Confirmada")
                 {
