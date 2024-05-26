@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 {
-    internal class GenerarRemitosModel
+    public class GenerarRemitosModel
     {
         public List<OrdenDePreparacion> OrdenesDeEntrega { get; set; } = new List<OrdenDePreparacion> {
 

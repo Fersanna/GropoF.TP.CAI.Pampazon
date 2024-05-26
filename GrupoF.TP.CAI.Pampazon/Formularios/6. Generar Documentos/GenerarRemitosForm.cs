@@ -31,6 +31,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
             else
             {
                 RemitosForm remitosForm = new RemitosForm();
+                remitosForm.model = this.model;
                 remitosForm.ShowDialog();
             }
         }
@@ -61,6 +62,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
                     item.SubItems.Add(ordenesConfirmadas.EstadoOrden);
 
                     listOrdenesDeEntrega.Items.Add(item);
+
+                    item.Tag = ordenesConfirmadas;
                 }
             }
         }

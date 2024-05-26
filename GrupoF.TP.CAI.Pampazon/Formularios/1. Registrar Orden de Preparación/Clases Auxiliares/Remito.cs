@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación.Clases_Auxiliares
 {
-    internal class Remito
+    public class Remito
     {
         public int NumeroRemito {get; set;}
         public DateTime FechaRemito {get; set;}
