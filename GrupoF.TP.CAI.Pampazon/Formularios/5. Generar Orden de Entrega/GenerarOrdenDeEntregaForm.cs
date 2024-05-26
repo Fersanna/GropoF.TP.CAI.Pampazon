@@ -34,8 +34,22 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
+            if (!model.OrdenesConfirmadas.Any(o => o.EstadoOrden == "Confirmada"))
+            {
+                MessageBox.Show("Debe seleccionar una o varias ordenes.");
+                return;
+            }
+
+            OrdenDeEntregaForm ordenDeEntregaForm = new OrdenDeEntregaForm();
+
+            model =model;
+
+            ordenDeEntregaForm.ShowDialog();
+            CargarOrdenesSeleccionadas();
+            this.Close();
 
         }
+
 
         private void CargarOrdenesSeleccionadas()
         {
@@ -72,7 +86,7 @@ namespace GrupoF.TP.CAI.Pampazon
                     return;
                 }
 
-                ordenSeleccionada.EstadoOrden = "En selección";
+                ordenSeleccionada.EstadoOrden = "Confirmada";
 
                 CargarOrdenesSeleccionadas();
             }

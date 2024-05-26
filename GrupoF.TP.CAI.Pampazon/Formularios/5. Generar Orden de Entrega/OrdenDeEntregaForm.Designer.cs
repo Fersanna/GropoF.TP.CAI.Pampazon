@@ -41,9 +41,10 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(589, 295);
+            CancelarBtn.Location = new Point(673, 393);
+            CancelarBtn.Margin = new Padding(3, 4, 3, 4);
             CancelarBtn.Name = "CancelarBtn";
-            CancelarBtn.Size = new Size(105, 30);
+            CancelarBtn.Size = new Size(120, 40);
             CancelarBtn.TabIndex = 2;
             CancelarBtn.Text = "Cancelar";
             CancelarBtn.UseVisualStyleBackColor = true;
@@ -53,9 +54,10 @@
             // 
             listOrdenesSeleccionadasConfirmadas.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
             listOrdenesSeleccionadasConfirmadas.GridLines = true;
-            listOrdenesSeleccionadasConfirmadas.Location = new Point(27, 45);
+            listOrdenesSeleccionadasConfirmadas.Location = new Point(31, 60);
+            listOrdenesSeleccionadasConfirmadas.Margin = new Padding(3, 4, 3, 4);
             listOrdenesSeleccionadasConfirmadas.Name = "listOrdenesSeleccionadasConfirmadas";
-            listOrdenesSeleccionadasConfirmadas.Size = new Size(667, 234);
+            listOrdenesSeleccionadasConfirmadas.Size = new Size(762, 311);
             listOrdenesSeleccionadasConfirmadas.TabIndex = 6;
             listOrdenesSeleccionadasConfirmadas.UseCompatibleStateImageBehavior = false;
             listOrdenesSeleccionadasConfirmadas.View = View.Details;
@@ -92,17 +94,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(27, 27);
+            label1.Location = new Point(31, 36);
             label1.Name = "label1";
-            label1.Size = new Size(104, 15);
+            label1.Size = new Size(135, 20);
             label1.TabIndex = 7;
             label1.Text = "Detalle de ordenes";
             // 
             // GenerarBtn
             // 
-            GenerarBtn.Location = new Point(478, 295);
+            GenerarBtn.Location = new Point(546, 393);
+            GenerarBtn.Margin = new Padding(3, 4, 3, 4);
             GenerarBtn.Name = "GenerarBtn";
-            GenerarBtn.Size = new Size(105, 30);
+            GenerarBtn.Size = new Size(120, 40);
             GenerarBtn.TabIndex = 8;
             GenerarBtn.Text = "Generar";
             GenerarBtn.UseVisualStyleBackColor = true;
@@ -110,15 +113,17 @@
             // 
             // OrdenDeEntregaForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(744, 366);
+            ClientSize = new Size(850, 488);
             Controls.Add(GenerarBtn);
             Controls.Add(label1);
             Controls.Add(listOrdenesSeleccionadasConfirmadas);
             Controls.Add(CancelarBtn);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "OrdenDeEntregaForm";
             Text = "Orden de Entrega";
+            Load += OrdenDeEntregaForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

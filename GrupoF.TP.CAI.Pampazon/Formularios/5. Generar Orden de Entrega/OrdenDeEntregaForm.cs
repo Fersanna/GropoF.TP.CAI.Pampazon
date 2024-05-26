@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 {
     public partial class OrdenDeEntregaForm : Form
     {
+        public OrdenDeEntregaModel model { get; set; }
         public OrdenDeEntregaForm()
         {
             InitializeComponent();
@@ -24,12 +26,48 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         private void GenerarBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("La orden de entrega ha sido generada con éxito.");
+            var ordenesConfirmadas = model.OrdenesSeleccionadas.Where(o => o.EstadoOrden == "Confirmada").ToList();
+
+            if (ordenesConfirmadas.Any())
+            {
+                var dialogResult = MessageBox.Show("¿Confirma las órdenes seleccionadas?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes)
+                {
+                    model.OrdenesSeleccionadas = ordenesConfirmadas;
+                    MessageBox.Show("Órdenes seleccionadas y confirmadas.");
+
+
+                    this.Close();
+
+                }
+                else if (dialogResult == DialogResult.Cancel)
+                {
+                    MessageBox.Show("Operación cancelada.");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("No hay ordenes seleccionadas para confirmar.");
+            }
         }
 
-        public void CargarDatos(List<ListViewItem> items)
+        private void OrdenDeEntregaForm_Load(object sender, EventArgs e)
         {
-            listOrdenesSeleccionadasConfirmadas.Items.AddRange(items.ToArray());
+             foreach (OrdenDePreparacion ordenesConfirmadas in model.OrdenesSeleccionadas)
+            {
+                if (ordenesConfirmadas.EstadoOrden == "Confirmada")
+                {
+                    ListViewItem item = new ListViewItem(ordenesConfirmadas.NumeroDeOrden);
+                    item.SubItems.Add(ordenesConfirmadas.CodigoCliente);
+                    item.SubItems.Add(ordenesConfirmadas.Fecha.ToString());
+                    item.SubItems.Add(ordenesConfirmadas.CodigoTransportista);
+                    item.SubItems.Add(ordenesConfirmadas.EstadoOrden);
+
+                    listOrdenesSeleccionadasConfirmadas.Items.Add(item);
+                }
+            }
         }
     }
 }

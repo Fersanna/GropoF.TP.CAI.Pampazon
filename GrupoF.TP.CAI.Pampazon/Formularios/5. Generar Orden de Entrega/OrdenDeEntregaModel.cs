@@ -7,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 {
-    internal class OrdenDeEntregaModel
+    public class OrdenDeEntregaModel
     {
-
 
         public string Cliente { get; set; }
 
