@@ -29,7 +29,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
                 MessageBox.Show("Debe seleccionar una orden.");
             }
             else
-            {
+            {   
+                model.OrdenSeleccionada = (OrdenDePreparacion) listOrdenesDeEntrega.SelectedItems[0].Tag;
                 RemitosForm remitosForm = new RemitosForm();
                 remitosForm.model = this.model;
                 remitosForm.ShowDialog();

@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 {
     public class GenerarRemitosModel
-    {
+    {   
+        public OrdenDePreparacion OrdenSeleccionada {get; set;}
         public List<OrdenDePreparacion> OrdenesDeEntrega { get; set; } = new List<OrdenDePreparacion> {
 
             new OrdenDePreparacion {
@@ -16,7 +17,23 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
                 CodigoCliente = "Moron Construcciones",
                 Fecha = new DateTime(2024, 5, 13),
                 CodigoTransportista = "Transportista 1",
-                EstadoOrden = "Confirmada"
+                EstadoOrden = "Confirmada",
+                ProductosOrden= new List <Productos>  {
+                new Productos
+                {
+                    IdProducto = "A1",
+                    Descripcion = "Producto 1",
+                    Posicion = "X-Y-Z",
+                    Cantidad = 5
+                },
+                 new Productos
+                {
+                    IdProducto = "A2",
+                    Descripcion = "Producto 2",
+                    Posicion = "X-Y-Z",
+                    Cantidad = 18
+                }
+            }
             },
             new OrdenDePreparacion
             {

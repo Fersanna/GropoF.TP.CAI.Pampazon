@@ -14,28 +14,23 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
     public partial class RemitosForm : Form
     {
         public GenerarRemitosModel model { get; set; }
+        public DateTime FechaRemito { get; set; }
+        public string NumeroDeRemito { get; set; }
 
-        public Remito remitos {get; set;} 
+        public string RazonSocialCliente { get; set; }
+
+        public string DomicilioCliente { get; set; }
+
+        public string CuitCliente { get; set; }
+
         public RemitosForm()
         {
             InitializeComponent();
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
 
-        }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void ImprimirBtn_Click(object sender, EventArgs e)
         {
@@ -45,6 +40,12 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
         private void CancelarBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void RemitosForm_Load(object sender, EventArgs e)
+        {
+            RazonSocialTexBox.Text = model.OrdenSeleccionada.CodigoCliente;
+           
         }
     }
 }

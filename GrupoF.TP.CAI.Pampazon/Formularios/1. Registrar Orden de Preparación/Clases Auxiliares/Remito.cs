@@ -14,6 +14,6 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
 
         public Clientes Cliente {get; set;}
 
-        public List<Productos> Productos {get; set;}
+        public OrdenDePreparacion OrdenDeEntrega {get; set;}
     }
 }
