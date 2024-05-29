@@ -1,4 +1,5 @@
-﻿using GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación.Clases_Auxiliares;
+﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación.Clases_Auxiliares;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,6 +47,17 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
         {
             RazonSocialTexBox.Text = model.OrdenSeleccionada.CodigoCliente;
            
+            foreach(Productos producto in model.OrdenSeleccionada.ProductosOrden)
+            {
+                  ListViewItem item = new ListViewItem(producto.IdProducto);
+                    item.SubItems.Add(producto.Descripcion);
+                    item.SubItems.Add(producto.Cantidad.ToString());
+                 
+
+                    ProductosList.Items.Add(item);
+
+                    item.Tag = producto;
+            }
         }
     }
 }
