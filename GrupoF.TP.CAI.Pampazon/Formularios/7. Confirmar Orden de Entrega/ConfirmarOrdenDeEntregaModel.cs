@@ -5,12 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
+namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
 {
-    public class GenerarRemitosModel
+    internal class ConfirmarOrdenDeEntregaModel
     {
-        public OrdenDePreparacion OrdenSeleccionada { get; set; }
-        public List<OrdenDePreparacion> OrdenesDeEntrega { get; set; } = new List<OrdenDePreparacion> {
+         public List<OrdenDePreparacion> OrdenesDeEntregaAConfirmar { get; set; } = new List<OrdenDePreparacion> {
 
             new OrdenDePreparacion {
                 NumeroDeOrden = "P-000001",

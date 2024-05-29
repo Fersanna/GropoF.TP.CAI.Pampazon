@@ -13,6 +13,7 @@ namespace GrupoF.TP.CAI.Pampazon
 {
     public partial class ConfirmarOrdenDeEntregaForm : Form
     {
+        ConfirmarOrdenDeEntregaModel model;
         public ConfirmarOrdenDeEntregaForm()
         {
             InitializeComponent();
@@ -20,6 +21,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void ConfirmarOrdenDeEntregaForm_Load(object sender, EventArgs e)
         {
+            model =new ConfirmarOrdenDeEntregaModel();
             AgregarDatosDePrueba();
         }
 
@@ -43,6 +45,7 @@ namespace GrupoF.TP.CAI.Pampazon
                 }
 
                 OrdenDespachadaForm ordenDespachadaForm = new OrdenDespachadaForm();
+                ordenDespachadaForm.model = model;
                 ordenDespachadaForm.CargarDatos(items);
                 ordenDespachadaForm.ShowDialog();
             }

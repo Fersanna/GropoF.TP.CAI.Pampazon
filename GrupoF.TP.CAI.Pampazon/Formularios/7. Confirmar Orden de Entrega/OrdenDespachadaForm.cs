@@ -12,10 +12,12 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
 {
     public partial class OrdenDespachadaForm : Form
     {
+        internal ConfirmarOrdenDeEntregaModel model { get; set; }
         public OrdenDespachadaForm()
         {
             InitializeComponent();
         }
+
 
         public void CargarDatos(List<ListViewItem> items)
         {

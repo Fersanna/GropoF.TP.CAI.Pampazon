@@ -42,9 +42,10 @@
             // 
             listOrdenesDespachadas.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
             listOrdenesDespachadas.GridLines = true;
-            listOrdenesDespachadas.Location = new Point(34, 64);
+            listOrdenesDespachadas.Location = new Point(39, 85);
+            listOrdenesDespachadas.Margin = new Padding(3, 4, 3, 4);
             listOrdenesDespachadas.Name = "listOrdenesDespachadas";
-            listOrdenesDespachadas.Size = new Size(669, 202);
+            listOrdenesDespachadas.Size = new Size(764, 268);
             listOrdenesDespachadas.TabIndex = 9;
             listOrdenesDespachadas.UseCompatibleStateImageBehavior = false;
             listOrdenesDespachadas.View = View.Details;
@@ -82,17 +83,18 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(34, 46);
+            label1.Location = new Point(39, 61);
             label1.Name = "label1";
-            label1.Size = new Size(188, 15);
+            label1.Size = new Size(240, 20);
             label1.TabIndex = 10;
             label1.Text = "Listado de ordenes de preparación";
             // 
             // AceptarBtn
             // 
-            AceptarBtn.Location = new Point(600, 290);
+            AceptarBtn.Location = new Point(686, 387);
+            AceptarBtn.Margin = new Padding(3, 4, 3, 4);
             AceptarBtn.Name = "AceptarBtn";
-            AceptarBtn.Size = new Size(103, 26);
+            AceptarBtn.Size = new Size(118, 35);
             AceptarBtn.TabIndex = 11;
             AceptarBtn.Text = "Aceptar";
             AceptarBtn.UseVisualStyleBackColor = true;
@@ -100,12 +102,13 @@
             // 
             // OrdenDespachadaForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(751, 351);
+            ClientSize = new Size(858, 468);
             Controls.Add(AceptarBtn);
             Controls.Add(label1);
             Controls.Add(listOrdenesDespachadas);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "OrdenDespachadaForm";
             Text = "OrdenDespachadaForm";
             ResumeLayout(false);
