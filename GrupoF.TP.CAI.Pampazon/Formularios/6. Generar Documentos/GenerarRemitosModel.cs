@@ -41,7 +41,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
                 CodigoCliente = "Fortin SRL",
                 Fecha = new DateTime(2024, 5, 13),
                 CodigoTransportista = "Transportista 2",
-                EstadoOrden = "Confirmada"
+                EstadoOrden = "Confirmada",
                  ProductosOrden= new List <Productos>  {
                 new Productos
                 {

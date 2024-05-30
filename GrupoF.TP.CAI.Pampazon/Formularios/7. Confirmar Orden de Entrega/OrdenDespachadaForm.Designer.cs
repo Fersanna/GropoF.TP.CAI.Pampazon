@@ -111,6 +111,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "OrdenDespachadaForm";
             Text = "OrdenDespachadaForm";
+            Load += OrdenDespachadaForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }

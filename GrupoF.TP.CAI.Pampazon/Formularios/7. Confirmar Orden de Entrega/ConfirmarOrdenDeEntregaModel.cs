@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
 {
-    internal class ConfirmarOrdenDeEntregaModel
+    public class ConfirmarOrdenDeEntregaModel
     {
          public List<OrdenDePreparacion> OrdenesDeEntregaAConfirmar { get; set; } = new List<OrdenDePreparacion> {
 
@@ -16,7 +16,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
                 CodigoCliente = "Moron Construcciones",
                 Fecha = new DateTime(2024, 5, 13),
                 CodigoTransportista = "Transportista 1",
-                EstadoOrden = "Confirmada",
+                EstadoOrden = "Seleccionada",
                 ProductosOrden= new List <Productos>  {
                 new Productos
                 {
@@ -40,7 +40,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
                 CodigoCliente = "Fortin SRL",
                 Fecha = new DateTime(2024, 5, 13),
                 CodigoTransportista = "Transportista 2",
-                EstadoOrden = "Confirmada"
+                EstadoOrden = "Seleccionada",
                  ProductosOrden= new List <Productos>  {
                 new Productos
                 {
@@ -64,7 +64,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
                 CodigoCliente = "Valentin Gomez S.A",
                 Fecha = new DateTime(2024, 5, 14),
                 CodigoTransportista = "Transportista 3",
-                EstadoOrden = "Confirmada"
+                EstadoOrden = "Seleccionada"
             },
 
             };

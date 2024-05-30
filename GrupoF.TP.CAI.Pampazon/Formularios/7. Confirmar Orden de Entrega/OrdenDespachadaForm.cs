@@ -12,7 +12,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
 {
     public partial class OrdenDespachadaForm : Form
     {
-        internal ConfirmarOrdenDeEntregaModel model { get; set; }
+        public ConfirmarOrdenDeEntregaModel model { get; set; }
         public OrdenDespachadaForm()
         {
             InitializeComponent();
@@ -27,6 +27,11 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
         private void AceptarBtn_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void OrdenDespachadaForm_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }
