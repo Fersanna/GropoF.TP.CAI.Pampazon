@@ -68,5 +68,6 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
             },
 
             };
+        public OrdenDePreparacion OrdenADespachada { get; internal set; }
     }
 }

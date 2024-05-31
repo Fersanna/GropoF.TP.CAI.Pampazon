@@ -55,10 +55,8 @@ namespace GrupoF.TP.CAI.Pampazon
                     OrdenDePreparacion seleccionada = (OrdenDePreparacion)listOrdenesPreparadas.SelectedItems[0].Tag;
                     seleccionada.EstadoOrden ="Despachada";
                     
-                   model.OrdenesDeEntregaAConfirmar.Add(seleccionada);
-
-                    ListViewItem items = new ListViewItem(seleccionada.CodigoCliente);
-                    
+                   model.OrdenADespachada = seleccionada;
+                  
 
                 }
 

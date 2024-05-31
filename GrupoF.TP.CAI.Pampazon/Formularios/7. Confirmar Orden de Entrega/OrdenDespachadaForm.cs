@@ -18,11 +18,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
             InitializeComponent();
         }
 
-
-        public void CargarDatos(List<ListViewItem> items)
-        {
-            listOrdenesDespachadas.Items.AddRange(items.ToArray());
-        }
+            
 
         private void AceptarBtn_Click(object sender, EventArgs e)
         {
@@ -32,6 +28,17 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
         private void OrdenDespachadaForm_Load(object sender, EventArgs e)
         {
            
+                    ListViewItem item = new ListViewItem(model.OrdenADespachada.NumeroDeOrden);
+                    item.SubItems.Add(model.OrdenADespachada.CodigoCliente);
+                    item.SubItems.Add(model.OrdenADespachada.Fecha.ToString());
+                    item.SubItems.Add(model.OrdenADespachada.CodigoTransportista);
+                    item.SubItems.Add(model.OrdenADespachada.EstadoOrden);
+                   
+
+                    listOrdenesDespachadas.Items.Add(item);
+
+                    item.Tag = model.OrdenADespachada;
+                
         }
     }
 }
