@@ -1,0 +1,542 @@
+[
+  {
+    "NumeroDeOrden": "P-000001",
+    "Fecha": "2024-05-01T00:00:00",
+    "CodigoCliente": "Moron Construcciones",
+    "CodigoTransportista": "Transportista 1",
+    "Prioridad": "Alta",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-001",
+        "Cantidad": 10
+      },
+      {
+        "IdProducto": "Prod-002",
+        "Cantidad": 5
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000002",
+    "Fecha": "2024-05-02T00:00:00",
+    "CodigoCliente": "Fortin SRL",
+    "CodigoTransportista": "Transportista 2",
+    "Prioridad": "Media",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-003",
+        "Cantidad": 20
+      },
+      {
+        "IdProducto": "Prod-004",
+        "Cantidad": 15
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000003",
+    "Fecha": "2024-05-03T00:00:00",
+    "CodigoCliente": "Valentin Gomez S.A",
+    "CodigoTransportista": "Transportista 3",
+    "Prioridad": "Baja",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-005",
+        "Cantidad": 8
+      },
+      {
+        "IdProducto": "Prod-006",
+        "Cantidad": 12
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000004",
+    "Fecha": "2024-05-04T00:00:00",
+    "CodigoCliente": "Almada S.A",
+    "CodigoTransportista": "Transportista 4",
+    "Prioridad": "Alta",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-007",
+        "Cantidad": 3
+      },
+      {
+        "IdProducto": "Prod-008",
+        "Cantidad": 6
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000005",
+    "Fecha": "2024-05-05T00:00:00",
+    "CodigoCliente": "Loma Negra",
+    "CodigoTransportista": "Transportista 5",
+    "Prioridad": "Media",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-009",
+        "Cantidad": 11
+      },
+      {
+        "IdProducto": "Prod-010",
+        "Cantidad": 7
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000006",
+    "Fecha": "2024-05-06T00:00:00",
+    "CodigoCliente": "Construmax",
+    "CodigoTransportista": "Transportista 6",
+    "Prioridad": "Baja",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-011",
+        "Cantidad": 25
+      },
+      {
+        "IdProducto": "Prod-012",
+        "Cantidad": 30
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000007",
+    "Fecha": "2024-05-07T00:00:00",
+    "CodigoCliente": "Ferreteria Centro",
+    "CodigoTransportista": "Transportista 7",
+    "Prioridad": "Alta",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-013",
+        "Cantidad": 14
+      },
+      {
+        "IdProducto": "Prod-014",
+        "Cantidad": 22
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000008",
+    "Fecha": "2024-05-08T00:00:00",
+    "CodigoCliente": "Acindar",
+    "CodigoTransportista": "Transportista 8",
+    "Prioridad": "Media",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-015",
+        "Cantidad": 5
+      },
+      {
+        "IdProducto": "Prod-016",
+        "Cantidad": 9
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000009",
+    "Fecha": "2024-05-09T00:00:00",
+    "CodigoCliente": "Holcim",
+    "CodigoTransportista": "Transportista 9",
+    "Prioridad": "Baja",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-017",
+        "Cantidad": 13
+      },
+      {
+        "IdProducto": "Prod-018",
+        "Cantidad": 17
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000010",
+    "Fecha": "2024-05-10T00:00:00",
+    "CodigoCliente": "Cementos Avellaneda",
+    "CodigoTransportista": "Transportista 10",
+    "Prioridad": "Alta",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-019",
+        "Cantidad": 18
+      },
+      {
+        "IdProducto": "Prod-020",
+        "Cantidad": 7
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000011",
+    "Fecha": "2024-05-11T00:00:00",
+    "CodigoCliente": "Pinturerias Rex",
+    "CodigoTransportista": "Transportista 1",
+    "Prioridad": "Media",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-021",
+        "Cantidad": 10
+      },
+      {
+        "IdProducto": "Prod-022",
+        "Cantidad": 12
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000012",
+    "Fecha": "2024-05-12T00:00:00",
+    "CodigoCliente": "Corralon Norte",
+    "CodigoTransportista": "Transportista 2",
+    "Prioridad": "Baja",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-023",
+        "Cantidad": 9
+      },
+      {
+        "IdProducto": "Prod-024",
+        "Cantidad": 4
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000013",
+    "Fecha": "2024-05-13T00:00:00",
+    "CodigoCliente": "Hierros SRL",
+    "CodigoTransportista": "Transportista 3",
+    "Prioridad": "Alta",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-025",
+        "Cantidad": 20
+      },
+      {
+        "IdProducto": "Prod-026",
+        "Cantidad": 15
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000014",
+    "Fecha": "2024-05-14T00:00:00",
+    "CodigoCliente": "Materiales Oeste",
+    "CodigoTransportista": "Transportista 4",
+    "Prioridad": "Media",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-027",
+        "Cantidad": 14
+      },
+      {
+        "IdProducto": "Prod-028",
+        "Cantidad": 11
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000015",
+    "Fecha": "2024-05-15T00:00:00",
+    "CodigoCliente": "Metalurgica Sur",
+    "CodigoTransportista": "Transportista 5",
+    "Prioridad": "Baja",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-029",
+        "Cantidad": 17
+      },
+      {
+        "IdProducto": "Prod-030",
+        "Cantidad": 5
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000016",
+    "Fecha": "2024-05-16T00:00:00",
+    "CodigoCliente": "Alba Construcciones",
+    "CodigoTransportista": "Transportista 6",
+    "Prioridad": "Alta",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-031",
+        "Cantidad": 8
+      },
+      {
+        "IdProducto": "Prod-032",
+        "Cantidad": 14
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000017",
+    "Fecha": "2024-05-17T00:00:00",
+    "CodigoCliente": "Hormigon Express",
+    "CodigoTransportista": "Transportista 7",
+    "Prioridad": "Media",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-033",
+        "Cantidad": 6
+      },
+      {
+        "IdProducto": "Prod-034",
+        "Cantidad": 20
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000018",
+    "Fecha": "2024-05-18T00:00:00",
+    "CodigoCliente": "Aberturas SRL",
+    "CodigoTransportista": "Transportista 8",
+    "Prioridad": "Baja",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-035",
+        "Cantidad": 11
+      },
+      {
+        "IdProducto": "Prod-036",
+        "Cantidad": 13
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000019",
+    "Fecha": "2024-05-19T00:00:00",
+    "CodigoCliente": "Pisos y Revestimientos",
+    "CodigoTransportista": "Transportista 9",
+    "Prioridad": "Alta",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-037",
+        "Cantidad": 7
+      },
+      {
+        "IdProducto": "Prod-038",
+        "Cantidad": 9
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000020",
+    "Fecha": "2024-05-20T00:00:00",
+    "CodigoCliente": "Ferreteria La Llave",
+    "CodigoTransportista": "Transportista 10",
+    "Prioridad": "Media",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-039",
+        "Cantidad": 21
+      },
+      {
+        "IdProducto": "Prod-040",
+        "Cantidad": 19
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000021",
+    "Fecha": "2024-05-21T00:00:00",
+    "CodigoCliente": "Construir S.A.",
+    "CodigoTransportista": "Transportista 1",
+    "Prioridad": "Baja",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-041",
+        "Cantidad": 5
+      },
+      {
+        "IdProducto": "Prod-042",
+        "Cantidad": 8
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000022",
+    "Fecha": "2024-05-22T00:00:00",
+    "CodigoCliente": "Plomeria Oeste",
+    "CodigoTransportista": "Transportista 2",
+    "Prioridad": "Alta",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-043",
+        "Cantidad": 16
+      },
+      {
+        "IdProducto": "Prod-044",
+        "Cantidad": 14
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000023",
+    "Fecha": "2024-05-23T00:00:00",
+    "CodigoCliente": "Materiales Delta",
+    "CodigoTransportista": "Transportista 3",
+    "Prioridad": "Media",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-045",
+        "Cantidad": 7
+      },
+      {
+        "IdProducto": "Prod-046",
+        "Cantidad": 12
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000024",
+    "Fecha": "2024-05-24T00:00:00",
+    "CodigoCliente": "Hierros y Metales",
+    "CodigoTransportista": "Transportista 4",
+    "Prioridad": "Baja",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-047",
+        "Cantidad": 10
+      },
+      {
+        "IdProducto": "Prod-048",
+        "Cantidad": 20
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000025",
+    "Fecha": "2024-05-25T00:00:00",
+    "CodigoCliente": "Tigre Construcciones",
+    "CodigoTransportista": "Transportista 5",
+    "Prioridad": "Alta",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-049",
+        "Cantidad": 18
+      },
+      {
+        "IdProducto": "Prod-050",
+        "Cantidad": 11
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000026",
+    "Fecha": "2024-05-26T00:00:00",
+    "CodigoCliente": "Loma Blanca",
+    "CodigoTransportista": "Transportista 6",
+    "Prioridad": "Media",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-051",
+        "Cantidad": 14
+      },
+      {
+        "IdProducto": "Prod-052",
+        "Cantidad": 7
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000027",
+    "Fecha": "2024-05-27T00:00:00",
+    "CodigoCliente": "Construcenter",
+    "CodigoTransportista": "Transportista 7",
+    "Prioridad": "Baja",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-053",
+        "Cantidad": 5
+      },
+      {
+        "IdProducto": "Prod-054",
+        "Cantidad": 3
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000028",
+    "Fecha": "2024-05-28T00:00:00",
+    "CodigoCliente": "Industrias Metalurgicas",
+    "CodigoTransportista": "Transportista 8",
+    "Prioridad": "Alta",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-055",
+        "Cantidad": 13
+      },
+      {
+        "IdProducto": "Prod-056",
+        "Cantidad": 9
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000029",
+    "Fecha": "2024-05-29T00:00:00",
+    "CodigoCliente": "Viviendas Sur",
+    "CodigoTransportista": "Transportista 9",
+    "Prioridad": "Media",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-057",
+        "Cantidad": 6
+      },
+      {
+        "IdProducto": "Prod-058",
+        "Cantidad": 8
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "P-000030",
+    "Fecha": "2024-05-30T00:00:00",
+    "CodigoCliente": "Construcciones del Norte",
+    "CodigoTransportista": "Transportista 10",
+    "Prioridad": "Baja",
+    "EstadoOrden": "Pendiente",
+    "Detalle": [
+      {
+        "IdProducto": "Prod-059",
+        "Cantidad": 4
+      },
+      {
+        "IdProducto": "Prod-060",
+        "Cantidad": 7
+      }
+    ]
+  }
+]

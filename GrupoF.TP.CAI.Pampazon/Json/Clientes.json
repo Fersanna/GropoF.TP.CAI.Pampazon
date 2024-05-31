@@ -1,0 +1,179 @@
+[
+  {
+    "CodigoCliente": "CL001",
+    "RazonSocial": "Construcciones Morón SRL",
+    "Cuit": "30-67891234-5",
+    "Domicilio": "Av. Rivadavia 1234, Morón, Buenos Aires",
+    "IdProductos": [ "PRD001", "PRD002" ]
+  },
+  {
+    "CodigoCliente": "CL002",
+    "RazonSocial": "Fortín SRL",
+    "Cuit": "30-56789012-3",
+    "Domicilio": "Calle Falsa 456, Quilmes, Buenos Aires",
+    "IdProductos": [ "PRD003", "PRD004" ]
+  },
+  {
+    "CodigoCliente": "CL003",
+    "RazonSocial": "Valentín Gómez S.A.",
+    "Cuit": "30-12345678-9",
+    "Domicilio": "Av. Libertador 789, Vicente López, Buenos Aires",
+    "IdProductos": [ "PRD005", "PRD006" ]
+  },
+  {
+    "CodigoCliente": "CL004",
+    "RazonSocial": "Almada S.A.",
+    "Cuit": "30-23456789-0",
+    "Domicilio": "Calle Siempre Viva 123, San Isidro, Buenos Aires",
+    "IdProductos": [ "PRD007", "PRD008" ]
+  },
+  {
+    "CodigoCliente": "CL005",
+    "RazonSocial": "Techos y Cielorrasos SRL",
+    "Cuit": "30-34567890-1",
+    "Domicilio": "Av. Belgrano 234, Lomas de Zamora, Buenos Aires",
+    "IdProductos": [ "PRD009", "PRD010" ]
+  },
+  {
+    "CodigoCliente": "CL006",
+    "RazonSocial": "Maderas del Sur S.A.",
+    "Cuit": "30-45678901-2",
+    "Domicilio": "Calle Mitre 567, Avellaneda, Buenos Aires",
+    "IdProductos": [ "PRD011", "PRD012" ]
+  },
+  {
+    "CodigoCliente": "CL007",
+    "RazonSocial": "Acero Argentino SRL",
+    "Cuit": "30-56789012-3",
+    "Domicilio": "Av. San Martín 890, Lanús, Buenos Aires",
+    "IdProductos": [ "PRD013", "PRD014" ]
+  },
+  {
+    "CodigoCliente": "CL008",
+    "RazonSocial": "Ladrillos Norte S.A.",
+    "Cuit": "30-67890123-4",
+    "Domicilio": "Calle Independencia 1234, Tigre, Buenos Aires",
+    "IdProductos": [ "PRD015", "PRD016" ]
+  },
+  {
+    "CodigoCliente": "CL009",
+    "RazonSocial": "Pinturerías Oeste SRL",
+    "Cuit": "30-78901234-5",
+    "Domicilio": "Av. de Mayo 567, Ituzaingó, Buenos Aires",
+    "IdProductos": [ "PRD017", "PRD018" ]
+  },
+  {
+    "CodigoCliente": "CL010",
+    "RazonSocial": "Herramientas del Centro S.A.",
+    "Cuit": "30-89012345-6",
+    "Domicilio": "Calle Corrientes 890, Almirante Brown, Buenos Aires",
+    "IdProductos": [ "PRD019", "PRD020" ]
+  },
+  {
+    "CodigoCliente": "CL011",
+    "RazonSocial": "Cerámicos del Sur SRL",
+    "Cuit": "30-90123456-7",
+    "Domicilio": "Av. Pellegrini 123, Berazategui, Buenos Aires",
+    "IdProductos": [ "PRD021", "PRD022" ]
+  },
+  {
+    "CodigoCliente": "CL012",
+    "RazonSocial": "Hierros y Aceros S.A.",
+    "Cuit": "30-01234567-8",
+    "Domicilio": "Calle 9 de Julio 456, Florencio Varela, Buenos Aires",
+    "IdProductos": [ "PRD023", "PRD024" ]
+  },
+  {
+    "CodigoCliente": "CL013",
+    "RazonSocial": "Plásticos del Oeste SRL",
+    "Cuit": "30-12345678-9",
+    "Domicilio": "Av. Santa Fe 789, Merlo, Buenos Aires",
+    "IdProductos": [ "PRD025", "PRD026" ]
+  },
+  {
+    "CodigoCliente": "CL014",
+    "RazonSocial": "Electrodomésticos Sur S.A.",
+    "Cuit": "30-23456789-0",
+    "Domicilio": "Calle Córdoba 123, La Plata, Buenos Aires",
+    "IdProductos": [ "PRD027", "PRD028" ]
+  },
+  {
+    "CodigoCliente": "CL015",
+    "RazonSocial": "Vidrios y Cristales SRL",
+    "Cuit": "30-34567890-1",
+    "Domicilio": "Av. Callao 234, Ezeiza, Buenos Aires",
+    "IdProductos": [ "PRD029", "PRD030" ]
+  },
+  {
+    "CodigoCliente": "CL016",
+    "RazonSocial": "Metalúrgica Norte S.A.",
+    "Cuit": "30-45678901-2",
+    "Domicilio": "Calle San Juan 567, Moreno, Buenos Aires",
+    "IdProductos": [ "PRD031", "PRD032" ]
+  },
+  {
+    "CodigoCliente": "CL017",
+    "RazonSocial": "Tuberías y Accesorios SRL",
+    "Cuit": "30-56789012-3",
+    "Domicilio": "Av. Roca 890, Tres de Febrero, Buenos Aires",
+    "IdProductos": [ "PRD033", "PRD034" ]
+  },
+  {
+    "CodigoCliente": "CL018",
+    "RazonSocial": "Mármoles y Granitos S.A.",
+    "Cuit": "30-67890123-4",
+    "Domicilio": "Calle Alem 1234, San Fernando, Buenos Aires",
+    "IdProductos": [ "PRD035", "PRD036" ]
+  },
+  {
+    "CodigoCliente": "CL019",
+    "RazonSocial": "Pisos y Revestimientos SRL",
+    "Cuit": "30-78901234-5",
+    "Domicilio": "Av. Boedo 567, San Miguel, Buenos Aires",
+    "IdProductos": [ "PRD037", "PRD038" ]
+  },
+  {
+    "CodigoCliente": "CL020",
+    "RazonSocial": "Iluminación del Este S.A.",
+    "Cuit": "30-89012345-6",
+    "Domicilio": "Calle Uruguay 890, José C. Paz, Buenos Aires",
+    "IdProductos": [ "PRD039", "PRD040" ]
+  },
+  {
+    "CodigoCliente": "CL021",
+    "RazonSocial": "Revestimientos Norte SRL",
+    "Cuit": "30-90123456-7",
+    "Domicilio": "Av. Tucumán 123, Vicente López, Buenos Aires",
+    "IdProductos": [ "PRD041", "PRD042" ]
+  },
+  {
+    "CodigoCliente": "CL022",
+    "RazonSocial": "Sanitarios del Sur S.A.",
+    "Cuit": "30-01234567-8",
+    "Domicilio": "Calle Lavalle 456, Escobar, Buenos Aires",
+    "IdProductos": [ "PRD043", "PRD044" ]
+  },
+  {
+    "CodigoCliente": "CL023",
+    "RazonSocial": "Ferretería del Centro SRL",
+    "Cuit": "30-12345678-9",
+    "Domicilio": "Av. San Martín 789, Pilar, Buenos Aires",
+    "IdProductos": [ "PRD045", "PRD046" ]
+  },
+  {
+    "CodigoCliente": "CL024",
+    "RazonSocial": "Aberturas Norte S.A.",
+    "Cuit": "30-23456789-0",
+    "Domicilio": "Calle 25 de Mayo 123, Zárate, Buenos Aires",
+    "IdProductos": [ "PRD047", "PRD048" ]
+  },
+  {
+    "CodigoCliente": "CL025",
+    "RazonSocial": "Herramientas del Oeste SRL",
+    "Cuit": "30-34567890-1",
+    "Domicilio": "Av. Alvear 234, Berisso, Buenos Aires",
+    "IdProductos": [ "PRD049", "PRD050" ]
+  }
+]
+
+
