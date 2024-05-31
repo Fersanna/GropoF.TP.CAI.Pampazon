@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace GrupoF.TP.CAI.Pampazon.Almacenes
 {
-    internal class AlmacenClientes
+    public static class AlmacenClientes
     {
-        internal static List<ClienteEnt> Clientes { get; private set; }
+        public static List<ClienteEnt> Clientes { get; private set; }
 
         static AlmacenClientes()
         {
