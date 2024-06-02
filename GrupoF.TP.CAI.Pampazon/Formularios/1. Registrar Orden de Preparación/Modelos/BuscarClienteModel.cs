@@ -1,4 +1,5 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Modulos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -68,6 +69,11 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
 
         }
         };
+
+         public BuscarClienteModel()
+        {
+            Clientes = ModuloClientes.ObtenerListaClientes();
+        }
 
         internal string QuitarProductoDelaOrden(Productos producto)
         {

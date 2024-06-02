@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrupoF.TP.CAI.Pampazon.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,15 @@ namespace GrupoF.TP.CAI.Pampazon.Clases_Auxiliares
         {
             Productos= new List<Productos>();
 
+        }
+
+         public Clientes(ClienteEnt clienteEnt)
+        {
+            CodigoCliente = clienteEnt.CodigoCliente;
+            RazonSocial = clienteEnt.RazonSocial;
+            Cuit = clienteEnt.Cuit;
+            Domicilio = clienteEnt.Domicilio;
+           
         }
     }
 }

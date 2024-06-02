@@ -11,22 +11,28 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
     public static class AlmacenClientes
     {
         public static List<ClienteEnt> Clientes { get; private set; }
-
+        private static readonly string filePath = @"C:\Users\Administrator\Desktop\Tp.CAI\GropoF.TP.CAI.Pampazon\GrupoF.TP.CAI.Pampazon\Json\Clientes.json";
         static AlmacenClientes()
         {
             Clientes = new List<ClienteEnt>();
 
             try
             {
-                if (File.Exists("Clientes.json"))
+                if (File.Exists(filePath))
                 {
-                    var archivoCargado = File.ReadAllText("Clientes.json");
+                    var archivoCargado = File.ReadAllText(filePath);
+                     MessageBox.Show ("Archivo cargado correctamente.");
                     Clientes = JsonConvert.DeserializeObject<List<ClienteEnt>>(archivoCargado);
+                   
+                }
+                else
+                {
+                    MessageBox.Show ("El archivo Clientes.json no existe.");
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error al cargar los clientes: {ex.Message}");
+                MessageBox.Show ($"Error al cargar los clientes: {ex.Message}");
             }
         }
 
@@ -39,7 +45,7 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error al guardar los clientes: {ex.Message}");
+               MessageBox.Show ($"Error al guardar los clientes: {ex.Message}");
             }
         }
     }
