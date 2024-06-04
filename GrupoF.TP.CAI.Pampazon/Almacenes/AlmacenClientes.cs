@@ -21,7 +21,7 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
                 if (File.Exists(filePath))
                 {
                     var archivoCargado = File.ReadAllText(filePath);
-                     MessageBox.Show ("Archivo cargado correctamente.");
+                
                     Clientes = JsonConvert.DeserializeObject<List<ClienteEnt>>(archivoCargado);
                    
                 }

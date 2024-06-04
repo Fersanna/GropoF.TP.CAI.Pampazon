@@ -71,20 +71,20 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
         }
         };
 
-         public BuscarClienteModel()
+        public BuscarClienteModel()
         {
-           var  clientesLista = ModuloClientes.ObtenerListaClientes();
-           Clientes =  clientesLista.Select(clienteEnt => new Clientes (clienteEnt)).ToList();
+            var clientesLista = ModuloClientes.ObtenerListaClientes();
+            Clientes = clientesLista.Select(clienteEnt => new Clientes(clienteEnt)).ToList();
 
-          var productos = AlmacenProductos.Productos;
-
-             foreach (var cliente in Clientes)
-        {
-            cliente.Productos = productos
-                   //  .Where(producto => cliente.Contains(producto.IdProducto))
-                    .Select(productoEnt => new Productos(productoEnt))
-                    .ToList();
-        }
+            var productos = AlmacenProductos.Productos;
+            //falta filtrar los productos para cada cliente
+            foreach (var cliente in Clientes)
+            {
+                cliente.Productos = productos
+                        //  .Where(producto => cliente.Contains(producto.IdProducto))
+                        .Select(productoEnt => new Productos(productoEnt))
+                        .ToList();
+            }
         }
 
         internal string QuitarProductoDelaOrden(Productos producto)
