@@ -11,7 +11,7 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
     public static class AlmacenClientes
     {
         public static List<ClienteEnt> Clientes { get; private set; }
-        private static readonly string filePath = @"C:\Users\Administrator\Desktop\Tp.CAI\GropoF.TP.CAI.Pampazon\GrupoF.TP.CAI.Pampazon\Json\Clientes.json";
+        private static readonly string filePath = @"Json\Clientes.json";
         static AlmacenClientes()
         {
             Clientes = new List<ClienteEnt>();
