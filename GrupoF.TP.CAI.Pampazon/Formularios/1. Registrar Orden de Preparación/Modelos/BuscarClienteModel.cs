@@ -74,17 +74,28 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
         public BuscarClienteModel()
         {
             var clientesLista = ModuloClientes.ObtenerListaClientes();
-            Clientes = clientesLista.Select(clienteEnt => new Clientes(clienteEnt)).ToList();
-
             var productos = AlmacenProductos.Productos;
-            //falta filtrar los productos para cada cliente
-            foreach (var cliente in Clientes)
+
+           Clientes = clientesLista.Select(clienteEnt => 
             {
-                cliente.Productos = productos
-                        //  .Where(producto => cliente.Contains(producto.IdProducto))
-                        .Select(productoEnt => new Productos(productoEnt))
-                        .ToList();
-            }
+                var productosCliente = clienteEnt.IdProductos
+                    .Select(idProducto => 
+                    {
+                        var producto = productos.FirstOrDefault(p => p.IdProducto == idProducto);
+                        return producto != null ? new Productos(producto) : null;
+                    })
+                    .Where(p => p != null)
+                    .ToList();
+
+                return new Clientes
+                {
+                    CodigoCliente = clienteEnt.CodigoCliente,
+                    RazonSocial = clienteEnt.RazonSocial,
+                    Cuit = clienteEnt.Cuit,
+                    Domicilio = clienteEnt.Domicilio,
+                    Productos = productosCliente
+                };
+            }).ToList();
         }
 
         internal string QuitarProductoDelaOrden(Productos producto)
