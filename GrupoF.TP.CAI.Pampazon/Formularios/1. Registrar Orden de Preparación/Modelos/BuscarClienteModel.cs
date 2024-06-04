@@ -1,4 +1,5 @@
-﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
+using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
 using GrupoF.TP.CAI.Pampazon.Modulos;
 using System;
 using System.Collections.Generic;
@@ -74,6 +75,16 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
         {
            var  clientesLista = ModuloClientes.ObtenerListaClientes();
            Clientes =  clientesLista.Select(clienteEnt => new Clientes (clienteEnt)).ToList();
+
+          var productos = AlmacenProductos.Productos;
+
+             foreach (var cliente in Clientes)
+        {
+            cliente.Productos = productos
+                   //  .Where(producto => cliente.Contains(producto.IdProducto))
+                    .Select(productoEnt => new Productos(productoEnt))
+                    .ToList();
+        }
         }
 
         internal string QuitarProductoDelaOrden(Productos producto)

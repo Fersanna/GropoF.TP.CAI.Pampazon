@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrupoF.TP.CAI.Pampazon.Entidades
 {
-    internal class ProductoEnt
+    public class ProductoEnt
     {
         public string IdProducto { get; set; }
         public string Descripcion { get; set; }

@@ -16,5 +16,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modulos
         {
              return AlmacenClientes.Clientes;
         }
+
+       
     }
 }

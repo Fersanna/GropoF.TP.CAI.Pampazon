@@ -1,0 +1,303 @@
+[
+  {
+    "IdProducto": "PRD001",
+    "Descripcion": "Ladrillo Hueco",
+    "Posicion": "A1",
+    "Stock": 1000
+  },
+  {
+    "IdProducto": "PRD002",
+    "Descripcion": "Cemento Portland",
+    "Posicion": "A2",
+    "Stock": 500
+  },
+  {
+    "IdProducto": "PRD003",
+    "Descripcion": "Arena Fina",
+    "Posicion": "B1",
+    "Stock": 300
+  },
+  {
+    "IdProducto": "PRD004",
+    "Descripcion": "Piedra Partida",
+    "Posicion": "B2",
+    "Stock": 200
+  },
+  {
+    "IdProducto": "PRD005",
+    "Descripcion": "Hierro de Construcción",
+    "Posicion": "C1",
+    "Stock": 150
+  },
+  {
+    "IdProducto": "PRD006",
+    "Descripcion": "Cal Hidráulica",
+    "Posicion": "C2",
+    "Stock": 120
+  },
+  {
+    "IdProducto": "PRD007",
+    "Descripcion": "Bloque de Hormigón",
+    "Posicion": "D1",
+    "Stock": 250
+  },
+  {
+    "IdProducto": "PRD008",
+    "Descripcion": "Ladrillo Común",
+    "Posicion": "D2",
+    "Stock": 300
+  },
+  {
+    "IdProducto": "PRD009",
+    "Descripcion": "Teja Colonial",
+    "Posicion": "E1",
+    "Stock": 400
+  },
+  {
+    "IdProducto": "PRD010",
+    "Descripcion": "Chapa Galvanizada",
+    "Posicion": "E2",
+    "Stock": 350
+  },
+  {
+    "IdProducto": "PRD011",
+    "Descripcion": "Madera de Pino",
+    "Posicion": "F1",
+    "Stock": 500
+  },
+  {
+    "IdProducto": "PRD012",
+    "Descripcion": "Madera de Eucalipto",
+    "Posicion": "F2",
+    "Stock": 450
+  },
+  {
+    "IdProducto": "PRD013",
+    "Descripcion": "Perfil de Acero",
+    "Posicion": "G1",
+    "Stock": 600
+  },
+  {
+    "IdProducto": "PRD014",
+    "Descripcion": "Viga de Hierro",
+    "Posicion": "G2",
+    "Stock": 300
+  },
+  {
+    "IdProducto": "PRD015",
+    "Descripcion": "Ladrillo Refractario",
+    "Posicion": "H1",
+    "Stock": 200
+  },
+  {
+    "IdProducto": "PRD016",
+    "Descripcion": "Aislante Térmico",
+    "Posicion": "H2",
+    "Stock": 100
+  },
+  {
+    "IdProducto": "PRD017",
+    "Descripcion": "Pintura Acrílica",
+    "Posicion": "I1",
+    "Stock": 350
+  },
+  {
+    "IdProducto": "PRD018",
+    "Descripcion": "Pintura Sintética",
+    "Posicion": "I2",
+    "Stock": 300
+  },
+  {
+    "IdProducto": "PRD019",
+    "Descripcion": "Taladro Eléctrico",
+    "Posicion": "J1",
+    "Stock": 50
+  },
+  {
+    "IdProducto": "PRD020",
+    "Descripcion": "Amoladora Angular",
+    "Posicion": "J2",
+    "Stock": 40
+  },
+  {
+    "IdProducto": "PRD021",
+    "Descripcion": "Cerámica de Piso",
+    "Posicion": "K1",
+    "Stock": 600
+  },
+  {
+    "IdProducto": "PRD022",
+    "Descripcion": "Cerámica de Pared",
+    "Posicion": "K2",
+    "Stock": 500
+  },
+  {
+    "IdProducto": "PRD023",
+    "Descripcion": "Hierro Doblado",
+    "Posicion": "L1",
+    "Stock": 200
+  },
+  {
+    "IdProducto": "PRD024",
+    "Descripcion": "Malla Electrosoldada",
+    "Posicion": "L2",
+    "Stock": 150
+  },
+  {
+    "IdProducto": "PRD025",
+    "Descripcion": "Tubo de PVC",
+    "Posicion": "M1",
+    "Stock": 300
+  },
+  {
+    "IdProducto": "PRD026",
+    "Descripcion": "Codo de PVC",
+    "Posicion": "M2",
+    "Stock": 250
+  },
+  {
+    "IdProducto": "PRD027",
+    "Descripcion": "Interruptor Eléctrico",
+    "Posicion": "N1",
+    "Stock": 400
+  },
+  {
+    "IdProducto": "PRD028",
+    "Descripcion": "Enchufe Eléctrico",
+    "Posicion": "N2",
+    "Stock": 350
+  },
+  {
+    "IdProducto": "PRD029",
+    "Descripcion": "Vidrio Templado",
+    "Posicion": "O1",
+    "Stock": 200
+  },
+  {
+    "IdProducto": "PRD030",
+    "Descripcion": "Cristal Laminado",
+    "Posicion": "O2",
+    "Stock": 150
+  },
+  {
+    "IdProducto": "PRD031",
+    "Descripcion": "Panel de Aluminio",
+    "Posicion": "P1",
+    "Stock": 300
+  },
+  {
+    "IdProducto": "PRD032",
+    "Descripcion": "Plancha de Acero",
+    "Posicion": "P2",
+    "Stock": 250
+  },
+  {
+    "IdProducto": "PRD033",
+    "Descripcion": "Tubo de Cobre",
+    "Posicion": "Q1",
+    "Stock": 400
+  },
+  {
+    "IdProducto": "PRD034",
+    "Descripcion": "Codo de Cobre",
+    "Posicion": "Q2",
+    "Stock": 350
+  },
+  {
+    "IdProducto": "PRD035",
+    "Descripcion": "Mármol Blanco",
+    "Posicion": "R1",
+    "Stock": 100
+  },
+  {
+    "IdProducto": "PRD036",
+    "Descripcion": "Granito Negro",
+    "Posicion": "R2",
+    "Stock": 120
+  },
+  {
+    "IdProducto": "PRD037",
+    "Descripcion": "Piso Flotante",
+    "Posicion": "S1",
+    "Stock": 500
+  },
+  {
+    "IdProducto": "PRD038",
+    "Descripcion": "Revestimiento Vinílico",
+    "Posicion": "S2",
+    "Stock": 450
+  },
+  {
+    "IdProducto": "PRD039",
+    "Descripcion": "Lámpara LED",
+    "Posicion": "T1",
+    "Stock": 600
+  },
+  {
+    "IdProducto": "PRD040",
+    "Descripcion": "Lámpara Halógena",
+    "Posicion": "T2",
+    "Stock": 500
+  },
+  {
+    "IdProducto": "PRD041",
+    "Descripcion": "Azulejo Blanco",
+    "Posicion": "U1",
+    "Stock": 300
+  },
+  {
+    "IdProducto": "PRD042",
+    "Descripcion": "Azulejo Azul",
+    "Posicion": "U2",
+    "Stock": 250
+  },
+  {
+    "IdProducto": "PRD043",
+    "Descripcion": "Lavamanos Cerámico",
+    "Posicion": "V1",
+    "Stock": 200
+  },
+  {
+    "IdProducto": "PRD044",
+    "Descripcion": "Inodoro de Porcelana",
+    "Posicion": "V2",
+    "Stock": 150
+  },
+  {
+    "IdProducto": "PRD045",
+    "Descripcion": "Martillo de Acero",
+    "Posicion": "W1",
+    "Stock": 300
+  },
+  {
+    "IdProducto": "PRD046",
+    "Descripcion": "Destornillador Phillips",
+    "Posicion": "W2",
+    "Stock": 250
+  },
+  {
+    "IdProducto": "PRD047",
+    "Descripcion": "Ventana de Aluminio",
+    "Posicion": "X1",
+    "Stock": 200
+  },
+  {
+    "IdProducto": "PRD048",
+    "Descripcion": "Puerta de Madera",
+    "Posicion": "X2",
+    "Stock": 150
+  },
+  {
+    "IdProducto": "PRD049",
+    "Descripcion": "Cinta Métrica",
+    "Posicion": "Y1",
+    "Stock": 100
+  },
+  {
+    "IdProducto": "PRD050",
+    "Descripcion": "Nivel de Burbuja",
+    "Posicion": "Y2",
+    "Stock": 80
+  }
+]
+
