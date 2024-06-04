@@ -11,11 +11,10 @@ namespace GrupoF.TP.CAI.Pampazon.Modulos
 {
     public static class ModuloClientes
     {
-       
-        //seguir por aca (Ensamblar ClientesEnt con Clientes y luego insertar codigo ObtenerListaClientes en el loal)
-        public static List<Clientes> ObtenerListaClientes()
+              
+        public static List<ClienteEnt> ObtenerListaClientes()
         {
-             return AlmacenClientes.Clientes.Select(clienteEnt => new Clientes(clienteEnt)).ToList();
+             return AlmacenClientes.Clientes;
         }
     }
 }

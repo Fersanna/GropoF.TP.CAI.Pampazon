@@ -72,7 +72,8 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
 
          public BuscarClienteModel()
         {
-            Clientes = ModuloClientes.ObtenerListaClientes();
+           var  clientesLista = ModuloClientes.ObtenerListaClientes();
+           Clientes =  clientesLista.Select(clienteEnt => new Clientes (clienteEnt)).ToList();
         }
 
         internal string QuitarProductoDelaOrden(Productos producto)
