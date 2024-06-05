@@ -73,9 +73,34 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
         }
 
         private void ConfirmarPrepBtn_Click(object sender, EventArgs e)
-        {   
+        {
             //Subir a ordenes confirmadas, validar y volver a menu principal
-            MessageBox.Show("La orden fue cargada con exito!");
+            var nuevaOrden = new OrdenDePreparacion
+            {
+                CodigoCliente = model.ClienteSeleccionado.CodigoCliente,
+                CodigoTransportista = TransportistaBox.Text,
+                Fecha = FechaPicker.Value,
+                EstadoOrden = "Disponible",
+                ProductosOrden = new List<Productos>()
+            };
+
+            foreach (ListViewItem item in ProductosOrdenList.Items)
+            {
+                var producto = item.Tag as Productos;
+                if (producto != null)
+                {
+                    nuevaOrden.ProductosOrden.Add(producto);
+                }
+
+                model.ClienteOrden = nuevaOrden;
+            }
+
+            model.GenerarNuevaOrdenDePreparacion();
+
+            MessageBox.Show("La orden fue cargada con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            // Cerrar el formulario o limpiar los campos si es necesario
+            this.Close();
         }
     }
 }

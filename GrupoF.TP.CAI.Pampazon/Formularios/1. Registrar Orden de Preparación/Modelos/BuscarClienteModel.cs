@@ -1,5 +1,6 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
 using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Entidades;
 using GrupoF.TP.CAI.Pampazon.Modulos;
 using System;
 using System.Collections.Generic;
@@ -76,26 +77,26 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
             var clientesLista = ModuloClientes.ObtenerListaClientes();
             var productos = AlmacenProductos.Productos;
 
-           Clientes = clientesLista.Select(clienteEnt => 
-            {
-                var productosCliente = clienteEnt.IdProductos
-                    .Select(idProducto => 
-                    {
-                        var producto = productos.FirstOrDefault(p => p.IdProducto == idProducto);
-                        return producto != null ? new Productos(producto) : null;
-                    })
-                    .Where(p => p != null)
-                    .ToList();
+            Clientes = clientesLista.Select(clienteEnt =>
+             {
+                 var productosCliente = clienteEnt.IdProductos
+                     .Select(idProducto =>
+                     {
+                         var producto = productos.FirstOrDefault(p => p.IdProducto == idProducto);
+                         return producto != null ? new Productos(producto) : null;
+                     })
+                     .Where(p => p != null)
+                     .ToList();
 
-                return new Clientes
-                {
-                    CodigoCliente = clienteEnt.CodigoCliente,
-                    RazonSocial = clienteEnt.RazonSocial,
-                    Cuit = clienteEnt.Cuit,
-                    Domicilio = clienteEnt.Domicilio,
-                    Productos = productosCliente
-                };
-            }).ToList();
+                 return new Clientes
+                 {
+                     CodigoCliente = clienteEnt.CodigoCliente,
+                     RazonSocial = clienteEnt.RazonSocial,
+                     Cuit = clienteEnt.Cuit,
+                     Domicilio = clienteEnt.Domicilio,
+                     Productos = productosCliente
+                 };
+             }).ToList();
         }
 
         internal string QuitarProductoDelaOrden(Productos producto)
@@ -156,6 +157,53 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
             return null;
         }
 
+        //Seguir por aca para terminar de el caso de uso 1
+        internal void GenerarNuevaOrdenDePreparacion()
+        {
+            var validacion = ValidarCantidadProductos();
+            if (validacion != null)
+            {
+                throw new InvalidOperationException(validacion);
+            }
+
+            // Actualizar el inventario de productos
+            foreach (var productoOrden in ClienteOrden.ProductosOrden)
+            {
+                var productoInventario = AlmacenProductos.Productos.FirstOrDefault(p => p.IdProducto == productoOrden.IdProducto);
+                if (productoInventario != null)
+                {
+                    productoInventario.Stock -= productoOrden.Cantidad;
+                }
+                else
+                {
+                    throw new InvalidOperationException($"Producto con ID {productoOrden.IdProducto} no encontrado en el inventario.");
+                }
+            }
+
+            // Convertir y guardar la nueva orden de preparación
+            var ordenDePreparacionEnt = ConvertirOrden(ClienteOrden);
+            AlmacenOrdenesDePreparacion.AgregarOrden(ordenDePreparacionEnt);
+                      
+            // Mensaje de confirmación
+            MessageBox.Show("La orden fue generada con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        internal OrdenDePreparacionEnt ConvertirOrden(OrdenDePreparacion orden)
+        {
+            return new OrdenDePreparacionEnt
+            {
+                NumeroDeOrden = orden.NumeroDeOrden,
+                Fecha = orden.Fecha,
+                CodigoCliente = orden.CodigoCliente,
+                CodigoTransportista = orden.CodigoTransportista,
+                EstadoOrden = orden.EstadoOrden,
+                Detalle = orden.ProductosOrden.Select(p => new OrdenDePreparacionDetalle
+                {
+                    IdProducto = p.IdProducto,
+                    Cantidad = p.Cantidad
+                }).ToList()
+            };
+        }
 
     }
 }

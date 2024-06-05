@@ -13,6 +13,8 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
     {
         public readonly static List<OrdenDePreparacionEnt> OrdenesDePreparacion;
 
+        public static List<OrdenDePreparacionEnt> OrdenDePreparacionEnts;
+
         static AlmacenOrdenesDePreparacion()
         {
             OrdenesDePreparacion = new List<OrdenDePreparacionEnt>();
@@ -37,6 +39,24 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
 
             // Guardar en el archivo
             File.WriteAllText("OrdenesDePreparacion.Json", contenidoJson);
+        }
+
+        internal static void AgregarOrden(OrdenDePreparacionEnt ordenDePreparacionEnt)
+        {
+            if (OrdenDePreparacionEnts == null)
+            {
+                OrdenDePreparacionEnts = new List<OrdenDePreparacionEnt>();
+            }
+            OrdenDePreparacionEnts.Add(ordenDePreparacionEnt);
+            var ultimaOrden = OrdenDePreparacionEnts.LastOrDefault();
+            if (ultimaOrden != null)
+            {
+                MessageBox.Show($"La orden grabada en la lista es la número: {ultimaOrden.NumeroDeOrden}\n" +
+                                $"Código Cliente: {ultimaOrden.CodigoCliente}\n" +
+                                $"Fecha: {ultimaOrden.Fecha}\n" +
+                                $"Transportista: {ultimaOrden.CodigoTransportista}\n" +
+                                $"Estado: {ultimaOrden.EstadoOrden}");
+            }
         }
     }
 }
