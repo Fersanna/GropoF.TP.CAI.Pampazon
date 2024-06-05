@@ -15,62 +15,9 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
         public Clientes ClienteSeleccionado { get; set; }
         public OrdenDePreparacion ClienteOrden { get; set; }
         public string Cuit { get; set; }
-        public List<Clientes> Clientes { get; set; } = new List<Clientes>
+        public List<Clientes> Clientes { get; set; } 
 
-
-        {
-        new Clientes
-        {
-            CodigoCliente = "001",
-            RazonSocial = "Cliente 1",
-            Cuit = "20-12345678-9",
-            Domicilio = "Dirección 1",
-            Productos = new List<Productos>
-            {
-                new Productos
-                {
-                    IdProducto = "A1",
-                    Descripcion = "Producto 1",
-                    Posicion = "X-Y-Z",
-                    Cantidad = 5
-                },
-                 new Productos
-                {
-                    IdProducto = "A2",
-                    Descripcion = "Producto 2",
-                    Posicion = "X-Y-Z",
-                    Cantidad = 18
-                }
-            }
-        },
-
-        new Clientes
-        {
-            CodigoCliente = "002",
-            RazonSocial = "Cliente 2",
-            Cuit = "20-87654321-9",
-            Domicilio = "Dirección 2",
-            Productos = new List<Productos>
-            {
-                new Productos
-                {
-                    IdProducto = "A2",
-                    Descripcion = "Producto 2",
-                    Posicion = "X-Y-Z",
-                    Cantidad = 18
-                }
-            }
-        },
-
-        new Clientes
-        {
-            CodigoCliente = "003",
-            RazonSocial = "Cliente 3",
-            Cuit = "20-19283746-9",
-            Domicilio = "Dirección 3"
-
-        }
-        };
+                  
 
         public BuscarClienteModel()
         {

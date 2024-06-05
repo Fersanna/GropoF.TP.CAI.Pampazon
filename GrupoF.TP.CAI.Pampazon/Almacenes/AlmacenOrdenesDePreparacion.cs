@@ -48,6 +48,7 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
                 OrdenDePreparacionEnts = new List<OrdenDePreparacionEnt>();
             }
             OrdenDePreparacionEnts.Add(ordenDePreparacionEnt);
+            Grabar();
             var ultimaOrden = OrdenDePreparacionEnts.LastOrDefault();
             if (ultimaOrden != null)
             {

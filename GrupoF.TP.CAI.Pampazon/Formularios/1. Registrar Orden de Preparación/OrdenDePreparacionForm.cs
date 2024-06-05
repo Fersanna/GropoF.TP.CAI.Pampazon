@@ -80,7 +80,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
                 CodigoCliente = model.ClienteSeleccionado.CodigoCliente,
                 CodigoTransportista = TransportistaBox.Text,
                 Fecha = FechaPicker.Value,
-                EstadoOrden = "Disponible",
+                EstadoOrden = "Pendiente",
                 ProductosOrden = new List<Productos>()
             };
 
@@ -97,7 +97,6 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
 
             model.GenerarNuevaOrdenDePreparacion();
 
-            MessageBox.Show("La orden fue cargada con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             // Cerrar el formulario o limpiar los campos si es necesario
             this.Close();

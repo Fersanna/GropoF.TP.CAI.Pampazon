@@ -1,4 +1,5 @@
-﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
+using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,46 +16,29 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         public DateTime FechaHasta { get; set; }
 
-        public string Transportista {get; set; }
+        public string Transportista { get; set; }
 
         public string NumeroOrden { get; set; }
 
         public List<OrdenDePreparacion> OrdenesConfirmadas { get; set; }
-        public List<OrdenDePreparacion> OrdenDePreparacion { get; set; } = new List<OrdenDePreparacion>
+        public List<OrdenDePreparacion> OrdenDePreparacion { get; set; } 
+
+        public OrdenDeSeleccionModel()
         {
-            new OrdenDePreparacion
-            {
-                NumeroDeOrden = "P-000001",
-                CodigoCliente = "Moron Construcciones",
-                Fecha = new DateTime(2024, 5, 13),
-                CodigoTransportista = "Transportista 1",
-                EstadoOrden = "Pendiente"
-            },
-            new OrdenDePreparacion
-            {
-                NumeroDeOrden = "P-000002",
-                CodigoCliente = "Fortin SRL",
-                Fecha = new DateTime(2024, 5, 13),
-                CodigoTransportista = "Transportista 2",
-                EstadoOrden = "Pendiente"
-            },
-            new OrdenDePreparacion
-            {
-                NumeroDeOrden = "P-000003",
-                CodigoCliente = "Valentin Gomez S.A",
-                Fecha = new DateTime(2024, 5, 14),
-                CodigoTransportista = "Transportista 3",
-                EstadoOrden = "Pendiente"
-            },
-            new OrdenDePreparacion
-            {
-                NumeroDeOrden = "P-000004",
-                CodigoCliente = "Almada S.A",
-                Fecha = new DateTime(2024, 5, 15),
-                CodigoTransportista = "Transportista 4",
-                EstadoOrden = "Pendiente"
+
+            var ordenesDeSeleccion = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts;
+            OrdenDePreparacion = ordenesDeSeleccion.Select(ordenesEnt =>
+             new OrdenDePreparacion
+             {
+                 NumeroDeOrden = ordenesEnt.NumeroDeOrden,
+                 Fecha = ordenesEnt.Fecha,
+                 CodigoCliente = ordenesEnt.CodigoCliente,
+                 CodigoTransportista = ordenesEnt.CodigoTransportista,
+                 EstadoOrden = ordenesEnt.EstadoOrden,
+
+             }).ToList();
+
             }
-        };
 
         internal List<OrdenDePreparacion> FiltrarOrdenes()
         {
@@ -82,14 +66,14 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
             {
                 return "El nombre del cliente no puede tener más de 30 caracteres.";
             }
-            
+
 
             if (string.IsNullOrWhiteSpace(Transportista))
             {
                 return "El nombre del Transportista no puede estar vacío.";
             }
 
-              if (string.IsNullOrWhiteSpace(NumeroOrden))
+            if (string.IsNullOrWhiteSpace(NumeroOrden))
             {
                 return "El numero de orden no puede estar vacío.";
             }
