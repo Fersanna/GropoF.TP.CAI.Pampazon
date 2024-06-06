@@ -15,9 +15,9 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
         public Clientes ClienteSeleccionado { get; set; }
         public OrdenDePreparacion ClienteOrden { get; set; }
         public string Cuit { get; set; }
-        public List<Clientes> Clientes { get; set; } 
+        public List<Clientes> Clientes { get; set; }
 
-                  
+
 
         public BuscarClienteModel()
         {
@@ -119,8 +119,21 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
                 var productoInventario = AlmacenProductos.Productos.FirstOrDefault(p => p.IdProducto == productoOrden.IdProducto);
                 if (productoInventario != null)
                 {
+
                     productoInventario.Stock -= productoOrden.Cantidad;
+
+                    var productoCliente = ClienteSeleccionado.Productos.FirstOrDefault(p => p.IdProducto == productoOrden.IdProducto);
+
+                    if (productoCliente != null)
+                    {
+                        productoCliente.Cantidad -= productoOrden.Cantidad;
+                    }
+                    else
+                    {
+                        throw new InvalidOperationException($"Producto con ID {productoOrden.IdProducto} no encontrado en la lista de productos del cliente.");
+                    }
                 }
+
                 else
                 {
                     throw new InvalidOperationException($"Producto con ID {productoOrden.IdProducto} no encontrado en el inventario.");
@@ -130,7 +143,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
             // Convertir y guardar la nueva orden de preparación
             var ordenDePreparacionEnt = ConvertirOrden(ClienteOrden);
             AlmacenOrdenesDePreparacion.AgregarOrden(ordenDePreparacionEnt);
-                      
+
             // Mensaje de confirmación
             MessageBox.Show("La orden fue generada con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
