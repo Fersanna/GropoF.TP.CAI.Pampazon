@@ -64,12 +64,20 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
             else
             {
                 OrdenDePreparacionForm ordenDePreparacionForm = new OrdenDePreparacionForm();
+                ordenDePreparacionForm.FormularioGenerarOrden = this;
                 ordenDePreparacionForm.model = model;
                 ordenDePreparacionForm.ShowDialog();
 
             }
 
 
+        }
+
+        public void CerrarGenerarOrdenDePreparacionForm()
+        {
+            
+                this.Close();
+            
         }
 
         private void PorductosList_SelectedIndexChanged(object sender, EventArgs e)
@@ -130,7 +138,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                         Cantidad = (int)newRow.Cells["Cantidad"].Value,
                     });
 
-                   // MessageBox.Show("Se han agregado " + model.ClienteOrden.ProductosOrden.Count() + "a la orden"); Para probar que el producto se este agregando correctamente a la orden.
+                    // MessageBox.Show("Se han agregado " + model.ClienteOrden.ProductosOrden.Count() + "a la orden"); Para probar que el producto se este agregando correctamente a la orden.
                 }
                 else
                 {
@@ -237,6 +245,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                 MessageBox.Show("Por favor, seleccione una fila para quitar.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+
     }
 
 
