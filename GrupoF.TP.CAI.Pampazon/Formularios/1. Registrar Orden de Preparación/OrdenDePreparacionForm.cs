@@ -22,6 +22,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
         public BuscarClienteModel model { get; internal set; }
         public GenerarOrdenDePreparacionForm FormularioGenerarOrden { get; set; }
 
+        public BuscarClienteForm BuscarClienteForm { get; set; }
+
         private void CancelarBtn_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -102,6 +104,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
             // Cerrar el formulario o limpiar los campos si es necesario
             this.Close();
             FormularioGenerarOrden.CerrarGenerarOrdenDePreparacionForm();
+            BuscarClienteForm.CerrarClientes();
             
         }
     }

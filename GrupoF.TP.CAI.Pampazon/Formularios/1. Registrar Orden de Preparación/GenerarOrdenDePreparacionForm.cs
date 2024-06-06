@@ -17,6 +17,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
     {
         public BuscarClienteModel model { get; set; }
 
+        public BuscarClienteForm ClientesForm {get; set;}
+
         public GenerarOrdenDePreparacionForm(BuscarClienteModel model)
         {
             InitializeComponent();
@@ -65,6 +67,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
             {
                 OrdenDePreparacionForm ordenDePreparacionForm = new OrdenDePreparacionForm();
                 ordenDePreparacionForm.FormularioGenerarOrden = this;
+                ordenDePreparacionForm.BuscarClienteForm = ClientesForm;
                 ordenDePreparacionForm.model = model;
                 ordenDePreparacionForm.ShowDialog();
 

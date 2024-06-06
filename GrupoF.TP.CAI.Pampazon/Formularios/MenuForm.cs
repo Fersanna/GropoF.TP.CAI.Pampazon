@@ -1,3 +1,4 @@
+using GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación;
 using GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición;
 using GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada;
 using GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos;
@@ -20,6 +21,7 @@ namespace GrupoF.TP.CAI.Pampazon
         private void RegistrarOrdenDePreparacion_Click(object sender, EventArgs e)
         {
             BuscarClienteForm buscarClienteForm = new BuscarClienteForm();
+             
             buscarClienteForm.ShowDialog();
         }
 
