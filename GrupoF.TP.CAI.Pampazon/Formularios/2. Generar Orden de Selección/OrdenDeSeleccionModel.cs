@@ -1,5 +1,6 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
 using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Entidades;
 using GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección.Clases_auxiliares;
 using System;
 using System.Collections.Generic;
@@ -41,12 +42,14 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                      EstadoOrden = ordenesEnt.EstadoOrden,
 
                  }).ToList();
-            }else 
-            MessageBox.Show ("Debe ingresar una orden de preparacion");
-            
-         
+            }
+            else
+                MessageBox.Show("Debe ingresar una orden de preparacion");
+
+
 
         }
+
 
         internal List<OrdenDeSeleccion> FiltrarOrdenes()
         {
@@ -111,9 +114,28 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
         {
             ordenSeleccionada.EstadoOrden = "Pendiente";
         }
+
+        internal void RegistrarOrden(List<OrdenDeSeleccion> ordenesConfirmadas)
+        {
+            foreach (var orden in ordenesConfirmadas)
+            {
+                var ordenEnt = new OrdenDeSeleccionEnt
+                {
+                    IdOrdenDeSeleccion = orden.NumeroDeOrden,
+                    SeleccionDetalle = orden.NumeroDeOrden.Select(detalle => new OrdenDeSeleccionDetalle
+                    {
+                        NumeroDeOrden = orden.NumeroDeOrden
+
+                    }).ToList()
+                };
+
+               AlmacenOrdenDeSeleccion.OrdenesDeSeleccion = ordenEnt;
+
+            }
+        }
+
+
     }
-
-
 }
 
 

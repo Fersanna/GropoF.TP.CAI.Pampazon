@@ -35,6 +35,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                 if (dialogResult == DialogResult.Yes)
                 {
                     model.OrdenesConfirmadas = ordenesSeleccionadas;
+                    model.RegistrarOrden(model.OrdenesConfirmadas);
                     MessageBox.Show("Órdenes seleccionadas y confirmadas.");
                                          
 
