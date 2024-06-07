@@ -59,17 +59,21 @@ namespace GrupoF.TP.CAI.Pampazon
         {
             listOrdenesPendientes.Items.Clear();
 
-            foreach (OrdenDeSeleccion ordenes in model.OrdenDePreparacion)
+            if (model.OrdenDePreparacion != null)
+
             {
-                ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
-                item.SubItems.Add(ordenes.CodigoCliente);
-                item.SubItems.Add(ordenes.Fecha.ToString());
-                item.SubItems.Add(ordenes.CodigoTransportista);
-                item.SubItems.Add(ordenes.EstadoOrden);
+                foreach (OrdenDeSeleccion ordenes in model.OrdenDePreparacion)
+                {
+                    ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
+                    item.SubItems.Add(ordenes.CodigoCliente);
+                    item.SubItems.Add(ordenes.Fecha.ToString());
+                    item.SubItems.Add(ordenes.CodigoTransportista);
+                    item.SubItems.Add(ordenes.EstadoOrden);
 
-                listOrdenesPendientes.Items.Add(item);
+                    listOrdenesPendientes.Items.Add(item);
 
-                item.Tag = ordenes;
+                    item.Tag = ordenes;
+                }
             }
 
         }
@@ -106,7 +110,7 @@ namespace GrupoF.TP.CAI.Pampazon
             model.FechaHasta = HastadateTimePicker.Value;
             model.Transportista = TransportistaTextBox.Text;
             model.NumeroOrden = NumeroOrdenTextBox.Text;
-        
+
 
             var error = model.ValidarFiltro();
 
@@ -115,7 +119,7 @@ namespace GrupoF.TP.CAI.Pampazon
                 MessageBox.Show(error);
                 return;
             }
-          
+
             var ordenesFiltradas = model.FiltrarOrdenes();
 
             if (ordenesFiltradas == null)
