@@ -34,5 +34,12 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
             // Guardar en el archivo
             File.WriteAllText("OrdenesDePreparacion.Json", contenidoJson);
         }
+
+        internal static void AgregarOrden(OrdenDeSeleccionEnt ordenEnt)
+        {
+           
+            OrdenesDeSeleccion = ordenEnt;
+            MessageBox.Show($"El número de orden guardada: {ordenEnt.IdOrdenDeSeleccion}");
+        }
     }
 }
