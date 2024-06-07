@@ -29,6 +29,6 @@ namespace GrupoF.TP.CAI.Pampazon.Clases_Auxiliares
             contadorOrdenes++;
         }
 
-
+        //No usar para el resto de las pantallas
     }
 }

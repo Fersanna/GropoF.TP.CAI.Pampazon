@@ -1,4 +1,5 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección.Clases_auxiliares;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -56,7 +57,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         private void OrdenDeSeleccionForm_Load(object sender, EventArgs e)
         {
-            foreach (OrdenDePreparacion ordenesSeleccionada in model.OrdenDePreparacion)
+            foreach (OrdenDeSeleccion ordenesSeleccionada in model.OrdenDePreparacion)
             {
                 if (ordenesSeleccionada.EstadoOrden == "En selección")
                 {

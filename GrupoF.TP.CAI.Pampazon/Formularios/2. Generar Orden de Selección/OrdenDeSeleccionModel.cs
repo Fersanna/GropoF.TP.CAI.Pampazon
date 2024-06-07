@@ -1,5 +1,6 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
 using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección.Clases_auxiliares;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,27 +21,34 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         public string NumeroOrden { get; set; }
 
-        public List<OrdenDePreparacion> OrdenesConfirmadas { get; set; }
-        public List<OrdenDePreparacion> OrdenDePreparacion { get; set; } 
+        public List<OrdenDeSeleccion> OrdenesConfirmadas { get; set; }
+        public List<OrdenDeSeleccion> OrdenDePreparacion { get; set; }
 
         public OrdenDeSeleccionModel()
         {
 
             var ordenesDeSeleccion = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts;
-            OrdenDePreparacion = ordenesDeSeleccion.Select(ordenesEnt =>
-             new OrdenDePreparacion
-             {
-                 NumeroDeOrden = ordenesEnt.NumeroDeOrden,
-                 Fecha = ordenesEnt.Fecha,
-                 CodigoCliente = ordenesEnt.CodigoCliente,
-                 CodigoTransportista = ordenesEnt.CodigoTransportista,
-                 EstadoOrden = ordenesEnt.EstadoOrden,
 
-             }).ToList();
+            if (ordenesDeSeleccion != null)
+            {
+                OrdenDePreparacion = ordenesDeSeleccion.Select(ordenesEnt =>
+                 new OrdenDeSeleccion
+                 {
+                     NumeroDeOrden = ordenesEnt.NumeroDeOrden,
+                     Fecha = ordenesEnt.Fecha,
+                     CodigoCliente = ordenesEnt.CodigoCliente,
+                     CodigoTransportista = ordenesEnt.CodigoTransportista,
+                     EstadoOrden = ordenesEnt.EstadoOrden,
 
-            }
+                 }).ToList();
+            }else 
+            MessageBox.Show ("Debe ingresar una orden de preparacion");
+            
+         
 
-        internal List<OrdenDePreparacion> FiltrarOrdenes()
+        }
+
+        internal List<OrdenDeSeleccion> FiltrarOrdenes()
         {
             var OrdenesFiltradas = OrdenDePreparacion
                 .Where(p => p.Fecha >= FechaDesde && p.Fecha <= FechaHasta &&
@@ -81,7 +89,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
             return null;
         }
 
-        internal string ValidarOrden(OrdenDePreparacion ordenSeleccionada)
+        internal string ValidarOrden(OrdenDeSeleccion ordenSeleccionada)
         {   // Arreglar esto para cuando se null
             if (ordenSeleccionada.EstadoOrden == "En selección")
             {
@@ -99,7 +107,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         }
 
-        private void RevertirEstadoOrden(OrdenDePreparacion ordenSeleccionada)
+        private void RevertirEstadoOrden(OrdenDeSeleccion ordenSeleccionada)
         {
             ordenSeleccionada.EstadoOrden = "Pendiente";
         }
