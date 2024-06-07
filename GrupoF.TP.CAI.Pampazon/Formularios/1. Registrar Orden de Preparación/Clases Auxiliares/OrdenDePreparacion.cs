@@ -8,7 +8,7 @@ namespace GrupoF.TP.CAI.Pampazon.Clases_Auxiliares
 {
     public class OrdenDePreparacion
     {
-        private static int contadorOrdenes = 0;
+        private static int contadorOrdenes = 1;
         public string NumeroDeOrden {get; set; }
 
         public DateTime Fecha {get; set; }
@@ -25,6 +25,7 @@ namespace GrupoF.TP.CAI.Pampazon.Clases_Auxiliares
             ProductosOrden = new List<Productos>();
 
             NumeroDeOrden = contadorOrdenes.ToString();
+            
             contadorOrdenes++;
         }
 
