@@ -59,5 +59,20 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
                                 $"Estado: {ultimaOrden.EstadoOrden}");
             }
         }
+
+        internal static void ModificarEstadoEnOrdenes(List<OrdenDeSeleccionDetalle> seleccionDetalle)
+        {
+            foreach (var detalle in seleccionDetalle)
+            {
+                var ordenDePreparacion = OrdenDePreparacionEnts
+                    .FirstOrDefault(o => o.NumeroDeOrden == detalle.NumeroDeOrden);
+
+                if (ordenDePreparacion != null)
+                {
+                    ordenDePreparacion.EstadoOrden = "En selección";
+                }
+
+            }
+        }
     }
 }

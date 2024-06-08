@@ -129,9 +129,12 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                     }).ToList()
                 };
 
-               AlmacenOrdenDeSeleccion.AgregarOrden(ordenEnt);
+                AlmacenOrdenDeSeleccion.AgregarOrden(ordenEnt);
+                AlmacenOrdenesDePreparacion.ModificarEstadoEnOrdenes(ordenEnt.SeleccionDetalle);
 
             }
+            OrdenesConfirmadas.RemoveAll(o => ordenesConfirmadas.Any(oc => oc.NumeroDeOrden == o.NumeroDeOrden));
+
         }
 
         //Sacar de las listas las ordenes de Preparacion que pasan a estar en la Orden de Seleccion.
