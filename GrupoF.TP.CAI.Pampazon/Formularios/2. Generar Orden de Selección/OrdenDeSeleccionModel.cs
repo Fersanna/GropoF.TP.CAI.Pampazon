@@ -131,9 +131,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
                 AlmacenOrdenDeSeleccion.AgregarOrden(ordenEnt);
                 AlmacenOrdenesDePreparacion.ModificarEstadoEnOrdenes(ordenEnt.SeleccionDetalle);
-
+               
             }
-            OrdenesConfirmadas.RemoveAll(o => ordenesConfirmadas.Any(oc => oc.NumeroDeOrden == o.NumeroDeOrden));
+
 
         }
 

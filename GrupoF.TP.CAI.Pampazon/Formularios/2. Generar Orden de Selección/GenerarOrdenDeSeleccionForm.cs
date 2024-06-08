@@ -18,6 +18,8 @@ namespace GrupoF.TP.CAI.Pampazon
     public partial class GenerarOrdenDeSeleccionForm : Form
     {
         OrdenDeSeleccionModel model;
+
+        private bool filtroAplicado = false;
         public GenerarOrdenDeSeleccionForm()
         {
             InitializeComponent();
@@ -62,20 +64,25 @@ namespace GrupoF.TP.CAI.Pampazon
             if (model.OrdenDePreparacion != null)
 
             {
+
                 foreach (OrdenDeSeleccion ordenes in model.OrdenDePreparacion)
                 {
-                    ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
-                    item.SubItems.Add(ordenes.CodigoCliente);
-                    item.SubItems.Add(ordenes.Fecha.ToString());
-                    item.SubItems.Add(ordenes.CodigoTransportista);
-                    item.SubItems.Add(ordenes.EstadoOrden);
+                    if (filtroAplicado || ordenes.EstadoOrden == "Pendiente")
+                    {
 
-                    listOrdenesPendientes.Items.Add(item);
+                        ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
+                        item.SubItems.Add(ordenes.CodigoCliente);
+                        item.SubItems.Add(ordenes.Fecha.ToString());
+                        item.SubItems.Add(ordenes.CodigoTransportista);
+                        item.SubItems.Add(ordenes.EstadoOrden);
 
-                    item.Tag = ordenes;
+                        listOrdenesPendientes.Items.Add(item);
+
+                        item.Tag = ordenes;
+                    }
                 }
             }
-
+               filtroAplicado = true;
         }
 
         private void listOrdenesPendientes_MouseClick(object sender, MouseEventArgs e)
