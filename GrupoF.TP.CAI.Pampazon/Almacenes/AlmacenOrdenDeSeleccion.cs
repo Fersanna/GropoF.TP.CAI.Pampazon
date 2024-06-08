@@ -4,10 +4,9 @@ using Newtonsoft.Json;
 
 namespace GrupoF.TP.CAI.Pampazon.Almacenes
 {
-    internal class AlmacenOrdenDeSeleccion
+    public static class AlmacenOrdenDeSeleccion
     {
-        public readonly static List<OrdenDeSeleccionEnt> OrdenesDeSeleccionEnt;
-        public static OrdenDeSeleccionEnt OrdenesDeSeleccion { get; internal set; }
+        public static List<OrdenDeSeleccionEnt> OrdenesDeSeleccionEnt { get; private set; }
 
         static AlmacenOrdenDeSeleccion()
         {
@@ -15,31 +14,42 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
 
             try
             {
-                if (File.Exists("OrdenesDePreparacion.Json"))
+                if (File.Exists(@"Json\OrdenesDeSeleccion.json"))
                 {
-                    var archivoCargado = File.ReadAllText("OrdenesDePreparacion.Json");
-                    OrdenesDeSeleccionEnt = JsonConvert.DeserializeObject<List<OrdenDeSeleccionEnt>>(archivoCargado);
+                    var archivoCargado = File.ReadAllText(@"Json\OrdenesDeSeleccion.json");
+                    var ordenes = JsonConvert.DeserializeObject<List<OrdenDeSeleccionEnt>>(archivoCargado);
+                    if (ordenes != null)
+                    {
+                        OrdenesDeSeleccionEnt = ordenes;
+                    }
                 }
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error al cargar las órdenes de preparación: {ex.Message}");
+                Console.WriteLine($"Error al cargar las órdenes de selección: {ex.Message}");
             }
         }
 
         public static void Grabar()
         {
-            var contenidoJson = JsonConvert.SerializeObject(OrdenesDeSeleccionEnt);
-
-            // Guardar en el archivo
-            File.WriteAllText("OrdenesDePreparacion.Json", contenidoJson);
+            try
+            {
+                var contenidoJson = JsonConvert.SerializeObject(OrdenesDeSeleccionEnt, Formatting.Indented);
+                File.WriteAllText(@"Json\OrdenesDeSeleccion.json", contenidoJson);
+                MessageBox.Show("Órdenes guardadas correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error al guardar las órdenes: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            };
         }
 
         internal static void AgregarOrden(OrdenDeSeleccionEnt ordenEnt)
         {
-           
-            OrdenesDeSeleccion = ordenEnt;
+
+            OrdenesDeSeleccionEnt.Add(ordenEnt);
             MessageBox.Show($"El número de orden guardada: {ordenEnt.IdOrdenDeSeleccion}");
+            Grabar();
         }
     }
 }
