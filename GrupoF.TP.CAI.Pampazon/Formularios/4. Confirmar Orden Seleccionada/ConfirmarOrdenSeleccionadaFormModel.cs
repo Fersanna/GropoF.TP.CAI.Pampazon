@@ -9,9 +9,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
 {
     internal class ConfirmarOrdenSeleccionadaFormModel
     {
-         public List<OrdenDePreparacion> OrdenEnSeleccion { get; set; } = new List<OrdenDePreparacion>
+         public List<OrdenDeSeleccion> OrdenEnSeleccion { get; set; } = new List<OrdenDeSeleccion>
         {
-            new OrdenDePreparacion
+            new OrdenDeSeleccion
             {
                 NumeroDeOrden = "P-000001",
                 CodigoCliente = "Moron Construcciones",
@@ -19,7 +19,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 CodigoTransportista = "Transportista 1",
                 EstadoOrden = "En selección"
             },
-            new OrdenDePreparacion
+            new OrdenDeSeleccion
             {
                 NumeroDeOrden = "P-000002",
                 CodigoCliente = "Fortin SRL",
@@ -27,7 +27,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 CodigoTransportista = "Transportista 2",
                 EstadoOrden = "En selección"
             },
-            new OrdenDePreparacion
+            new OrdenDeSeleccion
             {
                 NumeroDeOrden = "P-000003",
                 CodigoCliente = "Valentin Gomez S.A",
@@ -35,7 +35,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 CodigoTransportista = "Transportista 3",
                 EstadoOrden = "En selección"
             },
-            new OrdenDePreparacion
+            new OrdenDeSeleccion
             {
                 NumeroDeOrden = "P-000004",
                 CodigoCliente = "Almada S.A",
@@ -45,7 +45,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
             }
         };
 
-        internal void CambiarEstadoEnOrden(OrdenDePreparacion orden)
+        internal void CambiarEstadoEnOrden(OrdenDeSeleccion orden)
         {
            if (orden.EstadoOrden != "En selección")
             {
