@@ -1,4 +1,5 @@
-﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
+using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -44,6 +45,20 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 EstadoOrden = "En selección"
             }
         };
+        //Seguir x aca
+        public  ConfirmarOrdenSeleccionadaFormModel()
+        {
+            var ordenesAconfirmar = AlmacenOrdenDeSeleccion.OrdenesDeSeleccionEnt;
+           
+            if (ordenesAconfirmar != null)
+            {
+                OrdenEnSeleccion = ordenesAconfirmar.Select(ordenEnt =>
+                new OrdenDeSeleccion
+                {
+                    NumeroDeOrden = ordenEnt.IdOrdenDeSeleccion
+                }).ToList();
+            }
+        }
 
         internal void CambiarEstadoEnOrden(OrdenDeSeleccion orden)
         {

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
 {
-    internal class OrdenDeSeleccion
+    public class OrdenDeSeleccion
     {
         public string NumeroDeOrden { get; set; }
         public DateTime Fecha { get; set; }
