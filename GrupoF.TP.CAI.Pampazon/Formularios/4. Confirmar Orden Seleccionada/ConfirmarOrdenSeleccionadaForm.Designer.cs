@@ -32,18 +32,18 @@
             CancelarBtn = new Button();
             listOrdenesEnSeleccion = new ListView();
             NumeroColum = new ColumnHeader();
-            ClienteColum = new ColumnHeader();
             FechaColum = new ColumnHeader();
-            TranspColum = new ColumnHeader();
             EstadoColum = new ColumnHeader();
             label1 = new Label();
+            DetalleHeader = new ColumnHeader();
             SuspendLayout();
             // 
             // ConfirmarBtn
             // 
-            ConfirmarBtn.Location = new Point(511, 300);
+            ConfirmarBtn.Location = new Point(584, 400);
+            ConfirmarBtn.Margin = new Padding(3, 4, 3, 4);
             ConfirmarBtn.Name = "ConfirmarBtn";
-            ConfirmarBtn.Size = new Size(98, 31);
+            ConfirmarBtn.Size = new Size(112, 41);
             ConfirmarBtn.TabIndex = 2;
             ConfirmarBtn.Text = "Confirmar";
             ConfirmarBtn.UseVisualStyleBackColor = true;
@@ -51,9 +51,10 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(615, 300);
+            CancelarBtn.Location = new Point(703, 400);
+            CancelarBtn.Margin = new Padding(3, 4, 3, 4);
             CancelarBtn.Name = "CancelarBtn";
-            CancelarBtn.Size = new Size(98, 31);
+            CancelarBtn.Size = new Size(112, 41);
             CancelarBtn.TabIndex = 3;
             CancelarBtn.Text = "Cancelar";
             CancelarBtn.UseVisualStyleBackColor = true;
@@ -61,12 +62,13 @@
             // 
             // listOrdenesEnSeleccion
             // 
-            listOrdenesEnSeleccion.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
+            listOrdenesEnSeleccion.Columns.AddRange(new ColumnHeader[] { NumeroColum, DetalleHeader, FechaColum, EstadoColum });
             listOrdenesEnSeleccion.FullRowSelect = true;
             listOrdenesEnSeleccion.GridLines = true;
-            listOrdenesEnSeleccion.Location = new Point(40, 46);
+            listOrdenesEnSeleccion.Location = new Point(46, 61);
+            listOrdenesEnSeleccion.Margin = new Padding(3, 4, 3, 4);
             listOrdenesEnSeleccion.Name = "listOrdenesEnSeleccion";
-            listOrdenesEnSeleccion.Size = new Size(669, 248);
+            listOrdenesEnSeleccion.Size = new Size(764, 329);
             listOrdenesEnSeleccion.TabIndex = 6;
             listOrdenesEnSeleccion.UseCompatibleStateImageBehavior = false;
             listOrdenesEnSeleccion.View = View.Details;
@@ -76,23 +78,11 @@
             NumeroColum.Text = "ID";
             NumeroColum.Width = 130;
             // 
-            // ClienteColum
-            // 
-            ClienteColum.Text = "Cliente";
-            ClienteColum.TextAlign = HorizontalAlignment.Center;
-            ClienteColum.Width = 130;
-            // 
             // FechaColum
             // 
             FechaColum.Text = "Fecha";
             FechaColum.TextAlign = HorizontalAlignment.Center;
             FechaColum.Width = 130;
-            // 
-            // TranspColum
-            // 
-            TranspColum.Text = "Transportista";
-            TranspColum.TextAlign = HorizontalAlignment.Center;
-            TranspColum.Width = 130;
             // 
             // EstadoColum
             // 
@@ -104,21 +94,27 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(40, 28);
+            label1.Location = new Point(46, 37);
             label1.Name = "label1";
-            label1.Size = new Size(188, 15);
+            label1.Size = new Size(240, 20);
             label1.TabIndex = 7;
             label1.Text = "Listado de ordenes de preparación";
             // 
+            // DetalleHeader
+            // 
+            DetalleHeader.Text = "Detalle de Ordenes";
+            DetalleHeader.Width = 200;
+            // 
             // ConfirmarOrdenSeleccionadaForm
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(752, 372);
+            ClientSize = new Size(859, 496);
             Controls.Add(label1);
             Controls.Add(listOrdenesEnSeleccion);
             Controls.Add(CancelarBtn);
             Controls.Add(ConfirmarBtn);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "ConfirmarOrdenSeleccionadaForm";
             Text = "Confirmar Orden Seleccionada";
             Load += ConfirmarOrdenSeleccionadaForm_Load;
@@ -131,10 +127,9 @@
         private Button CancelarBtn;
         private ListView listOrdenesEnSeleccion;
         private ColumnHeader NumeroColum;
-        private ColumnHeader ClienteColum;
         private ColumnHeader FechaColum;
-        private ColumnHeader TranspColum;
         private ColumnHeader EstadoColum;
         private Label label1;
+        private ColumnHeader DetalleHeader;
     }
 }

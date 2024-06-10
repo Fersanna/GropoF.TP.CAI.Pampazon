@@ -10,41 +10,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
 {
     internal class ConfirmarOrdenSeleccionadaFormModel
     {
-         public List<OrdenDeSeleccion> OrdenEnSeleccion { get; set; } = new List<OrdenDeSeleccion>
-        {
-            new OrdenDeSeleccion
-            {
-                NumeroDeOrden = "P-000001",
-                CodigoCliente = "Moron Construcciones",
-                Fecha = new DateTime(2024, 5, 13),
-                CodigoTransportista = "Transportista 1",
-                EstadoOrden = "En selección"
-            },
-            new OrdenDeSeleccion
-            {
-                NumeroDeOrden = "P-000002",
-                CodigoCliente = "Fortin SRL",
-                Fecha = new DateTime(2024, 5, 13),
-                CodigoTransportista = "Transportista 2",
-                EstadoOrden = "En selección"
-            },
-            new OrdenDeSeleccion
-            {
-                NumeroDeOrden = "P-000003",
-                CodigoCliente = "Valentin Gomez S.A",
-                Fecha = new DateTime(2024, 5, 14),
-                CodigoTransportista = "Transportista 3",
-                EstadoOrden = "En selección"
-            },
-            new OrdenDeSeleccion
-            {
-                NumeroDeOrden = "P-000004",
-                CodigoCliente = "Almada S.A",
-                Fecha = new DateTime(2024, 5, 15),
-                CodigoTransportista = "Transportista 4",
-                EstadoOrden = "En selección"
-            }
-        };
+         public List<OrdenDeSeleccion> OrdenEnSeleccion { get; set; } 
         //Seguir x aca
         public  ConfirmarOrdenSeleccionadaFormModel()
         {
@@ -55,23 +21,25 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 OrdenEnSeleccion = ordenesAconfirmar.Select(ordenEnt =>
                 new OrdenDeSeleccion
                 {
-                    NumeroDeOrden = ordenEnt.IdOrdenDeSeleccion
+                    NumeroDeOrden = ordenEnt.IdOrdenDeSeleccion,
+                    OrdenesSeleccionadas = ordenEnt.SeleccionDetalle.Select(detalle => detalle.NumeroDeOrden).ToList(),
+                    
                 }).ToList();
             }
         }
 
-        internal void CambiarEstadoEnOrden(OrdenDeSeleccion orden)
-        {
-           if (orden.EstadoOrden != "En selección")
-            {
-                MessageBox.Show("Esta Orden ya ha sido seleccionada");
-            }
-           else
-            {
-                orden.EstadoOrden = "Seleccionada";
-                return;
-            }
+        //internal void CambiarEstadoEnOrden(OrdenDeSeleccion orden)
+        //{
+        //   if (orden.EstadoOrden != "En selección")
+        //    {
+        //        MessageBox.Show("Esta Orden ya ha sido seleccionada");
+        //    }
+        //   else
+        //    {
+        //        orden.EstadoOrden = "Seleccionada";
+        //        return;
+        //    }
 
-        }
+        //}
     }
 }

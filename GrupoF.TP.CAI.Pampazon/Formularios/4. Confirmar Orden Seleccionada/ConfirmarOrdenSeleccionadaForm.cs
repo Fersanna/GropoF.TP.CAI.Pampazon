@@ -32,7 +32,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                
                 {
                     ListViewItem item = new ListViewItem(ordenesSeleccionada.NumeroDeOrden);
-                 
+                    string detallesUnidos = string.Join(" - ", ordenesSeleccionada.OrdenesSeleccionadas);
+                    item.SubItems.Add(detallesUnidos);
 
                     listOrdenesEnSeleccion.Items.Add(item);
 
@@ -62,7 +63,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 OrdenDeSeleccion ordenDePreparacion = (OrdenDeSeleccion)listOrdenesEnSeleccion.SelectedItems[0].Tag;
 
 
-                model.CambiarEstadoEnOrden(ordenDePreparacion);
+              //  model.CambiarEstadoEnOrden(ordenDePreparacion);
 
                 foreach (ListViewItem item in listOrdenesEnSeleccion.SelectedItems)
                 {

@@ -10,8 +10,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
     {
         public string NumeroDeOrden { get; set; }
         public DateTime Fecha { get; set; }
-        public string CodigoCliente { get; set; }
-        public string CodigoTransportista { get; set; }
-        public string EstadoOrden { get; set; }
+        
+        public List<string> OrdenesSeleccionadas{ get; set; }
     }
 }
