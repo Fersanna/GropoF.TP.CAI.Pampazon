@@ -1,3 +1,5 @@
+using GrupoF.TP.CAI.Pampazon.Entidades;
+
 namespace GrupoF.TP.CAI.Pampazon
 {
     internal static class Program

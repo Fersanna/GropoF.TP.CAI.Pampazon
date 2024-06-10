@@ -11,6 +11,8 @@ namespace GrupoF.TP.CAI.Pampazon.Entidades
        
         public string IdOrdenDeSeleccion {get; set; }
 
-        public List<OrdenDeSeleccionDetalle> SeleccionDetalle {get; set;}
+        //No tiene un estado?
+
+        public List<string> CodigosOrdenesPreparacion {get; set;} //Es una lista de códigos de ordenes de preparación
     }
 }

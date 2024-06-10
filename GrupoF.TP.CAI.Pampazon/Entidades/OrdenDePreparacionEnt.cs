@@ -15,9 +15,9 @@ namespace GrupoF.TP.CAI.Pampazon.Entidades
 
         public string CodigoTransportista { get; set; }
 
-        public string Prioridad { get; set; }
+        public Prioridades Prioridad { get; set; }  //si no, integer.
 
-        public string EstadoOrden { get; set; }
+        public EstadosOrden EstadoOrden { get; set; } //Enumeracion es un integer. ej.: int e = (int)EstadoOrden;
 
         public List<OrdenDePreparacionDetalle> Detalle {get; set;}
 
