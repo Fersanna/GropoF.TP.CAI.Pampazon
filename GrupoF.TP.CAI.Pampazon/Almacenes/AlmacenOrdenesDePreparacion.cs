@@ -21,9 +21,9 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
 
             try
             {
-                if (File.Exists("OrdenesDePreparacion.Json"))
+                if (File.Exists(@"Json/OrdenesDePreparacion.Json"))
                 {
-                    var archivoCargado = File.ReadAllText("OrdenesDePreparacion.Json");
+                    var archivoCargado = File.ReadAllText(@"Json/OrdenesDePreparacion.Json");
                     OrdenesDePreparacion = JsonConvert.DeserializeObject<List<OrdenDePreparacionEnt>>(archivoCargado);
                 }
             }
@@ -35,10 +35,10 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
 
         public static void Grabar()
         {
-            var contenidoJson = JsonConvert.SerializeObject(OrdenesDePreparacion);
+            var contenidoJson = JsonConvert.SerializeObject(OrdenDePreparacionEnts, Newtonsoft.Json.Formatting.Indented);
 
             // Guardar en el archivo
-            File.WriteAllText("OrdenesDePreparacion.Json", contenidoJson);
+            File.WriteAllText(@"json/OrdenesDePreparacion.Json", contenidoJson);
         }
 
         internal static void AgregarOrden(OrdenDePreparacionEnt ordenDePreparacionEnt)
@@ -58,6 +58,7 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
                                 $"Transportista: {ultimaOrden.CodigoTransportista}\n" +
                                 $"Estado: {ultimaOrden.EstadoOrden}");
             }
+            Grabar();
         }
 
         internal static void ModificarEstadoEnOrdenes(List<OrdenDeSeleccionDetalle> seleccionDetalle)

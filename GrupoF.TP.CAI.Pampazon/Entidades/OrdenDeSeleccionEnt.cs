@@ -8,6 +8,7 @@ namespace GrupoF.TP.CAI.Pampazon.Entidades
 {
     public class OrdenDeSeleccionEnt
     {
+       
         public string IdOrdenDeSeleccion {get; set; }
 
         public List<OrdenDeSeleccionDetalle> SeleccionDetalle {get; set;}

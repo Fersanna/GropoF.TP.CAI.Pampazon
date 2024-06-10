@@ -117,29 +117,47 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         internal void RegistrarOrden(List<OrdenDeSeleccion> ordenesConfirmadas)
         {
-            foreach (var orden in ordenesConfirmadas)
+         
+            var ultimaOrden = AlmacenOrdenDeSeleccion.OrdenesDeSeleccionEnt
+                .OrderByDescending(o => o.IdOrdenDeSeleccion)
+                .FirstOrDefault();
+
+            int ultimoId = 0;
+
+            if (ultimaOrden != null && int.TryParse(ultimaOrden.IdOrdenDeSeleccion, out int id))
             {
-                var ordenEnt = new OrdenDeSeleccionEnt
-                {
-                    IdOrdenDeSeleccion = orden.NumeroDeOrden,
-                    SeleccionDetalle = orden.NumeroDeOrden.Select(detalle => new OrdenDeSeleccionDetalle
-                    {
-                        NumeroDeOrden = orden.NumeroDeOrden
-
-                    }).ToList()
-                };
-
-                AlmacenOrdenDeSeleccion.AgregarOrden(ordenEnt);
-                AlmacenOrdenesDePreparacion.ModificarEstadoEnOrdenes(ordenEnt.SeleccionDetalle);
-               
+                ultimoId = id;
             }
 
+           
+            ultimoId++;
+            string nuevoIdOrdenDeSeleccion = ultimoId.ToString();
 
+           
+            var nuevaOrdenEnt = new OrdenDeSeleccionEnt
+            {
+                IdOrdenDeSeleccion = nuevoIdOrdenDeSeleccion,
+                SeleccionDetalle = new List<OrdenDeSeleccionDetalle>()
+            };
+
+            
+            foreach (var orden in ordenesConfirmadas)
+            {
+                nuevaOrdenEnt.SeleccionDetalle.Add(new OrdenDeSeleccionDetalle
+                {
+                    NumeroDeOrden = orden.NumeroDeOrden
+                });
+            }
+
+          
+            AlmacenOrdenDeSeleccion.AgregarOrden(nuevaOrdenEnt);
+            AlmacenOrdenesDePreparacion.ModificarEstadoEnOrdenes(nuevaOrdenEnt.SeleccionDetalle);
         }
 
-        //Sacar de las listas las ordenes de Preparacion que pasan a estar en la Orden de Seleccion.
     }
+
 }
+
 
 
 

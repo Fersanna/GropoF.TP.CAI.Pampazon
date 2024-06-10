@@ -16,6 +16,9 @@
     <Compile Update="Almacenes\AlmacenClientes.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
+    <Compile Update="Almacenes\AlmacenOrdenesDePreparacion.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>

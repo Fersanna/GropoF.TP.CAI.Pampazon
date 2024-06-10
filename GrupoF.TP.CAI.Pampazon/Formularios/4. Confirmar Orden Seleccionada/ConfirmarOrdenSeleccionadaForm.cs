@@ -29,13 +29,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
 
             foreach (OrdenDeSeleccion ordenesSeleccionada in model.OrdenEnSeleccion)
             {
-                if (ordenesSeleccionada.EstadoOrden == "En selección")
+               
                 {
                     ListViewItem item = new ListViewItem(ordenesSeleccionada.NumeroDeOrden);
-                    item.SubItems.Add(ordenesSeleccionada.CodigoCliente);
-                    item.SubItems.Add(ordenesSeleccionada.Fecha.ToString());
-                    item.SubItems.Add(ordenesSeleccionada.CodigoTransportista);
-                    item.SubItems.Add(ordenesSeleccionada.EstadoOrden);
+                 
 
                     listOrdenesEnSeleccion.Items.Add(item);
 
