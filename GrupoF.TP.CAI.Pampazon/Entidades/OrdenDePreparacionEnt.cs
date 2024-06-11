@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static GrupoF.TP.CAI.Pampazon.Entidades.Prioridades;
 
 namespace GrupoF.TP.CAI.Pampazon.Entidades
 {
@@ -15,7 +16,7 @@ namespace GrupoF.TP.CAI.Pampazon.Entidades
 
         public string CodigoTransportista { get; set; }
 
-        public string Prioridad { get; set; }
+        public Prioridad Prioridad { get; set; } 
 
         public string EstadoOrden { get; set; }
 

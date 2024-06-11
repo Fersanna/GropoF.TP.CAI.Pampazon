@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static GrupoF.TP.CAI.Pampazon.Entidades.Prioridades;
 
 namespace GrupoF.TP.CAI.Pampazon.Modelos
 {
@@ -150,19 +151,25 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
 
         internal OrdenDePreparacionEnt ConvertirOrden(OrdenDePreparacion orden)
         {
-            return new OrdenDePreparacionEnt
+        
             {
-                NumeroDeOrden = orden.NumeroDeOrden,
-                Fecha = orden.Fecha,
-                CodigoCliente = orden.CodigoCliente,
-                CodigoTransportista = orden.CodigoTransportista,
-                EstadoOrden = orden.EstadoOrden,
-                Detalle = orden.ProductosOrden.Select(p => new OrdenDePreparacionDetalle
+                return new OrdenDePreparacionEnt
                 {
-                    IdProducto = p.IdProducto,
-                    Cantidad = p.Cantidad
-                }).ToList()
-            };
+                    NumeroDeOrden = orden.NumeroDeOrden,
+                    Fecha = orden.Fecha,
+                    CodigoCliente = orden.CodigoCliente,
+                    CodigoTransportista = orden.CodigoTransportista,
+                    EstadoOrden = orden.EstadoOrden,
+                    Prioridad = (Prioridad)orden.Prioridad,
+
+                    Detalle = orden.ProductosOrden.Select(p => new OrdenDePreparacionDetalle
+                    {
+                        IdProducto = p.IdProducto,
+                        Cantidad = p.Cantidad
+                    }).ToList()
+                };
+
+            }
         }
 
     }

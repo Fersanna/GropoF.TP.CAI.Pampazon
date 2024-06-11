@@ -1,4 +1,5 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Entidades;
 using GrupoF.TP.CAI.Pampazon.Modelos;
 using System;
 using System.Collections.Generic;
@@ -9,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static GrupoF.TP.CAI.Pampazon.Clases_Auxiliares.OrdenDePreparacion;
+using static GrupoF.TP.CAI.Pampazon.Entidades.Prioridades;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
 {
@@ -45,6 +48,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
             model.ClienteOrden.EstadoOrden = "Disponible";
             CodigoClienteTextBox.Text = model.ClienteOrden.NumeroDeOrden;
 
+            PrioridadComboBox.DataSource = Enum.GetValues(typeof(Prioridad));
 
             ProductosOrdenList.Items.Clear();
 
@@ -79,14 +83,14 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
         {
             //Subir a ordenes confirmadas, validar y volver a menu principal
             var nuevaOrden = model.ClienteOrden;
-            {   
-                  
+            {
+
                 nuevaOrden.CodigoCliente = model.ClienteSeleccionado.CodigoCliente;
                 nuevaOrden.CodigoTransportista = TransportistaBox.Text;
                 nuevaOrden.Fecha = FechaPicker.Value;
                 nuevaOrden.EstadoOrden = "Pendiente";
-
-                 nuevaOrden.ProductosOrden = new ();
+                nuevaOrden.Prioridad = (Prioridad)PrioridadComboBox.SelectedItem;
+                nuevaOrden.ProductosOrden = new();
             };
 
             foreach (ListViewItem item in ProductosOrdenList.Items)
@@ -107,7 +111,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
             this.Close();
             FormularioGenerarOrden.CerrarGenerarOrdenDePreparacionForm();
             BuscarClienteForm.CerrarClientes();
-            
+
         }
     }
 }
