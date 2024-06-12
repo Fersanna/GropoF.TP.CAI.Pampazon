@@ -22,6 +22,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 new OrdenDeSeleccionada
                 {
                     NumeroDeOrden = ordenEnt.IdOrdenDeSeleccion,
+                    Estado =ordenEnt.Estado,
                     OrdenesSeleccionadas = ordenEnt.SeleccionDetalle.Select(detalle => detalle.NumeroDeOrden).ToList(),
                     
                 }).ToList();
