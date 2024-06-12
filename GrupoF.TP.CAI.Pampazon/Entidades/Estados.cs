@@ -21,6 +21,7 @@ namespace GrupoF.TP.CAI.Pampazon.Entidades
 
             [Description("Despachada")]
             Despachada,
+
             Seleccionada,
         }
     }

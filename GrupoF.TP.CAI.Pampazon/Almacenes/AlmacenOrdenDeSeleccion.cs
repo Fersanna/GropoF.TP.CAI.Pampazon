@@ -24,8 +24,11 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
                         OrdenesDeSeleccionEnt = ordenes;
                     }
 
-                    var ultimoNumeroOrden = OrdenesDeSeleccionEnt.Max(o => int.Parse(o.IdOrdenDeSeleccion));
-                    contadorOrdenes = ultimoNumeroOrden + 1;
+                      if (OrdenesDeSeleccionEnt.Any())
+                    {
+                        var ultimoNumeroOrden = OrdenesDeSeleccionEnt.Max(o => int.Parse(o.IdOrdenDeSeleccion));
+                        contadorOrdenes = ultimoNumeroOrden + 1;
+                    }
                 }
             }
             catch (Exception ex)
@@ -50,7 +53,9 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
 
         internal static void AgregarOrden(OrdenDeSeleccionEnt ordenEnt)
         {
+
             ordenEnt.IdOrdenDeSeleccion = contadorOrdenes.ToString();
+            contadorOrdenes++;
             ordenEnt.Estado= Estados.Estado.Seleccionada;
             OrdenesDeSeleccionEnt.Add(ordenEnt);
             MessageBox.Show($"El número de orden guardada: {ordenEnt.IdOrdenDeSeleccion}");

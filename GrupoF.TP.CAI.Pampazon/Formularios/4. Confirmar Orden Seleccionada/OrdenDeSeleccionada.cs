@@ -7,7 +7,7 @@ using static GrupoF.TP.CAI.Pampazon.Entidades.Estados;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
 {
-    public class OrdenDeSeleccion
+    public class OrdenDeSeleccionada
     {
         public string NumeroDeOrden { get; set; }
         public DateTime Fecha { get; set; }

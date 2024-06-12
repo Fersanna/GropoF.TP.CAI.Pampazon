@@ -68,6 +68,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
                 foreach (OrdenDeSeleccion ordenes in model.OrdenDePreparacion)
                 {
+                  
                  if (ordenes.EstadoOrden == Entidades.Estados.Estado.Pendiente || ordenes.EstadoOrden == Entidades.Estados.Estado.Seleccion)
                     {
                     {

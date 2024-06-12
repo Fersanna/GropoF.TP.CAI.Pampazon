@@ -14,7 +14,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 {
     public partial class OrdenDeSeleccionForm : Form
     {
-        
+
         public OrdenDeSeleccionModel model { get; set; }
         public OrdenDeSeleccionForm()
         {
@@ -33,14 +33,19 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                 var dialogResult = MessageBox.Show("¿Confirma las órdenes seleccionadas?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (dialogResult == DialogResult.Yes)
-                {   
+                {
+                    foreach (var orden in ordenesSeleccionadas)
+                    {
+                        orden.EstadoOrden = Entidades.Estados.Estado.Seleccionada;
+                    }
+
                     model.OrdenesConfirmadas = ordenesSeleccionadas;
                     model.RegistrarOrden(model.OrdenesConfirmadas);
                     MessageBox.Show("Órdenes seleccionadas y confirmadas.");
-                                         
+
 
                     this.Close();
-                   
+
                 }
                 else if (dialogResult == DialogResult.Cancel)
                 {

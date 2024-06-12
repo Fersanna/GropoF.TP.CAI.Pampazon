@@ -117,7 +117,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         internal void RegistrarOrden(List<OrdenDeSeleccion> ordenesConfirmadas)
         {
-         
+
             var ultimaOrden = AlmacenOrdenDeSeleccion.OrdenesDeSeleccionEnt
                 .OrderByDescending(o => o.IdOrdenDeSeleccion)
                 .FirstOrDefault();
@@ -129,12 +129,12 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                 ultimoId = id;
             }
 
-           
+
             ultimoId++;
             string nuevoIdOrdenDeSeleccion = ultimoId.ToString();
 
 
-           
+
             var nuevaOrdenEnt = new OrdenDeSeleccionEnt
             {
                 IdOrdenDeSeleccion = nuevoIdOrdenDeSeleccion,
@@ -142,7 +142,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                 SeleccionDetalle = new List<OrdenDeSeleccionDetalle>()
             };
 
-            
+
             foreach (var orden in ordenesConfirmadas)
             {
                 nuevaOrdenEnt.SeleccionDetalle.Add(new OrdenDeSeleccionDetalle
@@ -151,7 +151,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                 });
             }
 
-          
+
             AlmacenOrdenDeSeleccion.AgregarOrden(nuevaOrdenEnt);
             AlmacenOrdenesDePreparacion.ModificarEstadoEnOrdenes(nuevaOrdenEnt.SeleccionDetalle);
         }

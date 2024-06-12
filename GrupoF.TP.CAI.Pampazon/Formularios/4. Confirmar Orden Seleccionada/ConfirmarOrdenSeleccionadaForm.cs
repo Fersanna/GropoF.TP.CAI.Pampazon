@@ -27,7 +27,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
         {
             model = new ConfirmarOrdenSeleccionadaFormModel();
 
-            foreach (OrdenDeSeleccion ordenesSeleccionada in model.OrdenEnSeleccion)
+            foreach (OrdenDeSeleccionada ordenesSeleccionada in model.OrdenEnSeleccion)
             {
                
                 {
@@ -61,7 +61,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
             else
             {
 
-                OrdenDeSeleccion ordenDePreparacion = (OrdenDeSeleccion)listOrdenesEnSeleccion.SelectedItems[0].Tag;
+                OrdenDeSeleccionada ordenDePreparacion = (OrdenDeSeleccionada)listOrdenesEnSeleccion.SelectedItems[0].Tag;
 
 
               //  model.CambiarEstadoEnOrden(ordenDePreparacion);

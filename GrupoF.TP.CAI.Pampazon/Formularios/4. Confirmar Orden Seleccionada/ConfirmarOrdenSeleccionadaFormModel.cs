@@ -10,7 +10,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
 {
     internal class ConfirmarOrdenSeleccionadaFormModel
     {
-         public List<OrdenDeSeleccion> OrdenEnSeleccion { get; set; } 
+         public List<OrdenDeSeleccionada> OrdenEnSeleccion { get; set; } 
         //Seguir x aca
         public  ConfirmarOrdenSeleccionadaFormModel()
         {
@@ -19,7 +19,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
             if (ordenesAconfirmar != null)
             {
                 OrdenEnSeleccion = ordenesAconfirmar.Select(ordenEnt =>
-                new OrdenDeSeleccion
+                new OrdenDeSeleccionada
                 {
                     NumeroDeOrden = ordenEnt.IdOrdenDeSeleccion,
                     OrdenesSeleccionadas = ordenEnt.SeleccionDetalle.Select(detalle => detalle.NumeroDeOrden).ToList(),
