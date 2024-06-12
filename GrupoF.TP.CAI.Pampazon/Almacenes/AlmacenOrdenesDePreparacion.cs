@@ -11,7 +11,9 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
 {
     public static class AlmacenOrdenesDePreparacion
     {
-        public readonly static List<OrdenDePreparacionEnt> OrdenesDePreparacion;
+        private static int contadorOrdenes = 0;
+
+        public static readonly List<OrdenDePreparacionEnt> OrdenesDePreparacion = new List<OrdenDePreparacionEnt>();
 
         public static List<OrdenDePreparacionEnt> OrdenDePreparacionEnts;
 
@@ -25,6 +27,9 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
                 {
                     var archivoCargado = File.ReadAllText(@"Json/OrdenesDePreparacion.Json");
                     OrdenDePreparacionEnts = JsonConvert.DeserializeObject<List<OrdenDePreparacionEnt>>(archivoCargado);
+
+                    var ultimoNumeroOrden = OrdenDePreparacionEnts.Max(o => int.Parse(o.NumeroDeOrden));
+                    contadorOrdenes = ultimoNumeroOrden + 1;
                 }
             }
             catch (Exception ex)
@@ -47,8 +52,16 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
             {
                 OrdenDePreparacionEnts = new List<OrdenDePreparacionEnt>();
             }
+
+           
+
+            ordenDePreparacionEnt.NumeroDeOrden = contadorOrdenes.ToString();
+
             OrdenDePreparacionEnts.Add(ordenDePreparacionEnt);
-            Grabar();
+
+            OrdenesDePreparacion.Add(ordenDePreparacionEnt);
+
+           
             var ultimaOrden = OrdenDePreparacionEnts.LastOrDefault();
             if (ultimaOrden != null)
             {
