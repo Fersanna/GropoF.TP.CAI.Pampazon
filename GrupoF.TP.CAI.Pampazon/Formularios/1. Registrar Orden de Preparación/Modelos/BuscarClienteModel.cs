@@ -152,11 +152,25 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
 
         internal OrdenDePreparacionEnt ConvertirOrden(OrdenDePreparacion orden)
         {
-        
+
             {
+
+                var ultimoNumeroOrdenPreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts.OrderByDescending(o => o.NumeroDeOrden)
+             .FirstOrDefault();
+
+                int ultimoId = 0;
+
+                if (ultimoNumeroOrdenPreparacion != null && int.TryParse(ultimoNumeroOrdenPreparacion.NumeroDeOrden, out int id))
+                {
+                    ultimoId = id;
+                }
+
+                ultimoId++;
+                string nuevoNumeroOrdenPrep = ultimoId.ToString();
+
                 return new OrdenDePreparacionEnt
                 {
-                    NumeroDeOrden = orden.NumeroDeOrden,
+                    NumeroDeOrden = nuevoNumeroOrdenPrep,
                     Fecha = orden.Fecha,
                     CodigoCliente = orden.CodigoCliente,
                     CodigoTransportista = orden.CodigoTransportista,

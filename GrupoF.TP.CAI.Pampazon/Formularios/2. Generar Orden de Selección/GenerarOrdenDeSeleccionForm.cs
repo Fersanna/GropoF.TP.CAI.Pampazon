@@ -89,7 +89,7 @@ namespace GrupoF.TP.CAI.Pampazon
         {
             if (listOrdenesPendientes.SelectedItems.Count > 0)
             {
-                OrdenDeSeleccion ordenSeleccionada = (OrdenDeSeleccion)listOrdenesPendientes.SelectedItems[0].Tag as OrdenDeSeleccion;
+                OrdenDeSeleccion ordenSeleccionada = (OrdenDeSeleccion)listOrdenesPendientes.SelectedItems[0].Tag;
 
 
                 var error = model.ValidarOrden(ordenSeleccionada);

@@ -17,14 +17,14 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
 
         static AlmacenOrdenesDePreparacion()
         {
-            OrdenesDePreparacion = new List<OrdenDePreparacionEnt>();
+            OrdenDePreparacionEnts = new List<OrdenDePreparacionEnt>();
 
             try
             {
                 if (File.Exists(@"Json/OrdenesDePreparacion.Json"))
                 {
                     var archivoCargado = File.ReadAllText(@"Json/OrdenesDePreparacion.Json");
-                    OrdenesDePreparacion = JsonConvert.DeserializeObject<List<OrdenDePreparacionEnt>>(archivoCargado);
+                    OrdenDePreparacionEnts = JsonConvert.DeserializeObject<List<OrdenDePreparacionEnt>>(archivoCargado);
                 }
             }
             catch (Exception ex)

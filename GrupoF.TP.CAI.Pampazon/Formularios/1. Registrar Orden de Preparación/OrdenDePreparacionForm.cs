@@ -43,7 +43,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
             {
                 MessageBox.Show("No se ha seleccionado un cliente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            model.ClienteOrden.CodigoTransportista = TransportistaBox.Text;
+           TransportistaBox.Text ="";
             model.ClienteOrden.Fecha = FechaPicker.Value;
             model.ClienteOrden.EstadoOrden = Estados.Estado.Disponible;
             CodigoClienteTextBox.Text = model.ClienteOrden.NumeroDeOrden;
@@ -86,7 +86,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
             {
 
                 nuevaOrden.CodigoCliente = model.ClienteSeleccionado.CodigoCliente;
-                nuevaOrden.CodigoTransportista = TransportistaBox.Text;
+                nuevaOrden.CodigoTransportista = TranspBox.Text;
                 nuevaOrden.Fecha = FechaPicker.Value;
                 nuevaOrden.EstadoOrden = Estados.Estado.Pendiente;
                 nuevaOrden.Prioridad = (Prioridad)PrioridadComboBox.SelectedItem;

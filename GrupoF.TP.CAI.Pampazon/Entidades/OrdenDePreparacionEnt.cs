@@ -10,19 +10,27 @@ namespace GrupoF.TP.CAI.Pampazon.Entidades
 {
     public class OrdenDePreparacionEnt
     {
-        public string NumeroDeOrden { get; set; }
+        public string NumeroDeOrden { get; set; } =string.Empty;
         public DateTime Fecha { get; set; }
 
         public string CodigoCliente { get; set; }
 
         public string CodigoTransportista { get; set; }
 
-        public Prioridad Prioridad { get; set; } 
+        public Prioridad Prioridad { get; set; }
 
         public Estado EstadoOrden { get; set; }
 
-        public List<OrdenDePreparacionDetalle> Detalle {get; set;}
+        public List<OrdenDePreparacionDetalle> Detalle { get; set; }
 
+        public OrdenDePreparacionEnt()
+        {
+            NumeroDeOrden = "0"; 
+            Fecha = DateTime.Now; 
+            CodigoCliente = string.Empty;
+            CodigoTransportista = string.Empty;
+            Detalle = new List<OrdenDePreparacionDetalle>();
+        }
 
-}
+    }
 }
