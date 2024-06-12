@@ -40,7 +40,7 @@ namespace GrupoF.TP.CAI.Pampazon
         private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
 
-            if (!model.OrdenDePreparacion.Any(o => o.EstadoOrden == "En selección"))
+            if (!model.OrdenDePreparacion.Any(o => o.EstadoOrden == Entidades.Estados.Estado.Seleccion))
             {
                 MessageBox.Show("Debe seleccionar una o varias ordenes.");
                 return;
@@ -67,14 +67,14 @@ namespace GrupoF.TP.CAI.Pampazon
 
                 foreach (OrdenDeSeleccion ordenes in model.OrdenDePreparacion)
                 {
-                    if (filtroAplicado || ordenes.EstadoOrden == "Pendiente")
+                    if (filtroAplicado || ordenes.EstadoOrden == Entidades.Estados.Estado.Pendiente)
                     {
 
                         ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
                         item.SubItems.Add(ordenes.CodigoCliente);
                         item.SubItems.Add(ordenes.Fecha.ToString());
                         item.SubItems.Add(ordenes.CodigoTransportista);
-                        item.SubItems.Add(ordenes.EstadoOrden);
+                        item.SubItems.Add(ordenes.EstadoOrden.ToString());
 
                         listOrdenesPendientes.Items.Add(item);
 
@@ -101,7 +101,7 @@ namespace GrupoF.TP.CAI.Pampazon
                     return;
                 }
 
-                ordenSeleccionada.EstadoOrden = "En selección";
+                ordenSeleccionada.EstadoOrden = Entidades.Estados.Estado.Seleccion;
 
                 CargarOrdenesDePreparacion();
             }
@@ -147,7 +147,7 @@ namespace GrupoF.TP.CAI.Pampazon
                 item.SubItems.Add(orden.CodigoCliente);
                 item.SubItems.Add(orden.Fecha.ToString());
                 item.SubItems.Add(orden.CodigoTransportista);
-                item.SubItems.Add(orden.EstadoOrden);
+                item.SubItems.Add(orden.EstadoOrden.ToString());
 
                 listOrdenesPendientes.Items.Add(item);
             }

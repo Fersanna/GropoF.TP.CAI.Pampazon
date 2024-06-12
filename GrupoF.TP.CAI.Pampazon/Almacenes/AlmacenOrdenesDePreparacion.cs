@@ -70,7 +70,7 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
 
                 if (ordenDePreparacion != null)
                 {
-                    ordenDePreparacion.EstadoOrden = "En selección";
+                    ordenDePreparacion.EstadoOrden = Estados.Estado.Seleccion;
                 }
 
             }

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static GrupoF.TP.CAI.Pampazon.Entidades.Estados;
 using static GrupoF.TP.CAI.Pampazon.Entidades.Prioridades;
 
 namespace GrupoF.TP.CAI.Pampazon.Modelos
@@ -159,7 +160,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
                     Fecha = orden.Fecha,
                     CodigoCliente = orden.CodigoCliente,
                     CodigoTransportista = orden.CodigoTransportista,
-                    EstadoOrden = orden.EstadoOrden,
+                    EstadoOrden = Estados.Estado.Pendiente,
                     Prioridad = (Prioridad)orden.Prioridad,
 
                     Detalle = orden.ProductosOrden.Select(p => new OrdenDePreparacionDetalle

@@ -26,7 +26,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         private void GenerarBtn_Click(object sender, EventArgs e)
         {
-            var ordenesConfirmadas = model.OrdenesSeleccionadas.Where(o => o.EstadoOrden == "Confirmada").ToList();
+            var ordenesConfirmadas = model.OrdenesSeleccionadas.Where(o => o.EstadoOrden == Entidades.Estados.Estado.Confirmada).ToList();
 
             if (ordenesConfirmadas.Any() == true)
             {
@@ -63,13 +63,13 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
             foreach (OrdenDePreparacion ordenesConfirmadas in model.OrdenesSeleccionadas)
             {
-                if (ordenesConfirmadas.EstadoOrden == "Confirmada")
+                if (ordenesConfirmadas.EstadoOrden == Entidades.Estados.Estado.Confirmada)
                 {
                     ListViewItem item = new ListViewItem(ordenesConfirmadas.NumeroDeOrden);
                     item.SubItems.Add(ordenesConfirmadas.CodigoCliente);
                     item.SubItems.Add(ordenesConfirmadas.Fecha.ToString());
                     item.SubItems.Add(ordenesConfirmadas.CodigoTransportista);
-                    item.SubItems.Add(ordenesConfirmadas.EstadoOrden);
+                    item.SubItems.Add(ordenesConfirmadas.EstadoOrden.ToString());
 
                     listOrdenesSeleccionadasConfirmadas.Items.Add(item);
                 }

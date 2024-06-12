@@ -34,7 +34,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
-            if (!model.OrdenesSeleccionadas.Any(o => o.EstadoOrden == "Confirmada"))
+            if (!model.OrdenesSeleccionadas.Any(o => o.EstadoOrden == Entidades.Estados.Estado.Confirmada))
             {
                 MessageBox.Show("Debe seleccionar una o varias ordenes.");
                 return;
@@ -61,7 +61,7 @@ namespace GrupoF.TP.CAI.Pampazon
                 item.SubItems.Add(ordenes.CodigoCliente);
                 item.SubItems.Add(ordenes.Fecha.ToString());
                 item.SubItems.Add(ordenes.CodigoTransportista);
-                item.SubItems.Add(ordenes.EstadoOrden);
+                item.SubItems.Add(ordenes.EstadoOrden.ToString());
 
                 listOrdenesPreparacion.Items.Add(item);
 
@@ -86,7 +86,7 @@ namespace GrupoF.TP.CAI.Pampazon
                     return;
                 }
 
-                ordenSeleccionada.EstadoOrden = "Confirmada";
+                ordenSeleccionada.EstadoOrden = Entidades.Estados.Estado.Confirmada;
 
                 CargarOrdenesSeleccionadas();
             }
@@ -105,7 +105,7 @@ namespace GrupoF.TP.CAI.Pampazon
                 item.SubItems.Add(orden.CodigoCliente);
                 item.SubItems.Add(orden.Fecha.ToString());
                 item.SubItems.Add(orden.CodigoTransportista);
-                item.SubItems.Add(orden.EstadoOrden);
+                item.SubItems.Add(orden.EstadoOrden.ToString());
 
                 listOrdenesPreparacion.Items.Add(item);
             }

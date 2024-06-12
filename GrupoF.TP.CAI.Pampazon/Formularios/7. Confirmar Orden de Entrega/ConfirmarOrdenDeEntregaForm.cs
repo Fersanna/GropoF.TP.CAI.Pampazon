@@ -30,7 +30,7 @@ namespace GrupoF.TP.CAI.Pampazon
                     item.SubItems.Add(orden.CodigoCliente);
                     item.SubItems.Add(orden.Fecha.ToString());
                     item.SubItems.Add(orden.CodigoTransportista);
-                    item.SubItems.Add(orden.EstadoOrden);
+                    item.SubItems.Add(orden.EstadoOrden.ToString());
 
                     listOrdenesPreparadas.Items.Add(item);
 
@@ -53,7 +53,7 @@ namespace GrupoF.TP.CAI.Pampazon
                 foreach (OrdenDePreparacion item in model.OrdenesDeEntregaAConfirmar)
                 {
                     OrdenDePreparacion seleccionada = (OrdenDePreparacion)listOrdenesPreparadas.SelectedItems[0].Tag;
-                    seleccionada.EstadoOrden ="Despachada";
+                    seleccionada.EstadoOrden =Entidades.Estados.Estado.Despachada;
                     
                    model.OrdenADespachada = seleccionada;
                   

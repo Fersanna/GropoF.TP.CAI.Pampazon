@@ -32,7 +32,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
                     item.SubItems.Add(model.OrdenADespachada.CodigoCliente);
                     item.SubItems.Add(model.OrdenADespachada.Fecha.ToString());
                     item.SubItems.Add(model.OrdenADespachada.CodigoTransportista);
-                    item.SubItems.Add(model.OrdenADespachada.EstadoOrden);
+                    item.SubItems.Add(model.OrdenADespachada.EstadoOrden.ToString());
                    
 
                     listOrdenesDespachadas.Items.Add(item);

@@ -45,7 +45,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
             }
             model.ClienteOrden.CodigoTransportista = TransportistaBox.Text;
             model.ClienteOrden.Fecha = FechaPicker.Value;
-            model.ClienteOrden.EstadoOrden = "Disponible";
+            model.ClienteOrden.EstadoOrden = Estados.Estado.Disponible;
             CodigoClienteTextBox.Text = model.ClienteOrden.NumeroDeOrden;
 
             PrioridadComboBox.DataSource = Enum.GetValues(typeof(Prioridad));
@@ -88,7 +88,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
                 nuevaOrden.CodigoCliente = model.ClienteSeleccionado.CodigoCliente;
                 nuevaOrden.CodigoTransportista = TransportistaBox.Text;
                 nuevaOrden.Fecha = FechaPicker.Value;
-                nuevaOrden.EstadoOrden = "Pendiente";
+                nuevaOrden.EstadoOrden = Estados.Estado.Pendiente;
                 nuevaOrden.Prioridad = (Prioridad)PrioridadComboBox.SelectedItem;
                 nuevaOrden.ProductosOrden = new();
             };

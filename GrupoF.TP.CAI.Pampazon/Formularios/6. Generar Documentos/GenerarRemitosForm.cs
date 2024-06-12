@@ -54,13 +54,13 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
             foreach (OrdenDePreparacion ordenesConfirmadas in model.OrdenesDeEntrega)
             {
-                if (ordenesConfirmadas.EstadoOrden == "Confirmada")
+                if (ordenesConfirmadas.EstadoOrden == Entidades.Estados.Estado.Confirmada)
                 {
                     ListViewItem item = new ListViewItem(ordenesConfirmadas.NumeroDeOrden);
                     item.SubItems.Add(ordenesConfirmadas.CodigoCliente);
                     item.SubItems.Add(ordenesConfirmadas.Fecha.ToString());
                     item.SubItems.Add(ordenesConfirmadas.CodigoTransportista);
-                    item.SubItems.Add(ordenesConfirmadas.EstadoOrden);
+                    item.SubItems.Add(ordenesConfirmadas.EstadoOrden.ToString());
 
                     listOrdenesDeEntrega.Items.Add(item);
 

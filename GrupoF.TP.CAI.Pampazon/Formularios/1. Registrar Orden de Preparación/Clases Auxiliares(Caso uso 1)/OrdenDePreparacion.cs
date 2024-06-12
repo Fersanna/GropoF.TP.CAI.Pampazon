@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static GrupoF.TP.CAI.Pampazon.Entidades.Estados;
 using static GrupoF.TP.CAI.Pampazon.Entidades.Prioridades;
 
 namespace GrupoF.TP.CAI.Pampazon.Clases_Auxiliares
@@ -17,7 +18,7 @@ namespace GrupoF.TP.CAI.Pampazon.Clases_Auxiliares
 
         public string CodigoCliente {get; set; }    
         public string CodigoTransportista {get; set;}
-        public string EstadoOrden{get; set; }
+        public Estado EstadoOrden{get; set; }
 
         public Prioridad Prioridad {get; set;}
         public List<Productos> ProductosOrden {get; set; }
