@@ -133,10 +133,12 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
             ultimoId++;
             string nuevoIdOrdenDeSeleccion = ultimoId.ToString();
 
+
            
             var nuevaOrdenEnt = new OrdenDeSeleccionEnt
             {
                 IdOrdenDeSeleccion = nuevoIdOrdenDeSeleccion,
+                Estado = Estados.Estado.Seleccionada,
                 SeleccionDetalle = new List<OrdenDeSeleccionDetalle>()
             };
 

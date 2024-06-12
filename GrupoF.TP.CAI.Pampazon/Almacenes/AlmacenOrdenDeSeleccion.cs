@@ -5,7 +5,8 @@ using Newtonsoft.Json;
 namespace GrupoF.TP.CAI.Pampazon.Almacenes
 {
     public static class AlmacenOrdenDeSeleccion
-    {
+    {   
+        private static int contadorOrdenes = 0;
         public static List<OrdenDeSeleccionEnt> OrdenesDeSeleccionEnt { get; private set; }
 
         static AlmacenOrdenDeSeleccion()
@@ -22,6 +23,9 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
                     {
                         OrdenesDeSeleccionEnt = ordenes;
                     }
+
+                    var ultimoNumeroOrden = OrdenesDeSeleccionEnt.Max(o => int.Parse(o.IdOrdenDeSeleccion));
+                    contadorOrdenes = ultimoNumeroOrden + 1;
                 }
             }
             catch (Exception ex)
@@ -46,7 +50,8 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
 
         internal static void AgregarOrden(OrdenDeSeleccionEnt ordenEnt)
         {
-
+            ordenEnt.IdOrdenDeSeleccion = contadorOrdenes.ToString();
+            ordenEnt.Estado= Estados.Estado.Seleccionada;
             OrdenesDeSeleccionEnt.Add(ordenEnt);
             MessageBox.Show($"El número de orden guardada: {ordenEnt.IdOrdenDeSeleccion}");
             Grabar();

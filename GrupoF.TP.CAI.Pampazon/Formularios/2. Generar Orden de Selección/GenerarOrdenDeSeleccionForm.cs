@@ -48,6 +48,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
             OrdenDeSeleccionForm ordenDeSeleccionForm = new OrdenDeSeleccionForm
             {
+
                 model = model
             };
             ordenDeSeleccionForm.ShowDialog();
@@ -67,7 +68,8 @@ namespace GrupoF.TP.CAI.Pampazon
 
                 foreach (OrdenDeSeleccion ordenes in model.OrdenDePreparacion)
                 {
-                    if (filtroAplicado || ordenes.EstadoOrden == Entidades.Estados.Estado.Pendiente)
+                 if (ordenes.EstadoOrden == Entidades.Estados.Estado.Pendiente || ordenes.EstadoOrden == Entidades.Estados.Estado.Seleccion)
+                    {
                     {
 
                         ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
@@ -80,9 +82,11 @@ namespace GrupoF.TP.CAI.Pampazon
 
                         item.Tag = ordenes;
                     }
+
+                    }
                 }
             }
-               filtroAplicado = true;
+              
         }
 
         private void listOrdenesPendientes_MouseClick(object sender, MouseEventArgs e)
@@ -102,7 +106,7 @@ namespace GrupoF.TP.CAI.Pampazon
                 }
 
                 ordenSeleccionada.EstadoOrden = Entidades.Estados.Estado.Seleccion;
-
+                 //Aca esta cargando todas las ordenes otra vez al cambiar de estado 
                 CargarOrdenesDePreparacion();
             }
             MessageBox.Show("La orden fue seleccionada");
