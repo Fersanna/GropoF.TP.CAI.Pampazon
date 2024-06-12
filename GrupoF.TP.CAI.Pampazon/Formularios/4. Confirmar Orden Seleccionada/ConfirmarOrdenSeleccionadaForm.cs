@@ -34,6 +34,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                     ListViewItem item = new ListViewItem(ordenesSeleccionada.NumeroDeOrden);
                     string detallesUnidos = string.Join(" - ", ordenesSeleccionada.OrdenesSeleccionadas);
                     item.SubItems.Add(detallesUnidos);
+                    item.SubItems.Add(ordenesSeleccionada.Estado.ToString());
 
                     listOrdenesEnSeleccion.Items.Add(item);
 

@@ -32,10 +32,9 @@
             CancelarBtn = new Button();
             listOrdenesEnSeleccion = new ListView();
             NumeroColum = new ColumnHeader();
-            FechaColum = new ColumnHeader();
-            EstadoColum = new ColumnHeader();
-            label1 = new Label();
             DetalleHeader = new ColumnHeader();
+            EstadoCol = new ColumnHeader();
+            label1 = new Label();
             SuspendLayout();
             // 
             // ConfirmarBtn
@@ -62,7 +61,7 @@
             // 
             // listOrdenesEnSeleccion
             // 
-            listOrdenesEnSeleccion.Columns.AddRange(new ColumnHeader[] { NumeroColum, DetalleHeader, FechaColum, EstadoColum });
+            listOrdenesEnSeleccion.Columns.AddRange(new ColumnHeader[] { NumeroColum, DetalleHeader, EstadoCol });
             listOrdenesEnSeleccion.FullRowSelect = true;
             listOrdenesEnSeleccion.GridLines = true;
             listOrdenesEnSeleccion.Location = new Point(46, 61);
@@ -78,18 +77,16 @@
             NumeroColum.Text = "ID";
             NumeroColum.Width = 130;
             // 
-            // FechaColum
+            // DetalleHeader
             // 
-            FechaColum.Text = "Fecha";
-            FechaColum.TextAlign = HorizontalAlignment.Center;
-            FechaColum.Width = 130;
+            DetalleHeader.Text = "Detalle de Ordenes";
+            DetalleHeader.Width = 200;
             // 
-            // EstadoColum
+            // EstadoCol
             // 
-            EstadoColum.Tag = "";
-            EstadoColum.Text = "Estado";
-            EstadoColum.TextAlign = HorizontalAlignment.Center;
-            EstadoColum.Width = 130;
+            EstadoCol.Text = "Estado";
+            EstadoCol.TextAlign = HorizontalAlignment.Center;
+            EstadoCol.Width = 130;
             // 
             // label1
             // 
@@ -99,11 +96,6 @@
             label1.Size = new Size(240, 20);
             label1.TabIndex = 7;
             label1.Text = "Listado de ordenes de preparación";
-            // 
-            // DetalleHeader
-            // 
-            DetalleHeader.Text = "Detalle de Ordenes";
-            DetalleHeader.Width = 200;
             // 
             // ConfirmarOrdenSeleccionadaForm
             // 
@@ -127,8 +119,7 @@
         private Button CancelarBtn;
         private ListView listOrdenesEnSeleccion;
         private ColumnHeader NumeroColum;
-        private ColumnHeader FechaColum;
-        private ColumnHeader EstadoColum;
+        private ColumnHeader EstadoCol;
         private Label label1;
         private ColumnHeader DetalleHeader;
     }
