@@ -83,7 +83,7 @@
 
                     if (ordenDePreparacion != null)
                     {
-                        ordenDePreparacion.EstadoOrden = Estados.Estado.Seleccionada;
+                        ordenDePreparacion.EstadoOrden = Estados.Estado.Seleccion;
                     }
 
                 }

@@ -10,20 +10,25 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
 {
     internal class ConfirmarOrdenSeleccionadaFormModel
     {
-         public List<OrdenDeSeleccionada> OrdenEnSeleccion { get; set; } 
+        public List<OrdenDeSeleccionada> OrdenEnSeleccion { get; set; }
         //Seguir x aca
-        public  ConfirmarOrdenSeleccionadaFormModel()
+        public ConfirmarOrdenSeleccionadaFormModel()
         {
-            var ordenesAconfirmar = AlmacenOrdenDeSeleccion.OrdenesDeSeleccionEnt;
-           
+            var ordenesAconfirmar = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts;
+
+
             if (ordenesAconfirmar != null)
             {
-                OrdenEnSeleccion = ordenesAconfirmar.Select(ordenEnt =>
+                var ordenesEnSeleccion = ordenesAconfirmar.FindAll(p => p.EstadoOrden == Entidades.Estados.Estado.Seleccion);
+
+                OrdenEnSeleccion = ordenesEnSeleccion.Select(ordenEnt =>
                 new OrdenDeSeleccionada
                 {
-                    NumeroDeOrden = ordenEnt.IdOrdenDeSeleccion,
-                    Estado =ordenEnt.Estado,
-                    OrdenesSeleccionadas = ordenEnt.SeleccionDetalle.Select(detalle => detalle.NumeroDeOrden).ToList(),
+                     NumeroDeOrden = ordenEnt.NumeroDeOrden,
+                     Fecha = ordenEnt.Fecha,
+                     CodigoCliente = ordenEnt.CodigoCliente,
+                     CodigoTransportista = ordenEnt.CodigoTransportista,
+                     Estado = ordenEnt.EstadoOrden,
                     
                 }).ToList();
             }

@@ -31,10 +31,13 @@
             ConfirmarBtn = new Button();
             CancelarBtn = new Button();
             listOrdenesEnSeleccion = new ListView();
-            NumeroColum = new ColumnHeader();
-            DetalleHeader = new ColumnHeader();
-            EstadoCol = new ColumnHeader();
+            NumeroHeader = new ColumnHeader();
+            ClienteHeader = new ColumnHeader();
+            EstadoHeader = new ColumnHeader();
             label1 = new Label();
+            FechaHeader = new ColumnHeader();
+            TranspHeader = new ColumnHeader();
+            PrioriodadHeader = new ColumnHeader();
             SuspendLayout();
             // 
             // ConfirmarBtn
@@ -61,7 +64,7 @@
             // 
             // listOrdenesEnSeleccion
             // 
-            listOrdenesEnSeleccion.Columns.AddRange(new ColumnHeader[] { NumeroColum, DetalleHeader, EstadoCol });
+            listOrdenesEnSeleccion.Columns.AddRange(new ColumnHeader[] { NumeroHeader, FechaHeader, ClienteHeader, TranspHeader, EstadoHeader, PrioriodadHeader });
             listOrdenesEnSeleccion.FullRowSelect = true;
             listOrdenesEnSeleccion.GridLines = true;
             listOrdenesEnSeleccion.Location = new Point(46, 61);
@@ -72,21 +75,21 @@
             listOrdenesEnSeleccion.UseCompatibleStateImageBehavior = false;
             listOrdenesEnSeleccion.View = View.Details;
             // 
-            // NumeroColum
+            // NumeroHeader
             // 
-            NumeroColum.Text = "ID";
-            NumeroColum.Width = 130;
+            NumeroHeader.Text = "ID";
+            NumeroHeader.Width = 130;
             // 
-            // DetalleHeader
+            // ClienteHeader
             // 
-            DetalleHeader.Text = "Detalle de Ordenes";
-            DetalleHeader.Width = 200;
+            ClienteHeader.Text = "Cliente";
+            ClienteHeader.Width = 200;
             // 
-            // EstadoCol
+            // EstadoHeader
             // 
-            EstadoCol.Text = "Estado";
-            EstadoCol.TextAlign = HorizontalAlignment.Center;
-            EstadoCol.Width = 130;
+            EstadoHeader.Text = "Estado";
+            EstadoHeader.TextAlign = HorizontalAlignment.Center;
+            EstadoHeader.Width = 130;
             // 
             // label1
             // 
@@ -96,6 +99,20 @@
             label1.Size = new Size(240, 20);
             label1.TabIndex = 7;
             label1.Text = "Listado de ordenes de preparación";
+            // 
+            // FechaHeader
+            // 
+            FechaHeader.Text = "Fecha";
+            // 
+            // TranspHeader
+            // 
+            TranspHeader.Text = "Transportista";
+            TranspHeader.Width = 150;
+            // 
+            // PrioriodadHeader
+            // 
+            PrioriodadHeader.Text = "Prioridad";
+            PrioriodadHeader.Width = 150;
             // 
             // ConfirmarOrdenSeleccionadaForm
             // 
@@ -118,9 +135,12 @@
         private Button ConfirmarBtn;
         private Button CancelarBtn;
         private ListView listOrdenesEnSeleccion;
-        private ColumnHeader NumeroColum;
-        private ColumnHeader EstadoCol;
+        private ColumnHeader NumeroHeader;
+        private ColumnHeader EstadoHeader;
         private Label label1;
-        private ColumnHeader DetalleHeader;
+        private ColumnHeader ClienteHeader;
+        private ColumnHeader FechaHeader;
+        private ColumnHeader TranspHeader;
+        private ColumnHeader PrioriodadHeader;
     }
 }

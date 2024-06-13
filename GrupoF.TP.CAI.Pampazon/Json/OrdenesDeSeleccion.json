@@ -1,0 +1,26 @@
+[
+  {
+    "IdOrdenDeSeleccion": "0",
+    "Estado": 5,
+    "SeleccionDetalle": [
+      {
+        "NumeroDeOrden": "9"
+      },
+      {
+        "NumeroDeOrden": "10"
+      }
+    ]
+  },
+  {
+    "IdOrdenDeSeleccion": "1",
+    "Estado": 5,
+    "SeleccionDetalle": [
+      {
+        "NumeroDeOrden": "7"
+      },
+      {
+        "NumeroDeOrden": "8"
+      }
+    ]
+  }
+]
