@@ -12,9 +12,9 @@ namespace GrupoF.TP.CAI.Pampazon.Clases_Auxiliares
         public Productos(ProductoEnt productoEnt)
         {
             IdProducto = productoEnt.IdProducto;
-            Descripcion = productoEnt.Descripcion;
-            Posicion = productoEnt.Posicion;
+            Descripcion = productoEnt.Descripcion;           
             Cantidad = productoEnt.Stock;
+            Posicion= productoEnt.Posicion;
         }
 
         public Productos()

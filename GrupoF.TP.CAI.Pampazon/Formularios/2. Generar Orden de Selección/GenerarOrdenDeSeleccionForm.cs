@@ -69,7 +69,7 @@ namespace GrupoF.TP.CAI.Pampazon
                 foreach (OrdenDeSeleccion ordenes in model.OrdenDePreparacion)
                 {
                   
-                 if (ordenes.EstadoOrden == Entidades.Estados.Estado.Pendiente || ordenes.EstadoOrden == Entidades.Estados.Estado.Seleccion)
+                 if (ordenes.EstadoOrden == Entidades.Estados.Estado.Pendiente)
                     {
                     {
 
@@ -107,8 +107,8 @@ namespace GrupoF.TP.CAI.Pampazon
                 }
 
                 ordenSeleccionada.EstadoOrden = Entidades.Estados.Estado.Seleccion;
-                 //Aca esta cargando todas las ordenes otra vez al cambiar de estado 
-                CargarOrdenesDePreparacion();
+                
+               listOrdenesPendientes.SelectedItems[0].SubItems[4].Text = ordenSeleccionada.EstadoOrden.ToString();
             }
             MessageBox.Show("La orden fue seleccionada");
 
