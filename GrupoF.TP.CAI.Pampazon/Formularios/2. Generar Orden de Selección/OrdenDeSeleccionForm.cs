@@ -26,7 +26,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         private void GenerarBtn_Click(object sender, EventArgs e)
         {
-            var ordenesSeleccionadas = model.OrdenDePreparacion.Where(o => o.EstadoOrden == Entidades.Estados.Estado.Seleccion).ToList();
+            var ordenesSeleccionadas = model.OrdenDePreparacionPendientes.Where(o => o.EstadoOrden == Entidades.Estados.Estado.Seleccion).ToList();
 
             if (ordenesSeleccionadas.Any())
             {
@@ -34,15 +34,17 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    foreach (var orden in ordenesSeleccionadas)
-                    {
-                        orden.EstadoOrden = Entidades.Estados.Estado.Seleccionada;
-                    }
+                    //foreach (var orden in ordenesSeleccionadas)
+                    //{
+                    //    orden.EstadoOrden = Entidades.Estados.Estado.Seleccionada;
+                    //}
 
                     model.OrdenesConfirmadas = ordenesSeleccionadas;
                     model.RegistrarOrden(model.OrdenesConfirmadas);
                     MessageBox.Show("Órdenes seleccionadas y confirmadas.");
+                    ListOrdenesSeleccionConfirmadas.Items.Clear();
 
+                
 
                     this.Close();
 
@@ -63,7 +65,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         private void OrdenDeSeleccionForm_Load(object sender, EventArgs e)
         {
-            foreach (OrdenDeSeleccion ordenesSeleccionada in model.OrdenDePreparacion)
+            ListOrdenesSeleccionConfirmadas.Items.Clear();
+
+            foreach (OrdenDeSeleccion ordenesSeleccionada in model.OrdenDePreparacionSeleccionadas)
             {
                 if (ordenesSeleccionada.EstadoOrden == Entidades.Estados.Estado.Seleccion)
                 {

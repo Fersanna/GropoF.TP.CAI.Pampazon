@@ -40,7 +40,7 @@ namespace GrupoF.TP.CAI.Pampazon
         private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
 
-            if (!model.OrdenDePreparacion.Any(o => o.EstadoOrden == Entidades.Estados.Estado.Seleccion))
+            if (!model.OrdenDePreparacionPendientes.Any(o => o.EstadoOrden == Entidades.Estados.Estado.Seleccion))
             {
                 MessageBox.Show("Debe seleccionar una o varias ordenes.");
                 return;
@@ -62,32 +62,32 @@ namespace GrupoF.TP.CAI.Pampazon
         {
             listOrdenesPendientes.Items.Clear();
 
-            if (model.OrdenDePreparacion != null)
+            if (model.OrdenDePreparacionPendientes != null)
 
             {
 
-                foreach (OrdenDeSeleccion ordenes in model.OrdenDePreparacion)
+                foreach (OrdenDeSeleccion ordenes in model.OrdenDePreparacionPendientes)
                 {
-                  
-                 if (ordenes.EstadoOrden == Entidades.Estados.Estado.Pendiente)
+
+                    if (ordenes.EstadoOrden == Entidades.Estados.Estado.Pendiente)
                     {
-                    {
+                        {
 
-                        ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
-                        item.SubItems.Add(ordenes.CodigoCliente);
-                        item.SubItems.Add(ordenes.Fecha.ToString());
-                        item.SubItems.Add(ordenes.CodigoTransportista);
-                        item.SubItems.Add(ordenes.EstadoOrden.ToString());
+                            ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
+                            item.SubItems.Add(ordenes.CodigoCliente);
+                            item.SubItems.Add(ordenes.Fecha.ToString());
+                            item.SubItems.Add(ordenes.CodigoTransportista);
+                            item.SubItems.Add(ordenes.EstadoOrden.ToString());
 
-                        listOrdenesPendientes.Items.Add(item);
+                            listOrdenesPendientes.Items.Add(item);
 
-                        item.Tag = ordenes;
-                    }
+                            item.Tag = ordenes;
+                        }
 
                     }
                 }
             }
-              
+
         }
 
         private void listOrdenesPendientes_MouseClick(object sender, MouseEventArgs e)
@@ -107,8 +107,13 @@ namespace GrupoF.TP.CAI.Pampazon
                 }
 
                 ordenSeleccionada.EstadoOrden = Entidades.Estados.Estado.Seleccion;
-                
-               listOrdenesPendientes.SelectedItems[0].SubItems[4].Text = ordenSeleccionada.EstadoOrden.ToString();
+
+                listOrdenesPendientes.SelectedItems[0].SubItems[4].Text = ordenSeleccionada.EstadoOrden.ToString();
+
+                if (!model.OrdenDePreparacionSeleccionadas.Contains(ordenSeleccionada))
+                {
+                    model.OrdenDePreparacionSeleccionadas.Add(ordenSeleccionada);
+                }
             }
             MessageBox.Show("La orden fue seleccionada");
 
