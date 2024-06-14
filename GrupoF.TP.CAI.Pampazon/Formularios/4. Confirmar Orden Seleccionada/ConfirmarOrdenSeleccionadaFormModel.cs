@@ -11,6 +11,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
     internal class ConfirmarOrdenSeleccionadaFormModel
     {
         public List<OrdenDeSeleccionada> OrdenEnSeleccion { get; set; }
+
+        public List<OrdenDeSeleccionada> OrdenesSeleccionadas { get; set; }
         //Seguir x aca
         public ConfirmarOrdenSeleccionadaFormModel()
         {
@@ -24,14 +26,41 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 OrdenEnSeleccion = ordenesEnSeleccion.Select(ordenEnt =>
                 new OrdenDeSeleccionada
                 {
-                     NumeroDeOrden = ordenEnt.NumeroDeOrden,
-                     Fecha = ordenEnt.Fecha,
-                     CodigoCliente = ordenEnt.CodigoCliente,
-                     CodigoTransportista = ordenEnt.CodigoTransportista,
-                     Estado = ordenEnt.EstadoOrden,
-                    
+                    NumeroDeOrden = ordenEnt.NumeroDeOrden,
+                    Fecha = ordenEnt.Fecha,
+                    CodigoCliente = ordenEnt.CodigoCliente,
+                    CodigoTransportista = ordenEnt.CodigoTransportista,
+                    Estado = ordenEnt.EstadoOrden,
+
                 }).ToList();
             }
+        }
+
+        internal void CambiarEstadoEnOrden(OrdenDeSeleccionada ordenDePreparacion)
+        {
+            var orden = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts.FirstOrDefault(OrdenEnt => OrdenEnt.NumeroDeOrden == ordenDePreparacion.NumeroDeOrden);
+
+            if (orden != null)
+
+            {
+                orden.EstadoOrden = Entidades.Estados.Estado.Seleccionada;
+
+                var ordenEnSeleccion = OrdenEnSeleccion.FirstOrDefault(o => o.NumeroDeOrden == ordenDePreparacion.NumeroDeOrden);
+                if (ordenEnSeleccion != null)
+                {
+                    ordenEnSeleccion.Estado = Entidades.Estados.Estado.Seleccionada;
+                }
+
+
+            }
+
+             else
+            {
+                
+                throw new Exception("Orden no encontrada.");
+            }
+
+      
         }
 
         //internal void CambiarEstadoEnOrden(OrdenDeSeleccion orden)

@@ -40,7 +40,7 @@ namespace GrupoF.TP.CAI.Pampazon
         private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
 
-            if (model.OrdenDePreparacionPendientes.Any(o => o.EstadoOrden == Entidades.Estados.Estado.Seleccion))
+            if (!model.OrdenDePreparacionPendientes.Any(o => o.EstadoOrden == Entidades.Estados.Estado.Seleccion))
             {
                 MessageBox.Show("Debe seleccionar una o varias ordenes.");
                 return;

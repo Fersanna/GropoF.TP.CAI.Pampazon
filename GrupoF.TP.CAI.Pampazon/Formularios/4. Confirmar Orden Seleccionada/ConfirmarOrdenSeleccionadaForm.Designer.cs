@@ -32,12 +32,12 @@
             CancelarBtn = new Button();
             listOrdenesEnSeleccion = new ListView();
             NumeroHeader = new ColumnHeader();
-            ClienteHeader = new ColumnHeader();
-            EstadoHeader = new ColumnHeader();
-            label1 = new Label();
             FechaHeader = new ColumnHeader();
+            ClienteHeader = new ColumnHeader();
             TranspHeader = new ColumnHeader();
+            EstadoHeader = new ColumnHeader();
             PrioriodadHeader = new ColumnHeader();
+            label1 = new Label();
             SuspendLayout();
             // 
             // ConfirmarBtn
@@ -69,27 +69,43 @@
             listOrdenesEnSeleccion.GridLines = true;
             listOrdenesEnSeleccion.Location = new Point(46, 61);
             listOrdenesEnSeleccion.Margin = new Padding(3, 4, 3, 4);
+            listOrdenesEnSeleccion.MultiSelect = false;
             listOrdenesEnSeleccion.Name = "listOrdenesEnSeleccion";
             listOrdenesEnSeleccion.Size = new Size(764, 329);
             listOrdenesEnSeleccion.TabIndex = 6;
             listOrdenesEnSeleccion.UseCompatibleStateImageBehavior = false;
             listOrdenesEnSeleccion.View = View.Details;
+            listOrdenesEnSeleccion.MouseClick += listOrdenesEnSeleccion_MouseClick;
             // 
             // NumeroHeader
             // 
             NumeroHeader.Text = "ID";
             NumeroHeader.Width = 130;
             // 
+            // FechaHeader
+            // 
+            FechaHeader.Text = "Fecha";
+            // 
             // ClienteHeader
             // 
             ClienteHeader.Text = "Cliente";
             ClienteHeader.Width = 200;
+            // 
+            // TranspHeader
+            // 
+            TranspHeader.Text = "Transportista";
+            TranspHeader.Width = 150;
             // 
             // EstadoHeader
             // 
             EstadoHeader.Text = "Estado";
             EstadoHeader.TextAlign = HorizontalAlignment.Center;
             EstadoHeader.Width = 130;
+            // 
+            // PrioriodadHeader
+            // 
+            PrioriodadHeader.Text = "Prioridad";
+            PrioriodadHeader.Width = 150;
             // 
             // label1
             // 
@@ -99,20 +115,6 @@
             label1.Size = new Size(240, 20);
             label1.TabIndex = 7;
             label1.Text = "Listado de ordenes de preparación";
-            // 
-            // FechaHeader
-            // 
-            FechaHeader.Text = "Fecha";
-            // 
-            // TranspHeader
-            // 
-            TranspHeader.Text = "Transportista";
-            TranspHeader.Width = 150;
-            // 
-            // PrioriodadHeader
-            // 
-            PrioriodadHeader.Text = "Prioridad";
-            PrioriodadHeader.Width = 150;
             // 
             // ConfirmarOrdenSeleccionadaForm
             // 

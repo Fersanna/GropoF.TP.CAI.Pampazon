@@ -29,10 +29,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
 
             foreach (OrdenDeSeleccionada ordenesSeleccionada in model.OrdenEnSeleccion)
             {
-               
+
                 {
                     ListViewItem item = new ListViewItem(ordenesSeleccionada.NumeroDeOrden);
-                   // string detallesUnidos = string.Join(" - ", ordenesSeleccionada.OrdenesSeleccionadas);
+                    // string detallesUnidos = string.Join(" - ", ordenesSeleccionada.OrdenesSeleccionadas);
                     item.SubItems.Add(ordenesSeleccionada.Fecha.ToString());
                     item.SubItems.Add(ordenesSeleccionada.CodigoCliente);
                     item.SubItems.Add(ordenesSeleccionada.CodigoTransportista);
@@ -68,17 +68,37 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 OrdenDeSeleccionada ordenDePreparacion = (OrdenDeSeleccionada)listOrdenesEnSeleccion.SelectedItems[0].Tag;
 
 
-              //  model.CambiarEstadoEnOrden(ordenDePreparacion);
+                model.CambiarEstadoEnOrden(ordenDePreparacion);
 
-                foreach (ListViewItem item in listOrdenesEnSeleccion.SelectedItems)
-                {
-                    listOrdenesEnSeleccion.Items.Remove(item);
-                }
+
+                //Este era el codigo para borrar al confirmar, sacar de la lista - Lo cambie por mostrar otro estado
+                //foreach (ListViewItem item in listOrdenesEnSeleccion.SelectedItems)
+                //{
+                //    listOrdenesEnSeleccion.Items.Remove(item);
+                //}
 
                 MessageBox.Show("La orden se ha confirmado con éxito.");
+                this.Close();
             }
         }
 
+        private void listOrdenesEnSeleccion_MouseClick(object sender, MouseEventArgs e)
+        {
+             if (listOrdenesEnSeleccion.SelectedItems.Count > 0)
+            {
+                OrdenDeSeleccionada orden = (OrdenDeSeleccionada)listOrdenesEnSeleccion.SelectedItems[0].Tag;
 
+                orden.Estado = Entidades.Estados.Estado.Seleccionada;
+
+                listOrdenesEnSeleccion.SelectedItems[0].SubItems[5].Text = orden.Estado.ToString();
+
+                
+                if (!model.OrdenEnSeleccion.Contains(orden))
+                {
+                    model.OrdenEnSeleccion.Remove(orden);
+                    model.OrdenesSeleccionadas.Add(orden);
+                }
+            }
+        }
     }
 }
