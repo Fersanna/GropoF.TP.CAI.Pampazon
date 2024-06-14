@@ -26,7 +26,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         private void GenerarBtn_Click(object sender, EventArgs e)
         {
-            var ordenesSeleccionadas = model.OrdenDePreparacionPendientes.Where(o => o.EstadoOrden == Entidades.Estados.Estado.Seleccion).ToList();
+            var ordenesSeleccionadas = model.OrdenDePreparacionSeleccionadas.Where(o => o.EstadoOrden == Entidades.Estados.Estado.Seleccion).ToList();
 
             if (ordenesSeleccionadas.Any())
             {
@@ -34,31 +34,22 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    //foreach (var orden in ordenesSeleccionadas)
-                    //{
-                    //    orden.EstadoOrden = Entidades.Estados.Estado.Seleccionada;
-                    //}
-
-                    model.OrdenesConfirmadas = ordenesSeleccionadas;
-                    model.RegistrarOrden(model.OrdenesConfirmadas);
+                    model.RegistrarOrden(ordenesSeleccionadas);
                     MessageBox.Show("Órdenes seleccionadas y confirmadas.");
                     ListOrdenesSeleccionConfirmadas.Items.Clear();
-
-                
-
                     this.Close();
-
                 }
-                else if (dialogResult == DialogResult.Cancel)
+                else if (dialogResult == DialogResult.No)
                 {
                     MessageBox.Show("Operación cancelada.");
                 }
-
             }
             else
             {
-                MessageBox.Show("No hay ordenes seleccionadas para confirmar.");
+                MessageBox.Show("No hay órdenes seleccionadas para confirmar.");
             }
+
+
         }
 
 
