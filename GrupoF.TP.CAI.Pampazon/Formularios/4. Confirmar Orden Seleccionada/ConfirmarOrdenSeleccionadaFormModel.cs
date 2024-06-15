@@ -50,17 +50,27 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 {
                     ordenEnSeleccion.Estado = Entidades.Estados.Estado.Seleccionada;
                 }
+                
+                if (OrdenesSeleccionadas == null)
+                {
+                    OrdenesSeleccionadas = new List<OrdenDeSeleccionada>();
+                }
 
-
+                if (!OrdenesSeleccionadas.Contains(ordenDePreparacion))
+                {
+                    OrdenEnSeleccion.Remove(ordenDePreparacion);
+                    OrdenesSeleccionadas.Add(ordenDePreparacion);
+                }
+                AlmacenOrdenesDePreparacion.Grabar();
             }
 
-             else
+            else
             {
-                
+
                 throw new Exception("Orden no encontrada.");
             }
 
-      
+
         }
 
         //internal void CambiarEstadoEnOrden(OrdenDeSeleccion orden)
