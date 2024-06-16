@@ -1,4 +1,6 @@
-﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
+using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Entidades;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,7 +22,34 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         public string NumeroOrden { get; set; }
 
-        public List<OrdenDePreparacion> OrdenesSeleccionadas { get; set; } 
+        public List<OrdenDePreparacion> OrdenesSeleccionadas { get; set; } = new();
+
+        public List<OrdenDePreparacion> OrdenesPreparadas { get; set; } = new();
+
+
+        public OrdenDeEntregaModel()
+        {
+            var ordenes = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts.FindAll(o => o.EstadoOrden == Estados.Estado.Seleccionada);
+
+            if (OrdenesSeleccionadas != null)
+            {
+                OrdenesSeleccionadas = ordenes.Select(ordenEnt => new OrdenDePreparacion
+                {
+                    NumeroDeOrden = ordenEnt.NumeroDeOrden,
+                    Fecha = ordenEnt.Fecha,
+                    CodigoCliente = ordenEnt.CodigoCliente,
+                    CodigoTransportista = ordenEnt.CodigoTransportista,
+                    EstadoOrden = ordenEnt.EstadoOrden,
+
+                }).ToList();
+
+            }
+              else
+            {
+                MessageBox.Show("Debe ingresar una orden de preparacion");
+            }
+
+        }
 
         internal List<OrdenDePreparacion> FiltrarOrdenes()
         {
@@ -66,7 +95,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         internal string ValidarOrden(OrdenDePreparacion ordenSeleccionada)
         {   // Arreglar esto para cuando se null
-            if (ordenSeleccionada.EstadoOrden == Entidades.Estados.Estado.Confirmada)
+            if (ordenSeleccionada.EstadoOrden == Estados.Estado.Preparada)
             {
                 DialogResult result = MessageBox.Show("Esta orden ya fue seleccionada. ¿Desea quitarla de la selección?", "Confirmación", MessageBoxButtons.OKCancel);
 
@@ -84,7 +113,14 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         private void RevertirEstadoOrden(OrdenDePreparacion ordenSeleccionada)
         {
-            ordenSeleccionada.EstadoOrden = Entidades.Estados.Estado.Seleccionada;
+            ordenSeleccionada.EstadoOrden = Estados.Estado.Seleccionada;
+             OrdenesSeleccionadas.Add(ordenSeleccionada);
+             OrdenesPreparadas.Remove(ordenSeleccionada);
+        }
+
+        internal void RegistrarOrden(List<OrdenDePreparacion> ordenesPreparadas)
+        {
+            throw new NotImplementedException();
         }
     }
 

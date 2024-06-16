@@ -34,11 +34,12 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
-            if (!model.OrdenesSeleccionadas.Any(o => o.EstadoOrden == Entidades.Estados.Estado.Confirmada))
+            if (!model.OrdenesPreparadas.Any(o => o.EstadoOrden == Entidades.Estados.Estado.Preparada))
             {
                 MessageBox.Show("Debe seleccionar una o varias ordenes.");
                 return;
             }
+
 
             OrdenDeEntregaForm ordenDeEntregaForm = new OrdenDeEntregaForm();
 
@@ -47,8 +48,9 @@ namespace GrupoF.TP.CAI.Pampazon
             ordenDeEntregaForm.ShowDialog();
             CargarOrdenesSeleccionadas();
             this.Close();
-
         }
+
+
 
 
         private void CargarOrdenesSeleccionadas()
@@ -86,9 +88,16 @@ namespace GrupoF.TP.CAI.Pampazon
                     return;
                 }
 
-                ordenSeleccionada.EstadoOrden = Entidades.Estados.Estado.Confirmada;
+                ordenSeleccionada.EstadoOrden = Entidades.Estados.Estado.Preparada;
 
-                CargarOrdenesSeleccionadas();
+               listOrdenesPreparacion.SelectedItems[0].SubItems[4].Text = ordenSeleccionada.EstadoOrden.ToString();
+
+                 if (!model.OrdenesPreparadas.Contains(ordenSeleccionada))
+                {
+                    model.OrdenesSeleccionadas.Remove(ordenSeleccionada);
+                    model.OrdenesPreparadas.Add(ordenSeleccionada);
+                }
+                
             }
             MessageBox.Show("La orden fue seleccionada");
         }

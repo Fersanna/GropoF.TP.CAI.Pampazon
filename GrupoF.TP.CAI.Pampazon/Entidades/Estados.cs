@@ -23,6 +23,7 @@ namespace GrupoF.TP.CAI.Pampazon.Entidades
             Despachada,
 
             Seleccionada,
+            Preparada,
         }
     }
 }

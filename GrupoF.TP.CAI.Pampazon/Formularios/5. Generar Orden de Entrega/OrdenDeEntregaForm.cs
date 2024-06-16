@@ -26,15 +26,16 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         private void GenerarBtn_Click(object sender, EventArgs e)
         {
-            var ordenesConfirmadas = model.OrdenesSeleccionadas.Where(o => o.EstadoOrden == Entidades.Estados.Estado.Confirmada).ToList();
+            var ordenesPreparadas = model.OrdenesPreparadas.Where(o => o.EstadoOrden == Entidades.Estados.Estado.Preparada).ToList();
 
-            if (ordenesConfirmadas.Any() == true)
+            if (ordenesPreparadas.Any() == true)
             {
                 var dialogResult = MessageBox.Show("¿Confirma las órdenes seleccionadas?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (dialogResult == DialogResult.Yes)
                 {
-                    model.OrdenesSeleccionadas = ordenesConfirmadas;
+                    model.RegistrarOrden(ordenesPreparadas);
+                   
                     MessageBox.Show("Órdenes seleccionadas y confirmadas.");
 
 
@@ -55,15 +56,15 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         private void OrdenDeEntregaForm_Load(object sender, EventArgs e)
         {
-            if (model == null || model.OrdenesSeleccionadas == null)
+            if (model == null || model.OrdenesPreparadas == null)
             {
                 MessageBox.Show("El modelo o las órdenes seleccionadas no están inicializados.");
                 return;
             }
 
-            foreach (OrdenDePreparacion ordenesConfirmadas in model.OrdenesSeleccionadas)
+            foreach (OrdenDePreparacion ordenesConfirmadas in model.OrdenesPreparadas)
             {
-                if (ordenesConfirmadas.EstadoOrden == Entidades.Estados.Estado.Confirmada)
+                if (ordenesConfirmadas.EstadoOrden == Entidades.Estados.Estado.Preparada)
                 {
                     ListViewItem item = new ListViewItem(ordenesConfirmadas.NumeroDeOrden);
                     item.SubItems.Add(ordenesConfirmadas.CodigoCliente);
