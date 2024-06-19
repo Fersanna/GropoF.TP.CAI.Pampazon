@@ -196,11 +196,6 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                         MessageBox.Show("La cantidad pedida debe ser mayor a 0.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         e.Cancel = true; // Cancela la edición
                     }
-                    else if (nuevaCantidad > producto.Cantidad)
-                    {
-                        MessageBox.Show("La cantidad pedida excede la cantidad disponible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        e.Cancel = true; // Cancela la edición
-                    }
                     else
                     {
                         // Si todas las validaciones pasan, actualizar la cantidad
@@ -254,10 +249,12 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                         MessageBox.Show(error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
 
+                    /*
                     else
                     {
                         MessageBox.Show("El producto ha sido eliminado");
                     }
+                    */
                 }
 
 

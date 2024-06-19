@@ -97,10 +97,12 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
                 {
                     return $"La cantidad pedida para el producto {productoOrden.IdProducto} excede la cantidad disponible. Disponible: {productoCliente.Cantidad}, Pedida: {productoOrden.Cantidad}.";
                 }
+                /*
                 if (productoOrden.Cantidad <= 0)
                 {
                     return $"La cantidad pedida para el producto {productoOrden.IdProducto} debe ser mayor que cero.";
                 }
+                */
             }
 
             return null;

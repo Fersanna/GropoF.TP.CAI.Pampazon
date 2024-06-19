@@ -127,6 +127,7 @@
             EditarOrden_GridView.Columns.AddRange(new DataGridViewColumn[] { IdProducto, Descripcion, Posicion, Cantidad });
             EditarOrden_GridView.Location = new Point(59, 264);
             EditarOrden_GridView.Margin = new Padding(3, 2, 3, 2);
+            EditarOrden_GridView.MultiSelect = false;
             EditarOrden_GridView.Name = "EditarOrden_GridView";
             EditarOrden_GridView.RowHeadersWidth = 51;
             EditarOrden_GridView.RowTemplate.Height = 29;
