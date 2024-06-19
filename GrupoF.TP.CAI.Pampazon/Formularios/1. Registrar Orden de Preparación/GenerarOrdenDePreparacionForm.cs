@@ -198,7 +198,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                     }
                     else if (nuevaCantidad > producto.Cantidad)
                     {
-                        MessageBox.Show("“La cantidad pedida excede la cantidad disponible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("La cantidad pedida excede la cantidad disponible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         e.Cancel = true; // Cancela la edición
                     }
                     else
