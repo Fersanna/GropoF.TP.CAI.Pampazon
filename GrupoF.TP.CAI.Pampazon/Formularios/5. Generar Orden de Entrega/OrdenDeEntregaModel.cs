@@ -120,7 +120,17 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         internal void RegistrarOrden(List<OrdenDePreparacion> ordenesPreparadas)
         {
-            throw new NotImplementedException();
+            foreach (var ordenPreparada in ordenesPreparadas)
+            {
+                var orden = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts.FirstOrDefault(o => o.NumeroDeOrden == ordenPreparada.NumeroDeOrden);
+                if (orden != null)
+                {
+                    orden.EstadoOrden = Estados.Estado.Preparada;
+                }
+            }
+
+
+             AlmacenOrdenesDePreparacion.Grabar();
         }
     }
 
