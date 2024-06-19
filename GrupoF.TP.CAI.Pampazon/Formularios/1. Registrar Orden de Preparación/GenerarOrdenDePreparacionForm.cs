@@ -178,6 +178,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                         MessageBox.Show("La cantidad ingresada no es válida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         e.Cancel = true; // Cancela la edición
                     }
+
+                    /*
                     if (producto != null)
                     {
                         producto.Cantidad = nuevaCantidad;
@@ -186,6 +188,23 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                     {
                         MessageBox.Show("La cantidad no puede ser menor que cero.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         e.Cancel = true; // Cancela la edición
+                    }
+                    */
+
+                    else if (nuevaCantidad <= 0)
+                    {
+                        MessageBox.Show("La cantidad pedida debe ser mayor a 0.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        e.Cancel = true; // Cancela la edición
+                    }
+                    else if (nuevaCantidad > producto.Cantidad)
+                    {
+                        MessageBox.Show("“La cantidad pedida excede la cantidad disponible.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        e.Cancel = true; // Cancela la edición
+                    }
+                    else
+                    {
+                        // Si todas las validaciones pasan, actualizar la cantidad
+                        producto.Cantidad = nuevaCantidad;
                     }
 
                 }
