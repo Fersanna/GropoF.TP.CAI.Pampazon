@@ -83,7 +83,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
 
             if (clienteEncontrado == null)
             {
-                return "El cliente no se ha encontrado";
+                return "El cliente no se ha encontrado.";
             }
 
             foreach (var productoOrden in ClienteOrden.ProductosOrden)

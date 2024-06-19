@@ -57,7 +57,7 @@ namespace GrupoF.TP.CAI.Pampazon
             }
             else
             {
-                MessageBox.Show("Debe seleccionar un cliente");
+                MessageBox.Show("Debe seleccionar un cliente del listado.");
             }
 
         }
@@ -76,13 +76,13 @@ namespace GrupoF.TP.CAI.Pampazon
         {
             if (string.IsNullOrWhiteSpace(Cuit_Box.Text))
             {
-                MessageBox.Show("Debe ingresar un numero de CUIT");
+                MessageBox.Show("Debe ingresar un numero de CUIT.");
                 e.Cancel = true;
                 return;
             }
             if (!Regex.IsMatch(Cuit_Box.Text, @"^\d{2}-\d{8}-\d{1}$"))
             {
-                MessageBox.Show("Formato de CUIT inválido.");
+                MessageBox.Show("El número de CUIT no ha sido ingresado correctamente.");
                 e.Cancel = false;
                 return;
             }
@@ -107,7 +107,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
             if (string.IsNullOrWhiteSpace(Cuit_Box.Text))
             {
-                MessageBox.Show("Debe ingresar un número de CUIT");
+                MessageBox.Show("Debe ingresar un número de CUIT.");
                 return;
             }
 
@@ -120,7 +120,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
             if (clienteBuscado == null)
             {
-                MessageBox.Show("El cliente no ha sido encontrado");
+                MessageBox.Show("El cliente no ha sido encontrado.");
                 return;
             }
 
