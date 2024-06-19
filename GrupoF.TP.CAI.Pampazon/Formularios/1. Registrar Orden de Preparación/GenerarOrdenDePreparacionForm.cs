@@ -143,11 +143,11 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
 
                     // MessageBox.Show("Se han agregado " + model.ClienteOrden.ProductosOrden.Count() + "a la orden"); Para probar que el producto se este agregando correctamente a la orden.
                 }
-                else
-                {
-                    MessageBox.Show("Por favor, seleccione un producto primero.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+            }
 
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un producto primero.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
 
