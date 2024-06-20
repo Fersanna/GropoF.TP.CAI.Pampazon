@@ -1,5 +1,7 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada;
 using GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega;
+using GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega.Clases_auxiliares;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -22,21 +24,30 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void ConfirmarOrdenDeEntregaForm_Load(object sender, EventArgs e)
         {
-            model =new ConfirmarOrdenDeEntregaModel();
-             
-             foreach (OrdenDePreparacion orden in model.OrdenesDeEntregaAConfirmar)
+            model = new ConfirmarOrdenDeEntregaModel();
+
+            CargarOrdenesPreparadas();
+        }
+
+        private void CargarOrdenesPreparadas()
+        {
+            if (model.OrdenesDeEntregaAConfirmar != null)
+            {
+                /*foreach (OrdenDePreparacionPreparada ordenes in model.OrdenesDeEntregaAConfirmar)
                 {
-                    ListViewItem item = new ListViewItem(orden.NumeroDeOrden);
-                    item.SubItems.Add(orden.CodigoCliente);
-                    item.SubItems.Add(orden.Fecha.ToString());
-                    item.SubItems.Add(orden.CodigoTransportista);
-                    item.SubItems.Add(orden.EstadoOrden.ToString());
+                    ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
+                    item.SubItems.Add(ordenes.CodigoCliente);
+                    item.SubItems.Add(ordenes.Fecha.ToString());
+                    item.SubItems.Add(ordenes.CodigoTransportista);
+                    item.SubItems.Add(((int)ordenes.Prioridad).ToString());
+                    item.SubItems.Add(ordenes.EstadoOrden.ToString());
 
                     listOrdenesPreparadas.Items.Add(item);
 
-                    item.Tag = orden;
+                    item.Tag = ordenes;
                 }
-
+                */
+            }
         }
 
         private void ConfirmarBtn_Click(object sender, EventArgs e)
