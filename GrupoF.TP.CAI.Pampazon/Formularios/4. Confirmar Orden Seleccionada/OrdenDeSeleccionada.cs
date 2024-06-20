@@ -15,7 +15,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
 
         public string CodigoCliente { get; set; }
         public string CodigoTransportista { get; set; }
-        public Estado Estado { get; set; }
+        public Estado EstadoOrden { get; set; }
 
         public Prioridad Prioridad { get; set; }
         public List<string> OrdenesSeleccionadas { get; set; }

@@ -33,12 +33,11 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 {
                     ListViewItem item = new ListViewItem(ordenesSeleccionada.NumeroDeOrden);
                     // string detallesUnidos = string.Join(" - ", ordenesSeleccionada.OrdenesSeleccionadas);
-                    item.SubItems.Add(ordenesSeleccionada.Fecha.ToString());
                     item.SubItems.Add(ordenesSeleccionada.CodigoCliente);
+                    item.SubItems.Add(ordenesSeleccionada.Fecha.ToString());
                     item.SubItems.Add(ordenesSeleccionada.CodigoTransportista);
-                    item.SubItems.Add(ordenesSeleccionada.Prioridad.ToString());
-
-                    item.SubItems.Add(ordenesSeleccionada.Estado.ToString());
+                    item.SubItems.Add(((int)ordenesSeleccionada.Prioridad).ToString());
+                    item.SubItems.Add(ordenesSeleccionada.EstadoOrden.ToString());
 
                     listOrdenesEnSeleccion.Items.Add(item);
 
@@ -91,9 +90,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
             {
                 OrdenDeSeleccionada orden = (OrdenDeSeleccionada)listOrdenesEnSeleccion.SelectedItems[0].Tag;
 
-                orden.Estado = Entidades.Estados.Estado.Seleccionada;
+                orden.EstadoOrden = Entidades.Estados.Estado.Seleccionada;
 
-                listOrdenesEnSeleccion.SelectedItems[0].SubItems[5].Text = orden.Estado.ToString();
+                listOrdenesEnSeleccion.SelectedItems[0].SubItems[5].Text = orden.EstadoOrden.ToString();
 
             }
         }

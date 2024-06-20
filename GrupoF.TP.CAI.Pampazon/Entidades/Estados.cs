@@ -13,17 +13,14 @@ namespace GrupoF.TP.CAI.Pampazon.Entidades
             [Description("En Selección")]
             Seleccion,
 
-            [Description("Confirmada")]
-            Confirmada,
+            [Description("Seleccionada")]
+            Seleccionada,
 
-            [Description("Disponible")]
-            Disponible,
+            [Description("Preparada")]
+            Preparada,
 
             [Description("Despachada")]
             Despachada,
-
-            Seleccionada,
-            Preparada,
         }
     }
 }

@@ -105,7 +105,7 @@
     "CodigoCliente": "CL006",
     "CodigoTransportista": "Distribuidora Norte",
     "Prioridad": 1,
-    "EstadoOrden": 0,
+    "EstadoOrden": 1,
     "Detalle": [
       {
         "IdProducto": "PRD012",
@@ -123,7 +123,7 @@
     "CodigoCliente": "CL008",
     "CodigoTransportista": "Transporte del Sur",
     "Prioridad": 3,
-    "EstadoOrden": 0,
+    "EstadoOrden": 2,
     "Detalle": [
       {
         "IdProducto": "PRD002",
@@ -137,7 +137,7 @@
     "CodigoCliente": "CL009",
     "CodigoTransportista": "Carga S.A.",
     "Prioridad": 2,
-    "EstadoOrden": 0,
+    "EstadoOrden": 3,
     "Detalle": [
       {
         "IdProducto": "PRD009",
@@ -155,7 +155,7 @@
     "CodigoCliente": "CL010",
     "CodigoTransportista": "Express Transport",
     "Prioridad": 1,
-    "EstadoOrden": 0,
+    "EstadoOrden": 4,
     "Detalle": [
       {
         "IdProducto": "PRD016",

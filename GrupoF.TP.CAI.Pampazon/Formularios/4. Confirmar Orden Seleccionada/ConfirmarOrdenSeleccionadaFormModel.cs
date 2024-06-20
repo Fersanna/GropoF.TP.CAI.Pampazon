@@ -27,10 +27,11 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 new OrdenDeSeleccionada
                 {
                     NumeroDeOrden = ordenEnt.NumeroDeOrden,
-                    Fecha = ordenEnt.Fecha,
                     CodigoCliente = ordenEnt.CodigoCliente,
+                    Fecha = ordenEnt.Fecha,
                     CodigoTransportista = ordenEnt.CodigoTransportista,
-                    Estado = ordenEnt.EstadoOrden,
+                    Prioridad = ordenEnt.Prioridad,
+                    EstadoOrden = ordenEnt.EstadoOrden,
 
                 }).ToList();
             }
@@ -48,7 +49,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 var ordenEnSeleccion = OrdenEnSeleccion.FirstOrDefault(o => o.NumeroDeOrden == ordenDePreparacion.NumeroDeOrden);
                 if (ordenEnSeleccion != null)
                 {
-                    ordenEnSeleccion.Estado = Entidades.Estados.Estado.Seleccionada;
+                    ordenEnSeleccion.EstadoOrden = Entidades.Estados.Estado.Seleccionada;
                 }
                 
                 if (OrdenesSeleccionadas == null)
