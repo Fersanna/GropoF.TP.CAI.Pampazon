@@ -41,7 +41,7 @@
             // 
             // ConfirmarBtn
             // 
-            ConfirmarBtn.Location = new Point(447, 335);
+            ConfirmarBtn.Location = new Point(494, 319);
             ConfirmarBtn.Name = "ConfirmarBtn";
             ConfirmarBtn.Size = new Size(102, 29);
             ConfirmarBtn.TabIndex = 1;
@@ -51,7 +51,7 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(555, 335);
+            CancelarBtn.Location = new Point(602, 319);
             CancelarBtn.Name = "CancelarBtn";
             CancelarBtn.Size = new Size(102, 29);
             CancelarBtn.TabIndex = 2;
@@ -64,9 +64,9 @@
             listInventario.Columns.AddRange(new ColumnHeader[] { IdProducto_Header, Descripcion_Header, Posicion_Header, Cantidad_Header, Cliente_Header });
             listInventario.FullRowSelect = true;
             listInventario.GridLines = true;
-            listInventario.Location = new Point(53, 61);
+            listInventario.Location = new Point(31, 45);
             listInventario.Name = "listInventario";
-            listInventario.Size = new Size(604, 268);
+            listInventario.Size = new Size(673, 268);
             listInventario.TabIndex = 3;
             listInventario.UseCompatibleStateImageBehavior = false;
             listInventario.View = View.Details;
@@ -80,7 +80,7 @@
             // 
             Descripcion_Header.Text = "Descripción";
             Descripcion_Header.TextAlign = HorizontalAlignment.Center;
-            Descripcion_Header.Width = 120;
+            Descripcion_Header.Width = 186;
             // 
             // Posicion_Header
             // 
@@ -103,7 +103,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(53, 43);
+            label1.Location = new Point(31, 27);
             label1.Name = "label1";
             label1.Size = new Size(116, 15);
             label1.TabIndex = 4;
@@ -113,7 +113,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(732, 427);
+            ClientSize = new Size(739, 384);
             Controls.Add(label1);
             Controls.Add(listInventario);
             Controls.Add(CancelarBtn);

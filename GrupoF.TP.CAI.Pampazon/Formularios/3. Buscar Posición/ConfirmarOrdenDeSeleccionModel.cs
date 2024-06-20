@@ -1,4 +1,5 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
+using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
 using GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección.Clases_auxiliares;
 using GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición.Clases_Auxiliares;
 using System;
@@ -12,6 +13,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
     public class ConfirmarOrdenDeSeleccionModel
     {
         public List<OrdenDeSeleccionPendiente> OrdenesSeleccionPendientes { get; set; } = new List<OrdenDeSeleccionPendiente>();
+
+        public List<Productos> Productos { get; set; } = new List<Productos>();
 
         public ConfirmarOrdenDeSeleccionModel()
         {
