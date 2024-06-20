@@ -10,8 +10,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición.Clases_Auxilia
 {
     public class OrdenDeSeleccionPendiente
     {
-        public string numeroDeOrden { get; set; }
-        public EstadoSeleccion estadoOrdenSeleccion { get; set; }
+        public string IdOrdenDeSeleccion { get; set; }
+        public EstadoSeleccion EstadoOrdenSeleccion { get; set; }
     }
 }
 

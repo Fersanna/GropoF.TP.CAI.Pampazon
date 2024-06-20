@@ -43,7 +43,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
         }
 
 
-        /*private void cargarOrdenesDeSeleccion()
+        private void cargarOrdenesDeSeleccion()
 
         {
             if (model.OrdenesSeleccionPendientes != null)
@@ -51,14 +51,14 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
             {
                 foreach (OrdenDeSeleccionPendiente ordenesSeleccion in model.OrdenesSeleccionPendientes)
                 {
-                    if (ordenesSeleccion.estadoOrdenSeleccion == Entidades.EstadoSeleccionEnum.EstadoSeleccion.Pendiente)
+                    if (ordenesSeleccion.EstadoOrdenSeleccion == Entidades.EstadoSeleccionEnum.EstadoSeleccion.Pendiente)
                     {
 
                         {
-                            ListViewItem item = new ListViewItem(ordenesSeleccion.numeroDeOrden);
+                            ListViewItem item = new ListViewItem(ordenesSeleccion.IdOrdenDeSeleccion);
                             // string detallesUnidos = string.Join(" - ", ordenesSeleccionada.OrdenesSeleccionadas);
-                            item.SubItems.Add(ordenesSeleccion.numeroDeOrden);
-                            item.SubItems.Add(ordenesSeleccion.estadoOrdenSeleccion.ToString());
+                            item.SubItems.Add(ordenesSeleccion.IdOrdenDeSeleccion);
+                            item.SubItems.Add(ordenesSeleccion.EstadoOrdenSeleccion.ToString());
 
 
                             listOrdenesDeSeleccion.Items.Add(item);
@@ -68,25 +68,16 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
 
                         }
                     }
-
                 }
-
-
-
-
             }
-
         }
-        */
+        
         private void BuscarPosicionForm_Load(object sender, EventArgs e)
 
         {
              model = new ConfirmarOrdenDeSeleccionModel();
 
-            //cargarOrdenesDeSeleccion();
-            
-          
-
+            cargarOrdenesDeSeleccion();
         }
     }
 }

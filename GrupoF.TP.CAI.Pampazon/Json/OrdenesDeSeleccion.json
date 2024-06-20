@@ -1,7 +1,7 @@
 [
   {
-    "IdOrdenDeSeleccion": "0",
-    "Estado": 5,
+    "IdOrdenDeSeleccion": "1",
+    "EstadoOrdenSeleccion": 0,
     "SeleccionDetalle": [
       {
         "NumeroDeOrden": "9"
@@ -12,8 +12,8 @@
     ]
   },
   {
-    "IdOrdenDeSeleccion": "1",
-    "Estado": 5,
+    "IdOrdenDeSeleccion": "2",
+    "EstadoOrdenSeleccion": 0,
     "SeleccionDetalle": [
       {
         "NumeroDeOrden": "7"

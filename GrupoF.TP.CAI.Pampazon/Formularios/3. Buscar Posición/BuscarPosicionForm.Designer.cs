@@ -32,7 +32,7 @@
             CancelarBtn = new Button();
             listOrdenesDeSeleccion = new ListView();
             NumeroColum = new ColumnHeader();
-            FechaColum = new ColumnHeader();
+            EstadoColum = new ColumnHeader();
             label1 = new Label();
             SuspendLayout();
             // 
@@ -58,7 +58,7 @@
             // 
             // listOrdenesDeSeleccion
             // 
-            listOrdenesDeSeleccion.Columns.AddRange(new ColumnHeader[] { NumeroColum, FechaColum });
+            listOrdenesDeSeleccion.Columns.AddRange(new ColumnHeader[] { NumeroColum, EstadoColum });
             listOrdenesDeSeleccion.FullRowSelect = true;
             listOrdenesDeSeleccion.GridLines = true;
             listOrdenesDeSeleccion.Location = new Point(66, 44);
@@ -73,11 +73,11 @@
             NumeroColum.Text = "ID";
             NumeroColum.Width = 350;
             // 
-            // FechaColum
+            // EstadoColum
             // 
-            FechaColum.Text = "Prioridad";
-            FechaColum.TextAlign = HorizontalAlignment.Center;
-            FechaColum.Width = 130;
+            EstadoColum.Text = "Estado";
+            EstadoColum.TextAlign = HorizontalAlignment.Center;
+            EstadoColum.Width = 130;
             // 
             // label1
             // 
@@ -110,7 +110,7 @@
         private Button CancelarBtn;
         private ListView listOrdenesDeSeleccion;
         private ColumnHeader NumeroColum;
-        private ColumnHeader FechaColum;
+        private ColumnHeader EstadoColum;
         private Label label1;
     }
 }

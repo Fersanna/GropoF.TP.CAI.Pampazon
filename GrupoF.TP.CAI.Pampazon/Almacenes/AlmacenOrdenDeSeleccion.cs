@@ -9,6 +9,7 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
         private static int contadorOrdenes = 0;
         public static List<OrdenDeSeleccionEnt> OrdenesDeSeleccionEnt { get; private set; }
 
+
         static AlmacenOrdenDeSeleccion()
         {
             OrdenesDeSeleccionEnt = new List<OrdenDeSeleccionEnt>();
