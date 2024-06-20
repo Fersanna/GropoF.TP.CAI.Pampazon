@@ -57,25 +57,21 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
                         {
                             ListViewItem item = new ListViewItem(ordenesSeleccion.IdOrdenDeSeleccion);
                             // string detallesUnidos = string.Join(" - ", ordenesSeleccionada.OrdenesSeleccionadas);
-                            item.SubItems.Add(ordenesSeleccion.IdOrdenDeSeleccion);
+
                             item.SubItems.Add(ordenesSeleccion.EstadoOrdenSeleccion.ToString());
-
-
                             listOrdenesDeSeleccion.Items.Add(item);
-
                             item.Tag = ordenesSeleccion;
-
 
                         }
                     }
                 }
             }
         }
-        
+
         private void BuscarPosicionForm_Load(object sender, EventArgs e)
 
         {
-             model = new ConfirmarOrdenDeSeleccionModel();
+            model = new ConfirmarOrdenDeSeleccionModel();
 
             cargarOrdenesDeSeleccion();
         }
