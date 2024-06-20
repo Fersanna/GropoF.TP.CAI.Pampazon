@@ -77,6 +77,7 @@ namespace GrupoF.TP.CAI.Pampazon
                             item.SubItems.Add(ordenes.CodigoCliente);
                             item.SubItems.Add(ordenes.Fecha.ToString());
                             item.SubItems.Add(ordenes.CodigoTransportista);
+                            item.SubItems.Add(((int)ordenes.Prioridad).ToString());
                             item.SubItems.Add(ordenes.EstadoOrden.ToString());
 
                             listOrdenesPendientes.Items.Add(item);
@@ -108,7 +109,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
                 ordenSeleccionada.EstadoOrden = Entidades.Estados.Estado.Seleccion;
 
-                listOrdenesPendientes.SelectedItems[0].SubItems[4].Text = ordenSeleccionada.EstadoOrden.ToString();
+                listOrdenesPendientes.SelectedItems[0].SubItems[5].Text = ordenSeleccionada.EstadoOrden.ToString();
 
                 if (!model.OrdenDePreparacionSeleccionadas.Contains(ordenSeleccionada))
                 {
@@ -158,6 +159,7 @@ namespace GrupoF.TP.CAI.Pampazon
                 item.SubItems.Add(orden.CodigoCliente);
                 item.SubItems.Add(orden.Fecha.ToString());
                 item.SubItems.Add(orden.CodigoTransportista);
+                item.SubItems.Add(((int)orden.Prioridad).ToString());
                 item.SubItems.Add(orden.EstadoOrden.ToString());
 
                 listOrdenesPendientes.Items.Add(item);

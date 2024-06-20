@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using static GrupoF.TP.CAI.Pampazon.Entidades.Estados;
 using static GrupoF.TP.CAI.Pampazon.Entidades.EstadoSeleccionEnum;
+using static GrupoF.TP.CAI.Pampazon.Entidades.Prioridades;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección.Clases_auxiliares
 {
@@ -16,7 +17,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección.Cla
         public string CodigoCliente { get; set; }
         public string CodigoTransportista { get; set; }
         public Estado EstadoOrden { get; set; }
-        
+
+        public Prioridad Prioridad { get; set; }
+
 
         public OrdenDePreparacionPendiente()
         {

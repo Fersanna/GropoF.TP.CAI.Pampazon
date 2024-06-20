@@ -4,7 +4,7 @@
     "Fecha": "2024-05-10T15:54:23",
     "CodigoCliente": "CL002",
     "CodigoTransportista": "El viajero",
-    "Prioridad": 0,
+    "Prioridad": 1,
     "EstadoOrden": 0,
     "Detalle": [
       {
@@ -22,7 +22,7 @@
     "Fecha": "2024-05-10T15:54:23",
     "CodigoCliente": "CL004",
     "CodigoTransportista": "Otro",
-    "Prioridad": 0,
+    "Prioridad": 3,
     "EstadoOrden": 0,
     "Detalle": [
       {
@@ -40,7 +40,7 @@
     "Fecha": "2024-05-10T15:54:23",
     "CodigoCliente": "CL007",
     "CodigoTransportista": "El molino SA",
-    "Prioridad": 0,
+    "Prioridad": 2,
     "EstadoOrden": 0,
     "Detalle": [
       {
@@ -86,7 +86,7 @@
     "Fecha": "2024-05-10T15:54:23",
     "CodigoCliente": "CL005",
     "CodigoTransportista": "Rapidex",
-    "Prioridad": 0,
+    "Prioridad": 3,
     "EstadoOrden": 0,
     "Detalle": [
       {
@@ -122,7 +122,7 @@
     "Fecha": "2024-05-10T15:54:23",
     "CodigoCliente": "CL008",
     "CodigoTransportista": "Transporte del Sur",
-    "Prioridad": 0,
+    "Prioridad": 3,
     "EstadoOrden": 0,
     "Detalle": [
       {

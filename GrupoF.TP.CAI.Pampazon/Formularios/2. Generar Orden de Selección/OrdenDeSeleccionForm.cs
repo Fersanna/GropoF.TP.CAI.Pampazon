@@ -66,6 +66,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                     item.SubItems.Add(ordenesSeleccionada.CodigoCliente);
                     item.SubItems.Add(ordenesSeleccionada.Fecha.ToString());
                     item.SubItems.Add(ordenesSeleccionada.CodigoTransportista);
+                    item.SubItems.Add(((int)ordenesSeleccionada.Prioridad).ToString());
                     item.SubItems.Add(ordenesSeleccionada.EstadoOrden.ToString());
 
                     ListOrdenesSeleccionConfirmadas.Items.Add(item);
