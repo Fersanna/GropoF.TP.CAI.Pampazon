@@ -43,12 +43,16 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
             {
                 MessageBox.Show("No se ha seleccionado un cliente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-           TransportistaBox.Text ="";
+            TranspBox.Text ="";
             model.ClienteOrden.Fecha = FechaPicker.Value;
             model.ClienteOrden.EstadoOrden = Estados.Estado.Disponible;
             CodigoClienteTextBox.Text = model.ClienteOrden.NumeroDeOrden;
 
-            PrioridadComboBox.DataSource = Enum.GetValues(typeof(Prioridad));
+            // Obtiene los valores del enum como un array de int
+            var valoresNumericos = Enum.GetValues(typeof(Prioridad)).Cast<int>().ToList();
+
+            // Establece la lista de valores numéricos como el DataSource del ComboBox
+            PrioridadComboBox.DataSource = valoresNumericos;
 
             ProductosOrdenList.Items.Clear();
 
@@ -81,6 +85,31 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
 
         private void ConfirmarPrepBtn_Click(object sender, EventArgs e)
         {
+            // Obtener la fecha seleccionada en el DateTimePicker
+            DateTime fechaSeleccionada = FechaPicker.Value.Date;
+
+            // Obtener la fecha actual sin la parte de la hora
+            DateTime fechaActual = DateTime.Now.Date;
+
+            // Comparar la fecha seleccionada con la fecha actual
+            if (fechaSeleccionada < fechaActual)
+            {
+                MessageBox.Show("Fecha inválida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(TranspBox.Text))
+            {
+                MessageBox.Show("Debe agregar un transportista.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (PrioridadComboBox.SelectedIndex == 0)
+            {
+                MessageBox.Show("Debe agregar una Prioridad (1, 2 o 3)", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             //Subir a ordenes confirmadas, validar y volver a menu principal
             var nuevaOrden = model.ClienteOrden;
             {
@@ -89,7 +118,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
                 nuevaOrden.CodigoTransportista = TranspBox.Text;
                 nuevaOrden.Fecha = FechaPicker.Value;
                 nuevaOrden.EstadoOrden = Estados.Estado.Pendiente;
-                nuevaOrden.Prioridad = (Prioridad)PrioridadComboBox.SelectedItem;
+                nuevaOrden.Prioridad = (Prioridad)(int)PrioridadComboBox.SelectedItem;
                 nuevaOrden.ProductosOrden = new();
             };
 

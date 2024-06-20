@@ -177,7 +177,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
                     CodigoCliente = orden.CodigoCliente,
                     CodigoTransportista = orden.CodigoTransportista,
                     EstadoOrden = Estados.Estado.Pendiente,
-                    Prioridad = (Prioridad)orden.Prioridad,
+                    Prioridad = (Prioridad)(int)orden.Prioridad,
 
                     Detalle = orden.ProductosOrden.Select(p => new OrdenDePreparacionDetalle
                     {

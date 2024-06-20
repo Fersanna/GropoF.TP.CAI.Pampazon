@@ -1,12 +1,13 @@
-﻿namespace GrupoF.TP.CAI.Pampazon.Entidades
+﻿namespace GrupoF.TP.CAI.Pampazon.Entidades;
+using System.ComponentModel;
+
+public class Prioridades
 {
-    public class Prioridades
+    public enum Prioridad
     {
-        public enum Prioridad
-        {
-            Alta,
-            Media,
-            Baja
-        }
+        Nulo = 0,
+        Baja = 1,
+        Media = 2,
+        Alta = 3
     }
 }
