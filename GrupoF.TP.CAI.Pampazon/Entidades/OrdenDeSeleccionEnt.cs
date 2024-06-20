@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static GrupoF.TP.CAI.Pampazon.Entidades.Estados;
+using static GrupoF.TP.CAI.Pampazon.Entidades.EstadoSeleccionEnum;
 
 namespace GrupoF.TP.CAI.Pampazon.Entidades
 {
@@ -12,7 +13,7 @@ namespace GrupoF.TP.CAI.Pampazon.Entidades
        
         public string IdOrdenDeSeleccion {get; set; }
 
-        public Estado Estado {get; set; }
+        public EstadoSeleccion EstadoSeleccion {get; set; }
 
         public List<OrdenDeSeleccionDetalle> SeleccionDetalle {get; set;}
     }

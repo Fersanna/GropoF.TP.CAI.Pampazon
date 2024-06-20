@@ -1,17 +1,24 @@
-﻿using System;
+﻿using GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección.Clases_auxiliares;
+using GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
 {
+
     public partial class BuscarPosicionForm : Form
     {
+        ConfirmarOrdenDeSeleccionModel model;
         public BuscarPosicionForm()
         {
             InitializeComponent();
@@ -55,10 +62,49 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
             listOrdenesDeSeleccion.Items.Add(item3);
             listOrdenesDeSeleccion.Items.Add(item4);
         }
+        private void cargarOrdenesDeSeleccion()
 
-        private void BuscarPosicionForm_Load(object sender, EventArgs e)
         {
-            AgregarDatosDePrueba();
+            if (model.OrdenesSeleccionPendientes != null)
+
+            {
+                foreach (OrdenDeSeleccionPendiente ordenesSeleccion in model.OrdenesSeleccionPendientes)
+                {
+                    if (ordenesSeleccion.estadoOrdenSeleccion == Entidades.EstadoSeleccionEnum.EstadoSeleccion.Pendiente)
+                    {
+
+                        {
+                            ListViewItem item = new ListViewItem(ordenesSeleccion.numeroDeOrden);
+                            // string detallesUnidos = string.Join(" - ", ordenesSeleccionada.OrdenesSeleccionadas);
+                            item.SubItems.Add(ordenesSeleccion.numeroDeOrden);
+                            item.SubItems.Add(ordenesSeleccion.estadoOrdenSeleccion.ToString());
+
+
+                            listOrdenesDeSeleccion.Items.Add(item);
+
+                            item.Tag = ordenesSeleccion;
+
+
+                        }
+                    }
+
+                }
+
+
+
+
+            }
+
+        }
+        private void BuscarPosicionForm_Load(object sender, EventArgs e)
+
+        {
+             model = new ConfirmarOrdenDeSeleccionModel();
+
+            cargarOrdenesDeSeleccion();
+            
+          
+
         }
     }
 }
