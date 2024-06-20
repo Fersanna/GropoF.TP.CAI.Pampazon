@@ -45,7 +45,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
                 }).ToList();
 
             }
-              else
+            else
             {
                 MessageBox.Show("Debe ingresar una orden de preparacion");
             }
@@ -115,23 +115,37 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
         private void RevertirEstadoOrden(OrdenDePreparacion ordenSeleccionada)
         {
             ordenSeleccionada.EstadoOrden = Estados.Estado.Seleccionada;
-             OrdenesSeleccionadas.Add(ordenSeleccionada);
-             OrdenesPreparadas.Remove(ordenSeleccionada);
+            OrdenesSeleccionadas.Add(ordenSeleccionada);
+            OrdenesPreparadas.Remove(ordenSeleccionada);
         }
 
         internal void RegistrarOrden(List<OrdenDePreparacion> ordenesPreparadas)
         {
+            var nuevaOrdenDeEntregaEnt = new OrdenDeEntregaEnt
+            {
+                Fecha = DateTime.Now,
+                EstadoEntrega = EstadoEntregaEnum.EstadoEntrega.Generada,
+                EntregaDetalle = new List<OrdenDeEntregaDetalle>()
+
+            };
+
             foreach (var ordenPreparada in ordenesPreparadas)
             {
                 var orden = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts.FirstOrDefault(o => o.NumeroDeOrden == ordenPreparada.NumeroDeOrden);
                 if (orden != null)
                 {
                     orden.EstadoOrden = Estados.Estado.Preparada;
+                    nuevaOrdenDeEntregaEnt.EntregaDetalle.Add(new OrdenDeEntregaDetalle
+                    {
+                        NumeroDeOrden = orden.NumeroDeOrden
+                    });
                 }
+
             }
 
-             
-             AlmacenOrdenesDePreparacion.Grabar();
+            AlmacenOrdenDeEntrega.OrdenDeEntregaEnts.Add(nuevaOrdenDeEntregaEnt);
+            AlmacenOrdenesDePreparacion.Grabar();
+            AlmacenOrdenDeEntrega.Grabar();
         }
     }
 

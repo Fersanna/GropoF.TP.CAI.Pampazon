@@ -5,7 +5,8 @@
         public enum EstadoEntrega
         {
             Pendiente,
-            Asignado
+            Asignado,
+            Generada
         }
     }
 }
