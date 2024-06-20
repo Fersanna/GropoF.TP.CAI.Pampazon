@@ -41,5 +41,14 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
                 // Guardar en el archivo
                 File.WriteAllText(@"json/OrdenesDeEntrega.Json", contenidoJson);
             }
+
+        internal static void AgregarOrdenDeEntrega(OrdenDeEntregaEnt nuevaOrdenDeEntregaEnt)
+        {
+            nuevaOrdenDeEntregaEnt.IdOrdenDeEntrega = contadorOrdenes.ToString();
+            contadorOrdenes++;
+            OrdenDeEntregaEnts.Add(nuevaOrdenDeEntregaEnt);
+            MessageBox.Show($"El número de orden guardada: {nuevaOrdenDeEntregaEnt.IdOrdenDeEntrega}");
+            Grabar();
+        }
     }
 }

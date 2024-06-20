@@ -143,9 +143,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
             }
 
-            AlmacenOrdenDeEntrega.OrdenDeEntregaEnts.Add(nuevaOrdenDeEntregaEnt);
+            AlmacenOrdenDeEntrega.AgregarOrdenDeEntrega(nuevaOrdenDeEntregaEnt);
             AlmacenOrdenesDePreparacion.Grabar();
-            AlmacenOrdenDeEntrega.Grabar();
+           
         }
     }
 
