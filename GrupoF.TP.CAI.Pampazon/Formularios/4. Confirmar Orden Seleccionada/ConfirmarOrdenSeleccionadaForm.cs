@@ -66,22 +66,17 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
 
                 OrdenDeSeleccionada ordenDePreparacion = (OrdenDeSeleccionada)listOrdenesEnSeleccion.SelectedItems[0].Tag;
 
-
-                /*
                 model.CambiarEstadoEnOrden(ordenDePreparacion);
-                */
-                
-
 
                 //Este era el codigo para borrar al confirmar, sacar de la lista - Lo cambie por mostrar otro estado
-                //foreach (ListViewItem item in listOrdenesEnSeleccion.SelectedItems)
-                //{
-                //    listOrdenesEnSeleccion.Items.Remove(item);
-                //}
+                foreach (ListViewItem item in listOrdenesEnSeleccion.SelectedItems)
+                {
+                    listOrdenesEnSeleccion.Items.Remove(item);
+                }
 
                 MessageBox.Show("La orden se ha confirmado con éxito.");
                 
-
+                /*
                 if (listOrdenesEnSeleccion.SelectedItems.Count > 0)
                 {
                     OrdenDeSeleccionada orden = (OrdenDeSeleccionada)listOrdenesEnSeleccion.SelectedItems[0].Tag;
@@ -91,6 +86,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                     listOrdenesEnSeleccion.SelectedItems[0].SubItems[5].Text = orden.EstadoOrden.ToString();
 
                 }
+                */
             }
         }
 
