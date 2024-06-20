@@ -9,7 +9,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
 {
     internal class ConfirmarOrdenDeSeleccionModel
     {
-        public List<OrdenDeSeleccion> OrdenesSeleccionPendientes { get; set; } = new List<OrdenDeSeleccion>();
+        public List<OrdenDePreparacionPendiente> OrdenesSeleccionPendientes { get; set; } = new List<OrdenDePreparacionPendiente>();
 
        
 

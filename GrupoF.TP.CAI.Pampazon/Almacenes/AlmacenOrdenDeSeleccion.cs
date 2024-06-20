@@ -56,7 +56,7 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
 
             ordenEnt.IdOrdenDeSeleccion = contadorOrdenes.ToString();
             contadorOrdenes++;
-            ordenEnt.Estado= Estados.Estado.Seleccionada;
+            ordenEnt.EstadoOrdenSeleccion = EstadoSeleccionEnum.EstadoSeleccion.Pendiente;
             OrdenesDeSeleccionEnt.Add(ordenEnt);
             MessageBox.Show($"El número de orden guardada: {ordenEnt.IdOrdenDeSeleccion}");
             Grabar();

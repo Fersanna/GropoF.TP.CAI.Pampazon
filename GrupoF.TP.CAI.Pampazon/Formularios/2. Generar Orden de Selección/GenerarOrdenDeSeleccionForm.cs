@@ -66,7 +66,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
             {
 
-                foreach (OrdenDeSeleccion ordenes in model.OrdenDePreparacionPendientes)
+                foreach (OrdenDePreparacionPendiente ordenes in model.OrdenDePreparacionPendientes)
                 {
 
                     if (ordenes.EstadoOrden == Entidades.Estados.Estado.Pendiente)
@@ -94,7 +94,7 @@ namespace GrupoF.TP.CAI.Pampazon
         {
             if (listOrdenesPendientes.SelectedItems.Count > 0)
             {
-                OrdenDeSeleccion ordenSeleccionada = (OrdenDeSeleccion)listOrdenesPendientes.SelectedItems[0].Tag;
+                OrdenDePreparacionPendiente ordenSeleccionada = (OrdenDePreparacionPendiente)listOrdenesPendientes.SelectedItems[0].Tag;
 
 
                 var error = model.ValidarOrden(ordenSeleccionada);
@@ -148,7 +148,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
             ActualizarListaOrdenesFiltradas(ordenesFiltradas);
         }
-        private void ActualizarListaOrdenesFiltradas(List<OrdenDeSeleccion> ordenesFiltradas)
+        private void ActualizarListaOrdenesFiltradas(List<OrdenDePreparacionPendiente> ordenesFiltradas)
         {
             listOrdenesPendientes.Items.Clear();
 

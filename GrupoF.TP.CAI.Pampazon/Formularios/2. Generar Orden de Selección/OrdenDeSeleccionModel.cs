@@ -22,9 +22,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         public string NumeroOrden { get; set; }
 
-        public List<OrdenDeSeleccion> OrdenesConfirmadas { get; set; } = new List<OrdenDeSeleccion>();
-        public List<OrdenDeSeleccion> OrdenDePreparacionPendientes { get; set; } = new List<OrdenDeSeleccion>();
-        public List<OrdenDeSeleccion> OrdenDePreparacionSeleccionadas { get; set; } = new List<OrdenDeSeleccion>();
+        public List<OrdenDePreparacionPendiente> OrdenesConfirmadas { get; set; } = new List<OrdenDePreparacionPendiente>();
+        public List<OrdenDePreparacionPendiente> OrdenDePreparacionPendientes { get; set; } = new List<OrdenDePreparacionPendiente>();
+        public List<OrdenDePreparacionPendiente> OrdenDePreparacionSeleccionadas { get; set; } = new List<OrdenDePreparacionPendiente>();
 
         public OrdenDeSeleccionModel()
         {
@@ -33,7 +33,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
             if (ordenesDeSeleccion != null)
             {
                 OrdenDePreparacionPendientes = ordenesDeSeleccion.Select(ordenesEnt =>
-                    new OrdenDeSeleccion
+                    new OrdenDePreparacionPendiente
                     {
                         NumeroDeOrden = ordenesEnt.NumeroDeOrden,
                         Fecha = ordenesEnt.Fecha,
@@ -49,7 +49,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
         }
 
 
-        internal List<OrdenDeSeleccion> FiltrarOrdenes()
+        internal List<OrdenDePreparacionPendiente> FiltrarOrdenes()
         {
             var OrdenesFiltradas = OrdenDePreparacionPendientes
                 .Where(p => p.Fecha >= FechaDesde && p.Fecha <= FechaHasta &&
@@ -90,7 +90,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
             return null;
         }
 
-        internal string ValidarOrden(OrdenDeSeleccion ordenSeleccionada)
+        internal string ValidarOrden(OrdenDePreparacionPendiente ordenSeleccionada)
         {   // Arreglar esto para cuando se null
             if (ordenSeleccionada.EstadoOrden == Estados.Estado.Seleccion)
             {
@@ -108,14 +108,14 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         }
 
-        private void RevertirEstadoOrden(OrdenDeSeleccion ordenSeleccionada)
+        private void RevertirEstadoOrden(OrdenDePreparacionPendiente ordenSeleccionada)
         {
             ordenSeleccionada.EstadoOrden = Estados.Estado.Pendiente;
             OrdenDePreparacionPendientes.Add(ordenSeleccionada);
             OrdenDePreparacionSeleccionadas.Remove(ordenSeleccionada);
         }
 
-        internal void RegistrarOrden(List<OrdenDeSeleccion> ordenesConfirmadas)
+        internal void RegistrarOrden(List<OrdenDePreparacionPendiente> ordenesConfirmadas)
         {
 
             var ultimaOrden = AlmacenOrdenDeSeleccion.OrdenesDeSeleccionEnt
@@ -138,7 +138,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
             var nuevaOrdenEnt = new OrdenDeSeleccionEnt
             {
                 IdOrdenDeSeleccion = nuevoIdOrdenDeSeleccion,
-                Estado = Estados.Estado.Seleccionada,
+                EstadoOrdenSeleccion = EstadoSeleccionEnum.EstadoSeleccion.Pendiente,
                 SeleccionDetalle = new List<OrdenDeSeleccionDetalle>()
             };
 

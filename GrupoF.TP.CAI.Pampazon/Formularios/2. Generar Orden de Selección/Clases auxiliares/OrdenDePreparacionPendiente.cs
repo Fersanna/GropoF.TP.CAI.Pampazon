@@ -8,7 +8,7 @@ using static GrupoF.TP.CAI.Pampazon.Entidades.EstadoSeleccionEnum;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección.Clases_auxiliares
 {
-    public class OrdenDeSeleccion
+    public class OrdenDePreparacionPendiente
     {
        
         public string NumeroDeOrden { get; set; }
@@ -18,7 +18,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección.Cla
         public Estado EstadoOrden { get; set; }
         
 
-        public OrdenDeSeleccion()
+        public OrdenDePreparacionPendiente()
         {
             
         }

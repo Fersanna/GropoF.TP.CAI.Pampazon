@@ -68,8 +68,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 OrdenDeSeleccionada ordenDePreparacion = (OrdenDeSeleccionada)listOrdenesEnSeleccion.SelectedItems[0].Tag;
 
 
+                /*
                 model.CambiarEstadoEnOrden(ordenDePreparacion);
-
+                */
                 
 
 

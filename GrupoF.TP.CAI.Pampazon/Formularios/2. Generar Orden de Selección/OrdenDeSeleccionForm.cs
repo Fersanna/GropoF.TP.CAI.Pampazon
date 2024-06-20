@@ -58,7 +58,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
         {
             ListOrdenesSeleccionConfirmadas.Items.Clear();
 
-            foreach (OrdenDeSeleccion ordenesSeleccionada in model.OrdenDePreparacionSeleccionadas)
+            foreach (OrdenDePreparacionPendiente ordenesSeleccionada in model.OrdenDePreparacionSeleccionadas)
             {
                 if (ordenesSeleccionada.EstadoOrden == Entidades.Estados.Estado.Seleccion)
                 {
