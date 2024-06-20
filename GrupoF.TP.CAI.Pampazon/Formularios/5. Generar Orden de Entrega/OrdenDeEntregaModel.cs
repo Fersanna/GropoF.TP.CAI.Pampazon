@@ -39,6 +39,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
                     Fecha = ordenEnt.Fecha,
                     CodigoCliente = ordenEnt.CodigoCliente,
                     CodigoTransportista = ordenEnt.CodigoTransportista,
+                    Prioridad = ordenEnt.Prioridad,
                     EstadoOrden = ordenEnt.EstadoOrden,
 
                 }).ToList();

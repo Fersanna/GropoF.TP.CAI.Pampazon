@@ -47,12 +47,15 @@
             ClienteColum = new ColumnHeader();
             FechaColum = new ColumnHeader();
             TranspColum = new ColumnHeader();
+            PrioridadColum = new ColumnHeader();
             EstadoColum = new ColumnHeader();
+            label7 = new Label();
+            PrioridadTextBox = new TextBox();
             SuspendLayout();
             // 
             // ConfirmarBtn
             // 
-            ConfirmarBtn.Location = new Point(487, 353);
+            ConfirmarBtn.Location = new Point(620, 345);
             ConfirmarBtn.Name = "ConfirmarBtn";
             ConfirmarBtn.Size = new Size(90, 27);
             ConfirmarBtn.TabIndex = 1;
@@ -62,7 +65,7 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(583, 353);
+            CancelarBtn.Location = new Point(716, 345);
             CancelarBtn.Name = "CancelarBtn";
             CancelarBtn.Size = new Size(90, 27);
             CancelarBtn.TabIndex = 2;
@@ -82,7 +85,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(415, 16);
+            label6.Location = new Point(419, 16);
             label6.Name = "label6";
             label6.Size = new Size(74, 15);
             label6.TabIndex = 28;
@@ -91,7 +94,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(287, 16);
+            label5.Location = new Point(291, 16);
             label5.Name = "label5";
             label5.Size = new Size(44, 15);
             label5.TabIndex = 27;
@@ -99,14 +102,14 @@
             // 
             // TransportistaTextBox
             // 
-            TransportistaTextBox.Location = new Point(418, 34);
+            TransportistaTextBox.Location = new Point(422, 34);
             TransportistaTextBox.Name = "TransportistaTextBox";
             TransportistaTextBox.Size = new Size(122, 23);
             TransportistaTextBox.TabIndex = 25;
             // 
             // NumeroOrdenTextBox
             // 
-            NumeroOrdenTextBox.Location = new Point(550, 34);
+            NumeroOrdenTextBox.Location = new Point(554, 34);
             NumeroOrdenTextBox.Name = "NumeroOrdenTextBox";
             NumeroOrdenTextBox.Size = new Size(122, 23);
             NumeroOrdenTextBox.TabIndex = 24;
@@ -114,7 +117,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(556, 16);
+            label4.Location = new Point(560, 16);
             label4.Name = "label4";
             label4.Size = new Size(87, 15);
             label4.TabIndex = 23;
@@ -122,7 +125,7 @@
             // 
             // ClienteTextBox
             // 
-            ClienteTextBox.Location = new Point(287, 34);
+            ClienteTextBox.Location = new Point(291, 34);
             ClienteTextBox.Name = "ClienteTextBox";
             ClienteTextBox.Size = new Size(122, 23);
             ClienteTextBox.TabIndex = 22;
@@ -170,7 +173,7 @@
             // 
             FiltrarBtn.Location = new Point(36, 63);
             FiltrarBtn.Name = "FiltrarBtn";
-            FiltrarBtn.Size = new Size(635, 23);
+            FiltrarBtn.Size = new Size(769, 23);
             FiltrarBtn.TabIndex = 17;
             FiltrarBtn.Text = "Filtrar";
             FiltrarBtn.UseVisualStyleBackColor = true;
@@ -179,12 +182,12 @@
             // listOrdenesPreparacion
             // 
             listOrdenesPreparacion.BackColor = SystemColors.Window;
-            listOrdenesPreparacion.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
+            listOrdenesPreparacion.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, PrioridadColum, EstadoColum });
             listOrdenesPreparacion.FullRowSelect = true;
             listOrdenesPreparacion.GridLines = true;
             listOrdenesPreparacion.Location = new Point(34, 122);
             listOrdenesPreparacion.Name = "listOrdenesPreparacion";
-            listOrdenesPreparacion.Size = new Size(638, 217);
+            listOrdenesPreparacion.Size = new Size(771, 217);
             listOrdenesPreparacion.TabIndex = 30;
             listOrdenesPreparacion.UseCompatibleStateImageBehavior = false;
             listOrdenesPreparacion.View = View.Details;
@@ -193,13 +196,13 @@
             // NumeroColum
             // 
             NumeroColum.Text = "N.º Orden";
-            NumeroColum.Width = 130;
+            NumeroColum.Width = 110;
             // 
             // ClienteColum
             // 
             ClienteColum.Text = "Cliente";
             ClienteColum.TextAlign = HorizontalAlignment.Center;
-            ClienteColum.Width = 160;
+            ClienteColum.Width = 130;
             // 
             // FechaColum
             // 
@@ -213,6 +216,12 @@
             TranspColum.TextAlign = HorizontalAlignment.Center;
             TranspColum.Width = 130;
             // 
+            // PrioridadColum
+            // 
+            PrioridadColum.Text = "Prioridad";
+            PrioridadColum.TextAlign = HorizontalAlignment.Center;
+            PrioridadColum.Width = 130;
+            // 
             // EstadoColum
             // 
             EstadoColum.Tag = "";
@@ -220,11 +229,29 @@
             EstadoColum.TextAlign = HorizontalAlignment.Center;
             EstadoColum.Width = 130;
             // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(684, 17);
+            label7.Name = "label7";
+            label7.Size = new Size(55, 15);
+            label7.TabIndex = 32;
+            label7.Text = "Prioridad";
+            // 
+            // PrioridadTextBox
+            // 
+            PrioridadTextBox.Location = new Point(682, 34);
+            PrioridadTextBox.Name = "PrioridadTextBox";
+            PrioridadTextBox.Size = new Size(122, 23);
+            PrioridadTextBox.TabIndex = 31;
+            // 
             // GenerarOrdenDeEntregaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(864, 400);
+            ClientSize = new Size(843, 400);
+            Controls.Add(label7);
+            Controls.Add(PrioridadTextBox);
             Controls.Add(listOrdenesPreparacion);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -268,5 +295,8 @@
         private ColumnHeader FechaColum;
         private ColumnHeader TranspColum;
         private ColumnHeader EstadoColum;
+        private ColumnHeader PrioridadColum;
+        private Label label7;
+        private TextBox PrioridadTextBox;
     }
 }

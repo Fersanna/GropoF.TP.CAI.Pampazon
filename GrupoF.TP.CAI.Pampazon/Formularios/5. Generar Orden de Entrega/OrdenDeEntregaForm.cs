@@ -70,6 +70,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
                     item.SubItems.Add(ordenesConfirmadas.CodigoCliente);
                     item.SubItems.Add(ordenesConfirmadas.Fecha.ToString());
                     item.SubItems.Add(ordenesConfirmadas.CodigoTransportista);
+                    item.SubItems.Add(((int)ordenesConfirmadas.Prioridad).ToString());
                     item.SubItems.Add(ordenesConfirmadas.EstadoOrden.ToString());
 
                     listOrdenesSeleccionadasConfirmadas.Items.Add(item);

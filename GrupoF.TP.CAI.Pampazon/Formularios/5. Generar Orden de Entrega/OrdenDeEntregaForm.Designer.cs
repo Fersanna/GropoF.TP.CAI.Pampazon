@@ -37,14 +37,14 @@
             EstadoColum = new ColumnHeader();
             label1 = new Label();
             GenerarBtn = new Button();
+            PrioridadColum = new ColumnHeader();
             SuspendLayout();
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(673, 393);
-            CancelarBtn.Margin = new Padding(3, 4, 3, 4);
+            CancelarBtn.Location = new Point(690, 285);
             CancelarBtn.Name = "CancelarBtn";
-            CancelarBtn.Size = new Size(120, 40);
+            CancelarBtn.Size = new Size(105, 30);
             CancelarBtn.TabIndex = 2;
             CancelarBtn.Text = "Cancelar";
             CancelarBtn.UseVisualStyleBackColor = true;
@@ -52,12 +52,11 @@
             // 
             // listOrdenesSeleccionadasConfirmadas
             // 
-            listOrdenesSeleccionadasConfirmadas.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
+            listOrdenesSeleccionadasConfirmadas.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, PrioridadColum, EstadoColum });
             listOrdenesSeleccionadasConfirmadas.GridLines = true;
-            listOrdenesSeleccionadasConfirmadas.Location = new Point(31, 60);
-            listOrdenesSeleccionadasConfirmadas.Margin = new Padding(3, 4, 3, 4);
+            listOrdenesSeleccionadasConfirmadas.Location = new Point(27, 45);
             listOrdenesSeleccionadasConfirmadas.Name = "listOrdenesSeleccionadasConfirmadas";
-            listOrdenesSeleccionadasConfirmadas.Size = new Size(762, 311);
+            listOrdenesSeleccionadasConfirmadas.Size = new Size(768, 234);
             listOrdenesSeleccionadasConfirmadas.TabIndex = 6;
             listOrdenesSeleccionadasConfirmadas.UseCompatibleStateImageBehavior = false;
             listOrdenesSeleccionadasConfirmadas.View = View.Details;
@@ -65,7 +64,7 @@
             // NumeroColum
             // 
             NumeroColum.Text = "ID";
-            NumeroColum.Width = 130;
+            NumeroColum.Width = 110;
             // 
             // ClienteColum
             // 
@@ -94,33 +93,37 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(31, 36);
+            label1.Location = new Point(27, 27);
             label1.Name = "label1";
-            label1.Size = new Size(135, 20);
+            label1.Size = new Size(104, 15);
             label1.TabIndex = 7;
             label1.Text = "Detalle de ordenes";
             // 
             // GenerarBtn
             // 
-            GenerarBtn.Location = new Point(546, 393);
-            GenerarBtn.Margin = new Padding(3, 4, 3, 4);
+            GenerarBtn.Location = new Point(579, 285);
             GenerarBtn.Name = "GenerarBtn";
-            GenerarBtn.Size = new Size(120, 40);
+            GenerarBtn.Size = new Size(105, 30);
             GenerarBtn.TabIndex = 8;
             GenerarBtn.Text = "Generar";
             GenerarBtn.UseVisualStyleBackColor = true;
             GenerarBtn.Click += GenerarBtn_Click;
             // 
+            // PrioridadColum
+            // 
+            PrioridadColum.Text = "Prioridad";
+            PrioridadColum.TextAlign = HorizontalAlignment.Center;
+            PrioridadColum.Width = 130;
+            // 
             // OrdenDeEntregaForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(850, 488);
+            ClientSize = new Size(831, 366);
             Controls.Add(GenerarBtn);
             Controls.Add(label1);
             Controls.Add(listOrdenesSeleccionadasConfirmadas);
             Controls.Add(CancelarBtn);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "OrdenDeEntregaForm";
             Text = "Orden de Entrega";
             Load += OrdenDeEntregaForm_Load;
@@ -138,5 +141,6 @@
         private Label label1;
         private ColumnHeader EstadoColum;
         private Button GenerarBtn;
+        private ColumnHeader PrioridadColum;
     }
 }

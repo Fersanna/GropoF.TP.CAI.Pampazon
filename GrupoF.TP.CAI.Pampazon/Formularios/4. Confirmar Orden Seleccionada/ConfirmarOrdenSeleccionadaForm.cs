@@ -80,21 +80,23 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 //}
 
                 MessageBox.Show("La orden se ha confirmado con éxito.");
-                this.Close();
+                
+
+                if (listOrdenesEnSeleccion.SelectedItems.Count > 0)
+                {
+                    OrdenDeSeleccionada orden = (OrdenDeSeleccionada)listOrdenesEnSeleccion.SelectedItems[0].Tag;
+
+                    orden.EstadoOrden = Entidades.Estados.Estado.Seleccionada;
+
+                    listOrdenesEnSeleccion.SelectedItems[0].SubItems[5].Text = orden.EstadoOrden.ToString();
+
+                }
             }
         }
 
         private void listOrdenesEnSeleccion_MouseClick(object sender, MouseEventArgs e)
         {
-            if (listOrdenesEnSeleccion.SelectedItems.Count > 0)
-            {
-                OrdenDeSeleccionada orden = (OrdenDeSeleccionada)listOrdenesEnSeleccion.SelectedItems[0].Tag;
-
-                orden.EstadoOrden = Entidades.Estados.Estado.Seleccionada;
-
-                listOrdenesEnSeleccion.SelectedItems[0].SubItems[5].Text = orden.EstadoOrden.ToString();
-
-            }
+            
         }
     }
 }
