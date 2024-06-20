@@ -43,7 +43,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
             OrdenDeEntregaForm ordenDeEntregaForm = new OrdenDeEntregaForm();
 
-           ordenDeEntregaForm.model =this.model;
+            ordenDeEntregaForm.model =this.model;
 
             ordenDeEntregaForm.ShowDialog();
             CargarOrdenesSeleccionadas();
@@ -77,7 +77,7 @@ namespace GrupoF.TP.CAI.Pampazon
         {
             if (listOrdenesPreparacion.SelectedItems.Count > 0)
             {
-                OrdenDePreparacion ordenSeleccionada = (OrdenDePreparacion)listOrdenesPreparacion.SelectedItems[0].Tag as OrdenDePreparacion;
+                OrdenDePreparacion ordenSeleccionada = (OrdenDePreparacion)listOrdenesPreparacion.SelectedItems[0].Tag;
 
 
                 var error = model.ValidarOrden(ordenSeleccionada);
