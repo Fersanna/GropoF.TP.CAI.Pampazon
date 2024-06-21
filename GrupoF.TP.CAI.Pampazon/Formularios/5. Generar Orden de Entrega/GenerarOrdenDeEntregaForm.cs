@@ -40,12 +40,18 @@ namespace GrupoF.TP.CAI.Pampazon
                 return;
             }
 
+            if (model.OrdenesSeleccionadas
+                     .GroupBy(c => c.CodigoCliente)
+                     .Count() > 2)
+            {
+                MessageBox.Show("Todas las ordenes seleccionadas deben pertenecera a un mismo cliente");
+            }
 
             OrdenDeEntregaForm ordenDeEntregaForm = new OrdenDeEntregaForm();
-
             ordenDeEntregaForm.model = this.model;
-
             ordenDeEntregaForm.ShowDialog();
+
+
             CargarOrdenesSeleccionadas();
             this.Close();
         }

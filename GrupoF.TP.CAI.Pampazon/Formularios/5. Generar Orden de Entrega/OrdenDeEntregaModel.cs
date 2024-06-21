@@ -40,16 +40,13 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
                     CodigoCliente = ordenEnt.CodigoCliente,
                     CodigoTransportista = ordenEnt.CodigoTransportista,
                     Prioridad = ordenEnt.Prioridad,
-                    EstadoOrden = ordenEnt.EstadoOrden,
-
+                    EstadoOrden = ordenEnt.EstadoOrden
                 }).ToList();
-
             }
             else
             {
                 MessageBox.Show("Debe ingresar una orden de preparacion");
             }
-
         }
 
         internal List<OrdenDePreparacion> FiltrarOrdenes()
