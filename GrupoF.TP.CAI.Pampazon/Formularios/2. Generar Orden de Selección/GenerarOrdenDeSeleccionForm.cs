@@ -130,7 +130,6 @@ namespace GrupoF.TP.CAI.Pampazon
             model.Transportista = TransportistaTextBox.Text;
             model.NumeroOrden = NumeroOrdenTextBox.Text;
 
-
             var error = model.ValidarFiltro();
 
             if (error != null)
@@ -143,26 +142,36 @@ namespace GrupoF.TP.CAI.Pampazon
 
             if (ordenesFiltradas == null)
             {
+                // Aquí ya no deberías tener el MessageBox, porque el modelo se encarga de eso
                 return;
             }
 
-
             ActualizarListaOrdenesFiltradas(ordenesFiltradas);
         }
+
+
+
         private void ActualizarListaOrdenesFiltradas(List<OrdenDePreparacionPendiente> ordenesFiltradas)
         {
             listOrdenesPendientes.Items.Clear();
 
             foreach (var orden in ordenesFiltradas)
             {
-                ListViewItem item = new ListViewItem(orden.NumeroDeOrden);
-                item.SubItems.Add(orden.CodigoCliente);
-                item.SubItems.Add(orden.Fecha.ToString());
-                item.SubItems.Add(orden.CodigoTransportista);
-                item.SubItems.Add(((int)orden.Prioridad).ToString());
-                item.SubItems.Add(orden.EstadoOrden.ToString());
+                if (orden.EstadoOrden == Entidades.Estados.Estado.Pendiente)
+                {
+                    {
 
-                listOrdenesPendientes.Items.Add(item);
+                        ListViewItem item = new ListViewItem(orden.NumeroDeOrden);
+                        item.SubItems.Add(orden.CodigoCliente);
+                        item.SubItems.Add(orden.Fecha.ToString());
+                        item.SubItems.Add(orden.CodigoTransportista);
+                        item.SubItems.Add(((int)orden.Prioridad).ToString());
+                        item.SubItems.Add(orden.EstadoOrden.ToString());
+
+                        listOrdenesPendientes.Items.Add(item);
+                    }
+
+                }
             }
         }
 
@@ -172,8 +181,11 @@ namespace GrupoF.TP.CAI.Pampazon
             NumeroOrdenTextBox.Text = "";
             TransportistaTextBox.Text = "";
             ClienteTextBox.Text = "";
-            HastadateTimePicker.Value = HastadateTimePicker.MinDate;
-            DesdeTimePicker.Value = DesdeTimePicker.MinDate;
+            
+            DesdeTimePicker.Value = DateTime.Now;
+            HastadateTimePicker.Value = HastadateTimePicker.MaxDate;
+
+            CargarOrdenesDePreparacion();
         }
     }
 }

@@ -53,21 +53,27 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
         internal List<OrdenDePreparacionPendiente> FiltrarOrdenes()
         {
             var OrdenesFiltradas = OrdenDePreparacionPendientes
-                .Where(p => p.Fecha >= FechaDesde && p.Fecha <= FechaHasta &&
-                    (string.IsNullOrEmpty(Cliente) || p.CodigoCliente.Contains(Cliente, StringComparison.OrdinalIgnoreCase) || p.CodigoTransportista.Contains(Transportista, StringComparison.OrdinalIgnoreCase) || p.NumeroDeOrden.Contains(NumeroOrden, StringComparison.OrdinalIgnoreCase)))
-                 .ToList();
+                .Where(p =>
+                    (FechaDesde == DateTime.MinValue || p.Fecha >= FechaDesde) &&
+                    (FechaHasta == DateTime.MinValue || p.Fecha <= FechaHasta) &&
+                    (string.IsNullOrEmpty(Cliente) || p.CodigoCliente.Contains(Cliente, StringComparison.OrdinalIgnoreCase)) &&
+                    (string.IsNullOrEmpty(Transportista) || p.CodigoTransportista.Contains(Transportista, StringComparison.OrdinalIgnoreCase)) &&
+                    (string.IsNullOrEmpty(NumeroOrden) || p.NumeroDeOrden.Contains(NumeroOrden, StringComparison.OrdinalIgnoreCase)))
+                .ToList();
+
             if (!OrdenesFiltradas.Any())
             {
-                MessageBox.Show("No existen Ordenes con esas carcartesticas para el rango de fecha indicado");
+                MessageBox.Show("No existen órdenes con las características indicadas.");
                 return null;
             }
-
 
             return OrdenesFiltradas;
         }
 
         internal string ValidarFiltro()
         {
+            /*
+            
             if (string.IsNullOrWhiteSpace(Cliente))
             {
                 return "El nombre del cliente no puede estar vacío.";
@@ -88,6 +94,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                 return "El numero de orden no puede estar vacío.";
             }
 
+            */
             return null;
         }
 
