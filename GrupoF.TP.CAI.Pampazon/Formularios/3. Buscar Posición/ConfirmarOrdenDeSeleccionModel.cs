@@ -23,12 +23,14 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
 
             if (ordenesDeSeleccion != null)
             {
-                OrdenesSeleccionPendientes = ordenesDeSeleccion.Select(ordenesEnt =>
-                    new OrdenDeSeleccionPendiente
-                    {
-                        IdOrdenDeSeleccion = ordenesEnt.IdOrdenDeSeleccion,
-                        EstadoOrdenSeleccion = ordenesEnt.EstadoOrdenSeleccion,
-                    }).ToList();
+                OrdenesSeleccionPendientes = ordenesDeSeleccion
+                                                .Select(ordenEnt => new OrdenDeSeleccionPendiente
+                                                                      {
+                                                                          IdOrdenDeSeleccion = ordenEnt.IdOrdenDeSeleccion,
+                                                                          EstadoOrdenSeleccion = ordenEnt.EstadoOrdenSeleccion,
+                                                                          SeleccionDetalle = ordenEnt.SeleccionDetalle.Select(d => d.NumeroDeOrden).ToList()
+                                                                      })
+                                                .ToList();
             }
             else
             {

@@ -17,7 +17,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
 {
     public partial class InventarioForm : Form
     {
-        ConfirmarOrdenDeSeleccionModel model;
+        public ConfirmarOrdenDeSeleccionModel Model;
 
         public InventarioForm()
         {
@@ -41,50 +41,35 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
 
         private void CargarProductos()
         {
-            var ordenesSeleccionadas =model.OrdenesSeleccionPendientes
-       .Where(o => o.EstadoOrdenSeleccion == EstadoSeleccionEnum.EstadoSeleccion.Pendiente)
-       .ToList();
-
-            var numerosDeOrden = ordenesSeleccionadas
-        .SelectMany(o => o.SeleccionDetalle)
-        .ToList();
+            var ordenesSeleccionada = Model.OrdenDeSeleccionElegida;
+            var numerosDeOrden = ordenesSeleccionada.SeleccionDetalle; //ID's de las ordenes de preparación.
 
             var ordenesDePreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts
-       .Where(o => numerosDeOrden.Contains(o.NumeroDeOrden))
-       .ToList();
+                                            .Where(o => numerosDeOrden.Contains(o.NumeroDeOrden))
+                                            .ToList();
 
-
-            if (ordenesDePreparacion.Any())
+            if (!ordenesDePreparacion.Any()) //Esto es un FI
             {
-                foreach (var ordenDePreparacion in ordenesDePreparacion)
+                throw new ApplicationException($"La orden de seleccion {ordenesSeleccionada.IdOrdenDeSeleccion} no tiene ordenes de preparacion asociadas.");
+            }
+
+            foreach (var ordenDePreparacion in ordenesDePreparacion)
+            {
+                foreach (var detalle in ordenDePreparacion.Detalle)
                 {
-                    foreach (var detalle in ordenDePreparacion.Detalle)
-                    {
-                       
-                        var producto = AlmacenProductos.Productos
-                            .FirstOrDefault(p => p.IdProducto == detalle.IdProducto);
+                    var producto = AlmacenProductos.Productos
+                                                   .Single(p => p.IdProducto == detalle.IdProducto);
 
-                        if (producto != null)
-                        {
-                            
-                            ListViewItem item = new ListViewItem(producto.IdProducto);
-                            item.SubItems.Add(producto.Descripcion);
-                            item.SubItems.Add(producto.Posicion);
-                            item.SubItems.Add(detalle.Cantidad.ToString());
-                            item.SubItems.Add(ordenDePreparacion.CodigoCliente);
-                            listInventario.Items.Add(item);
+                    ListViewItem item = new ListViewItem(producto.IdProducto);
+                    item.SubItems.Add(producto.Descripcion);
+                    item.SubItems.Add(producto.Posicion);
+                    item.SubItems.Add(detalle.Cantidad.ToString());
+                    item.SubItems.Add(ordenDePreparacion.CodigoCliente);
+                    listInventario.Items.Add(item);
 
-                            item.Tag = producto;
-                        }
-                    }
+                    item.Tag = producto;
                 }
             }
-            else
-            {
-                MessageBox.Show("No hay órdenes de preparación asociadas a las órdenes de selección pendientes.");
-            }
-
-
         }
     }
 }

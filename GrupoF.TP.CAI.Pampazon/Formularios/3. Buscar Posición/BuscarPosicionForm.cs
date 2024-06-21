@@ -36,9 +36,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
                 MessageBox.Show("Debe seleccionar una orden.");
             }
             else
-            {   
+            {
                 model.OrdenDeSeleccionElegida = (OrdenDeSeleccionPendiente)listOrdenesDeSeleccion.SelectedItems[0].Tag;
                 InventarioForm inventarioForm = new InventarioForm();
+                inventarioForm.Model = model;
                 inventarioForm.ShowDialog();
             }
         }
@@ -48,22 +49,17 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
 
         {
             if (model.OrdenesSeleccionPendientes != null)
-
             {
                 foreach (OrdenDeSeleccionPendiente ordenesSeleccion in model.OrdenesSeleccionPendientes)
                 {
                     if (ordenesSeleccion.EstadoOrdenSeleccion == Entidades.EstadoSeleccionEnum.EstadoSeleccion.Pendiente)
                     {
+                        ListViewItem item = new ListViewItem(ordenesSeleccion.IdOrdenDeSeleccion);
+                        // string detallesUnidos = string.Join(" - ", ordenesSeleccionada.OrdenesSeleccionadas);
 
-                        {
-                            ListViewItem item = new ListViewItem(ordenesSeleccion.IdOrdenDeSeleccion);
-                            // string detallesUnidos = string.Join(" - ", ordenesSeleccionada.OrdenesSeleccionadas);
-
-                            item.SubItems.Add(ordenesSeleccion.EstadoOrdenSeleccion.ToString());
-                            listOrdenesDeSeleccion.Items.Add(item);
-                            item.Tag = ordenesSeleccion;
-
-                        }
+                        item.SubItems.Add(ordenesSeleccion.EstadoOrdenSeleccion.ToString());
+                        listOrdenesDeSeleccion.Items.Add(item);
+                        item.Tag = ordenesSeleccion;
                     }
                 }
             }
