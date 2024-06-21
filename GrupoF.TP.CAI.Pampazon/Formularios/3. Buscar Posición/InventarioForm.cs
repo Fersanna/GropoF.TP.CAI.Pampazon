@@ -31,7 +31,16 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
 
         private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Se han eliminado los productos del inventario con éxito.");
+            var error = Model.Confirmar();
+            if (error == null)
+            {
+                MessageBox.Show("Se han eliminado los productos del inventario con éxito.");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show(error);
+            }
         }
 
         private void InventarioForm_Load(object sender, EventArgs e)

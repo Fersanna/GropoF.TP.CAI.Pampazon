@@ -41,6 +41,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
                 InventarioForm inventarioForm = new InventarioForm();
                 inventarioForm.Model = model;
                 inventarioForm.ShowDialog();
+
+                listOrdenesDeSeleccion.Clear();
+                cargarOrdenesDeSeleccion();
             }
         }
 

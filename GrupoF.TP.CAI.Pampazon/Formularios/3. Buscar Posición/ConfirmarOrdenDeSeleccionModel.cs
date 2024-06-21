@@ -37,6 +37,19 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
                 MessageBox.Show("Debe ingresar una orden de selección");
             }
         }
+
+        internal string Confirmar()
+        {
+            //TODO: verificar que haya stock? 
+            //TODO: bajar el stock
+            //TODO: Recargar la lista OrdenesSeleccionPendientes.
+
+
+
+            OrdenDeSeleccionElegida = null;
+            //si hay algun error string con mensaje para el usuario, si no devolver null
+            return null;
+        }
     }
 }
 
