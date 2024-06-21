@@ -38,11 +38,12 @@
             EstadoColum = new ColumnHeader();
             label1 = new Label();
             SiguienteBtn = new Button();
+            PrioridadColum = new ColumnHeader();
             SuspendLayout();
             // 
             // ConfirmarBtn
             // 
-            ConfirmarBtn.Location = new Point(487, 278);
+            ConfirmarBtn.Location = new Point(584, 294);
             ConfirmarBtn.Name = "ConfirmarBtn";
             ConfirmarBtn.Size = new Size(103, 26);
             ConfirmarBtn.TabIndex = 1;
@@ -52,7 +53,7 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(596, 278);
+            CancelarBtn.Location = new Point(693, 294);
             CancelarBtn.Name = "CancelarBtn";
             CancelarBtn.Size = new Size(103, 26);
             CancelarBtn.TabIndex = 3;
@@ -62,12 +63,12 @@
             // 
             // listOrdenesPreparadas
             // 
-            listOrdenesPreparadas.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, EstadoColum });
+            listOrdenesPreparadas.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, PrioridadColum, EstadoColum });
             listOrdenesPreparadas.FullRowSelect = true;
             listOrdenesPreparadas.GridLines = true;
             listOrdenesPreparadas.Location = new Point(30, 57);
             listOrdenesPreparadas.Name = "listOrdenesPreparadas";
-            listOrdenesPreparadas.Size = new Size(669, 202);
+            listOrdenesPreparadas.Size = new Size(767, 231);
             listOrdenesPreparadas.TabIndex = 8;
             listOrdenesPreparadas.UseCompatibleStateImageBehavior = false;
             listOrdenesPreparadas.View = View.Details;
@@ -75,7 +76,7 @@
             // NumeroColum
             // 
             NumeroColum.Text = "ID";
-            NumeroColum.Width = 130;
+            NumeroColum.Width = 110;
             // 
             // ClienteColum
             // 
@@ -114,7 +115,7 @@
             // 
             // SiguienteBtn
             // 
-            SiguienteBtn.Location = new Point(30, 278);
+            SiguienteBtn.Location = new Point(30, 294);
             SiguienteBtn.Name = "SiguienteBtn";
             SiguienteBtn.Size = new Size(103, 26);
             SiguienteBtn.TabIndex = 10;
@@ -122,11 +123,17 @@
             SiguienteBtn.UseVisualStyleBackColor = true;
             SiguienteBtn.Click += SiguienteBtn_Click;
             // 
+            // PrioridadColum
+            // 
+            PrioridadColum.Text = "Prioridad";
+            PrioridadColum.TextAlign = HorizontalAlignment.Center;
+            PrioridadColum.Width = 130;
+            // 
             // ConfirmarOrdenDeEntregaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(744, 361);
+            ClientSize = new Size(832, 375);
             Controls.Add(SiguienteBtn);
             Controls.Add(label1);
             Controls.Add(listOrdenesPreparadas);
@@ -150,5 +157,6 @@
         private ColumnHeader EstadoColum;
         private Label label1;
         private Button SiguienteBtn;
+        private ColumnHeader PrioridadColum;
     }
 }
