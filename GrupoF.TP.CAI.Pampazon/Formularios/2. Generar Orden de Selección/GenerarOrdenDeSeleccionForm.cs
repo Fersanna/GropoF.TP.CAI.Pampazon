@@ -113,7 +113,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
                 if (!model.OrdenDePreparacionSeleccionadas.Contains(ordenSeleccionada))
                 {
-                     model.OrdenDePreparacionPendientes.Remove(ordenSeleccionada);
+                    model.OrdenDePreparacionPendientes.Remove(ordenSeleccionada);
                     model.OrdenDePreparacionSeleccionadas.Add(ordenSeleccionada);
                 }
             }
@@ -164,6 +164,16 @@ namespace GrupoF.TP.CAI.Pampazon
 
                 listOrdenesPendientes.Items.Add(item);
             }
+        }
+
+        private void LimpiarBtn_Click(object sender, EventArgs e)
+        {
+            PrioridadTextBox.Text = "";
+            NumeroOrdenTextBox.Text = "";
+            TransportistaTextBox.Text = "";
+            ClienteTextBox.Text = "";
+            HastadateTimePicker.Value = HastadateTimePicker.MinDate;
+            DesdeTimePicker.Value = DesdeTimePicker.MinDate;
         }
     }
 }
