@@ -37,7 +37,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
             }
             else
             {   
-                model.OrdenDeSeleccionElegida = listOrdenesDeSeleccion.SelectedItems[0].Text;
+                model.OrdenDeSeleccionElegida = (OrdenDeSeleccionPendiente)listOrdenesDeSeleccion.SelectedItems[0].Tag;
                 InventarioForm inventarioForm = new InventarioForm();
                 inventarioForm.ShowDialog();
             }

@@ -41,13 +41,12 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
 
         private void CargarProductos()
         {
-            var ordenesSeleccionadas = AlmacenOrdenDeSeleccion.OrdenesDeSeleccionEnt
+            var ordenesSeleccionadas =model.OrdenesSeleccionPendientes
        .Where(o => o.EstadoOrdenSeleccion == EstadoSeleccionEnum.EstadoSeleccion.Pendiente)
        .ToList();
 
             var numerosDeOrden = ordenesSeleccionadas
         .SelectMany(o => o.SeleccionDetalle)
-        .Select(d => d.NumeroDeOrden)
         .ToList();
 
             var ordenesDePreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts

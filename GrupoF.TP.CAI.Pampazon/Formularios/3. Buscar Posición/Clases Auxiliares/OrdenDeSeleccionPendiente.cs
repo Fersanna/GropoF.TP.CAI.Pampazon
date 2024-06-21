@@ -12,6 +12,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición.Clases_Auxilia
     {
         public string IdOrdenDeSeleccion { get; set; }
         public EstadoSeleccion EstadoOrdenSeleccion { get; set; }
+
+        public List<string> SeleccionDetalle {get; set;} 
     }
 }
 
