@@ -67,10 +67,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
                 ProductosOrdenList.Items.Add(item);
 
                 item.Tag = productos;
-
             }
 
-
+            FechaPicker.Value = DateTime.Now;
         }
 
         private void ClienteNombreTextBox_TextChanged(object sender, EventArgs e)
@@ -92,7 +91,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
             DateTime fechaActual = DateTime.Now.Date;
 
             // Comparar la fecha seleccionada con la fecha actual
-            if (fechaSeleccionada < fechaActual)
+            if (fechaSeleccionada <= fechaActual)
             {
                 MessageBox.Show("Fecha inválida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
