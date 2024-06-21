@@ -8,7 +8,7 @@ using static GrupoF.TP.CAI.Pampazon.Entidades.Prioridades;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega.Clases_auxiliares
 {
-    internal class OrdenDePreparacionPreparada
+    public class OrdenDePreparacionPreparada
     {
         public string NumeroDeOrden { get; set; }
         public DateTime Fecha { get; set; }

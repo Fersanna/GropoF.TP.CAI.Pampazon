@@ -43,7 +43,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
             OrdenDeEntregaForm ordenDeEntregaForm = new OrdenDeEntregaForm();
 
-            ordenDeEntregaForm.model =this.model;
+            ordenDeEntregaForm.model = this.model;
 
             ordenDeEntregaForm.ShowDialog();
             CargarOrdenesSeleccionadas();
@@ -91,14 +91,14 @@ namespace GrupoF.TP.CAI.Pampazon
 
                 ordenSeleccionada.EstadoOrden = Entidades.Estados.Estado.Preparada;
 
-               listOrdenesPreparacion.SelectedItems[0].SubItems[5].Text = ordenSeleccionada.EstadoOrden.ToString();
+                listOrdenesPreparacion.SelectedItems[0].SubItems[5].Text = ordenSeleccionada.EstadoOrden.ToString();
 
-                 if (!model.OrdenesPreparadas.Contains(ordenSeleccionada))
+                if (!model.OrdenesPreparadas.Contains(ordenSeleccionada))
                 {
                     model.OrdenesSeleccionadas.Remove(ordenSeleccionada);
                     model.OrdenesPreparadas.Add(ordenSeleccionada);
                 }
-                
+
             }
             MessageBox.Show("La orden fue seleccionada");
         }
@@ -148,6 +148,16 @@ namespace GrupoF.TP.CAI.Pampazon
 
 
             ActualizarListaOrdenesFiltradas(ordenesFiltradas);
+        }
+
+        private void LimpiarBtn_Click(object sender, EventArgs e)
+        {
+            PrioridadTextBox.Text = "";
+            NumeroOrdenTextBox.Text = "";
+            TransportistaTextBox.Text = "";
+            ClienteTextBox.Text = "";
+            HastadateTimePicker.Value = HastadateTimePicker.MinDate;
+            DesdeTimePicker.Value = DesdeTimePicker.MinDate;
         }
     }
 }

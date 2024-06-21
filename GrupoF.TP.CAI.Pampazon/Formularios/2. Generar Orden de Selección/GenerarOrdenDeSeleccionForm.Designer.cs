@@ -51,6 +51,7 @@
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
+            LimpiarBtn = new Button();
             SuspendLayout();
             // 
             // listOrdenesPendientes
@@ -127,7 +128,7 @@
             // 
             FiltrarBtn.Location = new Point(42, 59);
             FiltrarBtn.Name = "FiltrarBtn";
-            FiltrarBtn.Size = new Size(785, 23);
+            FiltrarBtn.Size = new Size(587, 23);
             FiltrarBtn.TabIndex = 3;
             FiltrarBtn.Text = "Filtrar";
             FiltrarBtn.UseVisualStyleBackColor = true;
@@ -151,7 +152,7 @@
             DesdeTimePicker.Name = "DesdeTimePicker";
             DesdeTimePicker.Size = new Size(113, 23);
             DesdeTimePicker.TabIndex = 5;
-            DesdeTimePicker.Value = new DateTime(2024, 5, 18, 0, 0, 0, 0);
+            DesdeTimePicker.Value = new DateTime(2024, 6, 21, 0, 0, 0, 0);
             // 
             // label2
             // 
@@ -170,7 +171,7 @@
             HastadateTimePicker.Name = "HastadateTimePicker";
             HastadateTimePicker.Size = new Size(120, 23);
             HastadateTimePicker.TabIndex = 7;
-            HastadateTimePicker.Value = new DateTime(2024, 5, 18, 15, 54, 0, 0);
+            HastadateTimePicker.Value = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             // 
             // label3
             // 
@@ -245,11 +246,22 @@
             label7.TabIndex = 16;
             label7.Text = "Prioridad";
             // 
+            // LimpiarBtn
+            // 
+            LimpiarBtn.Location = new Point(635, 59);
+            LimpiarBtn.Name = "LimpiarBtn";
+            LimpiarBtn.Size = new Size(195, 23);
+            LimpiarBtn.TabIndex = 17;
+            LimpiarBtn.Text = "Limpiar";
+            LimpiarBtn.UseVisualStyleBackColor = true;
+            LimpiarBtn.Click += LimpiarBtn_Click;
+            // 
             // GenerarOrdenDeSeleccionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(864, 394);
+            Controls.Add(LimpiarBtn);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
@@ -299,5 +311,6 @@
         private Label label6;
         private Label label7;
         private ColumnHeader PrioridadColum;
+        private Button LimpiarBtn;
     }
 }

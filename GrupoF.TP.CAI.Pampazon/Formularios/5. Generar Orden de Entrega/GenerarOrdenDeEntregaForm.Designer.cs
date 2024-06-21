@@ -51,6 +51,7 @@
             EstadoColum = new ColumnHeader();
             label7 = new Label();
             PrioridadTextBox = new TextBox();
+            LimpiarBtn = new Button();
             SuspendLayout();
             // 
             // ConfirmarBtn
@@ -173,7 +174,7 @@
             // 
             FiltrarBtn.Location = new Point(36, 63);
             FiltrarBtn.Name = "FiltrarBtn";
-            FiltrarBtn.Size = new Size(769, 23);
+            FiltrarBtn.Size = new Size(574, 23);
             FiltrarBtn.TabIndex = 17;
             FiltrarBtn.Text = "Filtrar";
             FiltrarBtn.UseVisualStyleBackColor = true;
@@ -245,11 +246,22 @@
             PrioridadTextBox.Size = new Size(122, 23);
             PrioridadTextBox.TabIndex = 31;
             // 
+            // LimpiarBtn
+            // 
+            LimpiarBtn.Location = new Point(620, 63);
+            LimpiarBtn.Name = "LimpiarBtn";
+            LimpiarBtn.Size = new Size(184, 23);
+            LimpiarBtn.TabIndex = 33;
+            LimpiarBtn.Text = "Limpiar";
+            LimpiarBtn.UseVisualStyleBackColor = true;
+            LimpiarBtn.Click += LimpiarBtn_Click;
+            // 
             // GenerarOrdenDeEntregaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(843, 400);
+            Controls.Add(LimpiarBtn);
             Controls.Add(label7);
             Controls.Add(PrioridadTextBox);
             Controls.Add(listOrdenesPreparacion);
@@ -298,5 +310,6 @@
         private ColumnHeader PrioridadColum;
         private Label label7;
         private TextBox PrioridadTextBox;
+        private Button LimpiarBtn;
     }
 }

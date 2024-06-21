@@ -33,7 +33,7 @@ namespace GrupoF.TP.CAI.Pampazon
         {
             if (model.OrdenesDeEntregaAConfirmar != null)
             {
-                /*foreach (OrdenDePreparacionPreparada ordenes in model.OrdenesDeEntregaAConfirmar)
+                foreach (OrdenDePreparacionPreparada ordenes in model.OrdenesDeEntregaAConfirmar)
                 {
                     ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
                     item.SubItems.Add(ordenes.CodigoCliente);
@@ -46,7 +46,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
                     item.Tag = ordenes;
                 }
-                */
+                
             }
         }
 
@@ -61,9 +61,9 @@ namespace GrupoF.TP.CAI.Pampazon
                 
                 //Seguir por aca, esto esta pendiente.
 
-                foreach (OrdenDePreparacion item in model.OrdenesDeEntregaAConfirmar)
+                foreach (OrdenDePreparacionPreparada item in model.OrdenesDeEntregaAConfirmar)
                 {
-                    OrdenDePreparacion seleccionada = (OrdenDePreparacion)listOrdenesPreparadas.SelectedItems[0].Tag;
+                    OrdenDePreparacionPreparada seleccionada = (OrdenDePreparacionPreparada)listOrdenesPreparadas.SelectedItems[0].Tag;
                     seleccionada.EstadoOrden =Entidades.Estados.Estado.Despachada;
                     
                    model.OrdenADespachada = seleccionada;
