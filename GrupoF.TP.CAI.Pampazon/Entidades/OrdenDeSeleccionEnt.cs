@@ -15,7 +15,7 @@ namespace GrupoF.TP.CAI.Pampazon.Entidades
 
         public EstadoSeleccion EstadoOrdenSeleccion { get; set; }
 
-        public List<OrdenDeSeleccionDetalle> SeleccionDetalle { get; set; }
+        public List<OrdenDeSeleccionDetalle> SeleccionDetalle { get; set; } 
 
         public OrdenDeSeleccionEnt()
         {

@@ -1,4 +1,7 @@
-﻿using GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición.Clases_Auxiliares;
+﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
+using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Entidades;
+using GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición.Clases_Auxiliares;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -38,38 +41,52 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
 
         private void CargarProductos()
         {
-            
-            /*
-            
-            if (model.Productos != null)
+            var ordenesSeleccionadas = AlmacenOrdenDeSeleccion.OrdenesDeSeleccionEnt
+       .Where(o => o.EstadoOrdenSeleccion == EstadoSeleccionEnum.EstadoSeleccion.Pendiente)
+       .ToList();
 
+            var numerosDeOrden = ordenesSeleccionadas
+        .SelectMany(o => o.SeleccionDetalle)
+        .Select(d => d.NumeroDeOrden)
+        .ToList();
+
+            var ordenesDePreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts
+       .Where(o => numerosDeOrden.Contains(o.NumeroDeOrden))
+       .ToList();
+
+
+            if (ordenesDePreparacion.Any())
             {
-                
-                
-                foreach (ProductosARestar productosARestar in model.Productos)
+                foreach (var ordenDePreparacion in ordenesDePreparacion)
                 {
-                    if (productosARestar == Entidades.ProductoEnt)
+                    foreach (var detalle in ordenDePreparacion.Detalle)
                     {
+                       
+                        var producto = AlmacenProductos.Productos
+                            .FirstOrDefault(p => p.IdProducto == detalle.IdProducto);
 
+                        if (producto != null)
                         {
-                            ListViewItem item = new ListViewItem(productosARestar.IdProducto);
-                            // string detallesUnidos = string.Join(" - ", ordenesSeleccionada.OrdenesSeleccionadas);
-                            item.SubItems.Add(productosARestar.IdProducto);
-                            item.SubItems.Add(productosARestar.Descripcion);
-                            item.SubItems.Add(productosARestar.Posicion);
-                            item.SubItems.Add(productosARestar.Cantidad.ToString());
-                            item.SubItems.Add(productosARestar.CodigoCliente);
-
-
+                            
+                            ListViewItem item = new ListViewItem(producto.IdProducto);
+                            item.SubItems.Add(producto.Descripcion);
+                            item.SubItems.Add(producto.Posicion);
+                            item.SubItems.Add(detalle.Cantidad.ToString());
+                            item.SubItems.Add(ordenDePreparacion.CodigoCliente);
                             listInventario.Items.Add(item);
 
-                            item.Tag = productosARestar;
+                            item.Tag = producto;
                         }
                     }
                 }
             }
+            else
+            {
+                MessageBox.Show("No hay órdenes de preparación asociadas a las órdenes de selección pendientes.");
+            }
 
-            */
+
         }
     }
 }
+

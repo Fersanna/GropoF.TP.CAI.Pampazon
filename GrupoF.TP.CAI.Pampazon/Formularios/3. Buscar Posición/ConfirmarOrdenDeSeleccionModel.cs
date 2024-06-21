@@ -15,6 +15,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
         public List<OrdenDeSeleccionPendiente> OrdenesSeleccionPendientes { get; set; } = new List<OrdenDeSeleccionPendiente>();
 
         public List<Productos> Productos { get; set; } = new List<Productos>();
+        public string OrdenDeSeleccionElegida { get; internal set; }
 
         public ConfirmarOrdenDeSeleccionModel()
         {
