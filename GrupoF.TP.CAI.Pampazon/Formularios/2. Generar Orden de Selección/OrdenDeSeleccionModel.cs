@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static GrupoF.TP.CAI.Pampazon.Entidades.Prioridades;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 {
@@ -21,6 +22,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
         public string Transportista { get; set; }
 
         public string NumeroOrden { get; set; }
+
+        public string Prioridad { get; set; }
 
         public List<OrdenDePreparacionPendiente> OrdenesConfirmadas { get; set; } = new List<OrdenDePreparacionPendiente>();
         public List<OrdenDePreparacionPendiente> OrdenDePreparacionPendientes { get; set; } = new List<OrdenDePreparacionPendiente>();
@@ -58,7 +61,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                     (FechaHasta == DateTime.MinValue || p.Fecha <= FechaHasta) &&
                     (string.IsNullOrEmpty(Cliente) || p.CodigoCliente.Contains(Cliente, StringComparison.OrdinalIgnoreCase)) &&
                     (string.IsNullOrEmpty(Transportista) || p.CodigoTransportista.Contains(Transportista, StringComparison.OrdinalIgnoreCase)) &&
-                    (string.IsNullOrEmpty(NumeroOrden) || p.NumeroDeOrden.Contains(NumeroOrden, StringComparison.OrdinalIgnoreCase)))
+                    (string.IsNullOrEmpty(NumeroOrden) || p.NumeroDeOrden.Contains(NumeroOrden, StringComparison.OrdinalIgnoreCase)) &&
+                    (string.IsNullOrEmpty(Prioridad) || Enum.TryParse<Prioridad>(Prioridad, true, out var prioridad) && p.Prioridad == prioridad))
                 .ToList();
 
             if (!OrdenesFiltradas.Any())

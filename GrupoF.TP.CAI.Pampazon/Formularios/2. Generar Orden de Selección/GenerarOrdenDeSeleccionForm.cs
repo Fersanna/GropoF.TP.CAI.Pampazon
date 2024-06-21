@@ -129,6 +129,7 @@ namespace GrupoF.TP.CAI.Pampazon
             model.FechaHasta = HastadateTimePicker.Value;
             model.Transportista = TransportistaTextBox.Text;
             model.NumeroOrden = NumeroOrdenTextBox.Text;
+            model.Prioridad = PrioridadTextBox.Text;
 
             var error = model.ValidarFiltro();
 
