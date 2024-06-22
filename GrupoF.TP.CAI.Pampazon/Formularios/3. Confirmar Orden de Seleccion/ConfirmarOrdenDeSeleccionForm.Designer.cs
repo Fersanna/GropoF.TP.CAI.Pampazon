@@ -1,6 +1,6 @@
 ﻿namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
 {
-    partial class BuscarPosicionForm
+    partial class ConfirmarOrdenDeSeleccionForm
     {
         /// <summary>
         /// Required designer variable.
@@ -88,7 +88,7 @@
             label1.TabIndex = 7;
             label1.Text = "Listado de ordenes de selección";
             // 
-            // BuscarPosicionForm
+            // ConfirmarOrdenDeSeleccionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -97,8 +97,8 @@
             Controls.Add(listOrdenesDeSeleccion);
             Controls.Add(CancelarBtn);
             Controls.Add(ConsultarBtn);
-            Name = "BuscarPosicionForm";
-            Text = "Buscar Posición";
+            Name = "ConfirmarOrdenDeSeleccionForm";
+            Text = "Confirmar Orden de Selección";
             Load += BuscarPosicionForm_Load;
             ResumeLayout(false);
             PerformLayout();

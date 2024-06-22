@@ -33,7 +33,7 @@
             GenerarOrdenDeEntregaBtn = new Button();
             GenerarRemitosBtn = new Button();
             ConfirmarOrdenDeEntregaBtn = new Button();
-            BuscarPosiciónBtn = new Button();
+            ConfirmarOrdenDeSeleccionBtn = new Button();
             ConfirmarOrdenSeleccionadaBtn = new Button();
             SuspendLayout();
             // 
@@ -92,16 +92,16 @@
             ConfirmarOrdenDeEntregaBtn.UseVisualStyleBackColor = true;
             ConfirmarOrdenDeEntregaBtn.Click += ConfirmarOrdenDeEntregaBtn_Click;
             // 
-            // BuscarPosiciónBtn
+            // ConfirmarOrdenDeSeleccionBtn
             // 
-            BuscarPosiciónBtn.Location = new Point(42, 155);
-            BuscarPosiciónBtn.Margin = new Padding(3, 2, 3, 2);
-            BuscarPosiciónBtn.Name = "BuscarPosiciónBtn";
-            BuscarPosiciónBtn.Size = new Size(270, 52);
-            BuscarPosiciónBtn.TabIndex = 5;
-            BuscarPosiciónBtn.Text = "Buscar Posición";
-            BuscarPosiciónBtn.UseVisualStyleBackColor = true;
-            BuscarPosiciónBtn.Click += BuscarPosicionBtn_Click;
+            ConfirmarOrdenDeSeleccionBtn.Location = new Point(42, 155);
+            ConfirmarOrdenDeSeleccionBtn.Margin = new Padding(3, 2, 3, 2);
+            ConfirmarOrdenDeSeleccionBtn.Name = "ConfirmarOrdenDeSeleccionBtn";
+            ConfirmarOrdenDeSeleccionBtn.Size = new Size(270, 52);
+            ConfirmarOrdenDeSeleccionBtn.TabIndex = 5;
+            ConfirmarOrdenDeSeleccionBtn.Text = "Confirmar Orden de Selección";
+            ConfirmarOrdenDeSeleccionBtn.UseVisualStyleBackColor = true;
+            ConfirmarOrdenDeSeleccionBtn.Click += ConfirmarOrdenDeSeleccionBtn_Click;
             // 
             // ConfirmarOrdenSeleccionadaBtn
             // 
@@ -120,7 +120,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(343, 495);
             Controls.Add(ConfirmarOrdenSeleccionadaBtn);
-            Controls.Add(BuscarPosiciónBtn);
+            Controls.Add(ConfirmarOrdenDeSeleccionBtn);
             Controls.Add(ConfirmarOrdenDeEntregaBtn);
             Controls.Add(GenerarRemitosBtn);
             Controls.Add(GenerarOrdenDeEntregaBtn);
@@ -140,7 +140,7 @@
         private Button GenerarOrdenDeEntregaBtn;
         private Button GenerarRemitosBtn;
         private Button ConfirmarOrdenDeEntregaBtn;
-        private Button BuscarPosiciónBtn;
+        private Button ConfirmarOrdenDeSeleccionBtn;
         private Button ConfirmarOrdenSeleccionadaBtn;
     }
 }

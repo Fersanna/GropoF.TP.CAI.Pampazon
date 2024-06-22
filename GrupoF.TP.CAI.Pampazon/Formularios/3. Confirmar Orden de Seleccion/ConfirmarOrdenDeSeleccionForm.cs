@@ -14,10 +14,10 @@ using System.Windows.Forms;
 namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
 {
 
-    public partial class BuscarPosicionForm : Form
+    public partial class ConfirmarOrdenDeSeleccionForm : Form
     {
         ConfirmarOrdenDeSeleccionModel model;
-        public BuscarPosicionForm()
+        public ConfirmarOrdenDeSeleccionForm()
         {
             InitializeComponent();
         }
