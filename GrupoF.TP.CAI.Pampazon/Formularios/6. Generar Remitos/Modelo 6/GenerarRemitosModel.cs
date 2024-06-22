@@ -52,5 +52,17 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
             */
         }
+
+        internal void CambiarEstadoOrdenSeleccionada()
+        {
+            var ordenSeleccionada = AlmacenOrdenDeEntrega.OrdenDeEntregaEnts.FirstOrDefault(o => OrdenSeleccionada.IdOrdenDeEntrega == o.IdOrdenDeEntrega  );
+
+            ordenSeleccionada.EstadoOrdenEntrega = Entidades.EstadoEntregaEnum.EstadoEntrega.Asignado;
+        }
+
+        internal void GuardarRemito()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -15,7 +15,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
     public partial class RemitosForm : Form
     {
         public GenerarRemitosModel model { get; set; }
-      
+
 
         public RemitosForm()
         {
@@ -28,6 +28,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
         private void ImprimirBtn_Click(object sender, EventArgs e)
         {
+
+            //Cambiar estado de la orden y Guardar el remito generado en Json.
+            model.CambiarEstadoOrdenSeleccionada();
+            model.GuardarRemito();
             MessageBox.Show("El remito se ha generado con éxito.");
         }
 
@@ -38,7 +42,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
         private void RemitosForm_Load(object sender, EventArgs e)
         {
-            // del almacen de clientes traer con el codigo del cliente de la orden seleccionada,  los datos para confeccionar el remito 
+
 
             var ordenSeleccionada = model.OrdenSeleccionada;
             var IdCliente = ordenSeleccionada.CodigoCliente;
@@ -72,7 +76,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
         private void CargarProductos()
         {
-            
+
             var ordenesSeleccionada = model.OrdenSeleccionada;
             var numerosDeOrden = ordenesSeleccionada.EntregaDetalle; //ID's de las ordenes de preparación.
 
@@ -100,7 +104,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
                     item.Tag = producto;
                 }
             }
-            
+
             /*
             var ordenesSeleccionada = model.OrdenSeleccionada;
             if (ordenesSeleccionada == null)
