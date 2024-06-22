@@ -4,10 +4,10 @@
     "EstadoOrdenSeleccion": 0,
     "SeleccionDetalle": [
       {
-        "NumeroDeOrden": "9"
+        "NumeroDeOrden": "1"
       },
       {
-        "NumeroDeOrden": "10"
+        "NumeroDeOrden": "2"
       }
     ]
   },
@@ -16,10 +16,40 @@
     "EstadoOrdenSeleccion": 0,
     "SeleccionDetalle": [
       {
-        "NumeroDeOrden": "7"
+        "NumeroDeOrden": "3"
       },
       {
+        "NumeroDeOrden": "4"
+      },
+      {
+        "NumeroDeOrden": "5"
+      }
+    ]
+  },
+  {
+    "IdOrdenDeSeleccion": "3",
+    "EstadoOrdenSeleccion": 0,
+    "SeleccionDetalle": [
+      {
+        "NumeroDeOrden": "6"
+      },
+      {
+        "NumeroDeOrden": "7"
+      }
+    ]
+  },
+  {
+    "IdOrdenDeSeleccion": "4",
+    "EstadoOrdenSeleccion": 0,
+    "SeleccionDetalle": [
+      {
         "NumeroDeOrden": "8"
+      },
+      {
+        "NumeroDeOrden": "9"
+      },
+      {
+        "NumeroDeOrden": "10"
       }
     ]
   }
