@@ -1,5 +1,4 @@
-﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
-using GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega.Clases_Auxiliares;
+﻿using GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega.Clases_Auxiliares;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

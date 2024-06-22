@@ -1,5 +1,4 @@
-﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
-using GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación;
+﻿using GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación;
 using GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición;
 using System;
 using System.Collections.Generic;
