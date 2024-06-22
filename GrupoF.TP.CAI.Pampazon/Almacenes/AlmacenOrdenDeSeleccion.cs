@@ -1,5 +1,4 @@
-﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
-using GrupoF.TP.CAI.Pampazon.Entidades;
+﻿using GrupoF.TP.CAI.Pampazon.Entidades;
 using Newtonsoft.Json;
 
 namespace GrupoF.TP.CAI.Pampazon.Almacenes

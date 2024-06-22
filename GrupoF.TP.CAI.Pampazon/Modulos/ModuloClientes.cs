@@ -1,5 +1,4 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
-using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
 using GrupoF.TP.CAI.Pampazon.Entidades;
 using System;
 using System.Collections.Generic;
