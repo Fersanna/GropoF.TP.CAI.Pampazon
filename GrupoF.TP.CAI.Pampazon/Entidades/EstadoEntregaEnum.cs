@@ -6,7 +6,6 @@
         {
             Pendiente,
             Asignado,
-            Generada
         }
     }
 }

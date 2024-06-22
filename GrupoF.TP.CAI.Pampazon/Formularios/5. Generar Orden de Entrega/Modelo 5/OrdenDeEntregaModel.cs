@@ -121,7 +121,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
             var nuevaOrdenDeEntregaEnt = new OrdenDeEntregaEnt
             {
                 Fecha = DateTime.Now,
-                EstadoEntrega = EstadoEntregaEnum.EstadoEntrega.Generada,
+                EstadoOrdenEntrega = EstadoEntregaEnum.EstadoEntrega.Pendiente,
                 EntregaDetalle = new List<OrdenDeEntregaDetalle>()
 
             };

@@ -1,9 +1,11 @@
-﻿using System;
+﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -43,6 +45,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
         private void RemitosForm_Load(object sender, EventArgs e)
         {
+            CargarProductos();
+
             /*
             RazonSocialTexBox.Text = model.OrdenSeleccionada.CodigoCliente;
            
@@ -59,6 +63,37 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
                     item.Tag = producto;
             }
             */
+        }
+
+        private void CargarProductos()
+        {
+            var ordenesSeleccionada = model.OrdenSeleccionada;
+            var numerosDeOrden = ordenesSeleccionada.EntregaDetalle; //ID's de las ordenes de preparación.
+
+            var ordenesDePreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts
+                                            .Where(o => numerosDeOrden.Contains(o.NumeroDeOrden))
+                                            .ToList();
+
+            if (!ordenesDePreparacion.Any()) //Esto es un FI
+            {
+                throw new ApplicationException($"La orden de seleccion {ordenesSeleccionada.IdOrdenDeEntrega} no tiene ordenes de preparacion asociadas.");
+            }
+
+            foreach (var ordenDePreparacion in ordenesDePreparacion)
+            {
+                foreach (var detalle in ordenDePreparacion.Detalle)
+                {
+                    var producto = AlmacenProductos.Productos
+                                                   .Single(p => p.IdProducto == detalle.IdProducto);
+
+                    ListViewItem item = new ListViewItem(producto.IdProducto);
+                    item.SubItems.Add(producto.Descripcion);
+                    item.SubItems.Add(detalle.Cantidad.ToString());
+                    ProductosList.Items.Add(item);
+
+                    item.Tag = producto;
+                }
+            }
         }
     }
 }

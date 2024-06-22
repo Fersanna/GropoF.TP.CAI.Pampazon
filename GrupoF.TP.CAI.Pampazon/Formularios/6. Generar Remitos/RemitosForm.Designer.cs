@@ -33,6 +33,7 @@
             label1 = new Label();
             label2 = new Label();
             ProductosList = new ListView();
+            IdHeader = new ColumnHeader();
             DescripcionHeader = new ColumnHeader();
             CantidadHeader = new ColumnHeader();
             RazonSocialTexBox = new TextBox();
@@ -92,7 +93,7 @@
             // 
             // ProductosList
             // 
-            ProductosList.Columns.AddRange(new ColumnHeader[] { CantidadHeader, DescripcionHeader });
+            ProductosList.Columns.AddRange(new ColumnHeader[] { IdHeader, DescripcionHeader, CantidadHeader });
             ProductosList.Enabled = false;
             ProductosList.FullRowSelect = true;
             ProductosList.GridLines = true;
@@ -103,14 +104,20 @@
             ProductosList.UseCompatibleStateImageBehavior = false;
             ProductosList.View = View.Details;
             // 
+            // IdHeader
+            // 
+            IdHeader.Text = "ID";
+            IdHeader.Width = 100;
+            // 
             // DescripcionHeader
             // 
             DescripcionHeader.Text = "Descripción";
-            DescripcionHeader.Width = 500;
+            DescripcionHeader.Width = 370;
             // 
             // CantidadHeader
             // 
             CantidadHeader.Text = "Cantidad";
+            CantidadHeader.TextAlign = HorizontalAlignment.Center;
             CantidadHeader.Width = 100;
             // 
             // RazonSocialTexBox
@@ -271,6 +278,7 @@
         private TextBox textBox5;
         private Label label6;
         private Button CancelarBtn;
+        private ColumnHeader IdHeader;
         private ColumnHeader CantidadHeader;
     }
 }
