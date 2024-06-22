@@ -24,7 +24,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
         {
             model = new ConfirmarOrdenSeleccionadaFormModel();
 
-            foreach (OrdenDeSeleccionada ordenesSeleccionada in model.OrdenEnSeleccion)
+            foreach (OrdenDePreparacionEnSeleccion ordenesSeleccionada in model.OrdenEnSeleccion)
             {
 
                 {
@@ -58,7 +58,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
             else
             {
 
-                OrdenDeSeleccionada ordenDePreparacion = (OrdenDeSeleccionada)listOrdenesEnSeleccion.SelectedItems[0].Tag;
+                OrdenDePreparacionEnSeleccion ordenDePreparacion = (OrdenDePreparacionEnSeleccion)listOrdenesEnSeleccion.SelectedItems[0].Tag;
 
                 model.CambiarEstadoEnOrden(ordenDePreparacion);
 
@@ -74,7 +74,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
         {
              if (listOrdenesEnSeleccion.SelectedItems.Count > 0)
             {
-                OrdenDeSeleccionada orden = (OrdenDeSeleccionada)listOrdenesEnSeleccion.SelectedItems[0].Tag;
+                OrdenDePreparacionEnSeleccion orden = (OrdenDePreparacionEnSeleccion)listOrdenesEnSeleccion.SelectedItems[0].Tag;
 
                 orden.EstadoOrden = Entidades.Estados.Estado.Seleccionada;
 

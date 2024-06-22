@@ -9,9 +9,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
 {
     internal class ConfirmarOrdenSeleccionadaFormModel
     {
-        public List<OrdenDeSeleccionada> OrdenEnSeleccion { get; set; }
+        public List<OrdenDePreparacionEnSeleccion> OrdenEnSeleccion { get; set; }
 
-        public List<OrdenDeSeleccionada> OrdenesSeleccionadas { get; set; }
+        public List<OrdenDePreparacionEnSeleccion> OrdenesSeleccionadas { get; set; }
         //Seguir x aca
         public ConfirmarOrdenSeleccionadaFormModel()
         {
@@ -23,7 +23,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 var ordenesEnSeleccion = ordenesAconfirmar.FindAll(p => p.EstadoOrden == Entidades.Estados.Estado.Seleccion);
 
                 OrdenEnSeleccion = ordenesEnSeleccion.Select(ordenEnt =>
-                new OrdenDeSeleccionada
+                new OrdenDePreparacionEnSeleccion
                 {
                     NumeroDeOrden = ordenEnt.NumeroDeOrden,
                     CodigoCliente = ordenEnt.CodigoCliente,
@@ -36,7 +36,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
             }
         }
 
-        internal void CambiarEstadoEnOrden(OrdenDeSeleccionada ordenDePreparacion)
+        internal void CambiarEstadoEnOrden(OrdenDePreparacionEnSeleccion ordenDePreparacion)
         {
             var orden = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts.FirstOrDefault(OrdenEnt => OrdenEnt.NumeroDeOrden == ordenDePreparacion.NumeroDeOrden);
 
@@ -53,7 +53,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 
                 if (OrdenesSeleccionadas == null)
                 {
-                    OrdenesSeleccionadas = new List<OrdenDeSeleccionada>();
+                    OrdenesSeleccionadas = new List<OrdenDePreparacionEnSeleccion>();
                 }
 
                 if (!OrdenesSeleccionadas.Contains(ordenDePreparacion))
