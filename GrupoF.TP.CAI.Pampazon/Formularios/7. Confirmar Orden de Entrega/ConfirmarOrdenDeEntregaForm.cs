@@ -35,7 +35,7 @@ namespace GrupoF.TP.CAI.Pampazon
                 {
                     ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
                     item.SubItems.Add(ordenes.CodigoCliente);
-                    item.SubItems.Add(ordenes.Fecha.ToString());
+                    item.SubItems.Add(ordenes.Fecha.ToString("dd/MM/yyyy"));
                     item.SubItems.Add(ordenes.CodigoTransportista);
                     item.SubItems.Add(((int)ordenes.Prioridad).ToString());
                     item.SubItems.Add(ordenes.EstadoOrden.ToString());

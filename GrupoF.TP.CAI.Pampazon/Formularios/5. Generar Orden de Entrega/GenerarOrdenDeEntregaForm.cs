@@ -66,7 +66,7 @@ namespace GrupoF.TP.CAI.Pampazon
             {
                 ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
                 item.SubItems.Add(ordenes.CodigoCliente);
-                item.SubItems.Add(ordenes.Fecha.ToString());
+                item.SubItems.Add(ordenes.Fecha.ToString("dd/MM/yyyy"));
                 item.SubItems.Add(ordenes.CodigoTransportista);
                 item.SubItems.Add(((int)ordenes.Prioridad).ToString());
                 item.SubItems.Add(ordenes.EstadoOrden.ToString());
@@ -118,7 +118,7 @@ namespace GrupoF.TP.CAI.Pampazon
             {
                 ListViewItem item = new ListViewItem(orden.NumeroDeOrden);
                 item.SubItems.Add(orden.CodigoCliente);
-                item.SubItems.Add(orden.Fecha.ToString());
+                item.SubItems.Add(orden.Fecha.ToString("dd/MM/yyyy"));
                 item.SubItems.Add(orden.CodigoTransportista);
                 item.SubItems.Add(((int)orden.Prioridad).ToString());
                 item.SubItems.Add(orden.EstadoOrden.ToString());

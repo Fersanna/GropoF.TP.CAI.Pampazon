@@ -1,151 +1,151 @@
 [
   {
-    "IdOrdenDeEntrega": "E001",
+    "IdOrdenDeEntrega": "1",
     "Fecha": "2024-06-01T10:00:00",
     "CodigoCliente": "CL001",
     "CodigoTransportista": "TR001",
-    "EstadoEntrega": 0,
+    "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "001"
+        "NumeroDeOrden": "1"
       },
       {
-        "NumeroDeOrden": "002"
+        "NumeroDeOrden": "2"
       }
     ]
   },
   {
-    "IdOrdenDeEntrega": "E002",
+    "IdOrdenDeEntrega": "2",
     "Fecha": "2024-06-02T11:00:00",
     "CodigoCliente": "CL002",
     "CodigoTransportista": "TR002",
-    "EstadoEntrega": 1,
+    "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "003"
+        "NumeroDeOrden": "3"
       },
       {
-        "NumeroDeOrden": "004"
+        "NumeroDeOrden": "4"
       }
     ]
   },
   {
-    "IdOrdenDeEntrega": "E003",
+    "IdOrdenDeEntrega": "3",
     "Fecha": "2024-06-03T12:00:00",
     "CodigoCliente": "CL003",
     "CodigoTransportista": "TR003",
-    "EstadoEntrega": 2,
+    "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "005"
+        "NumeroDeOrden": "5"
       },
       {
-        "NumeroDeOrden": "006"
+        "NumeroDeOrden": "6"
       }
     ]
   },
   {
-    "IdOrdenDeEntrega": "E004",
+    "IdOrdenDeEntrega": "4",
     "Fecha": "2024-06-04T13:00:00",
     "CodigoCliente": "CL004",
     "CodigoTransportista": "TR004",
-    "EstadoEntrega": 3,
+    "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "007"
+        "NumeroDeOrden": "7"
       },
       {
-        "NumeroDeOrden": "008"
+        "NumeroDeOrden": "8"
       }
     ]
   },
   {
-    "IdOrdenDeEntrega": "E005",
+    "IdOrdenDeEntrega": "5",
     "Fecha": "2024-06-05T14:00:00",
     "CodigoCliente": "CL005",
     "CodigoTransportista": "TR005",
-    "EstadoEntrega": 0,
+    "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "009"
+        "NumeroDeOrden": "9"
       },
       {
-        "NumeroDeOrden": "010"
+        "NumeroDeOrden": "10"
       }
     ]
   },
   {
-    "IdOrdenDeEntrega": "E006",
+    "IdOrdenDeEntrega": "6",
     "Fecha": "2024-06-06T15:00:00",
     "CodigoCliente": "CL006",
     "CodigoTransportista": "TR006",
-    "EstadoEntrega": 1,
+    "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "011"
+        "NumeroDeOrden": "11"
       },
       {
-        "NumeroDeOrden": "012"
+        "NumeroDeOrden": "12"
       }
     ]
   },
   {
-    "IdOrdenDeEntrega": "E007",
+    "IdOrdenDeEntrega": "7",
     "Fecha": "2024-06-07T16:00:00",
     "CodigoCliente": "CL007",
     "CodigoTransportista": "TR007",
-    "EstadoEntrega": 2,
+    "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "013"
+        "NumeroDeOrden": "13"
       },
       {
-        "NumeroDeOrden": "014"
+        "NumeroDeOrden": "14"
       }
     ]
   },
   {
-    "IdOrdenDeEntrega": "E008",
+    "IdOrdenDeEntrega": "8",
     "Fecha": "2024-06-08T17:00:00",
     "CodigoCliente": "CL008",
     "CodigoTransportista": "TR008",
-    "EstadoEntrega": 3,
+    "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "015"
+        "NumeroDeOrden": "15"
       },
       {
-        "NumeroDeOrden": "016"
+        "NumeroDeOrden": "16"
       }
     ]
   },
   {
-    "IdOrdenDeEntrega": "E009",
+    "IdOrdenDeEntrega": "9",
     "Fecha": "2024-06-09T18:00:00",
     "CodigoCliente": "CL009",
     "CodigoTransportista": "TR009",
-    "EstadoEntrega": 0,
+    "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "017"
+        "NumeroDeOrden": "17"
       },
       {
-        "NumeroDeOrden": "018"
+        "NumeroDeOrden": "18"
       }
     ]
   },
   {
-    "IdOrdenDeEntrega": "E010",
+    "IdOrdenDeEntrega": "10",
     "Fecha": "2024-06-10T19:00:00",
     "CodigoCliente": "CL010",
     "CodigoTransportista": "TR010",
-    "EstadoEntrega": 1,
+    "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "019"
+        "NumeroDeOrden": "19"
       },
       {
-        "NumeroDeOrden": "020"
+        "NumeroDeOrden": "20"
       }
     ]
   }

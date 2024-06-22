@@ -169,13 +169,14 @@
             // 
             // FechaPicker
             // 
-            FechaPicker.Format = DateTimePickerFormat.Short;
+            FechaPicker.CustomFormat = "dd/MM/yyyy";
+            FechaPicker.Format = DateTimePickerFormat.Custom;
             FechaPicker.Location = new Point(10, 55);
             FechaPicker.Margin = new Padding(3, 2, 3, 2);
             FechaPicker.Name = "FechaPicker";
             FechaPicker.Size = new Size(210, 23);
             FechaPicker.TabIndex = 13;
-            FechaPicker.Value = new DateTime(2024, 5, 10, 15, 54, 23, 0);
+            FechaPicker.Value = new DateTime(2024, 5, 10, 0, 0, 0, 0);
             // 
             // label3
             // 

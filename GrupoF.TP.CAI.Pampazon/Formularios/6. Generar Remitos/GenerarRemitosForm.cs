@@ -58,7 +58,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
                 {
                     ListViewItem item = new ListViewItem(ordenesConfirmadas.IdOrdenDeEntrega);
                     item.SubItems.Add(ordenesConfirmadas.CodigoCliente);
-                    item.SubItems.Add(ordenesConfirmadas.Fecha.ToString());
+                    item.SubItems.Add(ordenesConfirmadas.Fecha.ToString("dd/MM/yyyy"));
                     item.SubItems.Add(ordenesConfirmadas.CodigoTransportista);
                     item.SubItems.Add(ordenesConfirmadas.EstadoOrdenEntrega.ToString());
 

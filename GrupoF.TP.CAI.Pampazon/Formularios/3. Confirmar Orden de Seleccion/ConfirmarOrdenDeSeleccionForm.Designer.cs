@@ -38,7 +38,7 @@
             // 
             // ConsultarBtn
             // 
-            ConsultarBtn.Location = new Point(374, 306);
+            ConsultarBtn.Location = new Point(388, 306);
             ConsultarBtn.Name = "ConsultarBtn";
             ConsultarBtn.Size = new Size(88, 23);
             ConsultarBtn.TabIndex = 3;
@@ -48,7 +48,7 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(468, 306);
+            CancelarBtn.Location = new Point(482, 306);
             CancelarBtn.Name = "CancelarBtn";
             CancelarBtn.Size = new Size(88, 23);
             CancelarBtn.TabIndex = 5;
@@ -63,7 +63,7 @@
             listOrdenesDeSeleccion.GridLines = true;
             listOrdenesDeSeleccion.Location = new Point(66, 44);
             listOrdenesDeSeleccion.Name = "listOrdenesDeSeleccion";
-            listOrdenesDeSeleccion.Size = new Size(490, 256);
+            listOrdenesDeSeleccion.Size = new Size(504, 256);
             listOrdenesDeSeleccion.TabIndex = 6;
             listOrdenesDeSeleccion.UseCompatibleStateImageBehavior = false;
             listOrdenesDeSeleccion.View = View.Details;
@@ -92,7 +92,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(615, 384);
+            ClientSize = new Size(644, 384);
             Controls.Add(label1);
             Controls.Add(listOrdenesDeSeleccion);
             Controls.Add(CancelarBtn);

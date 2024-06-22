@@ -35,15 +35,15 @@
             ClienteColum = new ColumnHeader();
             FechaColum = new ColumnHeader();
             TranspColum = new ColumnHeader();
+            PrioridadColum = new ColumnHeader();
             EstadoColum = new ColumnHeader();
             label1 = new Label();
             SiguienteBtn = new Button();
-            PrioridadColum = new ColumnHeader();
             SuspendLayout();
             // 
             // ConfirmarBtn
             // 
-            ConfirmarBtn.Location = new Point(584, 294);
+            ConfirmarBtn.Location = new Point(601, 294);
             ConfirmarBtn.Name = "ConfirmarBtn";
             ConfirmarBtn.Size = new Size(103, 26);
             ConfirmarBtn.TabIndex = 1;
@@ -53,7 +53,7 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(693, 294);
+            CancelarBtn.Location = new Point(710, 294);
             CancelarBtn.Name = "CancelarBtn";
             CancelarBtn.Size = new Size(103, 26);
             CancelarBtn.TabIndex = 3;
@@ -68,7 +68,7 @@
             listOrdenesPreparadas.GridLines = true;
             listOrdenesPreparadas.Location = new Point(30, 57);
             listOrdenesPreparadas.Name = "listOrdenesPreparadas";
-            listOrdenesPreparadas.Size = new Size(767, 231);
+            listOrdenesPreparadas.Size = new Size(783, 231);
             listOrdenesPreparadas.TabIndex = 8;
             listOrdenesPreparadas.UseCompatibleStateImageBehavior = false;
             listOrdenesPreparadas.View = View.Details;
@@ -95,6 +95,12 @@
             TranspColum.Text = "Transportista";
             TranspColum.TextAlign = HorizontalAlignment.Center;
             TranspColum.Width = 130;
+            // 
+            // PrioridadColum
+            // 
+            PrioridadColum.Text = "Prioridad";
+            PrioridadColum.TextAlign = HorizontalAlignment.Center;
+            PrioridadColum.Width = 130;
             // 
             // EstadoColum
             // 
@@ -123,17 +129,11 @@
             SiguienteBtn.UseVisualStyleBackColor = true;
             SiguienteBtn.Click += SiguienteBtn_Click;
             // 
-            // PrioridadColum
-            // 
-            PrioridadColum.Text = "Prioridad";
-            PrioridadColum.TextAlign = HorizontalAlignment.Center;
-            PrioridadColum.Width = 130;
-            // 
             // ConfirmarOrdenDeEntregaForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(832, 375);
+            ClientSize = new Size(852, 375);
             Controls.Add(SiguienteBtn);
             Controls.Add(label1);
             Controls.Add(listOrdenesPreparadas);
