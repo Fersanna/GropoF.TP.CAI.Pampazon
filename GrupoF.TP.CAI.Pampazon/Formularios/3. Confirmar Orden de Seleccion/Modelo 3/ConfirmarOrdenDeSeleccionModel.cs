@@ -37,9 +37,28 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
 
         internal string Confirmar()
         {
-            //TODO: verificar que haya stock? 
+           /* //TODO: verificar que haya stock? 
+            foreach (var detalle in OrdenDeSeleccionElegida.SeleccionDetalle)
+            {
+                var producto = AlmacenProductos.Productos.FirstOrDefault(p => p.IdProducto == detalle.NumeroDeOrden);
+
+                if (producto == null || producto.Stock <= 0)
+                {
+                    return $"No hay suficiente stock para el producto {detalle.NumeroDeOrden}.";
+                }
+            }
             //TODO: bajar el stock
+            foreach (var detalle in OrdenDeSeleccionElegida.SeleccionDetalle)
+            {
+                var producto = AlmacenProductos.Productos.FirstOrDefault(p => p.IdProducto == detalle.NumeroDeOrden);
+
+                if (producto != null)
+                {
+                    producto.Stock -= 1;  // Asumimos que se descuenta una unidad por cada selección
+                }
+            }
             //TODO: Recargar la lista OrdenesSeleccionPendientes.
+            AlmacenProductos.Grabar();*/
 
 
 

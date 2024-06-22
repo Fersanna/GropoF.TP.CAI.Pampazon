@@ -55,7 +55,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
                                             .Where(o => numerosDeOrden.Contains(o.NumeroDeOrden))
                                             .ToList();
 
-            if (!ordenesDePreparacion.Any()) //Esto es un FI
+            if (!ordenesDePreparacion.Any()) 
             {
                 throw new ApplicationException($"La orden de seleccion {ordenesSeleccionada.IdOrdenDeSeleccion} no tiene ordenes de preparacion asociadas.");
             }
