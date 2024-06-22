@@ -33,7 +33,7 @@
             label1 = new Label();
             ClienteNombreTextBox = new TextBox();
             FechaBox = new Label();
-            CodigoClienteTextBox = new TextBox();
+            IdTextBox = new TextBox();
             label2 = new Label();
             TranspBox = new TextBox();
             ProductosOrdenList = new ListView();
@@ -96,14 +96,14 @@
             FechaBox.TabIndex = 9;
             FechaBox.Text = "Fecha";
             // 
-            // CodigoClienteTextBox
+            // IdTextBox
             // 
-            CodigoClienteTextBox.Enabled = false;
-            CodigoClienteTextBox.Location = new Point(10, 196);
-            CodigoClienteTextBox.Margin = new Padding(3, 2, 3, 2);
-            CodigoClienteTextBox.Name = "CodigoClienteTextBox";
-            CodigoClienteTextBox.Size = new Size(210, 23);
-            CodigoClienteTextBox.TabIndex = 8;
+            IdTextBox.Enabled = false;
+            IdTextBox.Location = new Point(10, 196);
+            IdTextBox.Margin = new Padding(3, 2, 3, 2);
+            IdTextBox.Name = "IdTextBox";
+            IdTextBox.Size = new Size(210, 23);
+            IdTextBox.TabIndex = 8;
             // 
             // label2
             // 
@@ -219,7 +219,7 @@
             Controls.Add(label2);
             Controls.Add(TranspBox);
             Controls.Add(FechaBox);
-            Controls.Add(CodigoClienteTextBox);
+            Controls.Add(IdTextBox);
             Controls.Add(ClienteBox);
             Controls.Add(ClienteNombreTextBox);
             Controls.Add(label1);
@@ -238,7 +238,7 @@
         private Label label1;
         private TextBox ClienteNombreTextBox;
         private Label FechaBox;
-        private TextBox CodigoClienteTextBox;
+        private TextBox IdTextBox;
         private Label label2;
         private TextBox TranspBox;
         private ListView ProductosOrdenList;

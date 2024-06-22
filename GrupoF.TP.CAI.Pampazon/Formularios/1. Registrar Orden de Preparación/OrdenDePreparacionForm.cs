@@ -46,7 +46,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
             TranspBox.Text ="";
             model.ClienteOrden.Fecha = FechaPicker.Value;
             model.ClienteOrden.EstadoOrden = Estados.Estado.Pendiente;
-            CodigoClienteTextBox.Text = model.ClienteOrden.NumeroDeOrden;
+            IdTextBox.Text = model.ClienteOrden.NumeroDeOrden;
+
 
             // Obtiene los valores del enum como un array de int
             var valoresNumericos = Enum.GetValues(typeof(Prioridad)).Cast<int>().ToList();
