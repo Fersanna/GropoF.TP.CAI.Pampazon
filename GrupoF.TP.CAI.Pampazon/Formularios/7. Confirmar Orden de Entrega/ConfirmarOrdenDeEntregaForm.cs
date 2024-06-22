@@ -91,6 +91,7 @@ namespace GrupoF.TP.CAI.Pampazon
         private void SiguienteBtn_Click(object sender, EventArgs e)
         {
             OrdenDespachadaForm ordenDespachadaForm = new OrdenDespachadaForm();
+
             ordenDespachadaForm.ShowDialog();
         }
     }

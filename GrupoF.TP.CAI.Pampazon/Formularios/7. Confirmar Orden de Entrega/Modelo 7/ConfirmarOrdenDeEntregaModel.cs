@@ -1,5 +1,6 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
 using GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega.Clases_auxiliares;
+using GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega.Clases_Auxiliares_7;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
     {
         public List<OrdenDePreparacionPreparada> OrdenesDeEntregaAConfirmar { get; set; }
         public OrdenDePreparacionPreparada OrdenADespachada { get; internal set; }
+
+        public List<OrdenDePreparacionDespachada> OrdenesDeEntregaAEntregar { get; set; }
+        public OrdenDePreparacionDespachada OrdenDespachada { get; internal set; }
 
 
         public ConfirmarOrdenDeEntregaModel()
@@ -35,6 +39,26 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
 
                 }).ToList();
             }
+
+            var ordenesAEntregar = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts;
+
+            if (ordenesAEntregar != null)
+            {
+                var ordenesDespachadas = ordenesAEntregar.FindAll(p => p.EstadoOrden == Entidades.Estados.Estado.Despachada);
+
+                OrdenesDeEntregaAEntregar = ordenesDespachadas.Select(ordenDEnt =>
+                new OrdenDePreparacionDespachada
+                {
+                    NumeroDeOrden = ordenDEnt.NumeroDeOrden,
+                    CodigoCliente = ordenDEnt.CodigoCliente,
+                    Fecha = ordenDEnt.Fecha,
+                    CodigoTransportista = ordenDEnt.CodigoTransportista,
+                    Prioridad = ordenDEnt.Prioridad,
+                    EstadoOrden = ordenDEnt.EstadoOrden,
+
+                }).ToList();
+            }
         }
+
     }
 }
