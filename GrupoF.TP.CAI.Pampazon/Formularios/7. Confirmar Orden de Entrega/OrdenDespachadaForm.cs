@@ -29,19 +29,23 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
 
         private void OrdenDespachadaForm_Load(object sender, EventArgs e)
         {
+            
             CargarOrdenesDespachadas();
 
-            ListViewItem item = new ListViewItem(model.OrdenADespachada.NumeroDeOrden);
-            item.SubItems.Add(model.OrdenADespachada.CodigoCliente);
-            item.SubItems.Add(model.OrdenADespachada.Fecha.ToString("dd/MM/yyyy"));
-            item.SubItems.Add(model.OrdenADespachada.CodigoTransportista);
-            item.SubItems.Add(((int)model.OrdenADespachada.Prioridad).ToString());
-            item.SubItems.Add(model.OrdenADespachada.EstadoOrden.ToString());
-                 
-            listOrdenesDespachadas.Items.Add(item);
+            if (model != null && model.OrdenADespachada != null)
+            {
+                ListViewItem item = new ListViewItem(model.OrdenADespachada.NumeroDeOrden);
+                item.SubItems.Add(model.OrdenADespachada.CodigoCliente);
+                item.SubItems.Add(model.OrdenADespachada.Fecha.ToString("dd/MM/yyyy"));
+                item.SubItems.Add(model.OrdenADespachada.CodigoTransportista);
+                item.SubItems.Add(((int)model.OrdenADespachada.Prioridad).ToString());
+                item.SubItems.Add(model.OrdenADespachada.EstadoOrden.ToString());
 
-            item.Tag = model.OrdenADespachada;
-                
+                listOrdenesDespachadas.Items.Add(item);
+
+                item.Tag = model.OrdenADespachada;
+            }
+
         }
 
         private void CargarOrdenesDespachadas()
