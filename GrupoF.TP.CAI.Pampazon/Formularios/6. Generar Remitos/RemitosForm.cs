@@ -15,14 +15,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
     public partial class RemitosForm : Form
     {
         public GenerarRemitosModel model { get; set; }
-        public DateTime FechaRemito { get; set; }
-        public string NumeroDeRemito { get; set; }
-
-        public string RazonSocialCliente { get; set; }
-
-        public string DomicilioCliente { get; set; }
-
-        public string CuitCliente { get; set; }
+      
 
         public RemitosForm()
         {
@@ -45,6 +38,18 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
         private void RemitosForm_Load(object sender, EventArgs e)
         {
+            // del almacen de clientes traer con el codigo del cliente de la orden seleccionada,  los datos para confeccionar el remito 
+
+            var ordenSeleccionada = model.OrdenSeleccionada;
+            var IdCliente = ordenSeleccionada.CodigoCliente;
+
+            var clienteSeleccionado = AlmacenClientes.Clientes
+                                         .FirstOrDefault(clienteEnt => clienteEnt.CodigoCliente == IdCliente);
+
+            RazonSocialTexBox.Text = clienteSeleccionado.RazonSocial;
+            DomicilioTextBox.Text = clienteSeleccionado.Domicilio;
+            Cuit_Box.Text = clienteSeleccionado.Cuit;
+
             CargarProductos();
 
             /*
