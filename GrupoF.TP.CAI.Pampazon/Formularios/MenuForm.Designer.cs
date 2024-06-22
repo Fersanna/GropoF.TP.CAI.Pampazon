@@ -31,7 +31,7 @@
             RegistrarOrdenDePreparacionBtn = new Button();
             GenerarOrdenDeSeleccionBtn = new Button();
             GenerarOrdenDeEntregaBtn = new Button();
-            GenerarDocumentosBtn = new Button();
+            GenerarRemitosBtn = new Button();
             ConfirmarOrdenDeEntregaBtn = new Button();
             BuscarPosiciónBtn = new Button();
             ConfirmarOrdenSeleccionadaBtn = new Button();
@@ -70,16 +70,16 @@
             GenerarOrdenDeEntregaBtn.UseVisualStyleBackColor = true;
             GenerarOrdenDeEntregaBtn.Click += GenerarOrdenDeEntregaBtn_Click;
             // 
-            // GenerarDocumentosBtn
+            // GenerarRemitosBtn
             // 
-            GenerarDocumentosBtn.Location = new Point(42, 350);
-            GenerarDocumentosBtn.Margin = new Padding(3, 2, 3, 2);
-            GenerarDocumentosBtn.Name = "GenerarDocumentosBtn";
-            GenerarDocumentosBtn.Size = new Size(270, 52);
-            GenerarDocumentosBtn.TabIndex = 3;
-            GenerarDocumentosBtn.Text = "Generar Documentos";
-            GenerarDocumentosBtn.UseVisualStyleBackColor = true;
-            GenerarDocumentosBtn.Click += GenerarDocumentosBtn_Click;
+            GenerarRemitosBtn.Location = new Point(42, 350);
+            GenerarRemitosBtn.Margin = new Padding(3, 2, 3, 2);
+            GenerarRemitosBtn.Name = "GenerarRemitosBtn";
+            GenerarRemitosBtn.Size = new Size(270, 52);
+            GenerarRemitosBtn.TabIndex = 3;
+            GenerarRemitosBtn.Text = "Generar Remitos";
+            GenerarRemitosBtn.UseVisualStyleBackColor = true;
+            GenerarRemitosBtn.Click += GenerarRemitosBtn_Click;
             // 
             // ConfirmarOrdenDeEntregaBtn
             // 
@@ -122,7 +122,7 @@
             Controls.Add(ConfirmarOrdenSeleccionadaBtn);
             Controls.Add(BuscarPosiciónBtn);
             Controls.Add(ConfirmarOrdenDeEntregaBtn);
-            Controls.Add(GenerarDocumentosBtn);
+            Controls.Add(GenerarRemitosBtn);
             Controls.Add(GenerarOrdenDeEntregaBtn);
             Controls.Add(GenerarOrdenDeSeleccionBtn);
             Controls.Add(RegistrarOrdenDePreparacionBtn);
@@ -138,7 +138,7 @@
         private Button RegistrarOrdenDePreparacionBtn;
         private Button GenerarOrdenDeSeleccionBtn;
         private Button GenerarOrdenDeEntregaBtn;
-        private Button GenerarDocumentosBtn;
+        private Button GenerarRemitosBtn;
         private Button ConfirmarOrdenDeEntregaBtn;
         private Button BuscarPosiciónBtn;
         private Button ConfirmarOrdenSeleccionadaBtn;

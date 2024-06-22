@@ -20,7 +20,7 @@ namespace GrupoF.TP.CAI.Pampazon
         private void RegistrarOrdenDePreparacion_Click(object sender, EventArgs e)
         {
             BuscarClienteForm buscarClienteForm = new BuscarClienteForm();
-             
+
             buscarClienteForm.ShowDialog();
         }
 
@@ -48,7 +48,7 @@ namespace GrupoF.TP.CAI.Pampazon
             generarOrdenDeEntregaForm.ShowDialog();
         }
 
-        private void GenerarDocumentosBtn_Click(object sender, EventArgs e)
+        private void GenerarRemitosBtn_Click(object sender, EventArgs e)
         {
             GenerarRemitosForm generarRemitosForm = new GenerarRemitosForm();
             generarRemitosForm.ShowDialog();
@@ -59,5 +59,7 @@ namespace GrupoF.TP.CAI.Pampazon
             ConfirmarOrdenDeEntregaForm confirmarOrdenDeEntregaForm = new ConfirmarOrdenDeEntregaForm();
             confirmarOrdenDeEntregaForm.ShowDialog();
         }
+
+        
     }
 }
