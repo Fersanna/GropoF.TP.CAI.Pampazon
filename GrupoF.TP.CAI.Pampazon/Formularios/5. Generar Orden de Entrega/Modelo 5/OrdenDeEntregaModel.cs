@@ -122,6 +122,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
             {
                 Fecha = DateTime.Now,
                 EstadoOrdenEntrega = EstadoEntregaEnum.EstadoEntrega.Pendiente,
+                
                 EntregaDetalle = new List<OrdenDeEntregaDetalle>()
 
             };
@@ -132,6 +133,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
                 if (orden != null)
                 {
                     orden.EstadoOrden = Estados.Estado.Preparada;
+                   
+                    nuevaOrdenDeEntregaEnt.CodigoCliente =ordenPreparada.CodigoCliente;
+                    nuevaOrdenDeEntregaEnt.CodigoTransportista = ordenPreparada.CodigoTransportista;
                     nuevaOrdenDeEntregaEnt.EntregaDetalle.Add(new OrdenDeEntregaDetalle
                     {
                         NumeroDeOrden = orden.NumeroDeOrden

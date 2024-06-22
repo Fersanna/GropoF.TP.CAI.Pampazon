@@ -39,11 +39,15 @@ namespace GrupoF.TP.CAI.Pampazon
                 return;
             }
 
-            if (model.OrdenesSeleccionadas
-                     .GroupBy(c => c.CodigoCliente)
-                     .Count() > 2)
+            var codigoCliente = model.OrdenesPreparadas.First().CodigoCliente;
+
+            bool mismoCliente = model.OrdenesPreparadas.All(o => o.CodigoCliente == codigoCliente);
+
+            if (!mismoCliente)
             {
-                MessageBox.Show("Todas las ordenes seleccionadas deben pertenecera a un mismo cliente");
+                MessageBox.Show("Todas las ordenes seleccionadas deben pertenecer a un mismo cliente");
+                return;
+
             }
 
             OrdenDeEntregaForm ordenDeEntregaForm = new OrdenDeEntregaForm();
