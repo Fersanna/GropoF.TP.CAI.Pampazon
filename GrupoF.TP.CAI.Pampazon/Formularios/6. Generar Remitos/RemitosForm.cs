@@ -67,6 +67,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
         private void CargarProductos()
         {
+            
             var ordenesSeleccionada = model.OrdenSeleccionada;
             var numerosDeOrden = ordenesSeleccionada.EntregaDetalle; //ID's de las ordenes de preparación.
 
@@ -94,7 +95,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
                     item.Tag = producto;
                 }
             }
-
+            
             /*
             var ordenesSeleccionada = model.OrdenSeleccionada;
             if (ordenesSeleccionada == null)
