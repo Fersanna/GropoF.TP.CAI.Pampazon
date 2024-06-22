@@ -1,4 +1,5 @@
-﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+﻿using GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos.Clases_Auxiliares_6;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,7 +31,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
             }
             else
             {   
-                model.OrdenSeleccionada = (OrdenDePreparacion) listOrdenesDeEntrega.SelectedItems[0].Tag;
+                model.OrdenSeleccionada = (OrdenDeEntregaPendiente) listOrdenesDeEntrega.SelectedItems[0].Tag;
                 RemitosForm remitosForm = new RemitosForm();
                 remitosForm.model = this.model;
                 remitosForm.ShowDialog();
@@ -52,15 +53,15 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
                 return;
             }
 
-            foreach (OrdenDePreparacion ordenesConfirmadas in model.OrdenesDeEntrega)
+            foreach (OrdenDeEntregaPendiente ordenesConfirmadas in model.OrdenesDeEntrega)
             {
-                if (ordenesConfirmadas.EstadoOrden == Entidades.Estados.Estado.Pendiente)
+                if (ordenesConfirmadas.EstadoOrdenEntrega == Entidades.EstadoEntregaEnum.EstadoEntrega.Pendiente)
                 {
-                    ListViewItem item = new ListViewItem(ordenesConfirmadas.NumeroDeOrden);
+                    ListViewItem item = new ListViewItem(ordenesConfirmadas.IdOrdenDeEntrega);
                     item.SubItems.Add(ordenesConfirmadas.CodigoCliente);
                     item.SubItems.Add(ordenesConfirmadas.Fecha.ToString());
                     item.SubItems.Add(ordenesConfirmadas.CodigoTransportista);
-                    item.SubItems.Add(ordenesConfirmadas.EstadoOrden.ToString());
+                    item.SubItems.Add(ordenesConfirmadas.EstadoOrdenEntrega.ToString());
 
                     listOrdenesDeEntrega.Items.Add(item);
 

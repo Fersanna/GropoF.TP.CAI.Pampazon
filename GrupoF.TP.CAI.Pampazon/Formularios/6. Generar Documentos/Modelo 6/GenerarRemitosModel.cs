@@ -1,5 +1,5 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
-using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos.Clases_Auxiliares_6;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,14 +10,14 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 {
     public class GenerarRemitosModel
     {
-        public OrdenDePreparacion OrdenSeleccionada { get; set; }
-        public List<OrdenDePreparacion> OrdenesDeEntrega { get; set; }
+        public OrdenDeEntregaPendiente OrdenSeleccionada { get; set; }
+        public List<OrdenDeEntregaPendiente> OrdenesDeEntrega { get; set; }
 
         public GenerarRemitosModel()
         {
-            OrdenesDeEntrega = AlmacenOrdenDeEntrega.OrdenDeEntregaEnts.Select(ordenEnt => new OrdenDePreparacion
+            OrdenesDeEntrega = AlmacenOrdenDeEntrega.OrdenDeEntregaEnts.Select(ordenEnt => new OrdenDeEntregaPendiente
             {
-                NumeroDeOrden = ordenEnt.IdOrdenDeEntrega,
+                IdOrdenDeEntrega = ordenEnt.IdOrdenDeEntrega,
                 Fecha = ordenEnt.Fecha,
                // EstadoOrden = ordenEnt.EstadoEntrega,
                //Hay que hacer una nueva clase auxiliar 

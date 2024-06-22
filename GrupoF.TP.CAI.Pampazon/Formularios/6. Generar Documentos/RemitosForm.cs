@@ -45,8 +45,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
         private void RemitosForm_Load(object sender, EventArgs e)
         {
+            /*
             RazonSocialTexBox.Text = model.OrdenSeleccionada.CodigoCliente;
            
+            
             foreach(Productos producto in model.OrdenSeleccionada.ProductosOrden)
             {
                   ListViewItem item = new ListViewItem(producto.IdProducto);
@@ -58,6 +60,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
                     item.Tag = producto;
             }
+            */
         }
     }
 }
