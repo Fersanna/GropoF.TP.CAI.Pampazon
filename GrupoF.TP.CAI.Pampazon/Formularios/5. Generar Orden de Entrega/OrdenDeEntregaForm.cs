@@ -1,4 +1,5 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega.Clases_Auxiliares;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -62,7 +63,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
                 return;
             }
 
-            foreach (OrdenDePreparacion ordenesConfirmadas in model.OrdenesPreparadas)
+            foreach (OrdenDePreparacionSeleccionada ordenesConfirmadas in model.OrdenesPreparadas)
             {
                 if (ordenesConfirmadas.EstadoOrden == Entidades.Estados.Estado.Preparada)
                 {

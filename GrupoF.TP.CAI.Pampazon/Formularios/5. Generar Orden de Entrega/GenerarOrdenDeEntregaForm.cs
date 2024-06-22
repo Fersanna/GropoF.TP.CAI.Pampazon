@@ -1,6 +1,7 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
 using GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección;
 using GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega;
+using GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega.Clases_Auxiliares;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -63,7 +64,7 @@ namespace GrupoF.TP.CAI.Pampazon
         {
             listOrdenesPreparacion.Items.Clear();
 
-            foreach (OrdenDePreparacion ordenes in model.OrdenesSeleccionadas)
+            foreach (OrdenDePreparacionSeleccionada ordenes in model.OrdenesSeleccionadas)
             {
                 ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
                 item.SubItems.Add(ordenes.CodigoCliente);
@@ -83,7 +84,7 @@ namespace GrupoF.TP.CAI.Pampazon
         {
             if (listOrdenesPreparacion.SelectedItems.Count > 0)
             {
-                OrdenDePreparacion ordenSeleccionada = (OrdenDePreparacion)listOrdenesPreparacion.SelectedItems[0].Tag;
+                OrdenDePreparacionSeleccionada ordenSeleccionada = (OrdenDePreparacionSeleccionada)listOrdenesPreparacion.SelectedItems[0].Tag;
 
 
                 var error = model.ValidarOrden(ordenSeleccionada);
@@ -111,7 +112,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
 
 
-        private void ActualizarListaOrdenesFiltradas(List<OrdenDePreparacion> ordenesFiltradas)
+        private void ActualizarListaOrdenesFiltradas(List<OrdenDePreparacionSeleccionada> ordenesFiltradas)
         {
             listOrdenesPreparacion.Items.Clear();
 

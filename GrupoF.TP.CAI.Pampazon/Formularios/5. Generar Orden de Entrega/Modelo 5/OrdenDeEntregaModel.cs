@@ -1,6 +1,7 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
 using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
 using GrupoF.TP.CAI.Pampazon.Entidades;
+using GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega.Clases_Auxiliares;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,9 +23,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         public string NumeroOrden { get; set; }
 
-        public List<OrdenDePreparacion> OrdenesSeleccionadas { get; set; } = new();
+        public List<OrdenDePreparacionSeleccionada> OrdenesSeleccionadas { get; set; } = new();
 
-        public List<OrdenDePreparacion> OrdenesPreparadas { get; set; } = new();
+        public List<OrdenDePreparacionSeleccionada> OrdenesPreparadas { get; set; } = new();
 
 
         public OrdenDeEntregaModel()
@@ -33,7 +34,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
             if (OrdenesSeleccionadas != null)
             {
-                OrdenesSeleccionadas = ordenes.Select(ordenEnt => new OrdenDePreparacion
+                OrdenesSeleccionadas = ordenes.Select(ordenEnt => new OrdenDePreparacionSeleccionada
                 {
                     NumeroDeOrden = ordenEnt.NumeroDeOrden,
                     Fecha = ordenEnt.Fecha,
@@ -49,7 +50,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
             }
         }
 
-        internal List<OrdenDePreparacion> FiltrarOrdenes()
+        internal List<OrdenDePreparacionSeleccionada> FiltrarOrdenes()
         {
             var OrdenesFiltradas = OrdenesSeleccionadas.Where
                    (p => p.Fecha >= FechaDesde && p.Fecha <= FechaHasta &&
@@ -91,7 +92,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
             return null;
         }
 
-        internal string ValidarOrden(OrdenDePreparacion ordenSeleccionada)
+        internal string ValidarOrden(OrdenDePreparacionSeleccionada ordenSeleccionada)
         {   // Arreglar esto para cuando se null
             if (ordenSeleccionada.EstadoOrden == Estados.Estado.Preparada)
             {
@@ -109,14 +110,14 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         }
 
-        private void RevertirEstadoOrden(OrdenDePreparacion ordenSeleccionada)
+        private void RevertirEstadoOrden(OrdenDePreparacionSeleccionada ordenSeleccionada)
         {
             ordenSeleccionada.EstadoOrden = Estados.Estado.Seleccionada;
             OrdenesSeleccionadas.Add(ordenSeleccionada);
             OrdenesPreparadas.Remove(ordenSeleccionada);
         }
 
-        internal void RegistrarOrden(List<OrdenDePreparacion> ordenesPreparadas)
+        internal void RegistrarOrden(List<OrdenDePreparacionSeleccionada> ordenesPreparadas)
         {
             var nuevaOrdenDeEntregaEnt = new OrdenDeEntregaEnt
             {
