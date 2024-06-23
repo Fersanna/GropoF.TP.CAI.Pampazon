@@ -53,6 +53,7 @@
             ProductosList.FullRowSelect = true;
             ProductosList.GridLines = true;
             ProductosList.Location = new Point(59, 45);
+            ProductosList.MultiSelect = false;
             ProductosList.Name = "ProductosList";
             ProductosList.Size = new Size(555, 169);
             ProductosList.TabIndex = 0;
