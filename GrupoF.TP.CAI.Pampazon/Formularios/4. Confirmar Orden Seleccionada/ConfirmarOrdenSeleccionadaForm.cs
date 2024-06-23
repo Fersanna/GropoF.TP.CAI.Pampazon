@@ -52,7 +52,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
         {
             if (listOrdenesEnSeleccion.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Debe seleccionar una orden.");
+                MessageBox.Show("Debe seleccionar al menos una orden.");
                 return;
             }
             else
@@ -63,11 +63,11 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 model.CambiarEstadoEnOrden(ordenDePreparacion);
 
 
-                DialogResult result = MessageBox.Show("¿Está seguro de que la orden seleccionada han sido recibida?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("¿Está seguro de que las ordenes seleccionadas han sido recibidas?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("La orden se ha actualizado a estado Seleccionada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Las ordenes se han actualizado a estado Seleccionada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
                
