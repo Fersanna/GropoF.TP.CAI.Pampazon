@@ -58,9 +58,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                 .Where(p =>
                     (FechaDesde == DateTime.MinValue || p.Fecha >= FechaDesde) &&
                     (FechaHasta == DateTime.MinValue || p.Fecha <= FechaHasta) &&
-                    (string.IsNullOrEmpty(Cliente) || p.CodigoCliente.Contains(Cliente, StringComparison.OrdinalIgnoreCase)) &&
-                    (string.IsNullOrEmpty(Transportista) || p.CodigoTransportista.Contains(Transportista, StringComparison.OrdinalIgnoreCase)) &&
-                    (string.IsNullOrEmpty(NumeroOrden) || p.NumeroDeOrden.Contains(NumeroOrden, StringComparison.OrdinalIgnoreCase)) &&
+                    (string.IsNullOrEmpty(Cliente) || p.CodigoCliente.Equals(Cliente, StringComparison.OrdinalIgnoreCase)) &&
+                    (string.IsNullOrEmpty(Transportista) || p.CodigoTransportista.Equals(Transportista, StringComparison.OrdinalIgnoreCase)) &&
+                    (string.IsNullOrEmpty(NumeroOrden) || p.NumeroDeOrden.Equals(NumeroOrden, StringComparison.OrdinalIgnoreCase)) &&
                     (string.IsNullOrEmpty(Prioridad) || Enum.TryParse<Prioridad>(Prioridad, true, out var prioridad) && p.Prioridad == prioridad))
                 .ToList();
 
@@ -75,29 +75,6 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         internal string ValidarFiltro()
         {
-            /*
-            
-            if (string.IsNullOrWhiteSpace(Cliente))
-            {
-                return "El nombre del cliente no puede estar vacío.";
-            }
-            if (Cliente.Length > 30)
-            {
-                return "El nombre del cliente no puede tener más de 30 caracteres.";
-            }
-
-
-            if (string.IsNullOrWhiteSpace(Transportista))
-            {
-                return "El nombre del Transportista no puede estar vacío.";
-            }
-
-            if (string.IsNullOrWhiteSpace(NumeroOrden))
-            {
-                return "El numero de orden no puede estar vacío.";
-            }
-
-            */
             return null;
         }
 
