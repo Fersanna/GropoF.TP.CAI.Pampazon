@@ -30,6 +30,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
         private void ImprimirBtn_Click(object sender, EventArgs e)
         {
+            var dialogResult = MessageBox.Show("¿Desea generar un remito?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             //Cambiar estado de la orden y Guardar el remito generado en Json.
             model.CambiarEstadoOrdenSeleccionada();
@@ -79,7 +80,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
         private void CargarProductos()
         {
-
+            /* ANDRES
             var ordenesSeleccionada = model.OrdenSeleccionada;
             var numerosDeOrden = ordenesSeleccionada.EntregaDetalle; //ID's de las ordenes de preparación.
 
@@ -153,9 +154,11 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
         throw new ApplicationException($"La orden de selección {ordenesSeleccionada.IdOrdenDeEntrega} no tiene órdenes de preparación asociadas.");
     }
 
-    // Pre-cargar los productos en un diccionario para evitar múltiples consultas a la base de datos
-    var idsProductos = ordenesDePreparacion.SelectMany(o => o.Detalle.Select(d => d.IdProducto)).Distinct();
-    var productos = AlmacenProductos.Productos.Where(p => idsProductos.Contains(p.IdProducto)).ToDictionary(p => p.IdProducto);
+            // Pre-cargar los productos en un diccionario para evitar múltiples consultas a la base de datos
+            var idsProductos = ordenesDePreparacion.SelectMany(o => o.Detalle.Select(d => d.IdProducto)).Distinct();
+            var productos = AlmacenProductos.Productos
+                                            .Where(p => idsProductos.Contains(p.IdProducto))
+                                            .ToDictionary(p => p.IdProducto);
 
     // Diccionario para agrupar y sumar las cantidades de productos
     var productosAgrupados = new Dictionary<string, (string Descripcion, int Cantidad)>();
@@ -186,22 +189,17 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
         }
     }
 
-    // Agregar los productos agrupados a la lista visual
-    foreach (var productoAgrupado in productosAgrupados)
-    {
-        ListViewItem item = new ListViewItem(new[] {
-    productoAgrupado.Key,  // Asumiendo que Key es del tipo string
-    productoAgrupado.Value.Descripcion,
-    productoAgrupado.Value.Cantidad.ToString()
-});
-        item.Tag = productos[productoAgrupado.Key];
-        ProductosList.Items.Add(item);
+            // Agregar los productos agrupados a la lista visual
+            foreach (var productoAgrupado in productosAgrupados)
+            {
+                ListViewItem item = new ListViewItem(new[] {
+            productoAgrupado.Key,  // Asumiendo que Key es del tipo string
+            productoAgrupado.Value.Descripcion,
+            productoAgrupado.Value.Cantidad.ToString()
+        });
+                item.Tag = productos[productoAgrupado.Key];
+                ProductosList.Items.Add(item);
+            }
+        }
     }
-    */
 }
-
-
-
-
-
-

@@ -58,9 +58,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                 .Where(p =>
                     (FechaDesde == DateTime.MinValue || p.Fecha >= FechaDesde) &&
                     (FechaHasta == DateTime.MinValue || p.Fecha <= FechaHasta) &&
-                    (string.IsNullOrEmpty(Cliente) || p.CodigoCliente.Contains(Cliente, StringComparison.OrdinalIgnoreCase)) &&
-                    (string.IsNullOrEmpty(Transportista) || p.CodigoTransportista.Contains(Transportista, StringComparison.OrdinalIgnoreCase)) &&
-                    (string.IsNullOrEmpty(NumeroOrden) || p.NumeroDeOrden.Contains(NumeroOrden, StringComparison.OrdinalIgnoreCase)) &&
+                    (string.IsNullOrEmpty(Cliente) || p.CodigoCliente.Equals(Cliente, StringComparison.OrdinalIgnoreCase)) &&
+                    (string.IsNullOrEmpty(Transportista) || p.CodigoTransportista.Equals(Transportista, StringComparison.OrdinalIgnoreCase)) &&
+                    (string.IsNullOrEmpty(NumeroOrden) || p.NumeroDeOrden.Equals(NumeroOrden, StringComparison.OrdinalIgnoreCase)) &&
                     (string.IsNullOrEmpty(Prioridad) || Enum.TryParse<Prioridad>(Prioridad, true, out var prioridad) && p.Prioridad == prioridad))
                 .ToList();
 
@@ -75,29 +75,26 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         internal string ValidarFiltro()
         {
-            /*
-            
-            if (string.IsNullOrWhiteSpace(Cliente))
+            // Validar Prioridad
+            if (!string.IsNullOrEmpty(Prioridad) && !Prioridad.Equals("1", StringComparison.OrdinalIgnoreCase) &&
+                !Prioridad.Equals("2", StringComparison.OrdinalIgnoreCase) &&
+                !Prioridad.Equals("3", StringComparison.OrdinalIgnoreCase))
             {
-                return "El nombre del cliente no puede estar vacío.";
-            }
-            if (Cliente.Length > 30)
-            {
-                return "El nombre del cliente no puede tener más de 30 caracteres.";
+                return "Ingrese un valor válido para la Prioridad (1, 2 o 3).";
             }
 
-
-            if (string.IsNullOrWhiteSpace(Transportista))
+            // Validar Rango de fecha
+            if (FechaDesde > FechaHasta)
             {
-                return "El nombre del Transportista no puede estar vacío.";
+                return "La fecha Desde no puede ser mayor que la fecha Hasta.";
             }
 
-            if (string.IsNullOrWhiteSpace(NumeroOrden))
+            // Validar Número de Orden numérico
+            if (!string.IsNullOrEmpty(NumeroOrden) && !int.TryParse(NumeroOrden, out _))
             {
-                return "El numero de orden no puede estar vacío.";
+                return "El número de orden debe ser un valor numérico.";
             }
 
-            */
             return null;
         }
 
@@ -105,13 +102,17 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
         {   // Arreglar esto para cuando se null
             if (ordenSeleccionada.EstadoOrden == Estados.Estado.Seleccion)
             {
+                RevertirEstadoOrden(ordenSeleccionada);
+                return "Orden revertida a pendiente.";
+
+                /*
                 DialogResult result = MessageBox.Show("Esta orden ya fue seleccionada. ¿Desea quitarla de la selección?", "Confirmación", MessageBoxButtons.OKCancel);
 
                 if (result == DialogResult.OK)
                 {
-                    RevertirEstadoOrden(ordenSeleccionada);
-                    return "Orden revertida a pendiente.";
+                    
                 }
+                */
             }
 
 

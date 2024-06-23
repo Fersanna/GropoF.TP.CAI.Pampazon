@@ -29,18 +29,13 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
             if (ordenesSeleccionadas.Any())
             {
-                var dialogResult = MessageBox.Show("¿Confirma las órdenes seleccionadas?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var dialogResult = MessageBox.Show("¿Desea generar una orden de selección con las ordenes elegidas?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (dialogResult == DialogResult.Yes)
                 {
                     model.RegistrarOrden(ordenesSeleccionadas);
-                    MessageBox.Show("Órdenes seleccionadas y confirmadas.");
                     ListOrdenesSeleccionConfirmadas.Items.Clear();
                     this.Close();
-                }
-                else if (dialogResult == DialogResult.No)
-                {
-                    MessageBox.Show("Operación cancelada.");
                 }
             }
             else

@@ -236,6 +236,13 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                 // Obtiene la fila seleccionada
                 DataGridViewRow selectedRow = EditarOrden_GridView.SelectedRows[0];
 
+                // Verificar si la fila seleccionada es nueva y sin confirmar
+                if (selectedRow.IsNewRow)
+                {
+                    MessageBox.Show("No se puede quitar una fila sin información.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
                 // Elimina la fila seleccionada del DataGridView
                 EditarOrden_GridView.Rows.Remove(selectedRow);
 
@@ -248,16 +255,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios
                     {
                         MessageBox.Show(error, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-
-                    /*
-                    else
-                    {
-                        MessageBox.Show("El producto ha sido eliminado");
-                    }
-                    */
                 }
-
-
             }
             else
             {

@@ -1,4 +1,5 @@
-﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
+using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
 using GrupoF.TP.CAI.Pampazon.Entidades;
 using GrupoF.TP.CAI.Pampazon.Modelos;
 using System;
@@ -46,7 +47,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
             TranspBox.Text ="";
             model.ClienteOrden.Fecha = FechaPicker.Value;
             model.ClienteOrden.EstadoOrden = Estados.Estado.Pendiente;
-            IdTextBox.Text = model.ClienteOrden.NumeroDeOrden;
+
+            // Calcular el próximo número de orden disponible
+            int proximoNumeroOrden = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts.Count + 1;
+            IdTextBox.Text = proximoNumeroOrden.ToString();
 
 
             // Obtiene los valores del enum como un array de int
@@ -70,7 +74,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
                 item.Tag = productos;
             }
 
-            FechaPicker.Value = DateTime.Now;
+            DateTime fechaAyer = DateTime.Today.AddDays(-1);
+            FechaPicker.Value = fechaAyer;
         }
 
         private void ClienteNombreTextBox_TextChanged(object sender, EventArgs e)
@@ -92,7 +97,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
             DateTime fechaActual = DateTime.Now.Date;
 
             // Comparar la fecha seleccionada con la fecha actual
-            if (fechaSeleccionada <= fechaActual)
+            if (fechaSeleccionada < fechaActual)
             {
                 MessageBox.Show("Fecha inválida.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -133,13 +138,20 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
                 model.ClienteOrden = nuevaOrden;
             }
 
-            model.GenerarNuevaOrdenDePreparacion();
 
+            // Mostrar el mensaje de confirmación
+            DialogResult result = MessageBox.Show("¿Desea registrar la orden de preparación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            // Cerrar el formulario o limpiar los campos si es necesario
-            this.Close();
-            FormularioGenerarOrden.CerrarGenerarOrdenDePreparacionForm();
-            BuscarClienteForm.CerrarClientes();
+            if (result == DialogResult.Yes)
+            {
+                // Generar la nueva orden de preparación si se acepta la confirmación
+                model.GenerarNuevaOrdenDePreparacion();
+
+                // Cerrar el formulario o limpiar los campos si es necesario
+                this.Close();
+                FormularioGenerarOrden.CerrarGenerarOrdenDePreparacionForm();
+                BuscarClienteForm.CerrarClientes();
+            }
 
         }
     }

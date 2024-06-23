@@ -19,168 +19,6 @@
   },
   {
     "NumeroDeOrden": "2",
-    "Fecha": "2024-07-11",
-    "CodigoCliente": "CL002",
-    "CodigoTransportista": "Otro",
-    "Prioridad": 3,
-    "EstadoOrden": 0,
-    "Detalle": [
-      {
-        "IdProducto": "PRD003",
-        "Cantidad": 150
-      },
-      {
-        "IdProducto": "PRD004",
-        "Cantidad": 100
-      }
-    ]
-  },
-  {
-    "NumeroDeOrden": "3",
-    "Fecha": "2024-07-12",
-    "CodigoCliente": "CL003",
-    "CodigoTransportista": "El molino SA",
-    "Prioridad": 2,
-    "EstadoOrden": 1,
-    "Detalle": [
-      {
-        "IdProducto": "PRD005",
-        "Cantidad": 75
-      },
-      {
-        "IdProducto": "PRD006",
-        "Cantidad": 20
-      }
-    ]
-  },
-  {
-    "NumeroDeOrden": "4",
-    "Fecha": "2024-07-13",
-    "CodigoCliente": "CL004",
-    "CodigoTransportista": "Transportes Juan",
-    "Prioridad": 1,
-    "EstadoOrden": 1,
-    "Detalle": [
-      {
-        "IdProducto": "PRD007",
-        "Cantidad": 50
-      },
-      {
-        "IdProducto": "PRD008",
-        "Cantidad": 75
-      }
-    ]
-  },
-  {
-    "NumeroDeOrden": "5",
-    "Fecha": "2024-07-14",
-    "CodigoCliente": "CL005",
-    "CodigoTransportista": "Logística SA",
-    "Prioridad": 2,
-    "EstadoOrden": 2,
-    "Detalle": [
-      {
-        "IdProducto": "PRD009",
-        "Cantidad": 50
-      },
-      {
-        "IdProducto": "PRD010",
-        "Cantidad": 300
-      }
-    ]
-  },
-  {
-    "NumeroDeOrden": "6",
-    "Fecha": "2024-07-15",
-    "CodigoCliente": "CL006",
-    "CodigoTransportista": "Rapidex",
-    "Prioridad": 3,
-    "EstadoOrden": 2,
-    "Detalle": [
-      {
-        "IdProducto": "PRD011",
-        "Cantidad": 400
-      },
-      {
-        "IdProducto": "PRD012",
-        "Cantidad": 300
-      }
-    ]
-  },
-  {
-    "NumeroDeOrden": "7",
-    "Fecha": "2024-07-16",
-    "CodigoCliente": "CL007",
-    "CodigoTransportista": "Distribuidora Norte",
-    "Prioridad": 1,
-    "EstadoOrden": 3,
-    "Detalle": [
-      {
-        "IdProducto": "PRD013",
-        "Cantidad": 500
-      },
-      {
-        "IdProducto": "PRD014",
-        "Cantidad": 200
-      }
-    ]
-  },
-  {
-    "NumeroDeOrden": "8",
-    "Fecha": "2024-07-17",
-    "CodigoCliente": "CL008",
-    "CodigoTransportista": "Transporte del Sur",
-    "Prioridad": 3,
-    "EstadoOrden": 3,
-    "Detalle": [
-      {
-        "IdProducto": "PRD015",
-        "Cantidad": 100
-      },
-      {
-        "IdProducto": "PRD016",
-        "Cantidad": 50
-      }
-    ]
-  },
-  {
-    "NumeroDeOrden": "9",
-    "Fecha": "2024-07-18",
-    "CodigoCliente": "CL009",
-    "CodigoTransportista": "Carga S.A.",
-    "Prioridad": 2,
-    "EstadoOrden": 4,
-    "Detalle": [
-      {
-        "IdProducto": "PRD017",
-        "Cantidad": 250
-      },
-      {
-        "IdProducto": "PRD018",
-        "Cantidad": 250
-      }
-    ]
-  },
-  {
-    "NumeroDeOrden": "10",
-    "Fecha": "2024-07-19",
-    "CodigoCliente": "CL010",
-    "CodigoTransportista": "Express Transport",
-    "Prioridad": 1,
-    "EstadoOrden": 4,
-    "Detalle": [
-      {
-        "IdProducto": "PRD019",
-        "Cantidad": 20
-      },
-      {
-        "IdProducto": "PRD020",
-        "Cantidad": 15
-      }
-    ]
-  },
-  {
-    "NumeroDeOrden": "11",
     "Fecha": "2024-07-10",
     "CodigoCliente": "CL001",
     "CodigoTransportista": "El viajero",
@@ -198,7 +36,25 @@
     ]
   },
   {
-    "NumeroDeOrden": "12",
+    "NumeroDeOrden": "3",
+    "Fecha": "2024-07-11",
+    "CodigoCliente": "CL002",
+    "CodigoTransportista": "Otro",
+    "Prioridad": 3,
+    "EstadoOrden": 0,
+    "Detalle": [
+      {
+        "IdProducto": "PRD003",
+        "Cantidad": 150
+      },
+      {
+        "IdProducto": "PRD004",
+        "Cantidad": 100
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "4",
     "Fecha": "2024-07-11",
     "CodigoCliente": "CL002",
     "CodigoTransportista": "Otro",
@@ -216,7 +72,25 @@
     ]
   },
   {
-    "NumeroDeOrden": "13",
+    "NumeroDeOrden": "5",
+    "Fecha": "2024-07-12",
+    "CodigoCliente": "CL003",
+    "CodigoTransportista": "El molino SA",
+    "Prioridad": 2,
+    "EstadoOrden": 1,
+    "Detalle": [
+      {
+        "IdProducto": "PRD005",
+        "Cantidad": 75
+      },
+      {
+        "IdProducto": "PRD006",
+        "Cantidad": 20
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "6",
     "Fecha": "2024-07-12",
     "CodigoCliente": "CL003",
     "CodigoTransportista": "El molino SA",
@@ -234,7 +108,7 @@
     ]
   },
   {
-    "NumeroDeOrden": "14",
+    "NumeroDeOrden": "7",
     "Fecha": "2024-07-13",
     "CodigoCliente": "CL004",
     "CodigoTransportista": "Transportes Juan",
@@ -252,7 +126,43 @@
     ]
   },
   {
-    "NumeroDeOrden": "15",
+    "NumeroDeOrden": "8",
+    "Fecha": "2024-07-13",
+    "CodigoCliente": "CL004",
+    "CodigoTransportista": "Transportes Juan",
+    "Prioridad": 1,
+    "EstadoOrden": 1,
+    "Detalle": [
+      {
+        "IdProducto": "PRD007",
+        "Cantidad": 50
+      },
+      {
+        "IdProducto": "PRD008",
+        "Cantidad": 75
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "9",
+    "Fecha": "2024-07-14",
+    "CodigoCliente": "CL005",
+    "CodigoTransportista": "Logística SA",
+    "Prioridad": 2,
+    "EstadoOrden": 2,
+    "Detalle": [
+      {
+        "IdProducto": "PRD009",
+        "Cantidad": 50
+      },
+      {
+        "IdProducto": "PRD010",
+        "Cantidad": 300
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "10",
     "Fecha": "2024-07-14",
     "CodigoCliente": "CL005",
     "CodigoTransportista": "Logística SA",
@@ -270,7 +180,25 @@
     ]
   },
   {
-    "NumeroDeOrden": "16",
+    "NumeroDeOrden": "11",
+    "Fecha": "2024-07-15",
+    "CodigoCliente": "CL006",
+    "CodigoTransportista": "Rapidex",
+    "Prioridad": 3,
+    "EstadoOrden": 2,
+    "Detalle": [
+      {
+        "IdProducto": "PRD011",
+        "Cantidad": 400
+      },
+      {
+        "IdProducto": "PRD012",
+        "Cantidad": 300
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "12",
     "Fecha": "2024-07-15",
     "CodigoCliente": "CL006",
     "CodigoTransportista": "Rapidex",
@@ -288,7 +216,25 @@
     ]
   },
   {
-    "NumeroDeOrden": "17",
+    "NumeroDeOrden": "13",
+    "Fecha": "2024-07-16",
+    "CodigoCliente": "CL007",
+    "CodigoTransportista": "Distribuidora Norte",
+    "Prioridad": 1,
+    "EstadoOrden": 3,
+    "Detalle": [
+      {
+        "IdProducto": "PRD013",
+        "Cantidad": 500
+      },
+      {
+        "IdProducto": "PRD014",
+        "Cantidad": 200
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "14",
     "Fecha": "2024-07-16",
     "CodigoCliente": "CL007",
     "CodigoTransportista": "Distribuidora Norte",
@@ -306,7 +252,25 @@
     ]
   },
   {
-    "NumeroDeOrden": "18",
+    "NumeroDeOrden": "15",
+    "Fecha": "2024-07-17",
+    "CodigoCliente": "CL008",
+    "CodigoTransportista": "Transporte del Sur",
+    "Prioridad": 3,
+    "EstadoOrden": 3,
+    "Detalle": [
+      {
+        "IdProducto": "PRD015",
+        "Cantidad": 100
+      },
+      {
+        "IdProducto": "PRD016",
+        "Cantidad": 50
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "16",
     "Fecha": "2024-07-17",
     "CodigoCliente": "CL008",
     "CodigoTransportista": "Transportes del Sur",
@@ -324,7 +288,25 @@
     ]
   },
   {
-    "NumeroDeOrden": "19",
+    "NumeroDeOrden": "17",
+    "Fecha": "2024-07-18",
+    "CodigoCliente": "CL009",
+    "CodigoTransportista": "Carga S.A.",
+    "Prioridad": 2,
+    "EstadoOrden": 4,
+    "Detalle": [
+      {
+        "IdProducto": "PRD017",
+        "Cantidad": 250
+      },
+      {
+        "IdProducto": "PRD018",
+        "Cantidad": 250
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "18",
     "Fecha": "2024-07-18",
     "CodigoCliente": "CL009",
     "CodigoTransportista": "Carga S.A.",
@@ -338,6 +320,24 @@
       {
         "IdProducto": "PRD018",
         "Cantidad": 300
+      }
+    ]
+  },
+  {
+    "NumeroDeOrden": "19",
+    "Fecha": "2024-07-19",
+    "CodigoCliente": "CL010",
+    "CodigoTransportista": "Express Transport",
+    "Prioridad": 1,
+    "EstadoOrden": 4,
+    "Detalle": [
+      {
+        "IdProducto": "PRD019",
+        "Cantidad": 20
+      },
+      {
+        "IdProducto": "PRD020",
+        "Cantidad": 15
       }
     ]
   },

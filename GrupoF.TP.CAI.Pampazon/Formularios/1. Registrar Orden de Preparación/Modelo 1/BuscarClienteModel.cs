@@ -143,11 +143,8 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
                 }
             }
 
-            // Convertir y guardar la nueva orden de preparación
             var ordenDePreparacionEnt = ConvertirOrden(ClienteOrden);
             AlmacenOrdenesDePreparacion.AgregarOrden(ordenDePreparacionEnt);
-
-            // Mensaje de confirmación
             MessageBox.Show("La orden fue generada con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 

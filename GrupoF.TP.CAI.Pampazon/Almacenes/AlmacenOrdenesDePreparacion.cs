@@ -65,13 +65,12 @@
                 var ultimaOrden = OrdenDePreparacionEnts.LastOrDefault();
                 if (ultimaOrden != null)
                 {
-                    /*
                     MessageBox.Show($"La orden grabada en la lista es la número: {ultimaOrden.NumeroDeOrden}\n" +
                                     $"Código Cliente: {ultimaOrden.CodigoCliente}\n" +
-                                    $"Fecha: {ultimaOrden.Fecha}\n" +
+                                    $"Fecha: {ultimaOrden.Fecha.ToString("dd/MM/yyyy")}\n" +
                                     $"Transportista: {ultimaOrden.CodigoTransportista}\n" +
+                                    $"Prioridad: {(int)ultimaOrden.Prioridad}\n" +
                                     $"Estado: {ultimaOrden.EstadoOrden}");
-                    */
                 }
                 Grabar();
             }

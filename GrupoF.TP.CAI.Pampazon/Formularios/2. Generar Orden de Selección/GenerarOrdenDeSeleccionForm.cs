@@ -31,6 +31,7 @@ namespace GrupoF.TP.CAI.Pampazon
             CargarOrdenesDePreparacion();
 
             DesdeTimePicker.Value = DateTime.Now;
+
         }
 
         private void CancelarBtn_Click(object sender, EventArgs e)
@@ -118,7 +119,7 @@ namespace GrupoF.TP.CAI.Pampazon
                     model.OrdenDePreparacionSeleccionadas.Add(ordenSeleccionada);
                 }
             }
-            MessageBox.Show("La orden fue seleccionada");
+            MessageBox.Show("La orden fue seleccionada.");
 
 
         }
@@ -144,7 +145,6 @@ namespace GrupoF.TP.CAI.Pampazon
 
             if (ordenesFiltradas == null)
             {
-                // Aquí ya no deberías tener el MessageBox, porque el modelo se encarga de eso
                 return;
             }
 

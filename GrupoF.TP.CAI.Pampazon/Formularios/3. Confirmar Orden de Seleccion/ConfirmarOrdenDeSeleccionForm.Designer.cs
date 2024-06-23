@@ -62,6 +62,7 @@
             listOrdenesDeSeleccion.FullRowSelect = true;
             listOrdenesDeSeleccion.GridLines = true;
             listOrdenesDeSeleccion.Location = new Point(66, 44);
+            listOrdenesDeSeleccion.MultiSelect = false;
             listOrdenesDeSeleccion.Name = "listOrdenesDeSeleccion";
             listOrdenesDeSeleccion.Size = new Size(504, 256);
             listOrdenesDeSeleccion.TabIndex = 6;

@@ -110,8 +110,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
             AlmacenRemitos.RemitosEnt.Add(remito); 
             AlmacenRemitos.Grabar();
             
-            MessageBox.Show($"Remito guardado con éxito. ID del Remito: {remito.IdRemito}");
-          
+            MessageBox.Show($"Remito guardado con ID: {remito.IdRemito}");
 
         }
     }

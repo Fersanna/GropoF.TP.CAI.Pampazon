@@ -1,4 +1,5 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Entidades;
+using GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición.Clases_Auxiliares;
 using Newtonsoft.Json;
 
 namespace GrupoF.TP.CAI.Pampazon.Almacenes
@@ -43,7 +44,7 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
             {
                 var contenidoJson = JsonConvert.SerializeObject(OrdenesDeSeleccionEnt, Formatting.Indented);
                 File.WriteAllText(@"Json\OrdenesDeSeleccion.json", contenidoJson);
-                MessageBox.Show("Órdenes guardadas correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("La orden de selección fue generada con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
@@ -60,6 +61,15 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
             OrdenesDeSeleccionEnt.Add(ordenEnt);
             MessageBox.Show($"El número de orden guardada: {ordenEnt.IdOrdenDeSeleccion}");
             Grabar();
+        }
+
+        public static void CambiarEstadoOrdenSeleecion (OrdenDeSeleccionPendiente ordenDeSeleccionPendiente )
+        {
+            if (ordenDeSeleccionPendiente.EstadoOrdenSeleccion == EstadoSeleccionEnum.EstadoSeleccion.Pendiente)
+            {
+                ordenDeSeleccionPendiente.EstadoOrdenSeleccion = EstadoSeleccionEnum.EstadoSeleccion.Cumplida;
+            }
+
         }
     }
 }

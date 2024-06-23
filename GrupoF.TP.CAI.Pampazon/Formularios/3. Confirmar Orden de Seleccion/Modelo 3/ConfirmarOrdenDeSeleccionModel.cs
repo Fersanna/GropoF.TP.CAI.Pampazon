@@ -1,4 +1,6 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
+using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Entidades;
 using GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición.Clases_Auxiliares;
 using System;
 using System.Collections.Generic;
@@ -22,11 +24,11 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
             {
                 OrdenesSeleccionPendientes = ordenesDeSeleccion
                                                 .Select(ordenEnt => new OrdenDeSeleccionPendiente
-                                                                      {
-                                                                          IdOrdenDeSeleccion = ordenEnt.IdOrdenDeSeleccion,
-                                                                          EstadoOrdenSeleccion = ordenEnt.EstadoOrdenSeleccion,
-                                                                          SeleccionDetalle = ordenEnt.SeleccionDetalle.Select(d => d.NumeroDeOrden).ToList()
-                                                                      })
+                                                {
+                                                    IdOrdenDeSeleccion = ordenEnt.IdOrdenDeSeleccion,
+                                                    EstadoOrdenSeleccion = ordenEnt.EstadoOrdenSeleccion,
+                                                    SeleccionDetalle = ordenEnt.SeleccionDetalle.Select(d => d.NumeroDeOrden).ToList()
+                                                })
                                                 .ToList();
             }
             else
@@ -36,37 +38,46 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
         }
 
         internal string Confirmar()
-        {
-           /* //TODO: verificar que haya stock? 
-            foreach (var detalle in OrdenDeSeleccionElegida.SeleccionDetalle)
-            {
-                var producto = AlmacenProductos.Productos.FirstOrDefault(p => p.IdProducto == detalle.NumeroDeOrden);
+        { 
+           
+            
+            //TODO: verificar que haya stock? 
+            /* foreach (var detalle in OrdenDeSeleccionElegida.SeleccionDetalle)
+             {
 
-                if (producto == null || producto.Stock <= 0)
-                {
-                    return $"No hay suficiente stock para el producto {detalle.NumeroDeOrden}.";
-                }
-            }
-            //TODO: bajar el stock
-            foreach (var detalle in OrdenDeSeleccionElegida.SeleccionDetalle)
-            {
-                var producto = AlmacenProductos.Productos.FirstOrDefault(p => p.IdProducto == detalle.NumeroDeOrden);
 
-                if (producto != null)
-                {
-                    producto.Stock -= 1;  // Asumimos que se descuenta una unidad por cada selección
-                }
-            }
+                 var producto = AlmacenProductos.Productos.FirstOrDefault(p => p.IdProducto == detalle.NumeroDeOrden);
+
+                 if (producto == null || producto.Stock <= 0)
+                 {
+                     return $"No hay suficiente stock para el producto {detalle.NumeroDeOrden}.";
+                 }
+
+             }
+             //TODO: bajar el stock
+             foreach (var detalle in OrdenDeSeleccionElegida.SeleccionDetalle)
+             {
+                 var producto = AlmacenProductos.Productos.FirstOrDefault(p => p.IdProducto == );
+
+                 if (producto != null)
+                 {
+                     producto.Stock -= detalle.Cantidad;
+                 }
+             }*/
             //TODO: Recargar la lista OrdenesSeleccionPendientes.
-            AlmacenProductos.Grabar();*/
+            AlmacenOrdenDeSeleccion.CambiarEstadoOrdenSeleecion(OrdenDeSeleccionElegida);
+            AlmacenProductos.Grabar();
+            MessageBox.Show("Orden de Seleecion cumplida");
 
 
+                OrdenDeSeleccionElegida = null;
+                //si hay algun error string con mensaje para el usuario, si no devolver null
+                return null;
 
-            OrdenDeSeleccionElegida = null;
-            //si hay algun error string con mensaje para el usuario, si no devolver null
-            return null;
+            
         }
     }
 }
+
 
 

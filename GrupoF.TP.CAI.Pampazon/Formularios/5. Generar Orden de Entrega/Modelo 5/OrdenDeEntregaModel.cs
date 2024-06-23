@@ -1,11 +1,13 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
 using GrupoF.TP.CAI.Pampazon.Entidades;
+using GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección.Clases_auxiliares;
 using GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega.Clases_Auxiliares;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static GrupoF.TP.CAI.Pampazon.Entidades.Prioridades;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 {
@@ -21,6 +23,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
         public string Transportista { get; set; }
 
         public string NumeroOrden { get; set; }
+
+        public string Prioridad { get; set; }
 
         public List<OrdenDePreparacionSeleccionada> OrdenesSeleccionadas { get; set; } = new();
 
@@ -51,16 +55,21 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         internal List<OrdenDePreparacionSeleccionada> FiltrarOrdenes()
         {
-            var OrdenesFiltradas = OrdenesSeleccionadas.Where
-                   (p => p.Fecha >= FechaDesde && p.Fecha <= FechaHasta &&
-                    (string.IsNullOrEmpty(Cliente) || p.CodigoCliente.Contains(Cliente, StringComparison.OrdinalIgnoreCase) || p.CodigoTransportista.Contains(Transportista, StringComparison.OrdinalIgnoreCase) || p.NumeroDeOrden.Contains(NumeroOrden, StringComparison.OrdinalIgnoreCase)))
-                 .ToList();
+            var OrdenesFiltradas = OrdenesSeleccionadas
+                .Where(p =>
+                    (FechaDesde == DateTime.MinValue || p.Fecha >= FechaDesde) &&
+                    (FechaHasta == DateTime.MinValue || p.Fecha <= FechaHasta) &&
+                    (string.IsNullOrEmpty(Cliente) || p.CodigoCliente.Equals(Cliente, StringComparison.OrdinalIgnoreCase)) &&
+                    (string.IsNullOrEmpty(Transportista) || p.CodigoTransportista.Equals(Transportista, StringComparison.OrdinalIgnoreCase)) &&
+                    (string.IsNullOrEmpty(NumeroOrden) || p.NumeroDeOrden.Equals(NumeroOrden, StringComparison.OrdinalIgnoreCase)) &&
+                    (string.IsNullOrEmpty(Prioridad) || Enum.TryParse<Prioridad>(Prioridad, true, out var prioridad) && p.Prioridad == prioridad))
+                .ToList();
+
             if (!OrdenesFiltradas.Any())
             {
-                MessageBox.Show("No existen Ordenes con esas carcartesticas para el rango de fecha indicado");
+                MessageBox.Show("No existen órdenes con las características indicadas.");
                 return null;
             }
-
 
             return OrdenesFiltradas;
         }
@@ -68,24 +77,24 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         internal string ValidarFiltro()
         {
-            if (string.IsNullOrWhiteSpace(Cliente))
+            // Validar Prioridad
+            if (!string.IsNullOrEmpty(Prioridad) && !Prioridad.Equals("1", StringComparison.OrdinalIgnoreCase) &&
+                !Prioridad.Equals("2", StringComparison.OrdinalIgnoreCase) &&
+                !Prioridad.Equals("3", StringComparison.OrdinalIgnoreCase))
             {
-                return "El nombre del cliente no puede estar vacío.";
-            }
-            if (Cliente.Length > 30)
-            {
-                return "El nombre del cliente no puede tener más de 30 caracteres.";
-            }
-
-
-            if (string.IsNullOrWhiteSpace(Transportista))
-            {
-                return "El nombre del Transportista no puede estar vacío.";
+                return "Ingrese un valor válido para la Prioridad (1, 2 o 3).";
             }
 
-            if (string.IsNullOrWhiteSpace(NumeroOrden))
+            // Validar Rango de fecha
+            if (FechaDesde > FechaHasta)
             {
-                return "El numero de orden no puede estar vacío.";
+                return "La fecha Desde no puede ser mayor que la fecha Hasta.";
+            }
+
+            // Validar Número de Orden numérico
+            if (!string.IsNullOrEmpty(NumeroOrden) && !int.TryParse(NumeroOrden, out _))
+            {
+                return "El número de orden debe ser un valor numérico.";
             }
 
             return null;
@@ -95,13 +104,17 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
         {   // Arreglar esto para cuando se null
             if (ordenSeleccionada.EstadoOrden == Estados.Estado.Preparada)
             {
+                RevertirEstadoOrden(ordenSeleccionada);
+                return "Orden revertida a seleccionada.";
+
+                /*
                 DialogResult result = MessageBox.Show("Esta orden ya fue seleccionada. ¿Desea quitarla de la selección?", "Confirmación", MessageBoxButtons.OKCancel);
 
                 if (result == DialogResult.OK)
                 {
-                    RevertirEstadoOrden(ordenSeleccionada);
-                    return "Orden revertida a Seleccionada.";
+                    
                 }
+                */
             }
 
 

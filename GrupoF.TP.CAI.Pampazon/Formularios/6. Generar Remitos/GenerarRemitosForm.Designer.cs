@@ -41,10 +41,9 @@
             // 
             // ConfirmarBtn
             // 
-            ConfirmarBtn.Location = new Point(576, 421);
-            ConfirmarBtn.Margin = new Padding(3, 4, 3, 4);
+            ConfirmarBtn.Location = new Point(517, 306);
             ConfirmarBtn.Name = "ConfirmarBtn";
-            ConfirmarBtn.Size = new Size(120, 40);
+            ConfirmarBtn.Size = new Size(105, 30);
             ConfirmarBtn.TabIndex = 12;
             ConfirmarBtn.Text = "Confirmar";
             ConfirmarBtn.UseVisualStyleBackColor = true;
@@ -53,9 +52,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(59, 64);
+            label1.Location = new Point(52, 48);
             label1.Name = "label1";
-            label1.Size = new Size(135, 20);
+            label1.Size = new Size(104, 15);
             label1.TabIndex = 11;
             label1.Text = "Detalle de ordenes";
             // 
@@ -64,10 +63,10 @@
             listOrdenesDeEntrega.Columns.AddRange(new ColumnHeader[] { NumeroColum, ClienteColum, FechaColum, TranspColum, RemitoColum });
             listOrdenesDeEntrega.FullRowSelect = true;
             listOrdenesDeEntrega.GridLines = true;
-            listOrdenesDeEntrega.Location = new Point(59, 88);
-            listOrdenesDeEntrega.Margin = new Padding(3, 4, 3, 4);
+            listOrdenesDeEntrega.Location = new Point(52, 66);
+            listOrdenesDeEntrega.MultiSelect = false;
             listOrdenesDeEntrega.Name = "listOrdenesDeEntrega";
-            listOrdenesDeEntrega.Size = new Size(762, 311);
+            listOrdenesDeEntrega.Size = new Size(679, 234);
             listOrdenesDeEntrega.TabIndex = 10;
             listOrdenesDeEntrega.UseCompatibleStateImageBehavior = false;
             listOrdenesDeEntrega.View = View.Details;
@@ -103,10 +102,9 @@
             // 
             // CancelarBtn
             // 
-            CancelarBtn.Location = new Point(702, 421);
-            CancelarBtn.Margin = new Padding(3, 4, 3, 4);
+            CancelarBtn.Location = new Point(627, 306);
             CancelarBtn.Name = "CancelarBtn";
-            CancelarBtn.Size = new Size(120, 40);
+            CancelarBtn.Size = new Size(105, 30);
             CancelarBtn.TabIndex = 9;
             CancelarBtn.Text = "Cancelar";
             CancelarBtn.UseVisualStyleBackColor = true;
@@ -114,14 +112,13 @@
             // 
             // GenerarRemitosForm
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(898, 490);
+            ClientSize = new Size(786, 368);
             Controls.Add(ConfirmarBtn);
             Controls.Add(label1);
             Controls.Add(listOrdenesDeEntrega);
             Controls.Add(CancelarBtn);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "GenerarRemitosForm";
             Text = "Generar Remitos";
             Load += GenerarRemitosForm_Load;

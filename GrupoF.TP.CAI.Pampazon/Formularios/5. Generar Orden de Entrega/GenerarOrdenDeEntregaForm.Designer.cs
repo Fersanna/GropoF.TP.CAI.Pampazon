@@ -148,7 +148,7 @@
             HastadateTimePicker.Name = "HastadateTimePicker";
             HastadateTimePicker.Size = new Size(120, 23);
             HastadateTimePicker.TabIndex = 20;
-            HastadateTimePicker.Value = new DateTime(2024, 5, 18, 15, 54, 0, 0);
+            HastadateTimePicker.Value = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             // 
             // label2
             // 
