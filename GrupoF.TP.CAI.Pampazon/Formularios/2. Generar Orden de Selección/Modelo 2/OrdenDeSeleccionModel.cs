@@ -102,13 +102,17 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
         {   // Arreglar esto para cuando se null
             if (ordenSeleccionada.EstadoOrden == Estados.Estado.Seleccion)
             {
+                RevertirEstadoOrden(ordenSeleccionada);
+                return "Orden revertida a pendiente.";
+
+                /*
                 DialogResult result = MessageBox.Show("Esta orden ya fue seleccionada. ¿Desea quitarla de la selección?", "Confirmación", MessageBoxButtons.OKCancel);
 
                 if (result == DialogResult.OK)
                 {
-                    RevertirEstadoOrden(ordenSeleccionada);
-                    return "Orden revertida a pendiente.";
+                    
                 }
+                */
             }
 
 

@@ -140,9 +140,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
 
 
             // Mostrar el mensaje de confirmación
-            DialogResult result = MessageBox.Show("¿Desea registrar la orden de preparación?", "Confirmación", MessageBoxButtons.OKCancel);
+            DialogResult result = MessageBox.Show("¿Desea registrar la orden de preparación?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            if (result == DialogResult.OK)
+            if (result == DialogResult.Yes)
             {
                 // Generar la nueva orden de preparación si se acepta la confirmación
                 model.GenerarNuevaOrdenDePreparacion();

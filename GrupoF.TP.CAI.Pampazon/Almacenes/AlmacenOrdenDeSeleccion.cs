@@ -43,7 +43,7 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
             {
                 var contenidoJson = JsonConvert.SerializeObject(OrdenesDeSeleccionEnt, Formatting.Indented);
                 File.WriteAllText(@"Json\OrdenesDeSeleccion.json", contenidoJson);
-                MessageBox.Show("Órdenes guardadas correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("La orden de selección fue generada con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
