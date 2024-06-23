@@ -28,11 +28,17 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
         private void ImprimirBtn_Click(object sender, EventArgs e)
         {
+            var dialogResult = MessageBox.Show("¿Desea generar un remito?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            //Cambiar estado de la orden y Guardar el remito generado en Json.
-            model.CambiarEstadoOrdenSeleccionada();
-            model.GuardarRemito();
-            MessageBox.Show("El remito se ha generado con éxito.");
+            if (dialogResult == DialogResult.Yes)
+            {
+                //Cambiar estado de la orden y Guardar el remito generado en Json.
+                model.CambiarEstadoOrdenSeleccionada();
+                model.GuardarRemito();
+
+                MessageBox.Show("El remito se ha generado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+                
         }
 
         private void CancelarBtn_Click(object sender, EventArgs e)
@@ -76,7 +82,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
         private void CargarProductos()
         {
-
+            /*
             var ordenesSeleccionada = model.OrdenSeleccionada;
             var numerosDeOrden = ordenesSeleccionada.EntregaDetalle; //ID's de las ordenes de preparación.
 
@@ -104,8 +110,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
                     item.Tag = producto;
                 }
             }
-
-            /*
+            */
+            
             var ordenesSeleccionada = model.OrdenSeleccionada;
             if (ordenesSeleccionada == null)
             {
@@ -171,7 +177,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
                 item.Tag = productos[productoAgrupado.Key];
                 ProductosList.Items.Add(item);
             }
-            */
+            
         }
 
 

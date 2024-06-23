@@ -43,7 +43,6 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
             {
                 var contenidoJson = JsonConvert.SerializeObject(RemitosEnt, Formatting.Indented);
                 File.WriteAllText(@"Json\Remitos.json", contenidoJson);
-                MessageBox.Show("Remito guardado correctamente.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
