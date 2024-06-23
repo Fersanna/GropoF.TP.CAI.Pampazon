@@ -62,10 +62,14 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
 
                 model.CambiarEstadoEnOrden(ordenDePreparacion);
 
-               
 
-                MessageBox.Show("La orden se ha confirmado con éxito.");
-                this.Close();
+                DialogResult result = MessageBox.Show("¿Está seguro de que las ordenes seleccionadas han sido recibidas?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    MessageBox.Show("Las ordenes se han actualizado a estado Seleccionada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
                
             }
         }
