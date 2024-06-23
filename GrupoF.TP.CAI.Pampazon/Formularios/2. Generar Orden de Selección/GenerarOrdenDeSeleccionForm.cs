@@ -145,7 +145,6 @@ namespace GrupoF.TP.CAI.Pampazon
 
             if (ordenesFiltradas == null)
             {
-                // Aquí ya no deberías tener el MessageBox, porque el modelo se encarga de eso
                 return;
             }
 

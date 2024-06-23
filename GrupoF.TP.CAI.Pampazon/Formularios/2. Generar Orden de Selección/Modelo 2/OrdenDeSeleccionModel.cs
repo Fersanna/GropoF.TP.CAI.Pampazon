@@ -83,6 +83,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                 return "Ingrese un valor válido para la Prioridad (1, 2 o 3).";
             }
 
+            // Validar Rango de fecha
             if (FechaDesde > FechaHasta)
             {
                 return "La fecha Desde no puede ser mayor que la fecha Hasta.";

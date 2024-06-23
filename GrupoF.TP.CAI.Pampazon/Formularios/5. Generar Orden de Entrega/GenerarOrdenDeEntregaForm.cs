@@ -24,6 +24,8 @@ namespace GrupoF.TP.CAI.Pampazon
         private void GenerarOrdenDeEntregaForm_Load(object sender, EventArgs e)
         {
             CargarOrdenesSeleccionadas();
+
+            DesdeTimePicker.Value = DateTime.Now;
         }
 
         private void CancelarBtn_Click(object sender, EventArgs e)
@@ -138,7 +140,7 @@ namespace GrupoF.TP.CAI.Pampazon
             model.FechaHasta = HastadateTimePicker.Value;
             model.Transportista = TransportistaTextBox.Text;
             model.NumeroOrden = NumeroOrdenTextBox.Text;
-
+            model.Prioridad = PrioridadTextBox.Text;
 
             var error = model.ValidarFiltro();
 
@@ -155,7 +157,6 @@ namespace GrupoF.TP.CAI.Pampazon
                 return;
             }
 
-
             ActualizarListaOrdenesFiltradas(ordenesFiltradas);
         }
 
@@ -165,8 +166,11 @@ namespace GrupoF.TP.CAI.Pampazon
             NumeroOrdenTextBox.Text = "";
             TransportistaTextBox.Text = "";
             ClienteTextBox.Text = "";
-            HastadateTimePicker.Value = HastadateTimePicker.MinDate;
-            DesdeTimePicker.Value = DesdeTimePicker.MinDate;
+
+            DesdeTimePicker.Value = DateTime.Now;
+            HastadateTimePicker.Value = HastadateTimePicker.MaxDate;
+
+            CargarOrdenesSeleccionadas();
         }
     }
 }
