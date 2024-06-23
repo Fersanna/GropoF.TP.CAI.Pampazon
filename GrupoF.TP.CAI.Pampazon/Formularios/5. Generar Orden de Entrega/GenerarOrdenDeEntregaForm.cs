@@ -47,7 +47,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
             if (!mismoCliente)
             {
-                MessageBox.Show("Todas las ordenes seleccionadas deben pertenecer a un mismo cliente");
+                MessageBox.Show("Todas las ordenes seleccionadas deben pertenecer a un mismo cliente.");
                 return;
 
             }
@@ -111,7 +111,7 @@ namespace GrupoF.TP.CAI.Pampazon
                 }
 
             }
-            MessageBox.Show("La orden fue seleccionada");
+            MessageBox.Show("La orden fue seleccionada.");
         }
 
 

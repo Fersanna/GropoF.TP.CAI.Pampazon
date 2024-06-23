@@ -30,13 +30,13 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
             if (ordenesPreparadas.Any() == true)
             {
-                var dialogResult = MessageBox.Show("¿Confirma las órdenes seleccionadas?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                var dialogResult = MessageBox.Show("¿Desea generar una orden de entrega con las ordenes elegidas?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (dialogResult == DialogResult.Yes)
                 {
                     model.RegistrarOrden(ordenesPreparadas);
-                   
-                    MessageBox.Show("Órdenes seleccionadas y confirmadas.");
+
+                    MessageBox.Show("La orden de entrega fue generada con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
                     this.Close();
@@ -68,7 +68,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
                 {
                     ListViewItem item = new ListViewItem(ordenesConfirmadas.NumeroDeOrden);
                     item.SubItems.Add(ordenesConfirmadas.CodigoCliente);
-                    item.SubItems.Add(ordenesConfirmadas.Fecha.ToString());
+                    item.SubItems.Add(ordenesConfirmadas.Fecha.ToString("dd/MM/yyyy"));
                     item.SubItems.Add(ordenesConfirmadas.CodigoTransportista);
                     item.SubItems.Add(((int)ordenesConfirmadas.Prioridad).ToString());
                     item.SubItems.Add(ordenesConfirmadas.EstadoOrden.ToString());

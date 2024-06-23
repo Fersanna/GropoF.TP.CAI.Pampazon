@@ -119,7 +119,7 @@ namespace GrupoF.TP.CAI.Pampazon
                     model.OrdenDePreparacionSeleccionadas.Add(ordenSeleccionada);
                 }
             }
-            MessageBox.Show("La orden fue seleccionada");
+            MessageBox.Show("La orden fue seleccionada.");
 
 
         }

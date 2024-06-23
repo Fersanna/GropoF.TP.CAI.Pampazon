@@ -55,7 +55,7 @@
             // 
             FechaRemitoTimePicker.Enabled = false;
             FechaRemitoTimePicker.Format = DateTimePickerFormat.Short;
-            FechaRemitoTimePicker.Location = new Point(458, 48);
+            FechaRemitoTimePicker.Location = new Point(458, 51);
             FechaRemitoTimePicker.Name = "FechaRemitoTimePicker";
             FechaRemitoTimePicker.Size = new Size(102, 23);
             FechaRemitoTimePicker.TabIndex = 0;
@@ -63,7 +63,7 @@
             // Cuit_Box
             // 
             Cuit_Box.Enabled = false;
-            Cuit_Box.Location = new Point(93, 80);
+            Cuit_Box.Location = new Point(93, 54);
             Cuit_Box.Margin = new Padding(3, 2, 3, 2);
             Cuit_Box.Mask = "00-00000000-0";
             Cuit_Box.Name = "Cuit_Box";
@@ -76,7 +76,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(14, 80);
+            label1.Location = new Point(28, 57);
             label1.Name = "label1";
             label1.Size = new Size(32, 15);
             label1.TabIndex = 14;
@@ -85,7 +85,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(406, 51);
+            label2.Location = new Point(406, 54);
             label2.Name = "label2";
             label2.Size = new Size(38, 15);
             label2.TabIndex = 15;
@@ -131,7 +131,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(14, 25);
+            label3.Location = new Point(6, 25);
             label3.Name = "label3";
             label3.Size = new Size(73, 15);
             label3.TabIndex = 18;
@@ -154,22 +154,22 @@
             ImprimirBtn.Name = "ImprimirBtn";
             ImprimirBtn.Size = new Size(94, 25);
             ImprimirBtn.TabIndex = 41;
-            ImprimirBtn.Text = "Imprimir";
+            ImprimirBtn.Text = "Generar";
             ImprimirBtn.UseVisualStyleBackColor = true;
             ImprimirBtn.Click += ImprimirBtn_Click;
             // 
             // DomicilioTextBox
             // 
             DomicilioTextBox.Enabled = false;
-            DomicilioTextBox.Location = new Point(93, 51);
+            DomicilioTextBox.Location = new Point(93, 83);
             DomicilioTextBox.Name = "DomicilioTextBox";
-            DomicilioTextBox.Size = new Size(200, 23);
+            DomicilioTextBox.Size = new Size(307, 23);
             DomicilioTextBox.TabIndex = 42;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(14, 51);
+            label5.Location = new Point(14, 86);
             label5.Name = "label5";
             label5.Size = new Size(58, 15);
             label5.TabIndex = 44;

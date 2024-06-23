@@ -71,8 +71,17 @@ namespace GrupoF.TP.CAI.Pampazon
 
                 OrdenDespachadaForm ordenDespachadaForm = new OrdenDespachadaForm();
                 ordenDespachadaForm.model = model;
-               
-                ordenDespachadaForm.ShowDialog();
+
+                DialogResult result = MessageBox.Show("¿Está seguro de que las ordenes seleccionadas han sido despachadas?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    MessageBox.Show("Las ordenes se han actualizado a estado Despachada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ordenDespachadaForm.ShowDialog();
+                }
+
+
+                    
             }
         }
 

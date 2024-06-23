@@ -104,13 +104,17 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
         {   // Arreglar esto para cuando se null
             if (ordenSeleccionada.EstadoOrden == Estados.Estado.Preparada)
             {
+                RevertirEstadoOrden(ordenSeleccionada);
+                return "Orden revertida a seleccionada.";
+
+                /*
                 DialogResult result = MessageBox.Show("Esta orden ya fue seleccionada. ¿Desea quitarla de la selección?", "Confirmación", MessageBoxButtons.OKCancel);
 
                 if (result == DialogResult.OK)
                 {
-                    RevertirEstadoOrden(ordenSeleccionada);
-                    return "Orden revertida a Seleccionada.";
+                    
                 }
+                */
             }
 
 
