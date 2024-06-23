@@ -1,4 +1,6 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
+using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using GrupoF.TP.CAI.Pampazon.Entidades;
 using GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición.Clases_Auxiliares;
 using GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos.Clases_Auxiliares_6;
 using System;
@@ -6,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 {
@@ -55,14 +58,56 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
         internal void CambiarEstadoOrdenSeleccionada()
         {
-            var ordenSeleccionada = AlmacenOrdenDeEntrega.OrdenDeEntregaEnts.FirstOrDefault(o => OrdenSeleccionada.IdOrdenDeEntrega == o.IdOrdenDeEntrega  );
+            var ordenSeleccionada = AlmacenOrdenDeEntrega.OrdenDeEntregaEnts.FirstOrDefault(o => OrdenSeleccionada.IdOrdenDeEntrega == o.IdOrdenDeEntrega);
 
             ordenSeleccionada.EstadoOrdenEntrega = Entidades.EstadoEntregaEnum.EstadoEntrega.Asignado;
         }
 
         internal void GuardarRemito()
         {
-            throw new NotImplementedException();
+            var numerosDeOrden = OrdenSeleccionada.EntregaDetalle;
+
+            var ordenesDePreparacion = AlmacenOrdenesDePreparacion.OrdenesDePreparacion
+                 .Where(o => numerosDeOrden.Contains(o.NumeroDeOrden))
+                 .ToList();
+
+            var detalleProductos = new List<Productos>();
+
+            foreach (var ordenDePreparacion in ordenesDePreparacion)
+            {
+                foreach (var detalle in ordenDePreparacion.Detalle)
+                {
+                    var productoAlmacen = AlmacenProductos.Productos
+                                                   .FirstOrDefault(p => p.IdProducto == detalle.IdProducto);
+                    if (productoAlmacen != null)
+                    {
+                        // Crear una instancia del producto con la cantidad correspondiente
+                        var producto = new Productos
+                        {
+                            IdProducto = productoAlmacen.IdProducto,
+                            Descripcion = productoAlmacen.Descripcion,
+                            Cantidad = detalle.Cantidad
+                        };
+
+                        // Agregar el producto a la lista de detalles del remito
+                        detalleProductos.Add(producto);
+                    }
+                }
+            }
+            var remito = new RemitosEnt
+            {
+               // IdRemito = ObtenerNuevoIdRemito(), 
+                FechaRemito = DateTime.Now,
+                CodigoCliente = OrdenSeleccionada.CodigoCliente,
+                DetalleProductos = detalleProductos
+            };
+
+            
+            AlmacenRemitos.RemitosEnt.Add(remito); 
+            AlmacenRemitos.Grabar();
+            
+            MessageBox.Show($"Remito guardado con éxito. ID del Remito: {remito.IdRemito}");
+
         }
     }
 }

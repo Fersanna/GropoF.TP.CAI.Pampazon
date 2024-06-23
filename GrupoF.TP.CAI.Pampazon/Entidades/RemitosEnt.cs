@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,8 +12,8 @@ namespace GrupoF.TP.CAI.Pampazon.Entidades
         public int IdRemito {get; set;}
         public DateTime FechaRemito {get; set;}
 
-        public string Detalle {get; set;}
+        public string CodigoCliente {get; set;}
+        public List <Productos> DetalleProductos {get; set;}
 
-        public int Cantidad {get; set;} 
     }
 }
