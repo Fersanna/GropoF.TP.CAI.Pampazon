@@ -24,6 +24,11 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void BuscarClienteForm_Load(object sender, EventArgs e)
         {
+            CargarListado();
+        }
+
+        private void CargarListado()
+        {
             model = new BuscarClienteModel();
 
             ClientesList.Items.Clear();
@@ -70,25 +75,12 @@ namespace GrupoF.TP.CAI.Pampazon
         {
 
         }
-
+        
         private void Cuit_Box_Validating(object sender, CancelEventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(Cuit_Box.Text))
-            {
-                MessageBox.Show("Debe ingresar un numero de CUIT.");
-                e.Cancel = true;
-                return;
-            }
-            if (!Regex.IsMatch(Cuit_Box.Text, @"^\d{2}-\d{8}-\d{1}$"))
-            {
-                MessageBox.Show("El número de CUIT no ha sido ingresado correctamente.");
-                e.Cancel = false;
-                return;
-            }
 
-            e.Cancel = false;
         }
-
+        
         private void label1_Click(object sender, EventArgs e)
         {
 
@@ -99,23 +91,29 @@ namespace GrupoF.TP.CAI.Pampazon
 
         }
 
+
         private void Buscar_Click(object sender, EventArgs e)
         {
+            // Obtener el valor del MaskedTextBox sin la máscara
+            string cuit = Cuit_Box.Text.Replace("-", "");
 
-          
-
-            if (string.IsNullOrWhiteSpace(Cuit_Box.Text))
+            // Verificar si se ha ingresado algo en el MaskedTextBox
+            if (string.IsNullOrWhiteSpace(cuit))
             {
                 MessageBox.Show("Debe ingresar un número de CUIT.");
                 return;
             }
 
-            
-              model.Cuit = Cuit_Box.Text;
+            // Validar el formato del CUIT
+            if (!Regex.IsMatch(Cuit_Box.Text, @"^\d{2}-\d{8}-\d{1}$"))
+            {
+                MessageBox.Show("El número de CUIT no ha sido ingresado correctamente.");
+                return;
+            }
+
+            model.Cuit = Cuit_Box.Text;
 
             var clienteBuscado = model.Clientes.FirstOrDefault(p => p.Cuit == model.Cuit);
-
-            
 
             if (clienteBuscado == null)
             {
@@ -135,8 +133,6 @@ namespace GrupoF.TP.CAI.Pampazon
             ClientesList.Items.Add(item);
 
             item.Tag = clienteBuscado;
-
-
         }
 
         internal void CerrarClientes()
