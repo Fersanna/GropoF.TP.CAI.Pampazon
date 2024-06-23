@@ -137,13 +137,20 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
                 model.ClienteOrden = nuevaOrden;
             }
 
-            model.GenerarNuevaOrdenDePreparacion();
 
+            // Mostrar el mensaje de confirmación
+            DialogResult result = MessageBox.Show("¿Desea registrar la orden de preparación?", "Confirmación", MessageBoxButtons.OKCancel);
 
-            // Cerrar el formulario o limpiar los campos si es necesario
-            this.Close();
-            FormularioGenerarOrden.CerrarGenerarOrdenDePreparacionForm();
-            BuscarClienteForm.CerrarClientes();
+            if (result == DialogResult.OK)
+            {
+                // Generar la nueva orden de preparación si se acepta la confirmación
+                model.GenerarNuevaOrdenDePreparacion();
+
+                // Cerrar el formulario o limpiar los campos si es necesario
+                this.Close();
+                FormularioGenerarOrden.CerrarGenerarOrdenDePreparacionForm();
+                BuscarClienteForm.CerrarClientes();
+            }
 
         }
     }
