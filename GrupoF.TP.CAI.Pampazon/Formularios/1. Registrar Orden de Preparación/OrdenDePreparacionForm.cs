@@ -1,4 +1,5 @@
-﻿using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
+﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
+using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
 using GrupoF.TP.CAI.Pampazon.Entidades;
 using GrupoF.TP.CAI.Pampazon.Modelos;
 using System;
@@ -46,7 +47,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
             TranspBox.Text ="";
             model.ClienteOrden.Fecha = FechaPicker.Value;
             model.ClienteOrden.EstadoOrden = Estados.Estado.Pendiente;
-            IdTextBox.Text = model.ClienteOrden.NumeroDeOrden;
+
+            // Calcular el próximo número de orden disponible
+            int proximoNumeroOrden = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts.Count + 1;
+            IdTextBox.Text = proximoNumeroOrden.ToString();
 
 
             // Obtiene los valores del enum como un array de int
