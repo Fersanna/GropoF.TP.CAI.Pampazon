@@ -61,6 +61,7 @@
             listOrdenesPendientes.FullRowSelect = true;
             listOrdenesPendientes.GridLines = true;
             listOrdenesPendientes.Location = new Point(42, 119);
+            listOrdenesPendientes.MultiSelect = false;
             listOrdenesPendientes.Name = "listOrdenesPendientes";
             listOrdenesPendientes.Size = new Size(785, 217);
             listOrdenesPendientes.TabIndex = 0;

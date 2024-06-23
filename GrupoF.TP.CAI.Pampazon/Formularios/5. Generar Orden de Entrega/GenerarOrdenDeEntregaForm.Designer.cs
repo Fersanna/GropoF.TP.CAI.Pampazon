@@ -187,6 +187,7 @@
             listOrdenesPreparacion.FullRowSelect = true;
             listOrdenesPreparacion.GridLines = true;
             listOrdenesPreparacion.Location = new Point(34, 122);
+            listOrdenesPreparacion.MultiSelect = false;
             listOrdenesPreparacion.Name = "listOrdenesPreparacion";
             listOrdenesPreparacion.Size = new Size(771, 217);
             listOrdenesPreparacion.TabIndex = 30;
