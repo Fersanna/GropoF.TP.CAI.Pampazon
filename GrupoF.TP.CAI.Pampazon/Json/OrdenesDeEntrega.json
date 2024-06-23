@@ -10,7 +10,7 @@
         "NumeroDeOrden": "1"
       },
       {
-        "NumeroDeOrden": "11"
+        "NumeroDeOrden": "2"
       }
     ]
   },
@@ -22,10 +22,10 @@
     "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "2"
+        "NumeroDeOrden": "3"
       },
       {
-        "NumeroDeOrden": "12"
+        "NumeroDeOrden": "4"
       }
     ]
   },
@@ -37,10 +37,10 @@
     "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "3"
+        "NumeroDeOrden": "5"
       },
       {
-        "NumeroDeOrden": "13"
+        "NumeroDeOrden": "6"
       }
     ]
   },
@@ -52,10 +52,10 @@
     "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "4"
+        "NumeroDeOrden": "7"
       },
       {
-        "NumeroDeOrden": "14"
+        "NumeroDeOrden": "8"
       }
     ]
   },
@@ -67,10 +67,10 @@
     "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "5"
+        "NumeroDeOrden": "9"
       },
       {
-        "NumeroDeOrden": "15"
+        "NumeroDeOrden": "10"
       }
     ]
   },
@@ -82,10 +82,10 @@
     "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "6"
+        "NumeroDeOrden": "11"
       },
       {
-        "NumeroDeOrden": "16"
+        "NumeroDeOrden": "12"
       }
     ]
   },
@@ -97,10 +97,10 @@
     "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "7"
+        "NumeroDeOrden": "13"
       },
       {
-        "NumeroDeOrden": "17"
+        "NumeroDeOrden": "14"
       }
     ]
   },
@@ -112,10 +112,10 @@
     "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "8"
+        "NumeroDeOrden": "15"
       },
       {
-        "NumeroDeOrden": "18"
+        "NumeroDeOrden": "16"
       }
     ]
   },
@@ -127,10 +127,10 @@
     "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "9"
+        "NumeroDeOrden": "17"
       },
       {
-        "NumeroDeOrden": "19"
+        "NumeroDeOrden": "18"
       }
     ]
   },
@@ -142,7 +142,7 @@
     "EstadoOrdenEntrega": 0,
     "EntregaDetalle": [
       {
-        "NumeroDeOrden": "10"
+        "NumeroDeOrden": "19"
       },
       {
         "NumeroDeOrden": "20"
