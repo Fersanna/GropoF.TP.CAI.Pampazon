@@ -1,4 +1,5 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Entidades;
+using GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición.Clases_Auxiliares;
 using Newtonsoft.Json;
 
 namespace GrupoF.TP.CAI.Pampazon.Almacenes
@@ -60,6 +61,15 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
             OrdenesDeSeleccionEnt.Add(ordenEnt);
             MessageBox.Show($"El número de orden guardada: {ordenEnt.IdOrdenDeSeleccion}");
             Grabar();
+        }
+
+        public static void CambiarEstadoOrdenSeleecion (OrdenDeSeleccionPendiente ordenDeSeleccionPendiente )
+        {
+            if (ordenDeSeleccionPendiente.EstadoOrdenSeleccion == EstadoSeleccionEnum.EstadoSeleccion.Pendiente)
+            {
+                ordenDeSeleccionPendiente.EstadoOrdenSeleccion = EstadoSeleccionEnum.EstadoSeleccion.Cumplida;
+            }
+
         }
     }
 }
