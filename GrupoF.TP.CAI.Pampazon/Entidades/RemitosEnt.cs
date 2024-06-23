@@ -8,7 +8,11 @@ namespace GrupoF.TP.CAI.Pampazon.Entidades
 {
     internal class RemitosEnt
     {
-        public int NumeroRemito {get; set;}
+        public int IdRemito {get; set;}
         public DateTime FechaRemito {get; set;}
+
+        public string Detalle {get; set;}
+
+        public int Cantidad {get; set;} 
     }
 }
