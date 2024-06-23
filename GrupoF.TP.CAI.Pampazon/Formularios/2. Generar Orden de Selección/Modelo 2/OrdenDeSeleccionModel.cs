@@ -75,6 +75,25 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         internal string ValidarFiltro()
         {
+            // Validar Prioridad
+            if (!string.IsNullOrEmpty(Prioridad) && !Prioridad.Equals("1", StringComparison.OrdinalIgnoreCase) &&
+                !Prioridad.Equals("2", StringComparison.OrdinalIgnoreCase) &&
+                !Prioridad.Equals("3", StringComparison.OrdinalIgnoreCase))
+            {
+                return "Ingrese un valor válido para la Prioridad (1, 2 o 3).";
+            }
+
+            if (FechaDesde > FechaHasta)
+            {
+                return "La fecha Desde no puede ser mayor que la fecha Hasta.";
+            }
+
+            // Validar Número de Orden numérico
+            if (!string.IsNullOrEmpty(NumeroOrden) && !int.TryParse(NumeroOrden, out _))
+            {
+                return "El número de orden debe ser un valor numérico.";
+            }
+
             return null;
         }
 

@@ -31,6 +31,7 @@ namespace GrupoF.TP.CAI.Pampazon
             CargarOrdenesDePreparacion();
 
             DesdeTimePicker.Value = DateTime.Now;
+
         }
 
         private void CancelarBtn_Click(object sender, EventArgs e)
