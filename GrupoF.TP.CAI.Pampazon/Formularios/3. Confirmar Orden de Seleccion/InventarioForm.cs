@@ -48,7 +48,38 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
 
         private void CargarProductos()
         {
-            /*
+            /* ANDRES
+            var ordenesSeleccionada = Model.OrdenDeSeleccionElegida;
+            var numerosDeOrden = ordenesSeleccionada.SeleccionDetalle; //ID's de las ordenes de preparación.
+
+            var ordenesDePreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts
+                                            .Where(o => numerosDeOrden.Contains(o.NumeroDeOrden))
+                                            .ToList();
+
+            if (!ordenesDePreparacion.Any()) 
+            {
+                throw new ApplicationException($"La orden de seleccion {ordenesSeleccionada.IdOrdenDeSeleccion} no tiene ordenes de preparacion asociadas.");
+            }
+
+            foreach (var ordenDePreparacion in ordenesDePreparacion)
+            {
+                foreach (var detalle in ordenDePreparacion.Detalle)
+                {
+                    var producto = AlmacenProductos.Productos
+                                                   .Single(p => p.IdProducto == detalle.IdProducto);
+
+                    ListViewItem item = new ListViewItem(producto.IdProducto);
+                    item.SubItems.Add(producto.Descripcion);
+                    item.SubItems.Add(producto.Posicion);
+                    item.SubItems.Add(detalle.Cantidad.ToString());
+                    item.SubItems.Add(ordenDePreparacion.CodigoCliente);
+                    listInventario.Items.Add(item);
+
+                    item.Tag = producto;
+                }
+            }
+            */
+
             var ordenesSeleccionada = Model.OrdenDeSeleccionElegida;
             if (ordenesSeleccionada == null)
             {
@@ -122,38 +153,6 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
             });
                     item.Tag = producto;
                     listInventario.Items.Add(item);
-                }
-            }
-            */
-
-            
-            var ordenesSeleccionada = Model.OrdenDeSeleccionElegida;
-            var numerosDeOrden = ordenesSeleccionada.SeleccionDetalle; //ID's de las ordenes de preparación.
-
-            var ordenesDePreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts
-                                            .Where(o => numerosDeOrden.Contains(o.NumeroDeOrden))
-                                            .ToList();
-
-            if (!ordenesDePreparacion.Any()) 
-            {
-                throw new ApplicationException($"La orden de seleccion {ordenesSeleccionada.IdOrdenDeSeleccion} no tiene ordenes de preparacion asociadas.");
-            }
-
-            foreach (var ordenDePreparacion in ordenesDePreparacion)
-            {
-                foreach (var detalle in ordenDePreparacion.Detalle)
-                {
-                    var producto = AlmacenProductos.Productos
-                                                   .Single(p => p.IdProducto == detalle.IdProducto);
-
-                    ListViewItem item = new ListViewItem(producto.IdProducto);
-                    item.SubItems.Add(producto.Descripcion);
-                    item.SubItems.Add(producto.Posicion);
-                    item.SubItems.Add(detalle.Cantidad.ToString());
-                    item.SubItems.Add(ordenDePreparacion.CodigoCliente);
-                    listInventario.Items.Add(item);
-
-                    item.Tag = producto;
                 }
             }
         }

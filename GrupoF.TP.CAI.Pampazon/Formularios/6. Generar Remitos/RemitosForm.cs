@@ -82,7 +82,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
         private void CargarProductos()
         {
-            /*
+            /* ANDRES
             var ordenesSeleccionada = model.OrdenSeleccionada;
             var numerosDeOrden = ordenesSeleccionada.EntregaDetalle; //ID's de las ordenes de preparación.
 
@@ -135,7 +135,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
             // Pre-cargar los productos en un diccionario para evitar múltiples consultas a la base de datos
             var idsProductos = ordenesDePreparacion.SelectMany(o => o.Detalle.Select(d => d.IdProducto)).Distinct();
-            var productos = AlmacenProductos.Productos.Where(p => idsProductos.Contains(p.IdProducto)).ToDictionary(p => p.IdProducto);
+            var productos = AlmacenProductos.Productos
+                                            .Where(p => idsProductos.Contains(p.IdProducto))
+                                            .ToDictionary(p => p.IdProducto);
 
             // Diccionario para agrupar y sumar las cantidades de productos
             var productosAgrupados = new Dictionary<string, (string Descripcion, int Cantidad)>();
@@ -177,13 +179,6 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
                 item.Tag = productos[productoAgrupado.Key];
                 ProductosList.Items.Add(item);
             }
-            
         }
-
-
-
-
-
-
     }
 }
