@@ -1,6 +1,7 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
 using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
 using GrupoF.TP.CAI.Pampazon.Entidades;
+using GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación.Clases_Auxiliares;
 using GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición.Clases_Auxiliares;
 using GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos.Clases_Auxiliares_6;
 using System;
@@ -16,6 +17,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
     {
         public OrdenDeEntregaPendiente OrdenSeleccionada { get; internal set; }
         public List<OrdenDeEntregaPendiente> OrdenesDeEntrega { get; set; } = new List<OrdenDeEntregaPendiente>();
+
+        public Remito RemitoAGuardar {get; set; }
 
 
         public GenerarRemitosModel()
@@ -66,7 +69,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
         internal void GuardarRemito()
         {
             var numerosDeOrden = OrdenSeleccionada.EntregaDetalle;
-
+           
             var ordenesDePreparacion = AlmacenOrdenesDePreparacion.OrdenesDePreparacion
                  .Where(o => numerosDeOrden.Contains(o.NumeroDeOrden))
                  .ToList();
@@ -78,7 +81,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
                 foreach (var detalle in ordenDePreparacion.Detalle)
                 {
                     var productoAlmacen = AlmacenProductos.Productos
-                                                   .FirstOrDefault(p => p.IdProducto == detalle.IdProducto);
+                                                   .Single(p => p.IdProducto == detalle.IdProducto);
                     if (productoAlmacen != null)
                     {
                         // Crear una instancia del producto con la cantidad correspondiente
@@ -99,7 +102,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
                // IdRemito = ObtenerNuevoIdRemito(), 
                 FechaRemito = DateTime.Now,
                 CodigoCliente = OrdenSeleccionada.CodigoCliente,
-                DetalleProductos = detalleProductos
+                //Aca meti una brutalidad para poder obtener los productos ya que no encuentro el numero de orden arriba.
+                DetalleProductos = RemitoAGuardar.Detalle.ToList()
             };
 
             
@@ -107,6 +111,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
             AlmacenRemitos.Grabar();
             
             MessageBox.Show($"Remito guardado con éxito. ID del Remito: {remito.IdRemito}");
+          
 
         }
     }
