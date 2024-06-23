@@ -26,7 +26,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Json\OrdenesDeEntrega.json">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Json\OrdenesDePreparacion.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
