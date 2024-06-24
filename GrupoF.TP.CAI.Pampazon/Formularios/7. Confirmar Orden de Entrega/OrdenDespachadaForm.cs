@@ -1,4 +1,5 @@
-﻿using GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega.Clases_auxiliares;
+﻿using GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección.Clases_auxiliares;
+using GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega.Clases_auxiliares;
 using GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega.Clases_Auxiliares_7;
 using System;
 using System.Collections.Generic;
@@ -31,43 +32,57 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
         {
             
             CargarOrdenesDespachadas();
-
             /*
-            if (model != null && model.OrdenADespachada != null)
+            foreach (OrdenDePreparacionPreparada ordenesSeleccionada in model.OrdenADespachada)
             {
-                ListViewItem item = new ListViewItem(model.OrdenADespachada.NumeroDeOrden);
-                item.SubItems.Add(model.OrdenADespachada.CodigoCliente);
-                item.SubItems.Add(model.OrdenADespachada.Fecha.ToString("dd/MM/yyyy"));
-                item.SubItems.Add(model.OrdenADespachada.CodigoTransportista);
-                item.SubItems.Add(((int)model.OrdenADespachada.Prioridad).ToString());
-                item.SubItems.Add(model.OrdenADespachada.EstadoOrden.ToString());
+                if (ordenesSeleccionada.EstadoOrden == Entidades.EstadoPreparacion.Seleccion)
+                {
+                    ListViewItem item = new ListViewItem(ordenesSeleccionada.NumeroDeOrden);
+                    item.SubItems.Add(ordenesSeleccionada.CodigoCliente);
+                    item.SubItems.Add(ordenesSeleccionada.Fecha.ToString("dd/MM/yyyy"));
+                    item.SubItems.Add(ordenesSeleccionada.CodigoTransportista);
+                    item.SubItems.Add(((int)ordenesSeleccionada.Prioridad).ToString());
+                    item.SubItems.Add(ordenesSeleccionada.EstadoOrden.ToString());
 
-                listOrdenesDespachadas.Items.Add(item);
-
-                item.Tag = model.OrdenADespachada;
-            
+                    listOrdenesDespachadas.Items.Add(item);
+                }
             }
             */
         }
 
         private void CargarOrdenesDespachadas()
         {
-            if (model.OrdenesDeEntregaAEntregar != null)
+            // Limpiar la lista antes de cargar los datos para evitar duplicados
+            listOrdenesDespachadas.Items.Clear();
+
+            if (model.OrdenADespachada != null)
             {
-                foreach (OrdenDePreparacionDespachada ordenes in model.OrdenesDeEntregaAEntregar)
+                foreach (OrdenDePreparacionPreparada orden in model.OrdenADespachada)
                 {
-                    ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
-                    item.SubItems.Add(ordenes.CodigoCliente);
-                    item.SubItems.Add(ordenes.Fecha.ToString("dd/MM/yyyy"));
-                    item.SubItems.Add(ordenes.CodigoTransportista);
-                    item.SubItems.Add(((int)ordenes.Prioridad).ToString());
-                    item.SubItems.Add(ordenes.EstadoOrden.ToString());
+                    ListViewItem item = new ListViewItem(orden.NumeroDeOrden);
+                    item.SubItems.Add(orden.CodigoCliente);
+                    item.SubItems.Add(orden.Fecha.ToString("dd/MM/yyyy"));
+                    item.SubItems.Add(orden.CodigoTransportista);
+                    item.SubItems.Add(((int)orden.Prioridad).ToString());
+                    item.SubItems.Add(orden.EstadoOrden.ToString());
 
                     listOrdenesDespachadas.Items.Add(item);
-
-                    item.Tag = ordenes;
                 }
+            }
 
+            if (model.OrdenesDeEntregaAEntregar != null)
+            {
+                foreach (OrdenDePreparacionDespachada orden in model.OrdenesDeEntregaAEntregar)
+                {
+                    ListViewItem item = new ListViewItem(orden.NumeroDeOrden);
+                    item.SubItems.Add(orden.CodigoCliente);
+                    item.SubItems.Add(orden.Fecha.ToString("dd/MM/yyyy"));
+                    item.SubItems.Add(orden.CodigoTransportista);
+                    item.SubItems.Add(((int)orden.Prioridad).ToString());
+                    item.SubItems.Add(orden.EstadoOrden.ToString());
+
+                    listOrdenesDespachadas.Items.Add(item);
+                }
             }
         }
 

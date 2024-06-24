@@ -53,23 +53,34 @@ namespace GrupoF.TP.CAI.Pampazon
         {
             if (listOrdenesPreparadas.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Debe seleccionar al menos una orden.");
+                MessageBox.Show("Debe seleccionar una orden.");
             }
             else
             {
 
-                //Seguir por aca, esto esta pendiente.
-
+                // Obtener la orden seleccionada
                 OrdenDePreparacionPreparada ordenDePreparacion = (OrdenDePreparacionPreparada)listOrdenesPreparadas.SelectedItems[0].Tag;
 
+                // Cambiar el estado de la orden en el modelo
                 model.CambiarEstadoEnOrden(ordenDePreparacion);
 
+                // Remover la orden de la lista visual
+                listOrdenesPreparadas.Items.RemoveAt(listOrdenesPreparadas.SelectedIndices[0]);
 
                 DialogResult result = MessageBox.Show("¿Está seguro de que la orden seleccionada ha sido entregada?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
                     MessageBox.Show("La orden se ha actualizado a estado Despachada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // Crear instancia del siguiente formulario
+                    OrdenDespachadaForm ordenDespachadaForm = new OrdenDespachadaForm();
+
+                    // Asignar el modelo actualizado al siguiente formulario
+                    ordenDespachadaForm.model = model;
+
+                    // Mostrar el siguiente formulario
+                    ordenDespachadaForm.ShowDialog();
                 }
             }
         }
