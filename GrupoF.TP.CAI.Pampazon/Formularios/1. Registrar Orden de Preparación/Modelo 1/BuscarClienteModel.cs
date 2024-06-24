@@ -148,41 +148,56 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
 
         internal OrdenDePreparacionEnt ConvertirOrden(OrdenDePreparacion orden)
         {
+            /*
+            var ultimoNumeroOrdenPreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacion.OrderByDescending(o => o.NumeroDeOrden)
+         .FirstOrDefault();
 
+            int ultimoId = 0;
+
+            if (ultimoNumeroOrdenPreparacion != null && int.TryParse(ultimoNumeroOrdenPreparacion.NumeroDeOrden, out int id))
             {
+                ultimoId = id;
+            }
 
-                var ultimoNumeroOrdenPreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacion.OrderByDescending(o => o.NumeroDeOrden)
-             .FirstOrDefault();
+            ultimoId++;
+            string nuevoNumeroOrdenPrep = ultimoId.ToString();
+            */
 
-                int ultimoId = 0;
+            int ultimoId = 0;
+
+            // Buscar el último número de orden en el AlmacenOrdenesDePreparacion
+            if (AlmacenOrdenesDePreparacion.OrdenDePreparacion.Any())
+            {
+                var ultimoNumeroOrdenPreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacion
+                    .OrderByDescending(o => int.Parse(o.NumeroDeOrden))
+                    .FirstOrDefault();
 
                 if (ultimoNumeroOrdenPreparacion != null && int.TryParse(ultimoNumeroOrdenPreparacion.NumeroDeOrden, out int id))
                 {
                     ultimoId = id;
                 }
-
-                ultimoId++;
-                string nuevoNumeroOrdenPrep = ultimoId.ToString();
-
-                return new OrdenDePreparacionEnt
-                {
-                    NumeroDeOrden = nuevoNumeroOrdenPrep,
-                    Fecha = orden.Fecha,
-                    CodigoCliente = orden.CodigoCliente,
-                    CodigoTransportista = orden.CodigoTransportista,
-                    EstadoOrden = EstadoPreparacion.Pendiente,
-                    Prioridad = (Prioridad)(int)orden.Prioridad,
-
-                    Detalle = orden.ProductosOrden.Select(p => new OrdenDePreparacionDetalle
-                    {
-                        IdProducto = p.IdProducto,
-                        Cantidad = p.Cantidad
-                    }).ToList()
-                };
-
             }
-        }
 
+            // Incrementar el último ID para obtener el nuevo número de orden
+            ultimoId++;
+            string nuevoNumeroOrdenPrep = ultimoId.ToString();
+            
+            return new OrdenDePreparacionEnt
+            {
+                NumeroDeOrden = nuevoNumeroOrdenPrep,
+                Fecha = orden.Fecha,
+                CodigoCliente = orden.CodigoCliente,
+                CodigoTransportista = orden.CodigoTransportista,
+                EstadoOrden = EstadoPreparacion.Pendiente,
+                Prioridad = (Prioridad)(int)orden.Prioridad,
+
+                Detalle = orden.ProductosOrden.Select(p => new OrdenDePreparacionDetalle
+                {
+                    IdProducto = p.IdProducto,
+                    Cantidad = p.Cantidad
+                }).ToList()
+            };
+        }
     }
 }
 
