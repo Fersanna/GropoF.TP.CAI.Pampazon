@@ -1,7 +1,7 @@
 [
   {
     "IdOrdenDeSeleccion": "1",
-    "EstadoOrdenSeleccion": 0,
+    "EstadoSeleccion": 0,
     "SeleccionDetalle": [
       {
         "NumeroDeOrden": "1"
@@ -13,7 +13,7 @@
   },
   {
     "IdOrdenDeSeleccion": "2",
-    "EstadoOrdenSeleccion": 0,
+    "EstadoSeleccion": 0,
     "SeleccionDetalle": [
       {
         "NumeroDeOrden": "3"
@@ -28,7 +28,7 @@
   },
   {
     "IdOrdenDeSeleccion": "3",
-    "EstadoOrdenSeleccion": 0,
+    "EstadoSeleccion": 0,
     "SeleccionDetalle": [
       {
         "NumeroDeOrden": "6"
@@ -40,7 +40,7 @@
   },
   {
     "IdOrdenDeSeleccion": "4",
-    "EstadoOrdenSeleccion": 0,
+    "EstadoSeleccion": 0,
     "SeleccionDetalle": [
       {
         "NumeroDeOrden": "8"

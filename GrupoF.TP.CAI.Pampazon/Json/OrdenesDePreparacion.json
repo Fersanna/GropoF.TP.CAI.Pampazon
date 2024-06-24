@@ -5,7 +5,7 @@
     "CodigoCliente": "CL001",
     "CodigoTransportista": "El viajero",
     "Prioridad": 1,
-    "EstadoOrden": 0,
+    "EstadoPreparacion": 0,
     "Detalle": [
       {
         "IdProducto": "PRD001",
@@ -23,7 +23,7 @@
     "CodigoCliente": "CL001",
     "CodigoTransportista": "El viajero",
     "Prioridad": 2,
-    "EstadoOrden": 0,
+    "EstadoPreparacion": 0,
     "Detalle": [
       {
         "IdProducto": "PRD001",
@@ -41,7 +41,7 @@
     "CodigoCliente": "CL002",
     "CodigoTransportista": "Otro",
     "Prioridad": 3,
-    "EstadoOrden": 0,
+    "EstadoPreparacion": 0,
     "Detalle": [
       {
         "IdProducto": "PRD003",
@@ -59,7 +59,7 @@
     "CodigoCliente": "CL002",
     "CodigoTransportista": "Otro",
     "Prioridad": 3,
-    "EstadoOrden": 0,
+    "EstadoPreparacion": 0,
     "Detalle": [
       {
         "IdProducto": "PRD003",
@@ -77,7 +77,7 @@
     "CodigoCliente": "CL003",
     "CodigoTransportista": "El molino SA",
     "Prioridad": 2,
-    "EstadoOrden": 1,
+    "EstadoPreparacion": 1,
     "Detalle": [
       {
         "IdProducto": "PRD005",
@@ -95,7 +95,7 @@
     "CodigoCliente": "CL003",
     "CodigoTransportista": "El molino SA",
     "Prioridad": 2,
-    "EstadoOrden": 1,
+    "EstadoPreparacion": 1,
     "Detalle": [
       {
         "IdProducto": "PRD005",
@@ -113,7 +113,7 @@
     "CodigoCliente": "CL004",
     "CodigoTransportista": "Transportes Juan",
     "Prioridad": 1,
-    "EstadoOrden": 1,
+    "EstadoPreparacion": 1,
     "Detalle": [
       {
         "IdProducto": "PRD007",
@@ -131,7 +131,7 @@
     "CodigoCliente": "CL004",
     "CodigoTransportista": "Transportes Juan",
     "Prioridad": 1,
-    "EstadoOrden": 1,
+    "EstadoPreparacion": 1,
     "Detalle": [
       {
         "IdProducto": "PRD007",
@@ -149,7 +149,7 @@
     "CodigoCliente": "CL005",
     "CodigoTransportista": "Logística SA",
     "Prioridad": 2,
-    "EstadoOrden": 2,
+    "EstadoPreparacion": 2,
     "Detalle": [
       {
         "IdProducto": "PRD009",
@@ -167,7 +167,7 @@
     "CodigoCliente": "CL005",
     "CodigoTransportista": "Logística SA",
     "Prioridad": 1,
-    "EstadoOrden": 2,
+    "EstadoPreparacion": 2,
     "Detalle": [
       {
         "IdProducto": "PRD009",
@@ -185,7 +185,7 @@
     "CodigoCliente": "CL006",
     "CodigoTransportista": "Rapidex",
     "Prioridad": 3,
-    "EstadoOrden": 2,
+    "EstadoPreparacion": 2,
     "Detalle": [
       {
         "IdProducto": "PRD011",
@@ -203,7 +203,7 @@
     "CodigoCliente": "CL006",
     "CodigoTransportista": "Rapidex",
     "Prioridad": 2,
-    "EstadoOrden": 2,
+    "EstadoPreparacion": 2,
     "Detalle": [
       {
         "IdProducto": "PRD011",
@@ -221,7 +221,7 @@
     "CodigoCliente": "CL007",
     "CodigoTransportista": "Distribuidora Norte",
     "Prioridad": 1,
-    "EstadoOrden": 3,
+    "EstadoPreparacion": 3,
     "Detalle": [
       {
         "IdProducto": "PRD013",
@@ -239,7 +239,7 @@
     "CodigoCliente": "CL007",
     "CodigoTransportista": "Distribuidora Norte",
     "Prioridad": 3,
-    "EstadoOrden": 3,
+    "EstadoPreparacion": 3,
     "Detalle": [
       {
         "IdProducto": "PRD013",
@@ -257,7 +257,7 @@
     "CodigoCliente": "CL008",
     "CodigoTransportista": "Transporte del Sur",
     "Prioridad": 3,
-    "EstadoOrden": 3,
+    "EstadoPreparacion": 3,
     "Detalle": [
       {
         "IdProducto": "PRD015",
@@ -275,7 +275,7 @@
     "CodigoCliente": "CL008",
     "CodigoTransportista": "Transportes del Sur",
     "Prioridad": 2,
-    "EstadoOrden": 3,
+    "EstadoPreparacion": 3,
     "Detalle": [
       {
         "IdProducto": "PRD015",
@@ -293,7 +293,7 @@
     "CodigoCliente": "CL009",
     "CodigoTransportista": "Carga S.A.",
     "Prioridad": 2,
-    "EstadoOrden": 4,
+    "EstadoPreparacion": 4,
     "Detalle": [
       {
         "IdProducto": "PRD017",
@@ -311,7 +311,7 @@
     "CodigoCliente": "CL009",
     "CodigoTransportista": "Carga S.A.",
     "Prioridad": 3,
-    "EstadoOrden": 4,
+    "EstadoPreparacion": 4,
     "Detalle": [
       {
         "IdProducto": "PRD017",
@@ -329,7 +329,7 @@
     "CodigoCliente": "CL010",
     "CodigoTransportista": "Express Transport",
     "Prioridad": 1,
-    "EstadoOrden": 4,
+    "EstadoPreparacion": 4,
     "Detalle": [
       {
         "IdProducto": "PRD019",
@@ -347,7 +347,7 @@
     "CodigoCliente": "CL010",
     "CodigoTransportista": "Express Transport",
     "Prioridad": 1,
-    "EstadoOrden": 4,
+    "EstadoPreparacion": 4,
     "Detalle": [
       {
         "IdProducto": "PRD019",
