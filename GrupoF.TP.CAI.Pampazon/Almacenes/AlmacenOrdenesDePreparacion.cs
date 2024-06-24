@@ -1,94 +1,83 @@
-﻿    using GrupoF.TP.CAI.Pampazon.Entidades;
-    using Newtonsoft.Json;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Xml;
+﻿using GrupoF.TP.CAI.Pampazon.Entidades;
+using Newtonsoft.Json;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Xml;
 
-    namespace GrupoF.TP.CAI.Pampazon.Almacenes
+namespace GrupoF.TP.CAI.Pampazon.Almacenes
+{
+    public static class AlmacenOrdenesDePreparacion
     {
-        public static class AlmacenOrdenesDePreparacion
+        public static List<OrdenDePreparacionEnt> OrdenDePreparacion; //lo que levantas del archivo.
+
+        static AlmacenOrdenesDePreparacion()
         {
-            private static int contadorOrdenes = 0;
+            OrdenDePreparacion = new List<OrdenDePreparacionEnt>();
 
-            public static readonly List<OrdenDePreparacionEnt> OrdenesDePreparacion = new List<OrdenDePreparacionEnt>();
-
-            public static List<OrdenDePreparacionEnt> OrdenDePreparacionEnts;
-
-            static AlmacenOrdenesDePreparacion()
+            try
             {
-                OrdenDePreparacionEnts = new List<OrdenDePreparacionEnt>();
-
-                try
+                if (File.Exists(@"Json/OrdenesDePreparacion.Json"))
                 {
-                    if (File.Exists(@"Json/OrdenesDePreparacion.Json"))
-                    {
-                        var archivoCargado = File.ReadAllText(@"Json/OrdenesDePreparacion.Json");
-                        OrdenDePreparacionEnts = JsonConvert.DeserializeObject<List<OrdenDePreparacionEnt>>(archivoCargado);
-
-                        var ultimoNumeroOrden = OrdenDePreparacionEnts.Max(o => int.Parse(o.NumeroDeOrden));
-                        contadorOrdenes = ultimoNumeroOrden + 1;
-                    }
-                }
-                catch (Exception ex)
-                {
-                    Console.WriteLine($"Error al cargar las órdenes de preparación: {ex.Message}");
+                    var archivoCargado = File.ReadAllText(@"Json/OrdenesDePreparacion.Json");
+                    OrdenDePreparacion = JsonConvert.DeserializeObject<List<OrdenDePreparacionEnt>>(archivoCargado);
                 }
             }
-
-            public static void Grabar()
+            catch (Exception ex)
             {
-                var contenidoJson = JsonConvert.SerializeObject(OrdenDePreparacionEnts, Newtonsoft.Json.Formatting.Indented);
+                Console.WriteLine($"Error al cargar las órdenes de preparación: {ex.Message}");
+            }
+        }
 
-                // Guardar en el archivo
-                File.WriteAllText(@"json/OrdenesDePreparacion.Json", contenidoJson);
+        public static void Grabar()
+        {
+            var contenidoJson = JsonConvert.SerializeObject(OrdenDePreparacion, Newtonsoft.Json.Formatting.Indented);
+
+            // Guardar en el archivo
+            File.WriteAllText(@"json/OrdenesDePreparacion.Json", contenidoJson);
+        }
+
+        internal static void AgregarOrden(OrdenDePreparacionEnt ordenDePreparacionEnt)
+        {
+            if (OrdenDePreparacion == null)
+            {
+                OrdenDePreparacion = new List<OrdenDePreparacionEnt>();
             }
 
-            internal static void AgregarOrden(OrdenDePreparacionEnt ordenDePreparacionEnt)
+
+
+            ordenDePreparacionEnt.NumeroDeOrden = OrdenDePreparacion.Max(n => n.NumeroDeOrden) + 1;
+            OrdenDePreparacion.Add(ordenDePreparacionEnt);
+
+            /*
+            var ultimaOrden = OrdenDePreparacionEnts.LastOrDefault();
+            if (ultimaOrden != null)
             {
-                if (OrdenDePreparacionEnts == null)
-                {
-                    OrdenDePreparacionEnts = new List<OrdenDePreparacionEnt>();
-                }
-
-           
-
-                ordenDePreparacionEnt.NumeroDeOrden = contadorOrdenes.ToString();
-                contadorOrdenes++;
-                OrdenDePreparacionEnts.Add(ordenDePreparacionEnt);
-
-                OrdenesDePreparacion.Add(ordenDePreparacionEnt);
-
-           
-                var ultimaOrden = OrdenDePreparacionEnts.LastOrDefault();
-                if (ultimaOrden != null)
-                {
-                    MessageBox.Show($"La orden grabada en la lista es la número: {ultimaOrden.NumeroDeOrden}\n" +
-                                    $"Código Cliente: {ultimaOrden.CodigoCliente}\n" +
-                                    $"Fecha: {ultimaOrden.Fecha.ToString("dd/MM/yyyy")}\n" +
-                                    $"Transportista: {ultimaOrden.CodigoTransportista}\n" +
-                                    $"Prioridad: {(int)ultimaOrden.Prioridad}\n" +
-                                    $"Estado: {ultimaOrden.EstadoOrden}");
-                }
-                Grabar();
+                MessageBox.Show($"La orden grabada en la lista es la número: {ultimaOrden.NumeroDeOrden}\n" +
+                                $"Código Cliente: {ultimaOrden.CodigoCliente}\n" +
+                                $"Fecha: {ultimaOrden.Fecha.ToString("dd/MM/yyyy")}\n" +
+                                $"Transportista: {ultimaOrden.CodigoTransportista}\n" +
+                                $"Prioridad: {(int)ultimaOrden.Prioridad}\n" +
+                                $"Estado: {ultimaOrden.EstadoOrden}");
             }
+            Grabar();*/
+        }
 
-            internal static void ModificarEstadoEnOrdenes(List<OrdenDeSeleccionDetalle> seleccionDetalle)
+        internal static void ModificarEstadoEnOrdenes(List<OrdenDeSeleccionDetalle> seleccionDetalle)
+        {
+            foreach (var detalle in seleccionDetalle)
             {
-                foreach (var detalle in seleccionDetalle)
+                var ordenDePreparacion = OrdenDePreparacion
+                    .FirstOrDefault(o => o.NumeroDeOrden == detalle.NumeroDeOrden);
+
+                if (ordenDePreparacion != null)
                 {
-                    var ordenDePreparacion = OrdenDePreparacionEnts
-                        .FirstOrDefault(o => o.NumeroDeOrden == detalle.NumeroDeOrden);
-
-                    if (ordenDePreparacion != null)
-                    {
-                        ordenDePreparacion.EstadoOrden = Estados.Estado.Seleccion;
-                    }
-
+                    ordenDePreparacion.EstadoOrden = EstadoPreparacion.Seleccion;
                 }
-                  Grabar();
+
             }
         }
     }
+}

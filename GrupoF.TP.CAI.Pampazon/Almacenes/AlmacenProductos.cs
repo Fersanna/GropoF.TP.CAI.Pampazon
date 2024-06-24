@@ -48,5 +48,14 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
                 MessageBox.Show($"Error al guardar los productos: {ex.Message}");
             }
         }
+
+        public static void DarDeBajaStock(List<(string IdProducto, string Ubicacion, int Cantidad)> cantidadesPorIdProducto)
+        {
+            foreach (var idProdCant in cantidadesPorIdProducto)
+            {
+                var producto = Productos.Where(p => p.IdProducto == idProdCant.IdProducto && p.Posicion == idProdCant.Ubicacion).Single();
+                producto.Stock -= idProdCant.Cantidad;
+            }
+        }
     }
 }

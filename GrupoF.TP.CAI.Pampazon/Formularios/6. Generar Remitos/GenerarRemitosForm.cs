@@ -54,7 +54,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
             foreach (OrdenDeEntregaPendiente ordenesConfirmadas in model.OrdenesDeEntrega)
             {
-                if (ordenesConfirmadas.EstadoOrdenEntrega == Entidades.EstadoEntregaEnum.EstadoEntrega.Pendiente)
+                if (ordenesConfirmadas.EstadoOrdenEntrega == Entidades.EstadoEntrega.Pendiente)
                 {
                     ListViewItem item = new ListViewItem(ordenesConfirmadas.IdOrdenDeEntrega);
                     item.SubItems.Add(ordenesConfirmadas.CodigoCliente);

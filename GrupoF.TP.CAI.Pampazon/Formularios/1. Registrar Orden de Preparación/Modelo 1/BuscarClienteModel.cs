@@ -7,8 +7,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static GrupoF.TP.CAI.Pampazon.Entidades.Estados;
-using static GrupoF.TP.CAI.Pampazon.Entidades.Prioridades;
 
 namespace GrupoF.TP.CAI.Pampazon.Modelos
 {
@@ -153,7 +151,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
 
             {
 
-                var ultimoNumeroOrdenPreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts.OrderByDescending(o => o.NumeroDeOrden)
+                var ultimoNumeroOrdenPreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacion.OrderByDescending(o => o.NumeroDeOrden)
              .FirstOrDefault();
 
                 int ultimoId = 0;
@@ -172,7 +170,7 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
                     Fecha = orden.Fecha,
                     CodigoCliente = orden.CodigoCliente,
                     CodigoTransportista = orden.CodigoTransportista,
-                    EstadoOrden = Estados.Estado.Pendiente,
+                    EstadoOrden = EstadoPreparacion.Pendiente,
                     Prioridad = (Prioridad)(int)orden.Prioridad,
 
                     Detalle = orden.ProductosOrden.Select(p => new OrdenDePreparacionDetalle

@@ -5,7 +5,7 @@ using Newtonsoft.Json;
 namespace GrupoF.TP.CAI.Pampazon.Almacenes
 {
     public static class AlmacenOrdenDeSeleccion
-    {   
+    {
         private static int contadorOrdenes = 0;
         public static List<OrdenDeSeleccionEnt> OrdenesDeSeleccionEnt { get; private set; }
 
@@ -25,7 +25,7 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
                         OrdenesDeSeleccionEnt = ordenes;
                     }
 
-                      if (OrdenesDeSeleccionEnt.Any())
+                    if (OrdenesDeSeleccionEnt.Any())
                     {
                         var ultimoNumeroOrden = OrdenesDeSeleccionEnt.Max(o => int.Parse(o.IdOrdenDeSeleccion));
                         contadorOrdenes = ultimoNumeroOrden + 1;
@@ -40,36 +40,24 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
 
         public static void Grabar()
         {
-            try
-            {
-                var contenidoJson = JsonConvert.SerializeObject(OrdenesDeSeleccionEnt, Formatting.Indented);
-                File.WriteAllText(@"Json\OrdenesDeSeleccion.json", contenidoJson);
-                MessageBox.Show("La orden de selección fue generada con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Error al guardar las órdenes: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            };
+            var contenidoJson = JsonConvert.SerializeObject(OrdenesDeSeleccionEnt, Formatting.Indented);
+            File.WriteAllText(@"Json\OrdenesDeSeleccion.json", contenidoJson);
         }
 
         internal static void AgregarOrden(OrdenDeSeleccionEnt ordenEnt)
         {
-
             ordenEnt.IdOrdenDeSeleccion = contadorOrdenes.ToString();
             contadorOrdenes++;
-            ordenEnt.EstadoOrdenSeleccion = EstadoSeleccionEnum.EstadoSeleccion.Pendiente;
+            ordenEnt.EstadoOrdenSeleccion = EstadoSeleccion.Pendiente;
             OrdenesDeSeleccionEnt.Add(ordenEnt);
-            MessageBox.Show($"El número de orden guardada: {ordenEnt.IdOrdenDeSeleccion}");
             Grabar();
         }
 
-        public static void CambiarEstadoOrdenSeleecion (OrdenDeSeleccionPendiente ordenDeSeleccionPendiente )
+        public static void CambiarEstadoOrdenSeleccion(string ordenId, EstadoSeleccion estado)
         {
-            if (ordenDeSeleccionPendiente.EstadoOrdenSeleccion == EstadoSeleccionEnum.EstadoSeleccion.Pendiente)
-            {
-                ordenDeSeleccionPendiente.EstadoOrdenSeleccion = EstadoSeleccionEnum.EstadoSeleccion.Cumplida;
-            }
-
+            var orden = OrdenesDeSeleccionEnt.Where(o => o.IdOrdenDeSeleccion == ordenId).First();
+            orden.EstadoOrdenSeleccion = estado;
         }
+
     }
 }

@@ -11,8 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static GrupoF.TP.CAI.Pampazon.Clases_Auxiliares.OrdenDePreparacion;
-using static GrupoF.TP.CAI.Pampazon.Entidades.Prioridades;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
 {
@@ -46,10 +44,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
             }
             TranspBox.Text ="";
             model.ClienteOrden.Fecha = FechaPicker.Value;
-            model.ClienteOrden.EstadoOrden = Estados.Estado.Pendiente;
+            model.ClienteOrden.EstadoOrden = EstadoPreparacion.Pendiente;
 
             // Calcular el próximo número de orden disponible
-            int proximoNumeroOrden = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts.Count + 1;
+            int proximoNumeroOrden = AlmacenOrdenesDePreparacion.OrdenDePreparacion.Count + 1;
             IdTextBox.Text = proximoNumeroOrden.ToString();
 
 
@@ -122,7 +120,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._1._Registrar_Orden_de_Preparación
                 nuevaOrden.CodigoCliente = model.ClienteSeleccionado.CodigoCliente;
                 nuevaOrden.CodigoTransportista = TranspBox.Text;
                 nuevaOrden.Fecha = FechaPicker.Value;
-                nuevaOrden.EstadoOrden = Estados.Estado.Pendiente;
+                nuevaOrden.EstadoOrden = EstadoPreparacion.Pendiente;
                 nuevaOrden.Prioridad = (Prioridad)(int)PrioridadComboBox.SelectedItem;
                 nuevaOrden.ProductosOrden = new();
             };

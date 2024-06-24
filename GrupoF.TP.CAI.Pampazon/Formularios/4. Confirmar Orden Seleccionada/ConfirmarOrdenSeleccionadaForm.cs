@@ -80,7 +80,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
             {
                 OrdenDePreparacionEnSeleccion orden = (OrdenDePreparacionEnSeleccion)listOrdenesEnSeleccion.SelectedItems[0].Tag;
 
-                orden.EstadoOrden = Entidades.Estados.Estado.Seleccionada;
+                orden.EstadoOrden = Entidades.EstadoPreparacion.Seleccionada;
 
                 listOrdenesEnSeleccion.SelectedItems[0].SubItems[5].Text = orden.EstadoOrden.ToString();
 

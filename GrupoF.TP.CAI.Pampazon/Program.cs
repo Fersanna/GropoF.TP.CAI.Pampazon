@@ -1,3 +1,5 @@
+using GrupoF.TP.CAI.Pampazon.Almacenes;
+
 namespace GrupoF.TP.CAI.Pampazon
 {
     internal static class Program
@@ -12,6 +14,14 @@ namespace GrupoF.TP.CAI.Pampazon
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new MenuForm());
+
+            //esto pasa sólo si el sistema se cierra sin error.
+            AlmacenClientes.Grabar();
+            AlmacenOrdenDeEntrega.Grabar();
+            AlmacenOrdenDeSeleccion.Grabar();
+            AlmacenOrdenesDePreparacion.Grabar();
+            AlmacenProductos.Grabar();
+            AlmacenRemitos.Grabar();
         }
     }
 }

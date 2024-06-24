@@ -1,82 +1,91 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
-using GrupoF.TP.CAI.Pampazon.Clases_Auxiliares;
 using GrupoF.TP.CAI.Pampazon.Entidades;
 using GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición.Clases_Auxiliares;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using GrupoF.TP.CAI.Pampazon.Formularios._3._Confirmar_Orden_de_Seleccion.Modelo_3;
 
-namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
+namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición;
+
+public class ConfirmarOrdenDeSeleccionModel
 {
-    public class ConfirmarOrdenDeSeleccionModel
+    private readonly Dictionary<string, CantidadASeleccionar> cantidadesPorProductoPosicion = new();
+
+    public List<OrdenDeSeleccionPendiente> OrdenesSeleccionPendientes { get; set; } = new List<OrdenDeSeleccionPendiente>();
+
+    public OrdenDeSeleccionPendiente OrdenDeSeleccionElegida { get; internal set; }
+
+    public ConfirmarOrdenDeSeleccionModel()
     {
-        public List<OrdenDeSeleccionPendiente> OrdenesSeleccionPendientes { get; set; } = new List<OrdenDeSeleccionPendiente>();
-
-        public OrdenDeSeleccionPendiente OrdenDeSeleccionElegida { get; internal set; }
-
-        public ConfirmarOrdenDeSeleccionModel()
-        {
-            var ordenesDeSeleccion = AlmacenOrdenDeSeleccion.OrdenesDeSeleccionEnt;
-
-            if (ordenesDeSeleccion != null)
-            {
-                OrdenesSeleccionPendientes = ordenesDeSeleccion
-                                                .Select(ordenEnt => new OrdenDeSeleccionPendiente
-                                                {
-                                                    IdOrdenDeSeleccion = ordenEnt.IdOrdenDeSeleccion,
-                                                    EstadoOrdenSeleccion = ordenEnt.EstadoOrdenSeleccion,
-                                                    SeleccionDetalle = ordenEnt.SeleccionDetalle.Select(d => d.NumeroDeOrden).ToList()
-                                                })
-                                                .ToList();
-            }
-            else
-            {
-                MessageBox.Show("Debe ingresar una orden de selección");
-            }
-        }
-
-        internal string Confirmar()
-        { 
-           
-            
-            //TODO: verificar que haya stock? 
-            /* foreach (var detalle in OrdenDeSeleccionElegida.SeleccionDetalle)
-             {
-
-
-                 var producto = AlmacenProductos.Productos.FirstOrDefault(p => p.IdProducto == detalle.NumeroDeOrden);
-
-                 if (producto == null || producto.Stock <= 0)
-                 {
-                     return $"No hay suficiente stock para el producto {detalle.NumeroDeOrden}.";
-                 }
-
-             }
-             //TODO: bajar el stock
-             foreach (var detalle in OrdenDeSeleccionElegida.SeleccionDetalle)
-             {
-                 var producto = AlmacenProductos.Productos.FirstOrDefault(p => p.IdProducto == );
-
-                 if (producto != null)
-                 {
-                     producto.Stock -= detalle.Cantidad;
-                 }
-             }*/
-            //TODO: Recargar la lista OrdenesSeleccionPendientes.
-            AlmacenOrdenDeSeleccion.CambiarEstadoOrdenSeleecion(OrdenDeSeleccionElegida);
-            AlmacenProductos.Grabar();
-            MessageBox.Show("Orden de Seleecion cumplida");
-
-
-                OrdenDeSeleccionElegida = null;
-                //si hay algun error string con mensaje para el usuario, si no devolver null
-                return null;
-
-            
-        }
+        CargarOrdenesSeleccion();
     }
+
+
+    public List<CantidadASeleccionar> CantidadesAcumuladas()
+    {
+        var ordenSeleccion = AlmacenOrdenDeSeleccion.OrdenesDeSeleccionEnt.Where(o => o.IdOrdenDeSeleccion == OrdenDeSeleccionElegida.IdOrdenDeSeleccion).Single();
+        foreach (var detalleOrdenSeleccion in ordenSeleccion.SeleccionDetalle)
+        {
+            var ordenPreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacion.First(o => o.NumeroDeOrden == detalleOrdenSeleccion.NumeroDeOrden);
+
+            foreach (var ordenPreparacionDetalle in ordenPreparacion.Detalle)
+            {
+                var cantidadASeleccionar = ordenPreparacionDetalle.Cantidad;
+
+                foreach (var productoPosicionStock in AlmacenProductos.Productos.Where(p => p.IdProducto == ordenPreparacionDetalle.IdProducto && p.Stock > 0))
+                {
+                    var cantidadASacarDeLaPosicion = Math.Min(productoPosicionStock.Stock, cantidadASeleccionar);
+
+                    if (cantidadesPorProductoPosicion.TryGetValue(productoPosicionStock.IdProducto, out var posicion))
+                    {
+                        posicion.Cantidad += cantidadASacarDeLaPosicion;
+                    }
+                    else
+                    {
+                        cantidadesPorProductoPosicion.Add(productoPosicionStock.IdProducto, new()
+                        {
+                            idproducto = productoPosicionStock.IdProducto,
+                            DescripcionProducto = productoPosicionStock.Descripcion,
+                            CodigoCliente = ordenPreparacion.CodigoCliente,
+                            Posicion = productoPosicionStock.Posicion,
+                            Cantidad = cantidadASacarDeLaPosicion
+                        });
+                    }
+
+                    cantidadASeleccionar -= cantidadASacarDeLaPosicion;
+                    if (cantidadASeleccionar == 0)
+                    {
+                        break;
+                    }
+                }
+            }
+        }
+
+        return cantidadesPorProductoPosicion.Values.ToList();
+    }
+
+
+    internal void Confirmar()
+    {
+        AlmacenOrdenDeSeleccion.CambiarEstadoOrdenSeleccion(OrdenDeSeleccionElegida.IdOrdenDeSeleccion, EstadoSeleccion.Cumplida);
+
+
+        AlmacenProductos.DarDeBajaStock(cantidadesPorProductoPosicion.Select(d => (d.Value.idproducto, d.Value.Posicion, d.Value.Cantidad)).ToList());
+        CargarOrdenesSeleccion();
+    }
+
+    private void CargarOrdenesSeleccion()
+    {
+        OrdenesSeleccionPendientes = AlmacenOrdenDeSeleccion.OrdenesDeSeleccionEnt
+                                .Where(o => o.EstadoOrdenSeleccion == EstadoSeleccion.Pendiente)
+                                .Select(ordenEnt => new OrdenDeSeleccionPendiente
+                                {
+                                    IdOrdenDeSeleccion = ordenEnt.IdOrdenDeSeleccion,
+                                    EstadoOrdenSeleccion = ordenEnt.EstadoOrdenSeleccion,
+                                    SeleccionDetalle = ordenEnt.SeleccionDetalle.Select(d => d.NumeroDeOrden).ToList()
+                                })
+                                .ToList();
+
+    }
+
 }
 
 

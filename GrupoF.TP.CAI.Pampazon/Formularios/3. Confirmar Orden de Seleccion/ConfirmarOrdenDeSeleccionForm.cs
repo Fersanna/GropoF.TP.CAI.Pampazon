@@ -40,37 +40,26 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
                 inventarioForm.Model = model;
                 inventarioForm.ShowDialog();
 
-                listOrdenesDeSeleccion.Clear();
+                listOrdenesDeSeleccion.Items.Clear();
                 cargarOrdenesDeSeleccion();
             }
         }
 
 
         private void cargarOrdenesDeSeleccion()
-
         {
-            if (model.OrdenesSeleccionPendientes != null)
+            foreach (OrdenDeSeleccionPendiente ordenesSeleccion in model.OrdenesSeleccionPendientes)
             {
-                foreach (OrdenDeSeleccionPendiente ordenesSeleccion in model.OrdenesSeleccionPendientes)
-                {
-                    if (ordenesSeleccion.EstadoOrdenSeleccion == Entidades.EstadoSeleccionEnum.EstadoSeleccion.Pendiente)
-                    {
-                        ListViewItem item = new ListViewItem(ordenesSeleccion.IdOrdenDeSeleccion);
-                        // string detallesUnidos = string.Join(" - ", ordenesSeleccionada.OrdenesSeleccionadas);
-
-                        item.SubItems.Add(ordenesSeleccion.EstadoOrdenSeleccion.ToString());
-                        listOrdenesDeSeleccion.Items.Add(item);
-                        item.Tag = ordenesSeleccion;
-                    }
-                }
+                ListViewItem item = new ListViewItem(ordenesSeleccion.IdOrdenDeSeleccion);
+                item.SubItems.Add(ordenesSeleccion.EstadoOrdenSeleccion.ToString());
+                listOrdenesDeSeleccion.Items.Add(item);
+                item.Tag = ordenesSeleccion;
             }
         }
 
         private void BuscarPosicionForm_Load(object sender, EventArgs e)
-
         {
             model = new ConfirmarOrdenDeSeleccionModel();
-
             cargarOrdenesDeSeleccion();
         }
     }

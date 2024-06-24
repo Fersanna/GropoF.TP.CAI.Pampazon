@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static GrupoF.TP.CAI.Pampazon.Entidades.Prioridades;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 {
@@ -30,7 +29,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         public OrdenDeSeleccionModel()
         {
-            var ordenesDeSeleccion = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts;
+            var ordenesDeSeleccion = AlmacenOrdenesDePreparacion.OrdenDePreparacion;
 
             if (ordenesDeSeleccion != null)
             {
@@ -100,7 +99,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         internal string ValidarOrden(OrdenDePreparacionPendiente ordenSeleccionada)
         {   // Arreglar esto para cuando se null
-            if (ordenSeleccionada.EstadoOrden == Estados.Estado.Seleccion)
+            if (ordenSeleccionada.EstadoOrden == EstadoPreparacion.Seleccion)
             {
                 RevertirEstadoOrden(ordenSeleccionada);
                 return "Orden revertida a pendiente.";
@@ -122,7 +121,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
         private void RevertirEstadoOrden(OrdenDePreparacionPendiente ordenSeleccionada)
         {
-            ordenSeleccionada.EstadoOrden = Estados.Estado.Pendiente;
+            ordenSeleccionada.EstadoOrden = EstadoPreparacion.Pendiente;
             OrdenDePreparacionPendientes.Add(ordenSeleccionada);
             OrdenDePreparacionSeleccionadas.Remove(ordenSeleccionada);
         }
@@ -150,7 +149,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
             var nuevaOrdenEnt = new OrdenDeSeleccionEnt
             {
                 IdOrdenDeSeleccion = nuevoIdOrdenDeSeleccion,
-                EstadoOrdenSeleccion = EstadoSeleccionEnum.EstadoSeleccion.Pendiente,
+                EstadoOrdenSeleccion = EstadoSeleccion.Pendiente,
                 SeleccionDetalle = new List<OrdenDeSeleccionDetalle>()
             };
 

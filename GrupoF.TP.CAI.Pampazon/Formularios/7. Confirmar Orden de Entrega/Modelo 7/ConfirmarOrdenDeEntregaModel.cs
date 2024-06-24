@@ -20,12 +20,12 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
 
         public ConfirmarOrdenDeEntregaModel()
         {
-            var ordenesAdespachar = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts;
+            var ordenesAdespachar = AlmacenOrdenesDePreparacion.OrdenDePreparacion;
 
 
             if (ordenesAdespachar != null)
             {
-                var ordenesPreparadas = ordenesAdespachar.FindAll(p => p.EstadoOrden == Entidades.Estados.Estado.Preparada);
+                var ordenesPreparadas = ordenesAdespachar.FindAll(p => p.EstadoOrden == Entidades.EstadoPreparacion.Preparada);
 
                 OrdenesDeEntregaAConfirmar = ordenesPreparadas.Select(ordenEnt =>
                 new OrdenDePreparacionPreparada
@@ -40,11 +40,11 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
                 }).ToList();
             }
 
-            var ordenesAEntregar = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts;
+            var ordenesAEntregar = AlmacenOrdenesDePreparacion.OrdenDePreparacion;
 
             if (ordenesAEntregar != null)
             {
-                var ordenesDespachadas = ordenesAEntregar.FindAll(p => p.EstadoOrden == Entidades.Estados.Estado.Despachada);
+                var ordenesDespachadas = ordenesAEntregar.FindAll(p => p.EstadoOrden == Entidades.EstadoPreparacion.Despachada);
 
                 OrdenesDeEntregaAEntregar = ordenesDespachadas.Select(ordenDEnt =>
                 new OrdenDePreparacionDespachada

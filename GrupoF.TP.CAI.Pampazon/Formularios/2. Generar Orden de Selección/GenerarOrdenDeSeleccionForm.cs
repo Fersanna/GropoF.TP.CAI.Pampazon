@@ -42,7 +42,7 @@ namespace GrupoF.TP.CAI.Pampazon
         private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
 
-            if (!model.OrdenDePreparacionSeleccionadas.Any(o => o.EstadoOrden == Entidades.Estados.Estado.Seleccion))
+            if (!model.OrdenDePreparacionSeleccionadas.Any(o => o.EstadoOrden == Entidades.EstadoPreparacion.Seleccion))
             {
                 MessageBox.Show("Debe seleccionar una o varias ordenes.");
                 return;
@@ -71,7 +71,7 @@ namespace GrupoF.TP.CAI.Pampazon
                 foreach (OrdenDePreparacionPendiente ordenes in model.OrdenDePreparacionPendientes)
                 {
 
-                    if (ordenes.EstadoOrden == Entidades.Estados.Estado.Pendiente)
+                    if (ordenes.EstadoOrden == Entidades.EstadoPreparacion.Pendiente)
                     {
                         {
 
@@ -109,7 +109,7 @@ namespace GrupoF.TP.CAI.Pampazon
                     return;
                 }
 
-                ordenSeleccionada.EstadoOrden = Entidades.Estados.Estado.Seleccion;
+                ordenSeleccionada.EstadoOrden = Entidades.EstadoPreparacion.Seleccion;
 
                 listOrdenesPendientes.SelectedItems[0].SubItems[5].Text = ordenSeleccionada.EstadoOrden.ToString();
 
@@ -159,7 +159,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
             foreach (var orden in ordenesFiltradas)
             {
-                if (orden.EstadoOrden == Entidades.Estados.Estado.Pendiente)
+                if (orden.EstadoOrden == Entidades.EstadoPreparacion.Pendiente)
                 {
                     {
 

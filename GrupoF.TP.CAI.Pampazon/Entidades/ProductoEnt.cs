@@ -10,8 +10,7 @@ namespace GrupoF.TP.CAI.Pampazon.Entidades
     {
         public string IdProducto { get; set; }
         public string Descripcion { get; set; }
-        public string  Posicion { get; set;}
-        public int Stock {get; set; }
-       
+        public string Posicion { get; set; }
+        public int Stock { get; set; }
     }
 }

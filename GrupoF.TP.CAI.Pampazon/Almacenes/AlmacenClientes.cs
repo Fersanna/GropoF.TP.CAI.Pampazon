@@ -41,7 +41,7 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
             try
             {
                 var contenidoJson = JsonConvert.SerializeObject(Clientes, Formatting.Indented);
-                File.WriteAllText("Clientes.json", contenidoJson);
+                File.WriteAllText(filePath, contenidoJson);
             }
             catch (Exception ex)
             {

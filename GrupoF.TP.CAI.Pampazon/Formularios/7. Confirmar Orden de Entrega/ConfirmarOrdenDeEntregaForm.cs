@@ -62,7 +62,7 @@ namespace GrupoF.TP.CAI.Pampazon
                 foreach (OrdenDePreparacionPreparada item in model.OrdenesDeEntregaAConfirmar)
                 {
                     OrdenDePreparacionPreparada seleccionada = (OrdenDePreparacionPreparada)listOrdenesPreparadas.SelectedItems[0].Tag;
-                    seleccionada.EstadoOrden =Entidades.Estados.Estado.Despachada;
+                    seleccionada.EstadoOrden = Entidades.EstadoPreparacion.Despachada;
                     
                    model.OrdenADespachada = seleccionada;
                   

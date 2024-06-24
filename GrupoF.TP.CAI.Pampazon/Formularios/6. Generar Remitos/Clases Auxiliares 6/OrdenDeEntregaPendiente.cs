@@ -1,10 +1,9 @@
-﻿using System;
+﻿using GrupoF.TP.CAI.Pampazon.Entidades;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static GrupoF.TP.CAI.Pampazon.Entidades.EstadoEntregaEnum;
-using static GrupoF.TP.CAI.Pampazon.Entidades.EstadoSeleccionEnum;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos.Clases_Auxiliares_6
 {

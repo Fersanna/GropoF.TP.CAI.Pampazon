@@ -7,7 +7,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static GrupoF.TP.CAI.Pampazon.Entidades.Prioridades;
 
 namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 {
@@ -33,7 +32,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         public OrdenDeEntregaModel()
         {
-            var ordenes = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts.FindAll(o => o.EstadoOrden == Estados.Estado.Seleccionada);
+            var ordenes = AlmacenOrdenesDePreparacion.OrdenDePreparacion.FindAll(o => o.EstadoOrden == EstadoPreparacion.Seleccionada);
 
             if (OrdenesSeleccionadas != null)
             {
@@ -102,7 +101,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         internal string ValidarOrden(OrdenDePreparacionSeleccionada ordenSeleccionada)
         {   // Arreglar esto para cuando se null
-            if (ordenSeleccionada.EstadoOrden == Estados.Estado.Preparada)
+            if (ordenSeleccionada.EstadoOrden == EstadoPreparacion.Preparada)
             {
                 RevertirEstadoOrden(ordenSeleccionada);
                 return "Orden revertida a seleccionada.";
@@ -124,7 +123,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
         private void RevertirEstadoOrden(OrdenDePreparacionSeleccionada ordenSeleccionada)
         {
-            ordenSeleccionada.EstadoOrden = Estados.Estado.Seleccionada;
+            ordenSeleccionada.EstadoOrden = EstadoPreparacion.Seleccionada;
             OrdenesSeleccionadas.Add(ordenSeleccionada);
             OrdenesPreparadas.Remove(ordenSeleccionada);
         }
@@ -134,7 +133,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
             var nuevaOrdenDeEntregaEnt = new OrdenDeEntregaEnt
             {
                 Fecha = DateTime.Now,
-                EstadoOrdenEntrega = EstadoEntregaEnum.EstadoEntrega.Pendiente,
+                EstadoOrdenEntrega = EstadoEntrega.Pendiente,
                 
                 EntregaDetalle = new List<OrdenDeEntregaDetalle>()
 
@@ -142,10 +141,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
 
             foreach (var ordenPreparada in ordenesPreparadas)
             {
-                var orden = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts.FirstOrDefault(o => o.NumeroDeOrden == ordenPreparada.NumeroDeOrden);
+                var orden = AlmacenOrdenesDePreparacion.OrdenDePreparacion.FirstOrDefault(o => o.NumeroDeOrden == ordenPreparada.NumeroDeOrden);
                 if (orden != null)
                 {
-                    orden.EstadoOrden = Estados.Estado.Preparada;
+                    orden.EstadoOrden = EstadoPreparacion.Preparada;
                    
                     nuevaOrdenDeEntregaEnt.CodigoCliente =ordenPreparada.CodigoCliente;
                     nuevaOrdenDeEntregaEnt.CodigoTransportista = ordenPreparada.CodigoTransportista;

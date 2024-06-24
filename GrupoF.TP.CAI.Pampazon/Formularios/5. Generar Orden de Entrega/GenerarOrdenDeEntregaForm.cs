@@ -35,7 +35,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
         private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
-            if (!model.OrdenesPreparadas.Any(o => o.EstadoOrden == Entidades.Estados.Estado.Preparada))
+            if (!model.OrdenesPreparadas.Any(o => o.EstadoOrden == Entidades.EstadoPreparacion.Preparada))
             {
                 MessageBox.Show("Debe seleccionar una o varias ordenes.");
                 return;
@@ -100,7 +100,7 @@ namespace GrupoF.TP.CAI.Pampazon
                     return;
                 }
 
-                ordenSeleccionada.EstadoOrden = Entidades.Estados.Estado.Preparada;
+                ordenSeleccionada.EstadoOrden = Entidades.EstadoPreparacion.Preparada;
 
                 listOrdenesPreparacion.SelectedItems[0].SubItems[5].Text = ordenSeleccionada.EstadoOrden.ToString();
 

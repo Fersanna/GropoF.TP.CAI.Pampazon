@@ -63,14 +63,14 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
         {
             var ordenSeleccionada = AlmacenOrdenDeEntrega.OrdenDeEntregaEnts.FirstOrDefault(o => OrdenSeleccionada.IdOrdenDeEntrega == o.IdOrdenDeEntrega);
 
-            ordenSeleccionada.EstadoOrdenEntrega = Entidades.EstadoEntregaEnum.EstadoEntrega.Asignado;
+            ordenSeleccionada.EstadoOrdenEntrega = EstadoEntrega.Asignado;
         }
 
         internal void GuardarRemito()
         {
             var numerosDeOrden = OrdenSeleccionada.EntregaDetalle;
            
-            var ordenesDePreparacion = AlmacenOrdenesDePreparacion.OrdenesDePreparacion
+            var ordenesDePreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacion
                  .Where(o => numerosDeOrden.Contains(o.NumeroDeOrden))
                  .ToList();
 
@@ -110,10 +110,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
             AlmacenRemitos.RemitosEnt.Add(remito); 
             AlmacenRemitos.Grabar();
             
-
-            MessageBox.Show($"Remito guardado con éxito. ID del Remito: {remito.IdRemito}");
-         
-
+            MessageBox.Show($"Remito guardado con ID: {remito.IdRemito}");
 
         }
     }

@@ -15,12 +15,12 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
         //Seguir x aca
         public ConfirmarOrdenSeleccionadaFormModel()
         {
-            var ordenesAconfirmar = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts;
+            var ordenesAconfirmar = AlmacenOrdenesDePreparacion.OrdenDePreparacion;
 
 
             if (ordenesAconfirmar != null)
             {
-                var ordenesEnSeleccion = ordenesAconfirmar.FindAll(p => p.EstadoOrden == Entidades.Estados.Estado.Seleccion);
+                var ordenesEnSeleccion = ordenesAconfirmar.FindAll(p => p.EstadoOrden == Entidades.EstadoPreparacion.Seleccion);
 
                 OrdenEnSeleccion = ordenesEnSeleccion.Select(ordenEnt =>
                 new OrdenDePreparacionEnSeleccion
@@ -38,17 +38,17 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
 
         internal void CambiarEstadoEnOrden(OrdenDePreparacionEnSeleccion ordenDePreparacion)
         {
-            var orden = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts.FirstOrDefault(OrdenEnt => OrdenEnt.NumeroDeOrden == ordenDePreparacion.NumeroDeOrden);
+            var orden = AlmacenOrdenesDePreparacion.OrdenDePreparacion.FirstOrDefault(OrdenEnt => OrdenEnt.NumeroDeOrden == ordenDePreparacion.NumeroDeOrden);
 
             if (orden != null)
 
             {
-                orden.EstadoOrden = Entidades.Estados.Estado.Seleccionada;
+                orden.EstadoOrden = Entidades.EstadoPreparacion.Seleccionada;
 
                 var ordenEnSeleccion = OrdenEnSeleccion.FirstOrDefault(o => o.NumeroDeOrden == ordenDePreparacion.NumeroDeOrden);
                 if (ordenEnSeleccion != null)
                 {
-                    ordenEnSeleccion.EstadoOrden = Entidades.Estados.Estado.Seleccionada;
+                    ordenEnSeleccion.EstadoOrden = Entidades.EstadoPreparacion.Seleccionada;
                 }
                 
                 if (OrdenesSeleccionadas == null)

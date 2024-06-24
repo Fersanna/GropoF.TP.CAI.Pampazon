@@ -84,7 +84,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
             var ordenesSeleccionada = model.OrdenSeleccionada;
             var numerosDeOrden = ordenesSeleccionada.EntregaDetalle; //ID's de las ordenes de preparación.
 
-            var ordenesDePreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacionEnts
+            var ordenesDePreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacion
                                             .Where(o => numerosDeOrden.Contains(o.NumeroDeOrden))
                                             .ToList();
 
