@@ -47,8 +47,8 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
             }
 
 
-
-            ordenDePreparacionEnt.NumeroDeOrden = OrdenDePreparacion.Max(n => n.NumeroDeOrden) + 1;
+            var maxNumeroDeOrden = OrdenDePreparacion.Max(n => int.Parse(n.NumeroDeOrden));
+            ordenDePreparacionEnt.NumeroDeOrden = (maxNumeroDeOrden + 1).ToString();;
             OrdenDePreparacion.Add(ordenDePreparacionEnt);
 
             /*
