@@ -33,8 +33,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
 
             if (ordenesDeSeleccion != null)
             {
-                OrdenDePreparacionPendientes = ordenesDeSeleccion.Select(ordenesEnt =>
-                    new OrdenDePreparacionPendiente
+                OrdenDePreparacionPendientes = ordenesDeSeleccion
+                    .Where(ordenesEnt => ordenesEnt.EstadoOrden == EstadoPreparacion.Pendiente) // Filtrar por EstadoPendiente
+                    .Select(ordenesEnt => new OrdenDePreparacionPendiente // Proyección a OrdenDePreparacionPendiente
                     {
                         NumeroDeOrden = ordenesEnt.NumeroDeOrden,
                         Fecha = ordenesEnt.Fecha,
@@ -49,6 +50,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                 MessageBox.Show("Debe ingresar una orden de preparacion");
             }
         }
+
 
 
         internal List<OrdenDePreparacionPendiente> FiltrarOrdenes()
@@ -97,6 +99,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
             return null;
         }
 
+
+        /*
         internal string ValidarOrden(OrdenDePreparacionPendiente ordenSeleccionada)
         {   // Arreglar esto para cuando se null
             if (ordenSeleccionada.EstadoOrden == EstadoPreparacion.Seleccion)
@@ -111,13 +115,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                 {
                     
                 }
-                */
-            }
-
-
-            return null;
-
-        }
+                return null;
+    }
+        
 
         private void RevertirEstadoOrden(OrdenDePreparacionPendiente ordenSeleccionada)
         {
@@ -125,6 +125,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
             OrdenDePreparacionPendientes.Add(ordenSeleccionada);
             OrdenDePreparacionSeleccionadas.Remove(ordenSeleccionada);
         }
+
+        */
 
         internal void RegistrarOrden(List<OrdenDePreparacionPendiente> ordenesConfirmadas)
         {

@@ -99,10 +99,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
             }
             var remito = new RemitosEnt
             {
-               // IdRemito = ObtenerNuevoIdRemito(), 
+                IdRemito = Convert.ToInt32(OrdenSeleccionada.IdOrdenDeEntrega),
                 FechaRemito = DateTime.Now,
                 CodigoCliente = OrdenSeleccionada.CodigoCliente,
-                //Aca meti una brutalidad para poder obtener los productos ya que no encuentro el numero de orden arriba.
                 DetalleProductos = RemitoAGuardar.Detalle.ToList()
             };
 

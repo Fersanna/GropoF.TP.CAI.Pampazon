@@ -90,7 +90,7 @@ namespace GrupoF.TP.CAI.Pampazon
             {
                 OrdenDePreparacionSeleccionada ordenSeleccionada = (OrdenDePreparacionSeleccionada)listOrdenesPreparacion.SelectedItems[0].Tag;
 
-
+                /*
                 var error = model.ValidarOrden(ordenSeleccionada);
 
                 if (error != null)
@@ -99,6 +99,7 @@ namespace GrupoF.TP.CAI.Pampazon
                     CargarOrdenesSeleccionadas();
                     return;
                 }
+                */
 
                 ordenSeleccionada.EstadoOrden = Entidades.EstadoPreparacion.Preparada;
 
@@ -111,7 +112,7 @@ namespace GrupoF.TP.CAI.Pampazon
                 }
 
             }
-            MessageBox.Show("La orden fue seleccionada.");
+            //MessageBox.Show("La orden fue seleccionada.");
         }
 
 

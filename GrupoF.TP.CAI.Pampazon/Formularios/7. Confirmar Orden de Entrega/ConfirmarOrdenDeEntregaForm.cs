@@ -82,6 +82,8 @@ namespace GrupoF.TP.CAI.Pampazon
                     // Mostrar el siguiente formulario
                     ordenDespachadaForm.ShowDialog();
                 }
+
+                listOrdenesPreparadas.Enabled = true;
             }
         }
 
@@ -113,6 +115,8 @@ namespace GrupoF.TP.CAI.Pampazon
 
                 bool existeSeleccionada = false;
 
+                listOrdenesPreparadas.Enabled = false;
+
                 foreach (ListViewItem item in listOrdenesPreparadas.Items)
                 {
                     OrdenDePreparacionPreparada ordenEnLista = (OrdenDePreparacionPreparada)item.Tag;
@@ -123,6 +127,7 @@ namespace GrupoF.TP.CAI.Pampazon
                     }
                 }
 
+                
                 if (existeSeleccionada)
                 {
                     MessageBox.Show("Ya existe una orden en estado 'Despachada'. No se puede seleccionar otra orden hasta que la actual se complete.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);

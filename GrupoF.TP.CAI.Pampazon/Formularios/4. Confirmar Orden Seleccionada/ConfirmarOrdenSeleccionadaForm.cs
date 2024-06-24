@@ -72,7 +72,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                     MessageBox.Show("La orden se ha actualizado a estado Seleccionada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
-
+                listOrdenesEnSeleccion.Enabled = true;
             }
         }
 
@@ -83,6 +83,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 OrdenDePreparacionEnSeleccion orden = (OrdenDePreparacionEnSeleccion)listOrdenesEnSeleccion.SelectedItems[0].Tag;
 
                 bool existeSeleccionada = false;
+
+                listOrdenesEnSeleccion.Enabled = false;
 
                 foreach (ListViewItem item in listOrdenesEnSeleccion.Items)
                 {

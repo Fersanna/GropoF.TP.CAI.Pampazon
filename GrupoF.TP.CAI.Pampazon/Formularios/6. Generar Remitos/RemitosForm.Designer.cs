@@ -45,8 +45,6 @@
             RemitoTextBox = new TextBox();
             label4 = new Label();
             groupBox1 = new GroupBox();
-            textBox5 = new TextBox();
-            label6 = new Label();
             CancelarBtn = new Button();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -210,23 +208,6 @@
             groupBox1.TabIndex = 47;
             groupBox1.TabStop = false;
             // 
-            // textBox5
-            // 
-            textBox5.Enabled = false;
-            textBox5.Location = new Point(504, 351);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(97, 23);
-            textBox5.TabIndex = 48;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(461, 354);
-            label6.Name = "label6";
-            label6.Size = new Size(32, 15);
-            label6.TabIndex = 47;
-            label6.Text = "Total";
-            // 
             // CancelarBtn
             // 
             CancelarBtn.Location = new Point(512, 388);
@@ -243,8 +224,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(637, 425);
             Controls.Add(CancelarBtn);
-            Controls.Add(label6);
-            Controls.Add(textBox5);
             Controls.Add(groupBox1);
             Controls.Add(ImprimirBtn);
             Controls.Add(textBox2);
@@ -275,8 +254,6 @@
         private TextBox RemitoTextBox;
         private Label label4;
         private GroupBox groupBox1;
-        private TextBox textBox5;
-        private Label label6;
         private Button CancelarBtn;
         private ColumnHeader IdHeader;
         private ColumnHeader CantidadHeader;

@@ -71,10 +71,6 @@ namespace GrupoF.TP.CAI.Pampazon
                 foreach (OrdenDePreparacionPendiente ordenes in model.OrdenDePreparacionPendientes)
                 {
 
-                    if (ordenes.EstadoOrden == Entidades.EstadoPreparacion.Pendiente)
-                    {
-                        {
-
                             ListViewItem item = new ListViewItem(ordenes.NumeroDeOrden);
                             item.SubItems.Add(ordenes.CodigoCliente);
                             item.SubItems.Add(ordenes.Fecha.ToString("dd/MM/yyyy"));
@@ -85,9 +81,6 @@ namespace GrupoF.TP.CAI.Pampazon
                             listOrdenesPendientes.Items.Add(item);
 
                             item.Tag = ordenes;
-                        }
-
-                    }
                 }
             }
 
@@ -99,7 +92,7 @@ namespace GrupoF.TP.CAI.Pampazon
             {
                 OrdenDePreparacionPendiente ordenSeleccionada = (OrdenDePreparacionPendiente)listOrdenesPendientes.SelectedItems[0].Tag;
 
-
+                /*
                 var error = model.ValidarOrden(ordenSeleccionada);
 
                 if (error != null)
@@ -108,6 +101,7 @@ namespace GrupoF.TP.CAI.Pampazon
                     CargarOrdenesDePreparacion();
                     return;
                 }
+                */
 
                 ordenSeleccionada.EstadoOrden = Entidades.EstadoPreparacion.Seleccion;
 
@@ -119,7 +113,7 @@ namespace GrupoF.TP.CAI.Pampazon
                     model.OrdenDePreparacionSeleccionadas.Add(ordenSeleccionada);
                 }
             }
-            MessageBox.Show("La orden fue seleccionada.");
+            //MessageBox.Show("La orden fue seleccionada.");
 
 
         }

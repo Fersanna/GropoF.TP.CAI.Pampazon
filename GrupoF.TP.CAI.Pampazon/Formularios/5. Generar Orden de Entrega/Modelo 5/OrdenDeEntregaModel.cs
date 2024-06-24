@@ -99,6 +99,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
             return null;
         }
 
+        /*
         internal string ValidarOrden(OrdenDePreparacionSeleccionada ordenSeleccionada)
         {   // Arreglar esto para cuando se null
             if (ordenSeleccionada.EstadoOrden == EstadoPreparacion.Preparada)
@@ -106,14 +107,14 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
                 RevertirEstadoOrden(ordenSeleccionada);
                 return "Orden revertida a seleccionada.";
 
-                /*
+                
                 DialogResult result = MessageBox.Show("Esta orden ya fue seleccionada. ¿Desea quitarla de la selección?", "Confirmación", MessageBoxButtons.OKCancel);
 
                 if (result == DialogResult.OK)
                 {
                     
                 }
-                */
+                
             }
 
 
@@ -127,6 +128,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._5._Generar_Orden_de_Entrega
             OrdenesSeleccionadas.Add(ordenSeleccionada);
             OrdenesPreparadas.Remove(ordenSeleccionada);
         }
+        
+        */
 
         internal void RegistrarOrden(List<OrdenDePreparacionSeleccionada> ordenesPreparadas)
         {
