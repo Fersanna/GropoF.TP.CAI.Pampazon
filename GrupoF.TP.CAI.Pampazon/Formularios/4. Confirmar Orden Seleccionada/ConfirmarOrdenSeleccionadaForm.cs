@@ -55,6 +55,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 MessageBox.Show("Debe seleccionar al menos una orden.");
                 return;
             }
+
+
             else
             {
 
@@ -70,16 +72,33 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                     MessageBox.Show("Las ordenes se han actualizado a estado Seleccionada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
-               
+
             }
         }
 
         private void listOrdenesEnSeleccion_MouseClick(object sender, MouseEventArgs e)
         {
-             if (listOrdenesEnSeleccion.SelectedItems.Count > 0)
+            if (listOrdenesEnSeleccion.SelectedItems.Count > 0)
             {
                 OrdenDePreparacionEnSeleccion orden = (OrdenDePreparacionEnSeleccion)listOrdenesEnSeleccion.SelectedItems[0].Tag;
 
+                bool existeSeleccionada = false;
+
+                foreach (ListViewItem item in listOrdenesEnSeleccion.Items)
+                {
+                    OrdenDePreparacionEnSeleccion ordenEnLista = (OrdenDePreparacionEnSeleccion)item.Tag;
+                    if (ordenEnLista.EstadoOrden == Entidades.EstadoPreparacion.Seleccionada)
+                    {
+                        existeSeleccionada = true;
+                        break;
+                    }
+                }
+
+                if (existeSeleccionada)
+                {
+                    MessageBox.Show("Ya existe una orden en estado 'Seleccionada'. No se puede seleccionar otra orden hasta que la actual se complete.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
                 orden.EstadoOrden = Entidades.EstadoPreparacion.Seleccionada;
 
                 listOrdenesEnSeleccion.SelectedItems[0].SubItems[5].Text = orden.EstadoOrden.ToString();
@@ -90,7 +109,8 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                     model.OrdenEnSeleccion.Remove(orden);
                     model.OrdenesSeleccionadas.Add(orden);
                 }
-            
+
+            }
         }
     }
-} }
+}
