@@ -1,4 +1,5 @@
 ﻿using GrupoF.TP.CAI.Pampazon.Almacenes;
+using GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada;
 using GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega.Clases_auxiliares;
 using GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega.Clases_Auxiliares_7;
 using System;
@@ -12,10 +13,10 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
     public class ConfirmarOrdenDeEntregaModel
     {
         public List<OrdenDePreparacionPreparada> OrdenesDeEntregaAConfirmar { get; set; }
-        public OrdenDePreparacionPreparada OrdenADespachada { get; internal set; }
+        public List<OrdenDePreparacionPreparada> OrdenADespachada { get; set; }
 
         public List<OrdenDePreparacionDespachada> OrdenesDeEntregaAEntregar { get; set; }
-        public OrdenDePreparacionDespachada OrdenDespachada { get; internal set; }
+        public List<OrdenDePreparacionDespachada> OrdenDespachada { get; set; }
 
 
         public ConfirmarOrdenDeEntregaModel()
@@ -58,6 +59,43 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
 
                 }).ToList();
             }
+        }
+
+        internal void CambiarEstadoEnOrden(OrdenDePreparacionPreparada ordenDePreparacion)
+        {
+            var orden = AlmacenOrdenesDePreparacion.OrdenDePreparacion.FirstOrDefault(OrdenEnt => OrdenEnt.NumeroDeOrden == ordenDePreparacion.NumeroDeOrden);
+
+            if (orden != null)
+
+            {
+                orden.EstadoOrden = Entidades.EstadoPreparacion.Despachada;
+
+                var ordenEnSeleccion = OrdenesDeEntregaAConfirmar.FirstOrDefault(o => o.NumeroDeOrden == ordenDePreparacion.NumeroDeOrden);
+                if (ordenEnSeleccion != null)
+                {
+                    ordenEnSeleccion.EstadoOrden = Entidades.EstadoPreparacion.Despachada;
+                }
+
+                if (OrdenADespachada == null)
+                {
+                    OrdenADespachada = new List<OrdenDePreparacionPreparada>();
+                }
+
+                if (!OrdenADespachada.Contains(ordenDePreparacion))
+                {
+                    OrdenesDeEntregaAConfirmar.Remove(ordenDePreparacion);
+                    OrdenADespachada.Add(ordenDePreparacion);
+                }
+                AlmacenOrdenesDePreparacion.Grabar();
+            }
+
+            else
+            {
+
+                throw new Exception("Orden no encontrada.");
+            }
+
+
         }
 
     }

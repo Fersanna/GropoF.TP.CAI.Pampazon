@@ -32,6 +32,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
             
             CargarOrdenesDespachadas();
 
+            /*
             if (model != null && model.OrdenADespachada != null)
             {
                 ListViewItem item = new ListViewItem(model.OrdenADespachada.NumeroDeOrden);
@@ -44,8 +45,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
                 listOrdenesDespachadas.Items.Add(item);
 
                 item.Tag = model.OrdenADespachada;
+            
             }
-
+            */
         }
 
         private void CargarOrdenesDespachadas()

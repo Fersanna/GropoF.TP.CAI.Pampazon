@@ -1,4 +1,5 @@
-﻿using GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega;
+﻿using GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada;
+using GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega;
 using GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega.Clases_auxiliares;
 using System;
 using System.Collections.Generic;
@@ -44,7 +45,7 @@ namespace GrupoF.TP.CAI.Pampazon
 
                     item.Tag = ordenes;
                 }
-                
+
             }
         }
 
@@ -56,32 +57,20 @@ namespace GrupoF.TP.CAI.Pampazon
             }
             else
             {
-                
+
                 //Seguir por aca, esto esta pendiente.
 
-                foreach (OrdenDePreparacionPreparada item in model.OrdenesDeEntregaAConfirmar)
-                {
-                    OrdenDePreparacionPreparada seleccionada = (OrdenDePreparacionPreparada)listOrdenesPreparadas.SelectedItems[0].Tag;
-                    seleccionada.EstadoOrden = Entidades.EstadoPreparacion.Despachada;
-                    
-                   model.OrdenADespachada = seleccionada;
-                  
+                OrdenDePreparacionPreparada ordenDePreparacion = (OrdenDePreparacionPreparada)listOrdenesPreparadas.SelectedItems[0].Tag;
 
-                }
+                model.CambiarEstadoEnOrden(ordenDePreparacion);
 
-                OrdenDespachadaForm ordenDespachadaForm = new OrdenDespachadaForm();
-                ordenDespachadaForm.model = model;
 
-                DialogResult result = MessageBox.Show("¿Está seguro de que las ordenes seleccionadas han sido despachadas?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult result = MessageBox.Show("¿Está seguro de que la orden seleccionada ha sido entregada?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
                 if (result == DialogResult.Yes)
                 {
-                    MessageBox.Show("Las ordenes se han actualizado a estado Despachada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    ordenDespachadaForm.ShowDialog();
+                    MessageBox.Show("La orden se ha actualizado a estado Despachada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
-
-
-                    
             }
         }
 
@@ -90,7 +79,7 @@ namespace GrupoF.TP.CAI.Pampazon
             this.Close();
         }
 
-  
+
 
         private void label1_Click(object sender, EventArgs e)
         {
@@ -103,6 +92,43 @@ namespace GrupoF.TP.CAI.Pampazon
             ordenDespachadaForm.model = model;
 
             ordenDespachadaForm.ShowDialog();
+        }
+
+        private void listOrdenesPreparadas_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (listOrdenesPreparadas.SelectedItems.Count > 0)
+            {
+                OrdenDePreparacionPreparada orden = (OrdenDePreparacionPreparada)listOrdenesPreparadas.SelectedItems[0].Tag;
+
+                bool existeSeleccionada = false;
+
+                foreach (ListViewItem item in listOrdenesPreparadas.Items)
+                {
+                    OrdenDePreparacionPreparada ordenEnLista = (OrdenDePreparacionPreparada)item.Tag;
+                    if (ordenEnLista.EstadoOrden == Entidades.EstadoPreparacion.Despachada)
+                    {
+                        existeSeleccionada = true;
+                        break;
+                    }
+                }
+
+                if (existeSeleccionada)
+                {
+                    MessageBox.Show("Ya existe una orden en estado 'Despachada'. No se puede seleccionar otra orden hasta que la actual se complete.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                orden.EstadoOrden = Entidades.EstadoPreparacion.Despachada;
+
+                listOrdenesPreparadas.SelectedItems[0].SubItems[5].Text = orden.EstadoOrden.ToString();
+
+
+                if (!model.OrdenesDeEntregaAConfirmar.Contains(orden))
+                {
+                    model.OrdenesDeEntregaAConfirmar.Remove(orden);
+                    model.OrdenADespachada.Add(orden);
+                }
+
+            }
         }
     }
 }

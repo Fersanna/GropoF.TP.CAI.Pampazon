@@ -73,6 +73,7 @@
             listOrdenesPreparadas.TabIndex = 8;
             listOrdenesPreparadas.UseCompatibleStateImageBehavior = false;
             listOrdenesPreparadas.View = View.Details;
+            listOrdenesPreparadas.MouseClick += listOrdenesPreparadas_MouseClick;
             // 
             // NumeroColum
             // 
