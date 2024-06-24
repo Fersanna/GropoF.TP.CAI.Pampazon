@@ -30,24 +30,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._7._Confirmar_Orden_de_Entrega
 
         private void OrdenDespachadaForm_Load(object sender, EventArgs e)
         {
-            
             CargarOrdenesDespachadas();
-            /*
-            foreach (OrdenDePreparacionPreparada ordenesSeleccionada in model.OrdenADespachada)
-            {
-                if (ordenesSeleccionada.EstadoOrden == Entidades.EstadoPreparacion.Seleccion)
-                {
-                    ListViewItem item = new ListViewItem(ordenesSeleccionada.NumeroDeOrden);
-                    item.SubItems.Add(ordenesSeleccionada.CodigoCliente);
-                    item.SubItems.Add(ordenesSeleccionada.Fecha.ToString("dd/MM/yyyy"));
-                    item.SubItems.Add(ordenesSeleccionada.CodigoTransportista);
-                    item.SubItems.Add(((int)ordenesSeleccionada.Prioridad).ToString());
-                    item.SubItems.Add(ordenesSeleccionada.EstadoOrden.ToString());
-
-                    listOrdenesDespachadas.Items.Add(item);
-                }
-            }
-            */
         }
 
         private void CargarOrdenesDespachadas()
