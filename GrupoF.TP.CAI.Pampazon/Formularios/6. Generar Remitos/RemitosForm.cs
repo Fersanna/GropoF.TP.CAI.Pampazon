@@ -30,13 +30,15 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
         private void ImprimirBtn_Click(object sender, EventArgs e)
         {
+            //Cambiar estado de la orden y Guardar el remito generado en Json.
+            model.Confirmar();
             var dialogResult = MessageBox.Show("¿Desea generar un remito?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-            //Cambiar estado de la orden y Guardar el remito generado en Json.
-            model.CambiarEstadoOrdenSeleccionada();
-            model.GuardarRemito();
-            MessageBox.Show("El remito se ha generado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Close();
+            if (dialogResult == DialogResult.Yes)
+            {
+                MessageBox.Show("El remito se ha generado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.Close();
+            }
         }
 
         private void CancelarBtn_Click(object sender, EventArgs e)

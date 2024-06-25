@@ -23,27 +23,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
         public GenerarRemitosModel()
         {
-            var ordenesDeEntrega = AlmacenOrdenDeEntrega.OrdenDeEntregaEnts;
-
-            if (ordenesDeEntrega != null)
-            {
-                OrdenesDeEntrega = ordenesDeEntrega
-                                                .Select(ordenEnt => new OrdenDeEntregaPendiente
-                                                {
-                                                    IdOrdenDeEntrega = ordenEnt.IdOrdenDeEntrega,
-                                                    CodigoCliente = ordenEnt.CodigoCliente,
-                                                    Fecha = ordenEnt.Fecha,
-                                                    CodigoTransportista = ordenEnt.CodigoTransportista,
-                                                    EstadoOrdenEntrega = ordenEnt.EstadoOrdenEntrega,
-                                                    EntregaDetalle = ordenEnt.EntregaDetalle.Select(d => d.NumeroDeOrden).ToList()
-                                                })
-                                                .ToList();
-            }
-            else
-            {
-                MessageBox.Show("Debe ingresar una orden de selección");
-            }
-
+            CargarOrdenesDeEntrega();
 
             /*
             
@@ -59,17 +39,37 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
             */
         }
 
-        internal void CambiarEstadoOrdenSeleccionada()
+        private void CargarOrdenesDeEntrega()
         {
+             OrdenesDeEntrega = AlmacenOrdenDeEntrega.OrdenDeEntregaEnts
+                                                .Where(o => o.EstadoOrdenEntrega == EstadoEntrega.Pendiente)
+                                                .Select(ordenEnt => new OrdenDeEntregaPendiente
+                                                {
+                                                    IdOrdenDeEntrega = ordenEnt.IdOrdenDeEntrega,
+                                                    CodigoCliente = ordenEnt.CodigoCliente,
+                                                    Fecha = ordenEnt.Fecha,
+                                                    CodigoTransportista = ordenEnt.CodigoTransportista,
+                                                    EstadoOrdenEntrega = ordenEnt.EstadoOrdenEntrega,
+                                                    EntregaDetalle = ordenEnt.EntregaDetalle.Select(d => d.NumeroDeOrden).ToList()
+                                                })
+                                                .ToList();
+        }
+
+        internal void Confirmar()
+        {
+            // CambiarEstadoOrdenSeleccionada
+
             var ordenSeleccionada = AlmacenOrdenDeEntrega.OrdenDeEntregaEnts.FirstOrDefault(o => OrdenSeleccionada.IdOrdenDeEntrega == o.IdOrdenDeEntrega);
 
             ordenSeleccionada.EstadoOrdenEntrega = EstadoEntrega.Asignado;
-        }
 
-        internal void GuardarRemito()
-        {
+
+
+
+            // GuardarRemito
+
             var numerosDeOrden = OrdenSeleccionada.EntregaDetalle;
-           
+
             var ordenesDePreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacion
                  .Where(o => numerosDeOrden.Contains(o.NumeroDeOrden))
                  .ToList();
@@ -105,12 +105,13 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
                 DetalleProductos = RemitoAGuardar.Detalle.ToList()
             };
 
-            
-            AlmacenRemitos.RemitosEnt.Add(remito); 
+
+            AlmacenRemitos.RemitosEnt.Add(remito);
             AlmacenRemitos.Grabar();
-            
+
             MessageBox.Show($"Remito guardado con ID: {remito.IdRemito}");
 
+            CargarOrdenesDeEntrega();
         }
     }
 }
