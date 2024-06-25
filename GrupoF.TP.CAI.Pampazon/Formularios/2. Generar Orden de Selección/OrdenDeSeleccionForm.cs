@@ -35,6 +35,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._2._Generar_Orden_de_Selección
                 {
                     model.RegistrarOrden(ordenesSeleccionadas);
                     ListOrdenesSeleccionConfirmadas.Items.Clear();
+                    MessageBox.Show("La orden de selección fue generada con éxito..", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
                 }
             }

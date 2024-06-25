@@ -35,7 +35,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
             //Cambiar estado de la orden y Guardar el remito generado en Json.
             model.CambiarEstadoOrdenSeleccionada();
             model.GuardarRemito();
-            MessageBox.Show("El remito se ha generado con éxito.");
+            MessageBox.Show("El remito se ha generado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 
@@ -81,6 +81,58 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
         private void CargarProductos()
         {
+            var ordenesSeleccionada = model.OrdenSeleccionada;
+            var numerosDeOrden = ordenesSeleccionada.EntregaDetalle; //ID's de las ordenes de preparación.
+
+            var ordenesDePreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacion
+                                            .Where(o => numerosDeOrden.Contains(o.NumeroDeOrden))
+                                            .ToList();
+
+            if (!ordenesDePreparacion.Any()) //Esto es un FI
+            {
+                throw new ApplicationException($"La orden de seleccion {ordenesSeleccionada.IdOrdenDeEntrega} no tiene ordenes de preparacion asociadas.");
+            }
+
+            var detalleProductos = new List<Productos>();
+
+            foreach (var ordenDePreparacion in ordenesDePreparacion)
+            {
+                foreach (var detalle in ordenDePreparacion.Detalle)
+                {
+                    var producto = AlmacenProductos.Productos
+                                                   .Single(p => p.IdProducto == detalle.IdProducto);
+
+                    ListViewItem item = new ListViewItem(producto.IdProducto);
+                    item.SubItems.Add(producto.Descripcion);
+                    item.SubItems.Add(detalle.Cantidad.ToString());
+                    ProductosList.Items.Add(item);
+
+                    item.Tag = producto;
+
+                    var productoDetalle = new Productos
+                    {
+                        IdProducto = producto.IdProducto,
+                        Descripcion = producto.Descripcion,
+                        Cantidad = detalle.Cantidad
+                    };
+
+                    // Agregar el producto a la lista de detalles del remito
+                    detalleProductos.Add(productoDetalle);
+                }
+            }
+
+            // Asegurarte de que el remito a guardar tenga su lista de detalles inicializada
+            if (model.RemitoAGuardar == null)
+            {
+                model.RemitoAGuardar = new Remito();
+            }
+
+            model.RemitoAGuardar.Detalle = detalleProductos;
+
+
+
+            /*
+            
             var ordenesSeleccionada = model.OrdenSeleccionada;
             if (ordenesSeleccionada == null)
             {
@@ -149,54 +201,6 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
                 ProductosList.Items.Add(item);
             }
 
-            /*
-            var ordenesSeleccionada = model.OrdenSeleccionada;
-            var numerosDeOrden = ordenesSeleccionada.EntregaDetalle; //ID's de las ordenes de preparación.
-
-            var ordenesDePreparacion = AlmacenOrdenesDePreparacion.OrdenDePreparacion
-                                            .Where(o => numerosDeOrden.Contains(o.NumeroDeOrden))
-                                            .ToList();
-
-            if (!ordenesDePreparacion.Any()) //Esto es un FI
-            {
-                throw new ApplicationException($"La orden de seleccion {ordenesSeleccionada.IdOrdenDeEntrega} no tiene ordenes de preparacion asociadas.");
-            }
-
-            var detalleProductos = new List<Productos>();
-
-            foreach (var ordenDePreparacion in ordenesDePreparacion)
-            {
-                foreach (var detalle in ordenDePreparacion.Detalle)
-                {
-                    var producto = AlmacenProductos.Productos
-                                                   .Single(p => p.IdProducto == detalle.IdProducto);
-
-                    ListViewItem item = new ListViewItem(producto.IdProducto);
-                    item.SubItems.Add(producto.Descripcion);
-                    item.SubItems.Add(detalle.Cantidad.ToString());
-                    ProductosList.Items.Add(item);
-
-                    item.Tag = producto;
-
-                    var productoDetalle = new Productos
-                    {
-                        IdProducto = producto.IdProducto,
-                        Descripcion = producto.Descripcion,
-                        Cantidad = detalle.Cantidad
-                    };
-
-                    // Agregar el producto a la lista de detalles del remito
-                    detalleProductos.Add(productoDetalle);
-                }
-            }
-
-            // Asegurarte de que el remito a guardar tenga su lista de detalles inicializada
-            if (model.RemitoAGuardar == null)
-            {
-                model.RemitoAGuardar = new Remito();
-            }
-
-            model.RemitoAGuardar.Detalle = detalleProductos;
             */
         }
     }

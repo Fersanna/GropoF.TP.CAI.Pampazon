@@ -4,6 +4,7 @@ using GrupoF.TP.CAI.Pampazon.Entidades;
 using GrupoF.TP.CAI.Pampazon.Modulos;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -105,7 +106,6 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
             return null;
         }
 
-        //Seguir por aca para terminar de el caso de uso 1
         internal void GenerarNuevaOrdenDePreparacion()
         {
             var validacion = ValidarCantidadProductos();
@@ -143,7 +143,8 @@ namespace GrupoF.TP.CAI.Pampazon.Modelos
 
             var ordenDePreparacionEnt = ConvertirOrden(ClienteOrden);
             AlmacenOrdenesDePreparacion.AgregarOrden(ordenDePreparacionEnt);
-            MessageBox.Show("La orden fue generada con éxito!", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("La orden fue cargada con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
 
         internal OrdenDePreparacionEnt ConvertirOrden(OrdenDePreparacion orden)
