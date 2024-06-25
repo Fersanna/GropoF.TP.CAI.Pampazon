@@ -29,12 +29,13 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._3._Buscar_Posición
 
         private void ConfirmarBtn_Click(object sender, EventArgs e)
         {
-            Model.Confirmar();
+            
             var dialogResult = MessageBox.Show("¿Desea restar de stock todos los productos detallados?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (dialogResult == DialogResult.Yes)
             {
                 MessageBox.Show("La orden de selección ha sido Cumplida.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Model.Confirmar();
             }
             this.Close();
         }

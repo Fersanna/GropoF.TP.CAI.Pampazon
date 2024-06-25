@@ -27,13 +27,14 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
 
         private void ImprimirBtn_Click(object sender, EventArgs e)
         {
-            //Cambiar estado de la orden y Guardar el remito generado en Json.
-            model.Confirmar();
+            
             var dialogResult = MessageBox.Show("¿Desea generar un remito?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (dialogResult == DialogResult.Yes)
             {
                 MessageBox.Show("El remito se ha generado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //Cambiar estado de la orden y Guardar el remito generado en Json.
+                model.Confirmar();
             }
             this.Close();
             ParentForm?.Close();

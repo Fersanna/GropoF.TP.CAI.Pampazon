@@ -62,7 +62,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
 
                 OrdenDePreparacionEnSeleccion ordenDePreparacion = (OrdenDePreparacionEnSeleccion)listOrdenesEnSeleccion.SelectedItems[0].Tag;
 
-                model.CambiarEstadoEnOrden(ordenDePreparacion);
+                
 
 
                 DialogResult result = MessageBox.Show("¿Está seguro de que la orden seleccionada ha sido recibida?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -71,6 +71,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._4._Confirmar_Orden_Seleccionada
                 {
                     MessageBox.Show("La orden se ha actualizado a estado Seleccionada.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
+                    model.CambiarEstadoEnOrden(ordenDePreparacion);
                 }
                 listOrdenesEnSeleccion.Enabled = true;
             }
