@@ -19,9 +19,9 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
 
             try
             {
-                if (File.Exists(@"Json/OrdenesDeEntrega.Json"))
+                if (File.Exists(@"Json/OrdenesDeEntrega.json"))
                 {
-                    var archivoCargado = File.ReadAllText(@"Json/OrdenesDeEntrega.Json");
+                    var archivoCargado = File.ReadAllText(@"Json/OrdenesDeEntrega.json");
                     OrdenDeEntregaEnts = JsonConvert.DeserializeObject<List<OrdenDeEntregaEnt>>(archivoCargado);
 
                     var ultimoNumeroOrden = OrdenDeEntregaEnts.Max(o => int.Parse(o.IdOrdenDeEntrega));
@@ -39,7 +39,7 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
                 var contenidoJson = JsonConvert.SerializeObject(OrdenDeEntregaEnts, Newtonsoft.Json.Formatting.Indented);
 
                 // Guardar en el archivo
-                File.WriteAllText(@"json/OrdenesDeEntrega.Json", contenidoJson);
+                File.WriteAllText(@"Json/OrdenesDeEntrega.json", contenidoJson);
             }
 
         internal static void AgregarOrdenDeEntrega(OrdenDeEntregaEnt nuevaOrdenDeEntregaEnt)

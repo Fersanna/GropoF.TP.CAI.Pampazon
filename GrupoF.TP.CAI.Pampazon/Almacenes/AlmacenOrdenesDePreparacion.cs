@@ -19,9 +19,9 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
 
             try
             {
-                if (File.Exists(@"Json/OrdenesDePreparacion.Json"))
+                if (File.Exists(@"Json/OrdenesDePreparacion.json"))
                 {
-                    var archivoCargado = File.ReadAllText(@"Json/OrdenesDePreparacion.Json");
+                    var archivoCargado = File.ReadAllText(@"Json/OrdenesDePreparacion.json");
                     OrdenDePreparacion = JsonConvert.DeserializeObject<List<OrdenDePreparacionEnt>>(archivoCargado);
                 }
             }
@@ -36,7 +36,7 @@ namespace GrupoF.TP.CAI.Pampazon.Almacenes
             var contenidoJson = JsonConvert.SerializeObject(OrdenDePreparacion, Newtonsoft.Json.Formatting.Indented);
 
             // Guardar en el archivo
-            File.WriteAllText(@"json/OrdenesDePreparacion.Json", contenidoJson);
+            File.WriteAllText(@"Json/OrdenesDePreparacion.json", contenidoJson);
         }
 
         internal static void AgregarOrden(OrdenDePreparacionEnt ordenDePreparacionEnt)
