@@ -17,16 +17,13 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
     public partial class RemitosForm : Form
     {
         public GenerarRemitosModel model { get; set; }
-
+        public Form ParentForm { get; set; }
 
         public RemitosForm()
         {
             InitializeComponent();
 
         }
-
-
-
 
         private void ImprimirBtn_Click(object sender, EventArgs e)
         {
@@ -37,8 +34,9 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
             if (dialogResult == DialogResult.Yes)
             {
                 MessageBox.Show("El remito se ha generado con éxito.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Close();
             }
+            this.Close();
+            ParentForm?.Close();
         }
 
         private void CancelarBtn_Click(object sender, EventArgs e)

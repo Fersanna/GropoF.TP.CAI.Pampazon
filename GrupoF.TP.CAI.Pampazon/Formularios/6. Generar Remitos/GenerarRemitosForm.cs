@@ -33,6 +33,7 @@ namespace GrupoF.TP.CAI.Pampazon.Formularios._6._Generar_Documentos
                 model.OrdenSeleccionada = (OrdenDeEntregaPendiente) listOrdenesDeEntrega.SelectedItems[0].Tag;
                 RemitosForm remitosForm = new RemitosForm();
                 remitosForm.model = this.model;
+                remitosForm.ParentForm = this;
                 remitosForm.ShowDialog();
             }
         }
